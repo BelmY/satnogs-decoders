@@ -1,0 +1,1097 @@
+{
+  "Device": {
+    "-xmlns": "unican_device_schema",
+    "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "-xsi:schemaLocation": "unican_device_schema unican_device_schema.xsd",
+    "DevModel": "UHF_msgid",
+    "DevDesc": "UHF_msgid",
+    "Packet": [
+      {
+        "PacType": "datain",
+        "PacId": "65505",
+        "PacName": "version_sw",
+        "DataLen": "3",
+        "Field": [
+          {
+            "FldType": "uint",
+            "FldName": "major",
+            "FldValue": "0",
+            "FldOffset": "0",
+            "FldLen": "8",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "uint",
+            "FldName": "minor",
+            "FldValue": "0",
+            "FldOffset": "8",
+            "FldLen": "8",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "uint",
+            "FldName": "extra",
+            "FldValue": "0",
+            "FldOffset": "16",
+            "FldLen": "8",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          }
+        ]
+      },
+      {
+        "PacType": "datain",
+        "PacId": "16897",
+        "PacName": "UHF_config",
+        "PacDesc": "UHF config",
+        "DataLen": "42",
+        "Field": [
+          {
+            "FldType": "uint",
+            "FldName": "Magic",
+            "FldValue": "0",
+            "FldOffset": "0",
+            "FldLen": "32",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "uint",
+            "FldName": "Frequency",
+            "FldValue": "0",
+            "FldOffset": "32",
+            "FldLen": "32",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "uint",
+            "FldName": "BitRate",
+            "FldValue": "0",
+            "FldOffset": "64",
+            "FldLen": "32",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "int",
+            "FldName": "DAC1Setting",
+            "FldValue": "0",
+            "FldOffset": "96",
+            "FldLen": "16",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "int",
+            "FldName": "DAC2Setting",
+            "FldValue": "0",
+            "FldOffset": "112",
+            "FldLen": "16",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "uint",
+            "FldName": "TPacketMode",
+            "FldValue": "0",
+            "FldOffset": "128",
+            "FldLen": "8",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "uint",
+            "FldName": "EnableBeacon",
+            "FldValue": "0",
+            "FldOffset": "136",
+            "FldLen": "8",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "uint",
+            "FldName": "BeaconInterval",
+            "FldValue": "0",
+            "FldOffset": "144",
+            "FldLen": "16",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "string",
+            "FldName": "CallSign",
+            "FldValue": "0",
+            "FldOffset": "160",
+            "FldLen": "56",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "uint",
+            "FldName": "SSID",
+            "FldValue": "0",
+            "FldOffset": "216",
+            "FldLen": "8",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "string",
+            "FldName": "EarthCallSign",
+            "FldValue": "0",
+            "FldOffset": "224",
+            "FldLen": "56",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "uint",
+            "FldName": "EarthSSID",
+            "FldValue": "0",
+            "FldOffset": "280",
+            "FldLen": "8",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "uint",
+            "FldName": "TLocation",
+            "FldValue": "0",
+            "FldOffset": "288",
+            "FldLen": "8",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "uint",
+            "FldName": "UNIcanID",
+            "FldValue": "0",
+            "FldOffset": "296",
+            "FldLen": "16",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "uint",
+            "FldName": "EnableBridge",
+            "FldValue": "0",
+            "FldOffset": "312",
+            "FldLen": "8",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "uint",
+            "FldName": "BeaconStartupDelay",
+            "FldValue": "0",
+            "FldOffset": "320",
+            "FldLen": "16",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          }
+        ]
+      },
+      {
+        "PacType": "datain",
+        "PacId": "16918",
+        "PacName": "beacon",
+        "PacDesc": "Beacon",
+        "DataLen": "66",
+        "Field": [
+          {
+            "FldType": "uint",
+            "FldName": "Usb1",
+            "FldDesc": "Solar Panel 1 Voltage(mV)",
+            "FldValue": "0",
+            "FldOffset": "0",
+            "FldLen": "16",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "uint",
+            "FldName": "Usb2",
+            "FldDesc": "Solar Panel 2 Voltage(mV)",
+            "FldValue": "0",
+            "FldOffset": "16",
+            "FldLen": "16",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "uint",
+            "FldName": "Usb3",
+            "FldDesc": "Solar Panel 3 Voltage(mV)",
+            "FldValue": "0",
+            "FldOffset": "32",
+            "FldLen": "16",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "uint",
+            "FldName": "Isb1",
+            "FldDesc": "Solar Panel 1 Current(mA)",
+            "FldValue": "0",
+            "FldOffset": "48",
+            "FldLen": "16",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "uint",
+            "FldName": "Isb2",
+            "FldDesc": "Solar Panel 2 Current(mA)",
+            "FldValue": "0",
+            "FldOffset": "64",
+            "FldLen": "16",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "uint",
+            "FldName": "Isb3",
+            "FldDesc": "Solar Panel 3 Current(mA)",
+            "FldValue": "0",
+            "FldOffset": "80",
+            "FldLen": "16",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "int",
+            "FldName": "Iab",
+            "FldDesc": "Battery Current(mA)",
+            "FldValue": "0",
+            "FldOffset": "96",
+            "FldLen": "16",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "uint",
+            "FldName": "Ich1",
+            "FldDesc": "Channel 1 Current(mA)",
+            "FldValue": "0",
+            "FldOffset": "112",
+            "FldLen": "16",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "uint",
+            "FldName": "Ich2",
+            "FldDesc": "Channel 2 Current(mA)",
+            "FldValue": "0",
+            "FldOffset": "128",
+            "FldLen": "16",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "uint",
+            "FldName": "Ich3",
+            "FldDesc": "Channel 3 Current(mA)",
+            "FldValue": "0",
+            "FldOffset": "144",
+            "FldLen": "16",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "uint",
+            "FldName": "Ich4",
+            "FldDesc": "Channel 4 Current(mA)",
+            "FldValue": "0",
+            "FldOffset": "160",
+            "FldLen": "16",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "int",
+            "FldName": "t1_pw",
+            "FldDesc": "Battery temperature 1(deg. С)",
+            "FldValue": "0",
+            "FldOffset": "176",
+            "FldLen": "16",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "int",
+            "FldName": "t2_pw",
+            "FldDesc": "Battery temperature 2(deg. С)",
+            "FldValue": "0",
+            "FldOffset": "192",
+            "FldLen": "16",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "int",
+            "FldName": "t3_pw",
+            "FldDesc": "Battery temperature 3(deg. С)",
+            "FldValue": "0",
+            "FldOffset": "208",
+            "FldLen": "16",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "int",
+            "FldName": "t4_pw",
+            "FldDesc": "Battery temperature 4(deg. С)",
+            "FldValue": "0",
+            "FldOffset": "224",
+            "FldLen": "16",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "bit",
+            "FldName": "Uab_crit",
+            "FldDesc": "Flag \"Critical battery voltage\"",
+            "FldValue": "0",
+            "FldOffset": "240",
+            "FldLen": "1",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "bit",
+            "FldName": "Uab_min",
+            "FldDesc": "Flag \"Minimal battery voltage\"",
+            "FldValue": "0",
+            "FldOffset": "241",
+            "FldLen": "1",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "bit",
+            "FldName": "heater2_manual",
+            "FldDesc": "Flag \"Heater 2 manual control\"",
+            "FldValue": "0",
+            "FldOffset": "242",
+            "FldLen": "1",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "bit",
+            "FldName": "heater1_manual",
+            "FldDesc": "Flag \"Heater 1 manual control\"",
+            "FldValue": "0",
+            "FldOffset": "243",
+            "FldLen": "1",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "bit",
+            "FldName": "heater2_on",
+            "FldDesc": "Flag \"Heater 2 is on\"",
+            "FldValue": "0",
+            "FldOffset": "244",
+            "FldLen": "1",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "bit",
+            "FldName": "heater1_on",
+            "FldDesc": "Flag \"Heater 1 is on\"",
+            "FldValue": "0",
+            "FldOffset": "245",
+            "FldLen": "1",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "bit",
+            "FldName": "Tab_max",
+            "FldDesc": "Flag \"Battery overtemperature\"",
+            "FldValue": "0",
+            "FldOffset": "246",
+            "FldLen": "1",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "bit",
+            "FldName": "Tab_min",
+            "FldDesc": "Flag \"Battery undertemperature\"",
+            "FldValue": "0",
+            "FldOffset": "247",
+            "FldLen": "1",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "bit",
+            "FldName": "channelon4",
+            "FldDesc": "Flag \"Channel 4 is on\"",
+            "FldValue": "0",
+            "FldOffset": "248",
+            "FldLen": "1",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "bit",
+            "FldName": "channelon3",
+            "FldDesc": "Flag \"Channel 3 is on\"",
+            "FldValue": "0",
+            "FldOffset": "249",
+            "FldLen": "1",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "bit",
+            "FldName": "channelon2",
+            "FldDesc": "Flag \"Channel 2 is on\"",
+            "FldValue": "0",
+            "FldOffset": "250",
+            "FldLen": "1",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "bit",
+            "FldName": "channelon1",
+            "FldDesc": "Flag \"Channel 1 is on\"",
+            "FldValue": "0",
+            "FldOffset": "251",
+            "FldLen": "1",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "bit",
+            "FldName": "Ich_limit4",
+            "FldDesc": "Flag \"Channel 4 current limit\"",
+            "FldValue": "0",
+            "FldOffset": "252",
+            "FldLen": "1",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "bit",
+            "FldName": "Ich_limit3",
+            "FldDesc": "Flag \"Channel 3 current limit\"",
+            "FldValue": "0",
+            "FldOffset": "253",
+            "FldLen": "1",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "bit",
+            "FldName": "Ich_limit2",
+            "FldDesc": "Flag \"Channel 2 current limit\"",
+            "FldValue": "0",
+            "FldOffset": "254",
+            "FldLen": "1",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "bit",
+            "FldName": "Ich_limit1",
+            "FldDesc": "Flag \"Channel 1 current limit\"",
+            "FldValue": "0",
+            "FldOffset": "255",
+            "FldLen": "1",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "uint",
+            "FldName": "reserved0",
+            "FldDesc": "Reserved",
+            "FldValue": "0",
+            "FldOffset": "256",
+            "FldLen": "7",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "bit",
+            "FldName": "charger",
+            "FldDesc": "Flag \"Charging voltage\"",
+            "FldValue": "0",
+            "FldOffset": "263",
+            "FldLen": "1",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "uint",
+            "FldName": "reserved1",
+            "FldDesc": "Reserved",
+            "FldValue": "0",
+            "FldOffset": "264",
+            "FldLen": "8",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "int",
+            "FldName": "Uab",
+            "FldDesc": "Battery voltage(mV)",
+            "FldValue": "0",
+            "FldOffset": "272",
+            "FldLen": "16",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "uint",
+            "FldName": "reg_tel_id",
+            "FldDesc": "PSS telemetry number",
+            "FldValue": "0",
+            "FldOffset": "288",
+            "FldLen": "32",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "int",
+            "FldName": "Time",
+            "FldDesc": "PSS last telemetry timestamp",
+            "FldValue": "0",
+            "FldOffset": "320",
+            "FldLen": "32",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "uint",
+            "FldName": "Nres",
+            "FldDesc": "PSS reset counter",
+            "FldValue": "0",
+            "FldOffset": "352",
+            "FldLen": "8",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "uint",
+            "FldName": "FL",
+            "FldDesc": "PS flags",
+            "FldValue": "0",
+            "FldOffset": "360",
+            "FldLen": "8",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "int",
+            "FldName": "t_amp",
+            "FldDesc": "UHF amp temperatur(deg. С)",
+            "FldValue": "0",
+            "FldOffset": "368",
+            "FldLen": "8",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "int",
+            "FldName": "t_uhf",
+            "FldDesc": "UHF temperature(deg. С)",
+            "FldValue": "0",
+            "FldOffset": "376",
+            "FldLen": "8",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "int",
+            "FldName": "RSSIrx",
+            "FldDesc": "RX RSSI",
+            "FldValue": "0",
+            "FldOffset": "384",
+            "FldLen": "8",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "int",
+            "FldName": "RSSIidle",
+            "FldDesc": "idle RSSI",
+            "FldValue": "0",
+            "FldOffset": "392",
+            "FldLen": "8",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "int",
+            "FldName": "Pf",
+            "FldDesc": "Forward wave power(dBm)",
+            "FldValue": "0",
+            "FldOffset": "400",
+            "FldLen": "8",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "int",
+            "FldName": "Pb",
+            "FldDesc": "Reflected wave power(dBm)",
+            "FldValue": "0",
+            "FldOffset": "408",
+            "FldLen": "8",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "uint",
+            "FldName": "Nres",
+            "FldDesc": "UHF reset counter",
+            "FldValue": "0",
+            "FldOffset": "416",
+            "FldLen": "8",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "uint",
+            "FldName": "FL",
+            "FldDesc": "UHF flags",
+            "FldValue": "0",
+            "FldOffset": "424",
+            "FldLen": "8",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "int",
+            "FldName": "Time",
+            "FldDesc": "UHF telemetry timestamp",
+            "FldValue": "0",
+            "FldOffset": "432",
+            "FldLen": "32",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "uint",
+            "FldName": "UpTime",
+            "FldDesc": "Uptime(sec)",
+            "FldValue": "0",
+            "FldOffset": "464",
+            "FldLen": "32",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "uint",
+            "FldName": "Current",
+            "FldDesc": "UHF consumption current",
+            "FldValue": "0",
+            "FldOffset": "496",
+            "FldLen": "16",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "int",
+            "FldName": "Uuhf",
+            "FldDesc": "UHF voltage(mV)",
+            "FldValue": "0",
+            "FldOffset": "512",
+            "FldLen": "16",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          }
+        ]
+      },
+      {
+        "PacType": "datain",
+        "PacId": "16919",
+        "PacName": "extendedBeacon",
+        "PacDesc": "Extended beacon",
+        "DataLen": "81",
+        "Field": [
+          {
+            "FldType": "int",
+            "FldName": "t_mb",
+            "FldDesc": "Carrier board temperature (deg. С)",
+            "FldValue": "0",
+            "FldOffset": "0",
+            "FldLen": "16",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "float",
+            "FldName": "Mx",
+            "FldDesc": "Magnetic field X(nanotesla)",
+            "FldValue": "0",
+            "FldOffset": "16",
+            "FldLen": "32",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "float",
+            "FldName": "My",
+            "FldDesc": "Magnetic field Y(nanotesla)",
+            "FldValue": "0",
+            "FldOffset": "48",
+            "FldLen": "32",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "float",
+            "FldName": "Mz",
+            "FldDesc": "Magnetic field Z(nanotesla)",
+            "FldValue": "0",
+            "FldOffset": "80",
+            "FldLen": "32",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "float",
+            "FldName": "Vx",
+            "FldDesc": "Angular velocity X(dps)",
+            "FldValue": "0",
+            "FldOffset": "112",
+            "FldLen": "32",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "float",
+            "FldName": "Vy",
+            "FldDesc": "Angular velocity Y(dps)",
+            "FldValue": "0",
+            "FldOffset": "144",
+            "FldLen": "32",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "float",
+            "FldName": "Vz",
+            "FldDesc": "Angular velocity Z(dps)",
+            "FldValue": "0",
+            "FldOffset": "176",
+            "FldLen": "32",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "uint",
+            "FldName": "Nres",
+            "FldDesc": "Reset counter",
+            "FldValue": "0",
+            "FldOffset": "208",
+            "FldLen": "8",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "uint",
+            "FldName": "Rcon",
+            "FldDesc": "Last reset reason",
+            "FldValue": "0",
+            "FldOffset": "216",
+            "FldLen": "8",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "uint",
+            "FldName": "FL",
+            "FldDesc": "Flags",
+            "FldValue": "0",
+            "FldOffset": "224",
+            "FldLen": "8",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "int",
+            "FldName": "Time",
+            "FldDesc": "Last telemetry timestamp",
+            "FldValue": "0",
+            "FldOffset": "232",
+            "FldLen": "32",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "uint",
+            "FldName": "FL",
+            "FldDesc": "Payload flags",
+            "FldValue": "0",
+            "FldOffset": "264",
+            "FldLen": "8",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "int",
+            "FldName": "TimeSend",
+            "FldDesc": "Last payload telemetry timestamp",
+            "FldValue": "0",
+            "FldOffset": "272",
+            "FldLen": "32",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "int",
+            "FldName": "T_Plate",
+            "FldDesc": "Payload board temperature",
+            "FldValue": "0",
+            "FldOffset": "304",
+            "FldLen": "16",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "int",
+            "FldName": "T_CPU",
+            "FldDesc": "Payload MPU temperature",
+            "FldValue": "0",
+            "FldOffset": "320",
+            "FldLen": "16",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "uint",
+            "FldName": "CurSens1",
+            "FldDesc": "Payload current sensor 1",
+            "FldValue": "0",
+            "FldOffset": "336",
+            "FldLen": "16",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "uint",
+            "FldName": "CurSens2",
+            "FldDesc": "Payload current sensor 2",
+            "FldValue": "0",
+            "FldOffset": "352",
+            "FldLen": "16",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "uint",
+            "FldName": "NRst",
+            "FldDesc": "Payload reset counter",
+            "FldValue": "0",
+            "FldOffset": "368",
+            "FldLen": "8",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "int",
+            "FldName": "TimeRst",
+            "FldDesc": "Payload last reset timestamp",
+            "FldValue": "0",
+            "FldOffset": "376",
+            "FldLen": "32",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "uint",
+            "FldName": "CH1Rate",
+            "FldDesc": "Channel 1 count rate",
+            "FldValue": "0",
+            "FldOffset": "408",
+            "FldLen": "16",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "uint",
+            "FldName": "CH2Rate",
+            "FldDesc": "Channel 2 count rate",
+            "FldValue": "0",
+            "FldOffset": "424",
+            "FldLen": "16",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "uint",
+            "FldName": "CH3Rate",
+            "FldDesc": "Channel 3 count rate",
+            "FldValue": "0",
+            "FldOffset": "440",
+            "FldLen": "16",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "uint",
+            "FldName": "CH4Rate",
+            "FldDesc": "Channel 4 count rate",
+            "FldValue": "0",
+            "FldOffset": "456",
+            "FldLen": "16",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "uint",
+            "FldName": "CH5Rate",
+            "FldDesc": "Channel 5 count rate",
+            "FldValue": "0",
+            "FldOffset": "472",
+            "FldLen": "16",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "uint",
+            "FldName": "CH6Rate",
+            "FldDesc": "Channel 6 count rate",
+            "FldValue": "0",
+            "FldOffset": "488",
+            "FldLen": "16",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "uint",
+            "FldName": "PtrEnd1",
+            "FldDesc": "Last transmitted buffer from segment 1 pointer",
+            "FldValue": "0",
+            "FldOffset": "504",
+            "FldLen": "16",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "uint",
+            "FldName": "PtrCrt1",
+            "FldDesc": "Write pointer from segment 1",
+            "FldValue": "0",
+            "FldOffset": "520",
+            "FldLen": "16",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "uint",
+            "FldName": "PtrEnd2",
+            "FldDesc": "Last transmitted buffer from segment 2 pointer",
+            "FldValue": "0",
+            "FldOffset": "536",
+            "FldLen": "16",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "uint",
+            "FldName": "PtrCrt2",
+            "FldDesc": "Write pointer from segment 2",
+            "FldValue": "0",
+            "FldOffset": "552",
+            "FldLen": "16",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "uint",
+            "FldName": "PtrEnd3",
+            "FldDesc": "Last transmitted buffer from segment 3 pointer",
+            "FldValue": "0",
+            "FldOffset": "568",
+            "FldLen": "16",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "uint",
+            "FldName": "PtrCrt3",
+            "FldDesc": "Write pointer from segment 3",
+            "FldValue": "0",
+            "FldOffset": "584",
+            "FldLen": "16",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "uint",
+            "FldName": "LastEvent_CH1_1",
+            "FldDesc": "Last event channel 1 M1L1.",
+            "FldValue": "0",
+            "FldOffset": "600",
+            "FldLen": "8",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "uint",
+            "FldName": "LastEvent_CH1_2",
+            "FldDesc": "Last event channel 1 L2H1.",
+            "FldValue": "0",
+            "FldOffset": "608",
+            "FldLen": "8",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "uint",
+            "FldName": "LastEvent_CH1_3",
+            "FldDesc": "Last event channel 1 H2M2.",
+            "FldValue": "0",
+            "FldOffset": "616",
+            "FldLen": "8",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "uint",
+            "FldName": "LastEvent_CH2_1",
+            "FldDesc": "Last event channel 2 M1L1.",
+            "FldValue": "0",
+            "FldOffset": "624",
+            "FldLen": "8",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "uint",
+            "FldName": "LastEvent_CH2_2",
+            "FldDesc": "Last event channel 2 L2H1.",
+            "FldValue": "0",
+            "FldOffset": "632",
+            "FldLen": "8",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          },
+          {
+            "FldType": "uint",
+            "FldName": "LastEvent_CH2_3",
+            "FldDesc": "Last event channel 2 H2M2.",
+            "FldValue": "0",
+            "FldOffset": "640",
+            "FldLen": "8",
+            "FldByteOrder": "LE",
+            "FldEdit": "NO"
+          }
+        ]
+      }
+    ]
+  }
+}
