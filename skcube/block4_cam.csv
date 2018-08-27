@@ -1,0 +1,12 @@
+uint8	;CAM identificator
+uint32	;Timestamp
+uint16	;FW version
+uint16	;Number of reboots
+uint8	;JPEG compression
+uint8	;JPEG scale
+int8	;MCU Temperature
+uint16	;Vref internal
+uint16	;Packets sent
+uint16	;CW sent
+uint8	;Flash image position
+uint8	;TX datarate

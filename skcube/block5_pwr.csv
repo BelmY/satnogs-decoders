@@ -1,0 +1,79 @@
+uint8	;PWR identificator
+uint32	;Timestamp
+uint32	;FullUptime
+uint32	;Uptime
+uint16	;Active procesor
+uint16	;FW version
+uint16	;Number of reboots
+uint16	;CountComErrors
+uint16	;CountPSUErrors
+int16	;Solar J current
+int16	;Solar K current
+int16	;Solar L current
+int16	;Solar M current
+int16	;Solar U current
+int16	;Solar D current
+int16	;Solar J temp
+int16	;Solar K temp
+int16	;Solar L temp
+int16	;Solar M temp
+int16	;Solar U temp
+int16	;Solar D temp
+int16	;Battery A voltage
+int16	;Battery B voltage
+int16	;Battery temp
+uint16	;Battery A capacity
+uint16	;Battery B capacity
+uint16	;Bat Capacity (math 0-100%)
+int16	;Battery A current
+int16	;Battery B current
+int16	;Battery A min current
+int16	;Battery B min current
+int16	;Battery A max current
+int16	;Battery B max current
+int16	;Battery A avg current
+int16	;Battery B avg current
+int16	;CHDS min current
+int16	;CHDS max current
+int16	;CHDS avg current
+int16	;CHDS actual current
+int16	;COM min current
+int16	;COM max current
+int16	;COM avg current
+int16	;COM actual current
+int16	;CAM min current
+int16	;CAM max current
+int16	;CAM avg current
+int16	;CAM actual current
+int16	;EXP min current
+int16	;EXP max current
+int16	;EXP avg current
+int16	;EXP actual current
+int16	;ADCS min current
+int16	;ADCS max current
+int16	;ADCS avg current
+int16	;ADCS actual current
+uint16	;SYS voltage min
+uint16	;SYS voltage max
+uint16	;SYS voltage actual
+uint16	;Nadprudy 
+uint16	;Stav pripojenia
+int16	;TS_Temp
+uint32	;CountPacket
+uint16	;PSU_Error
+uint16	;PSU_Lasterror
+uint16	;COM_error
+uint16	;COM_Lasterror
+uint8	;CDHS_I_limit
+uint8	;COM_I_limit
+uint8	;CAM_I_limit
+uint8	;ADCS_I_limit
+uint8	;EXP_I_limit
+uint8	;CAM_UV_limit
+uint8	;EXP_UV_limit
+uint8	;ADCS_UV_limit
+int16	;BAT1_Vmax
+int16	;BAT1_Vmin
+int16	;BAT2_Vmax
+int16	;BAT2_Vmin
+uint16	;Endofdata

@@ -1,0 +1,29 @@
+uint32	;Timestamp
+uint16	;FW version
+uint16	;Number of reboots
+uint8	;Active ADC channel
+uint8	;FFT gain
+uint8	;Low frequency
+uint8	;High frequency
+uint16	;Max hold sec
+uint16	;Slow position
+uint16	;Postring samples
+uint16	;PSD
+uint16	;PSD max
+uint16	;PSD selected 
+uint16	;PSD selected max
+uint16	;Peak freq
+uint16	;Peak amp
+uint16	;PSD treshold
+uint16	;PSD selected events
+uint8	;Events position
+uint32	;Event time 1
+uint32	;Event time 2
+uint32	;Event time 3
+uint32	;Event time 4
+uint32	;Event time 5
+uint32	;Event time 6
+uint32	;Event time 7
+uint32	;Event time 8
+uint32	;Event time 9
+uint32	;Event time 10

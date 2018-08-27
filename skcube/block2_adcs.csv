@@ -1,0 +1,44 @@
+uint8	;ADCS identifier
+uint8	;ADCS mode
+uint8	;bd_k
+uint8	;Max PWM coil X
+uint8	;Max PWM coil Y
+uint8	;Max PWM coil Z
+int16	;SUN X+ (x)
+int16	;SUN X+ (y)
+uint8	;SUN X+ irradiation
+int16	;SUN X- (x)
+int16	;SUN X- (y)
+uint8	;SUN X- irradiation
+int16	;SUN Y+ (x)
+int16	;SUN Y+ (y)
+uint8	;SUN Y+ irradiation
+int16	;SUN Y- (x)
+int16	;SUN Y- (y)
+uint8	;SUN Y- irradiation
+int16	;SUN Z+ (x)
+int16	;SUN Z+ (y)
+uint8	;SUN Z+ irradiation
+int16	;SUN Z- (x)
+int16	;SUN Z- (y)
+uint8	;SUN Z- irradiation
+uint16	;Gyroscope X
+uint16	;Gyroscope Y
+uint16	;Gyroscope Z
+uint16	;Gyroscope temp
+uint16	;Magnetometer 1 X
+uint16	;Magnetometer 1 Y
+uint16	;Magnetometer 1 Z
+uint16	;Magnetometer 1 temp
+uint16	;Magnetometer 2 X
+uint16	;Magnetometer 2 Y
+uint16	;Magnetometer 2 Z
+uint16	;Magnetometer 2 temp
+uint16	;Accelerometer X
+uint16	;Accelerometer Y
+uint16	;Accelerometer Z
+uint16	;Accel temp
+uint16	;Earth sensor X+
+uint16	;Earth sensor X-
+uint16	;Earth sensor Y+
+uint16	;Earth sensor Y-
