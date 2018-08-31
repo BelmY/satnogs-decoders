@@ -4,6 +4,7 @@ import re
 
 
 filename = 'obc_beacon.csv'
+filename_modem = 'modem_beacon.csv'
 
 def unify_str(string):
     string = string.strip().lower()
@@ -23,9 +24,37 @@ def unify_str(string):
     return string
 
 if __name__ == "__main__":
+    with open(filename_modem, 'r') as f:
+        a = f.readlines()
+
+    print('#---------------Modem Beacon TLM--------------------------------')
+    print('  modem_beacon_tlm:')
+    print('    seq:')
+    print('    - id: channel')
+    print('      type: u1')
+    print('    - id: data')
+    print('      type:')
+    print('        switch-on: channel')
+    print('        cases:')
+    for l in a:
+        t = l.split('\t')
+        print('          {}: ch_{}'.format(t[0], unify_str(t[1])))
+
+    # Generate modem channel field defitions
+    print('############ Modem Channel fields ##############')
+    for l in a:
+        t = l.split('\t')
+
+        name = unify_str(t[1])
+        print('  ch_{}:'.format(name))
+        print('    seq:')
+        print('    - id: {}'.format(name))
+        print('      type: u1')
+
     with open(filename, 'r') as f:
         a = f.readlines()
 
+    print('#---------------OBC beacon TLM ---------------------------------')
     print('  obc_beacon_tlm:')
     print('    seq:')
     print('    - id: i2c_node_address')
@@ -34,6 +63,7 @@ if __name__ == "__main__":
     print('      type:')
     print('        switch-on: i2c_node_address')
     print('        cases:')
+
     # Generate switch statements
     for l in a:
         t = l.split('\t')
@@ -74,4 +104,4 @@ if __name__ == "__main__":
         print('    seq:')
         print('    - id: {}'.format(name))
         print('      type: u1')
-        # print('- id: {}'.format{})
+

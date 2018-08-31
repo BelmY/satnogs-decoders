@@ -20,12 +20,42 @@ seq:
 - id: crc_16_ccit
   size: 2
 types:
+#---------------Modem Beacon TLM--------------------------------
   modem_beacon_tlm:
     seq:
     - id: channel
       type: u1
     - id: data
-      size: 4
+      type:
+        switch-on: channel
+        cases:
+          0xE0: ch_time_since_last_obc_i2c_message
+          0xE1: ch_packets_up_count
+          0xE2: ch_packets_down_count
+          0xE3: ch_packets_up_dropped_count
+          0xE4: ch_packets_down_dropped_count
+############ Modem Channel fields ##############
+  ch_time_since_last_obc_i2c_message:
+    seq:
+    - id: time_since_last_obc_i2c_message
+      type: u1
+  ch_packets_up_count:
+    seq:
+    - id: packets_up_count
+      type: u1
+  ch_packets_down_count:
+    seq:
+    - id: packets_down_count
+      type: u1
+  ch_packets_up_dropped_count:
+    seq:
+    - id: packets_up_dropped_count
+      type: u1
+  ch_packets_down_dropped_count:
+    seq:
+    - id: packets_down_dropped_count
+      type: u1
+#---------------OBC beacon TLM ---------------------------------
   obc_beacon_tlm:
     seq:
     - id: i2c_node_address
@@ -108,7 +138,7 @@ types:
       type:
         switch-on: i2c_node_address
         cases:
-          0x0C: ch_4b_unix_time_little_endian
+          0x0C: ch_unix_time_little_endian
   magnetometers:
     seq:
     - id: i2c_node_address
@@ -268,9 +298,9 @@ types:
     - id: switch_9_solar_panel_deploy_fire
       type: u1
 #### I2C address 0x80: OBC DATA             ####
-  ch_4b_unix_time_little_endian:
+  ch_unix_time_little_endian:
     seq:
-    - id: 4b_unix_time_little_endian
+    - id: unix_time_little_endian
       type: u1
 #### I2C address 0x89: MAGNETOMETERS        ####
   ch_magnetometer_set_1:
