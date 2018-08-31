@@ -25,7 +25,7 @@ types:
     - id: channel
       type: u1
     - id: data
-      type: u4
+      type: s4le
   obc_beacon_tlm:
     seq:
     - id: i2c_node_address
