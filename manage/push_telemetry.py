@@ -3,10 +3,11 @@
 import os
 import json
 import time
+import argparse
 import binascii
 from datetime import datetime
 
-from satnogs_api_client import fetch_telemetry, DB_DEV_BASE_URL, post_telemetry
+from satnogs_api_client import fetch_telemetry, DB_BASE_URL, DB_DEV_BASE_URL, post_telemetry
 from qth_locator import square_to_location, location_to_square
 from db_helpers import gridsquare
 
@@ -18,32 +19,6 @@ norad_id_siriussat2_old = 99971
 norad_id_siriussat3_old = 99972
 norad_id_skcube = 42789
 DB_SPUTNIX_BASE_URL = 'http://db.satnogs.sputnix.ru'
-
-
-def _fetch_telemetry():
-    # source = 'sputnix'
-    norad_id = norad_id_skcube
-    source = 'satnogs-dev'
-
-    if source == 'satnogs':
-        url = DB_BASE_URL
-    elif source == 'satnogs-dev':
-        url = DB_DEV_BASE_URL
-    elif source == 'sputnix':
-        url = DB_SPUTNIX_BASE_URL
-
-    telemetry = fetch_telemetry(norad_id, url)
-    print("Fetched {} frames.".format(len(telemetry)))
-
-    directory = './telemetry/{}/{}'.format(source, norad_id)
-    filename = '{:%Y%m%d%H%M%S}_all_telemetry.json'.format(datetime.now())
-    path  = os.path.join(directory, filename)
-
-    if not os.path.exists(directory):
-        os.makedirs(directory)
-
-    with open(path, 'w') as f:
-        json.dump(telemetry, f)
 
 
 def _push_telemetry():
@@ -84,24 +59,3 @@ def _push_telemetry():
                        base_url=DB_DEV_BASE_URL)
         exported += 1
     print('Exported {} frames.'.format(exported))
-
-
-def _export_raw():
-    filename = '../telemetry/satnogs-dev/42789/20180826225700_all_telemetry.json'
-    norad_id = norad_id_skcube
-    sat_name = 'skcube'
-
-    with open(filename, 'r') as f:
-        telemetry = json.load(f)    
-
-    for t in telemetry[-20:]:
-        timestamp = datetime.strptime(t['timestamp'], '%Y-%m-%dT%H:%M:%SZ')
-
-        filename = '{}_{:%Y%m%d_%H%M%S}_raw'.format(sat_name, timestamp)
-        with open(filename, 'wb') as f:
-            f.write(binascii.unhexlify(t['frame']))
-
-if __name__ == "__main__":
-    _fetch_telemetry()
-    # _push_telemetry()
-    # _export_raw()

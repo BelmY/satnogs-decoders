@@ -107,7 +107,7 @@ def fetch_tle_of_observation(observation_id, prod=True):
     return [obs_tle_2, obs_tle_3]
 
 
-def fetch_telemetry(norad_id, url):
+def fetch_telemetry(norad_id, max_frames, url):
     # http://db-dev.satnogs.org/api/telemetry/?satellite=43595
 
     query_str = '{}/api/telemetry/?satellite={}'
@@ -125,13 +125,13 @@ def fetch_telemetry(norad_id, url):
 
     next_page_available = ('Link' in r.headers.keys())
 
-    if next_page_available:
+    if next_page_available and (not max_frames or len(telemetry) < max_frames):
         parts = r.headers['Link'].split(',')
         for part in parts:
             if part[-5:-1] == 'next':
                 next_page_url = part[1:-13]
 
-    while next_page_available:
+    while next_page_available and (not max_frames or len(telemetry) < max_frames):
         print(next_page_url)
         r = requests.get(url=next_page_url)
 
