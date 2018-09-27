@@ -21,17 +21,22 @@ norad_id_skcube = 42789
 DB_SPUTNIX_BASE_URL = 'http://db.satnogs.sputnix.ru'
 
 
-def _push_telemetry():
-    # filename = './telemetry/sputnix/20180826192616_telemetry_99970.json'
-    filename = './telemetry/sputnix/20180826192634_telemetry_99971.json'
-    norad_id_import = norad_id_siriussat2_old
-    norad_id_export = norad_id_siriussat2
+# filename = './telemetry/sputnix/20180826192616_telemetry_99970.json'
+telemetry_filename = './telemetry/sputnix/20180826192634_telemetry_99971.json'
+norad_id_import = norad_id_siriussat2_old
+norad_id_export = norad_id_siriussat2
 
-    with open(filename, 'r') as f:
+db_base_urls = {'satnogs': DB_BASE_URL,
+                'satnogs-dev': DB_DEV_BASE_URL,
+                'sputnix': DB_SPUTNIX_BASE_URL}
+
+
+def _push_telemetry(telemetry_filename, norad_id_import, norad_id_export, target, max_frames):
+    with open(telemetry_filename, 'r') as f:
         telemetry = json.load(f)    
 
     exported = 0
-    for i,t in enumerate(telemetry[:1]):
+    for i,t in enumerate(telemetry[:max_frames]):
         if len(t['observer']) == 0:
             print("Error: Empty observer, timestamp {}".format(t['timestamp']))
             continue
@@ -56,6 +61,30 @@ def _push_telemetry():
                        lat=str(abs(lat)) + ('N' if lat >= 0 else 'S'),
                        timestamp=t['timestamp'],
                        frame=t['frame'],
-                       base_url=DB_DEV_BASE_URL)
+                       base_url=db_base_urls[target])
         exported += 1
     print('Exported {} frames.'.format(exported))
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description='Push all telemetry data to the target db instance from a local json dump file for a given satellite.')
+    parser.add_argument('telemetry_filename',
+                        type=str,
+                        help='Filname of the telemetry data json dump')
+    parser.add_argument('norad_id_import', type=int, help='NORAD ID of the satellite in the data')
+    parser.add_argument('norad_id_export', type=int, help='NORAD ID of the satellite in the target db instance')
+    parser.add_argument('--target',
+                        type=str,
+                        default='satnogs',
+                        help='target satnogs-db Instance: satnogs, satnogs-dev or sputnix')
+    parser.add_argument('--max',
+                        type=int,
+                        default=None,
+                        help='Maximum number of fetched frames.')
+    args = parser.parse_args()
+
+    _push_telemetry(args.telemetry_filename,
+                    args.norad_id_import,
+                    args.norad_id_export,
+                    args.target,
+                    args.max)
