@@ -2,6 +2,49 @@
 
 ## Helper Scripts
 
+### Fetch telemetry
+```
+$ ./manage/fetch_telemetry.py --help
+usage: fetch_telemetry.py [-h] [--source SOURCE] [--base_dir BASE_DIR]
+                          [--max MAX]
+                          norad_id
+
+Fetch and store all telemetry data from a satnogs-db instance for a given
+satellite.
+
+positional arguments:
+  norad_id             NORAD ID of the satellite
+
+optional arguments:
+  -h, --help           show this help message and exit
+  --source SOURCE      satnogs-db Instance: satnogs, satnogs-dev or sputnix
+  --base_dir BASE_DIR  Base directory of the telemetry storage
+  --max MAX            Maximum number of fetched frames.
+```
+### Push telemetry
+TODO: Argument parsing missing
+```
+$ ./manage/push_telemetry.py
+```
+
+### Export raw frames
+
+```
+$ ./manage/export_raw.py --help
+usage: export_raw.py [-h] norad_id source_file satellite_name
+
+Export raw frames from local telemtry storage json files.
+
+positional arguments:
+  norad_id        NORAD ID of the satellite
+  source_file     Source telemetry storage file (json)
+  satellite_name  Satellite name
+
+optional arguments:
+  -h, --help      show this help message and exit
+```
+
+### Example Usage (OUTDATED!)
 ```
 ./manage/migrate_sids.py 39090 --source satnogs --max 10
 mkdir -p strand1/packets
