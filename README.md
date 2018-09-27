@@ -3,6 +3,7 @@
 ## Helper Scripts
 
 ### Fetch telemetry
+
 ```
 $ ./manage/fetch_telemetry.py --help
 usage: fetch_telemetry.py [-h] [--source SOURCE] [--base_dir BASE_DIR]
@@ -21,11 +22,30 @@ optional arguments:
   --base_dir BASE_DIR  Base directory of the telemetry storage
   --max MAX            Maximum number of fetched frames.
 ```
+
+
 ### Push telemetry
-TODO: Argument parsing missing
+
 ```
-$ ./manage/push_telemetry.py
+$ ./manage/push_telemetry.py --help
+usage: push_telemetry.py [-h] [--target TARGET] [--max MAX]
+                         telemetry_filename norad_id_import norad_id_export
+
+Push all telemetry data to the target db instance from a local json dump file
+for a given satellite.
+
+positional arguments:
+  telemetry_filename  Filname of the telemetry data json dump
+  norad_id_import     NORAD ID of the satellite in the data
+  norad_id_export     NORAD ID of the satellite in the target db instance
+
+optional arguments:
+  -h, --help          show this help message and exit
+  --target TARGET     target satnogs-db Instance: satnogs, satnogs-dev or
+                      sputnix
+  --max MAX           Maximum number of fetched frames.
 ```
+
 
 ### Export raw frames
 
@@ -44,12 +64,22 @@ optional arguments:
   -h, --help      show this help message and exit
 ```
 
-### Example Usage (OUTDATED!)
+
+### Example Usage
+
+Transfer frames from db-dev to db-dev (duplicating frames...):
 ```
-./manage/migrate_sids.py 39090 --source satnogs --max 10
-mkdir -p strand1/packets
-cd strand1/packets
-../../manage/export_raw.py 39090 ../../telemetry/satnogs/39090/20180831085759_all_telemetry.json strand1
+$ ./manage/fetch_telemetry.py 40967 --source satnogs-dev --max 10 --base_dir ./telemetry/
+https://db-dev.satnogs.org/api/telemetry/?satellite=40967
+Fetched 25 frames.
+Stored in ./telemetry/satnogs-dev/40967/20180927195606_all_telemetry.json
+
+
+$ ./manage/push_telemetry.py ./telemetry/satnogs-dev/40967/20180927195606_all_telemetry.json 40967 40967 --target satnogs-dev --max 3
+0 SR1GEO_DEV01-JO73mi 2018-09-20T21:40:24Z
+1 SR1GEO_DEV01-JO73mi 2018-09-20T21:40:19Z
+2 SR1GEO_DEV01-JO73mi 2018-09-20T21:40:14Z
+Exported 3 frames.
 ```
 
 ## Existing decoders
