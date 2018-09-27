@@ -70,4 +70,4 @@ cd strand1/packets
   <https://ukamsat.files.wordpress.com/2013/03/amsat-strand-1-20130327.xlsx>
 
 ## License
-??
+Helper scripts: GPLv3+
