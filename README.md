@@ -64,10 +64,10 @@ cd strand1/packets
 ## Possible future decoders
 
 - QBEE / QB50
-  <https://github.com/opencosmos/qb01-beacon-decoder/blob/master/QB50%20SE01%20beacon%20description%20-%20Open%20Cosmos.pdf>
+  - <https://github.com/opencosmos/qb01-beacon-decoder/blob/master/QB50%20SE01%20beacon%20description%20-%20Open%20Cosmos.pdf>
 - Strand-1
-  <https://amsat-uk.org/satellites/telemetry/strand-1/strand-1-telemetry/>
-  <https://ukamsat.files.wordpress.com/2013/03/amsat-strand-1-20130327.xlsx>
+  - <https://amsat-uk.org/satellites/telemetry/strand-1/strand-1-telemetry/>
+  - <https://ukamsat.files.wordpress.com/2013/03/amsat-strand-1-20130327.xlsx>
 
 ## License
 Helper scripts: GPLv3+
