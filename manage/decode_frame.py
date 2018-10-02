@@ -13,7 +13,7 @@ def decode_frame(decoder_name, frame):
     decoder_module = '{}.{}'.format(DECODERS_MODULE_BASE, decoder_name)
     decoder = __import__(decoder_module, fromlist='.')
     decoder_class = getattr(decoder,
-                            DECODER_NAME.capitalize())
+                            decoder_name.capitalize())
 
     # Decode the frame
     struct = decoder_class.from_bytes(frame)
@@ -36,19 +36,16 @@ if __name__ == '__main__':
                         help='Path to the file containing the raw frame')
     args = parser.parse_args()
 
-    INFILE = './siriussat/packets/data_219992_2018-08-22T13-46-52'
-    DECODER_NAME = 'siriussat'
-
     # Load the raw frame
-    with open(INFILE, 'rb') as f:
+    with open(args.frame_raw_file, 'rb') as f:
         frame = f.read()
 
-    decoded_frame = decode_frame(DECODER_NAME, frame)
+    decoded_frame = decode_frame(args.decoder_name, frame)
 
     # Create the json representation of the demodulated frame
     try:
         # Try to decode the timestamp from the filename
-        timestamp = datetime.strptime(INFILE.split('/')[-1].split('_')[-1], '%Y-%m-%dT%H-%M-%S')
+        timestamp = datetime.strptime(args.frame_raw_file.split('/')[-1].split('_')[-1], '%Y-%m-%dT%H-%M-%S')
     except ValueError:
         timestamp = datetime.now()
 
