@@ -98,6 +98,10 @@ $ ./manage/push_telemetry.py ./telemetry/satnogs-dev/40967/20180927195606_all_te
 Exported 3 frames.
 ```
 
+Decode a frame by Siriussat:
+```
+$ ./manage/decode_frame.py siriussat siriussat/packets/data_219992_2018-08-22T13-46-52
+```
 ## Existing decoders
 - CAS-4A & CAS-4B by cshields
 - Unisat-6 by cshields
