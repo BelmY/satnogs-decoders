@@ -1,6 +1,8 @@
 # SatNOGS Kaitai Structs
 
 ## Helper Scripts
+Install requirements using `pip install -r requirements.txt`. NOTE: Almost all scripts are python3-only,
+except `decode_frame.py` which is python2-only for now.
 
 ### Fetch telemetry
 
