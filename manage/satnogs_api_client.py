@@ -151,7 +151,7 @@ def fetch_telemetry(norad_id, max_frames, url):
 
 
 def post_telemetry(norad_id,
-                   source,
+                   source, # Receiver Callsign
                    lon,
                    lat,
                    timestamp,
