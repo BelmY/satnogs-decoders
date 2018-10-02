@@ -7,7 +7,7 @@ import argparse
 import binascii
 from datetime import datetime
 
-from satnogs_api_client import fetch_telemetry, DB_BASE_URL, DB_DEV_BASE_URL, post_telemetry
+from satnogs_api_client import fetch_telemetry, DB_BASE_URL, DB_DEV_BASE_URL
 from qth_locator import square_to_location, location_to_square
 from db_helpers import gridsquare
 
