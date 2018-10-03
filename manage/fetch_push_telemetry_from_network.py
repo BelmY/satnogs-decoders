@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 
-from datetime import datetime
+import argparse
 import requests
 import binascii
-from satnogs_api_client import fetch_observation_data_from_id, fetch_ground_station_data, DB_DEV_BASE_URL, post_telemetry
+from datetime import datetime
 from urllib.parse import urlparse
+
+from satnogs_api_client import fetch_observation_data_from_id, fetch_ground_station_data, DB_DEV_BASE_URL, post_telemetry
 
 def fetch_telemetry_from_network(norad_id, start, end, source_prod):
     telemetry_frames = []
@@ -58,10 +60,27 @@ def post_telemetry_frames(telemetry_frames, target_db_base_url):
 
 
 if __name__ == '__main__':
-    telemetry_frames = fetch_telemetry_from_network(norad_id=43616,
-                                                    start=datetime(2018,9,1),
-                                                    end=datetime(2018,9,27),
+    parser = argparse.ArgumentParser(description='Fetch all frames from a given satellite from satnogs-network and push to satnogs-db-dev in the specified time period.')
+    parser.add_argument('norad_id', type=int, help='NORAD ID of the satellite')
+    parser.add_argument('start',
+                        type=lambda d: datetime.strptime(d, '%Y-%m-%d'),
+                        help="Start date, YYYY-mm-dd")
+    parser.add_argument('end',
+                        type=lambda d: datetime.strptime(d, '%Y-%m-%d'),
+                        help="End date, YYYY-mm-dd")
+
+    args = parser.parse_args()
+    # 43617, 43616
+    # start=datetime(2018,9,1),
+    # end=datetime(2018,9,27),
+
+    telemetry_frames = fetch_telemetry_from_network(norad_id=args.norad_id,
+                                                    start=args.start,
+                                                    end=args.end,
                                                     source_prod=True)
+
+    for frame in telemetry_frames:
+        print('{} by {}'.format(frame['timestamp'], frame['source']))
 
     print('Fetched {} frames.'.format(len(telemetry_frames)))
     post_telemetry_frames(telemetry_frames,
