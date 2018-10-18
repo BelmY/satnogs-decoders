@@ -122,4 +122,4 @@ $ ./manage/decode_frame.py siriussat siriussat/packets/data_219992_2018-08-22T13
   - <https://ukamsat.files.wordpress.com/2013/03/amsat-strand-1-20130327.xlsx>
 
 ## License
-Helper scripts: GPLv3+
+Helper scripts: AGPL-3.0-or-later
