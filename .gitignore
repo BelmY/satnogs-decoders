@@ -1,0 +1,39 @@
+# Basics
+*.py[cod]
+*.pyc
+__pycache__
+env
+.env
+.cache
+
+# Logs
+*.log
+pip-log.txt
+
+# Unit test / coverage reports
+.coverage
+.tox
+nosetests.xml
+
+# Sqlite
+*.db
+*.sqlite
+*.sqlite3
+
+# Media & Static
+media
+/staticfiles/*
+node_modules
+yarn-error.log
+
+# Celery
+celerybeat-schedule
+
+# telemetry files
+/telemetry/*
+
+# compiled decoders
+/manage/py2_decoders/*
+
+# backup files
+*~
