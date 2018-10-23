@@ -1,0 +1,46 @@
+stages:
+  - compile
+  - static
+  - build
+compile:
+  stage: compile
+  image:
+    name: librespace/kaitai
+    entrypoint: [""]
+  script:
+    - /usr/bin/ksc --target python --outdir satnogsdecoders/decoder ksy/*.ksy
+  artifacts:
+    expire_in: 1 week
+    when: always
+    paths:
+      - satnogsdecoders/decoder
+static:
+  stage: static
+  image: python:2.7
+  before_script:
+    - pip install tox
+  script:
+    - tox -e flake8,yapf,pylint
+  allow_failure: True
+build:
+  stage: build
+  image: python:2.7
+  script:
+    - rm -rf dist
+    - python setup.py sdist bdist_wheel
+  artifacts:
+    expire_in: 1 week
+    when: always
+    paths:
+      - dist
+build3:
+  stage: build
+  image: python:3.6
+  script:
+    - rm -rf dist
+    - python setup.py sdist bdist_wheel
+  artifacts:
+    expire_in: 1 week
+    when: always
+    paths:
+      - dist
