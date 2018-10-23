@@ -8,7 +8,7 @@ seq:
     doc-ref: 'https://www.tapr.org/pub_ax25.html'
     size: 16
   - id: ax25_info
-    process: elfin_pp
+    process: satnogsdecoders.process.elfin_pp
     size-eos: true
     type:
       switch-on: _io.size
