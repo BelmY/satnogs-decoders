@@ -75,6 +75,12 @@ def fetch_ground_station_data(ground_station_ids, prod=True):
     # Fetch ground station metadata from network
     ground_stations = []
     for ground_station_id in ground_station_ids:
+        
+        # Skip frames from deleted groundstations, indidcated as ID 'None'
+        if str(ground_station_id) == 'None':
+            print("Skipping groundstation 'None'.")
+            continue
+        
         r = requests.get(url='{}/api/stations/{}/'.format(NETWORK_BASE_URL if prod else NETWORK_DEV_BASE_URL,
                                                       ground_station_id))
         if r.status_code != requests.codes.ok:
