@@ -17,6 +17,7 @@
 
 import binascii
 
+
 class ElfinPp:
     def decode(self, bindata):
         i = 0
@@ -32,6 +33,7 @@ class ElfinPp:
             i += 1
         return out
 
+
 if __name__ == "__main__":
 
     # some examples
@@ -43,4 +45,5 @@ if __name__ == "__main__":
     print binascii.hexlify(dec.decode(binascii.unhexlify('0011a2727220')))
 
     print binascii.hexlify(binascii.unhexlify('930027005e0027932727275e'))
-    print binascii.hexlify(dec.decode(binascii.unhexlify('930027005e0027932727275e')))
+    print binascii.hexlify(
+        dec.decode(binascii.unhexlify('930027005e0027932727275e')))
