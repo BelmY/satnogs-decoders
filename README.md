@@ -83,6 +83,25 @@ optional arguments:
   -h, --help      show this help message and exit
 ```
 
+### Fetch frames from network
+
+```
+$ ./contrib/manage/fetch_frames_from_network.py --help
+usage: fetch_frames_from_network.py [-h] norad_id start end target_dir
+
+Fetch all frames received in thespecified timeframe from a given satellite in
+satnogs-network (prod) and store themto individual raw files.
+
+positional arguments:
+  norad_id    NORAD ID of the satellite
+  start       Start date, YYYY-mm-dd
+  end         End date, YYYY-mm-dd
+  target_dir  target directory for the downloaded raw frames
+
+optional arguments:
+  -h, --help  show this help message and exit
+```
+
 ### Example Usage
 
 Transfer frames from db-dev to db-dev (duplicating frames...):
@@ -104,6 +123,14 @@ Decode a frame by Siriussat:
 ```
 $ ./manage/decode_frame.py siriussat siriussat/packets/data_219992_2018-08-22T13-46-52
 ```
+
+Download frames from satnogs-network (prod instance) for Fox-1A (norad id: 40967) received in the specified timeframe:
+```
+$ mkdir fox1a
+$ ./contrib/manage/fetch_frames_from_network.py 40967 2018-10-26T00:00:00 2018-10-26T01:00:00 ./fox1a/
+Fetched 45 frames.
+```
+
 ## Existing decoders
 - CAS-4A & CAS-4B by cshields
 - Unisat-6 by cshields
