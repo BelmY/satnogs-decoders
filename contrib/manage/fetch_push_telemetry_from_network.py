@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import re
 import argparse
 import requests
 import binascii
@@ -29,14 +30,24 @@ def fetch_telemetry_from_network(norad_id, start, end, source_prod):
                 continue
 
             payload = r.content
-            frame = binascii.hexlify(payload).decode('ascii').upper()
+
+            if payload_demod_url[-3:] in ["hex"]:
+                frame = payload.decode('ascii').upper().replace("0X", "")
+                frame = re.sub(r" ([0-9A-F]{1}) ", r"0\1", frame) # replace <space>number<space> with <space>0<number><space>
+                frame = frame.replace(" ", "")
+            elif payload_demod_url[-3:] in ["txt"] or re.search(r"\d{2}-\d{2}-\d{2}T\d{2}-\d{2}-[0-9_]*$", payload_demod_url): # .txt or no ending
+                frame = binascii.hexlify(payload).decode('ascii').upper()
+            else:
+                print("Unsupported payload file:%s" % payload_demod_url)
+                continue
 
             # need to abstract the timestamp from the filename. hacky..
+            if not re.search(r"\d{2}-\d{2}-\d{2}T\d{2}-\d{2}-[0-9_]*$", payload_demod_url):
+                payload_demod_url = payload_demod_url[:-4]
+
             file_datetime = urlparse(payload_demod_url).path.split('/')[-1].split('_')[2]
-            frame_datetime = datetime.strptime(file_datetime,
-                                               '%Y-%m-%dT%H-%M-%S')
-            submit_datetime_str = datetime.strftime(frame_datetime,
-                                                    '%Y-%m-%dT%H:%M:%S.000Z')
+            frame_datetime = datetime.strptime(file_datetime, '%Y-%m-%dT%H-%M-%S')
+            submit_datetime_str = datetime.strftime(frame_datetime, '%Y-%m-%dT%H:%M:%S.000Z')
 
             telemetry = {'norad_id': observation['norad_cat_id'],
                          'source': ground_station['name'],
