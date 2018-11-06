@@ -1,4 +1,25 @@
-# SatNOGS Kaitai Structs
+# SatNOGS Decoders
+
+Kaitai Structs, preprocessors and helper scripts for decoding SatNOGS received data.
+
+## Installation in development mode
+
+Within the root directory of this repository run `librespace/kaitai` container to compile KSY to Python code:
+```
+$ docker run \
+      -u $(id -u):$(id -g) \
+      -v $(pwd):/workdir \
+      librespace/kaitai \
+          --target python \
+          --outdir satnogsdecoders/decoder \
+          ksy/*.ksy
+```
+The above command will output the compiled files under `satnogsdecoders/decoder` directory.
+
+Then, install the package from source code directory as usual:
+```
+pip install -e .
+```
 
 ## Helper Scripts
 Install requirements using `pip install -r requirements.txt`. NOTE: Almost all scripts are python3-only,
