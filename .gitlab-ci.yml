@@ -2,6 +2,7 @@ stages:
   - compile
   - static
   - build
+  - deploy
 compile:
   stage: compile
   image:
@@ -43,3 +44,14 @@ build3:
     when: always
     paths:
       - dist
+deploy:
+  stage: deploy
+  image: python:2.7
+  before_script:
+    - pip install twine
+  script:
+    - rm -rf dist
+    - python setup.py sdist bdist_wheel
+    - twine upload -u "$PYPI_USERNAME" -p "$PYPI_PASSWORD" dist/*
+  only:
+    - tags
