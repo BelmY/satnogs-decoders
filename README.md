@@ -4,15 +4,9 @@ Kaitai Structs, preprocessors and helper scripts for decoding SatNOGS received d
 
 ## Installation in development mode
 
-Within the root directory of this repository run `librespace/kaitai` container to compile KSY to Python code:
+Within the root directory of this repository run `docker-ksc` script to compile KSY to Python code (requires Docker):
 ```
-$ docker run \
-      -u $(id -u):$(id -g) \
-      -v $(pwd):/workdir \
-      librespace/kaitai \
-          --target python \
-          --outdir satnogsdecoders/decoder \
-          ksy/*.ksy
+$ ./contrib/docker-ksc.sh
 ```
 The above command will output the compiled files under `satnogsdecoders/decoder` directory.
 
