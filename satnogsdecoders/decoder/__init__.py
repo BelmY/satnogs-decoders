@@ -18,7 +18,6 @@ from .ax25frames import Ax25frames
 from .cubebel1 import Cubebel1
 from .elfin import Elfin
 from .fox import Fox
-from .fox import Fox
 from .qbee import Qbee
 from .siriussat import Siriussat
 from .skcube import Skcube
