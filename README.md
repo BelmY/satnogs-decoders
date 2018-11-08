@@ -2,6 +2,13 @@
 
 Kaitai Structs, preprocessors and helper scripts for decoding SatNOGS received data.
 
+## Adding a new decoder
+
+1. Write the kaitai structure and add it to the ksy folder. Naming example:
+   `CubeBel-1 --> cubebel1.ksy -> meta: id: cubebel1 -> cubebel1.py --> Cubebel1 in __init__.py`
+   The python module name should match the python function naming rules in [PEP8](https://www.python.org/dev/peps/pep-0008/#id40).
+2. Add the python class name of your decoder to the list in `satnogsdecoders/__init__.py`
+
 ## Installation in development mode
 
 Within the root directory of this repository run `docker-ksc` script to compile KSY to Python code (requires Docker):
