@@ -154,21 +154,16 @@ Fetched 45 frames.
 ```
 
 ## Existing decoders
+- AMSAT FOX DUV by DL4PD
+- AX.25 frame decoder by DL4PD
 - CAS-4A & CAS-4B by cshields
-- Unisat-6 by cshields
+- CubeBel-1 by DL4PD
+- Elfin-A & -B by DL4PD
+- QBEE by Ansgar Schmidt
 - Siriussat-1 & -2 by kerel
 - skCUBE by borispilka & kerel
-
-## Upcoming decoders
-- Elfin-A & -B by DL4PD
-
-## Possible future decoders
-
-- QBEE / QB50
-  - <https://github.com/opencosmos/qb01-beacon-decoder/blob/master/QB50%20SE01%20beacon%20description%20-%20Open%20Cosmos.pdf>
-- Strand-1
-  - <https://amsat-uk.org/satellites/telemetry/strand-1/strand-1-telemetry/>
-  - <https://ukamsat.files.wordpress.com/2013/03/amsat-strand-1-20130327.xlsx>
+- Strand-1 by kerel
+- Unisat-6 by cshields
 
 ## License
 Helper scripts: AGPL-3.0-or-later
