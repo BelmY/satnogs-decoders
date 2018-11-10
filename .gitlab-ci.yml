@@ -55,7 +55,11 @@ deploy:
     - python setup.py sdist bdist_wheel
     - twine upload -u "$PYPI_USERNAME" -p "$PYPI_PASSWORD" dist/*
   only:
-    - tags
+    refs:
+      - tags
+    variables:
+      - $PYPI_USERNAME
+      - $PYPI_PASSWORD
 trigger:
   stage: trigger
   image: alpine
@@ -63,3 +67,8 @@ trigger:
     - apk add --no-cache curl
   script:
     - for trigger in $PIPELINE_TRIGGERS; do curl -X POST "$trigger"; done
+  only:
+    refs:
+      - tags
+    variables:
+      - $PIPELINE_TRIGGERS
