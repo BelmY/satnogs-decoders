@@ -3,6 +3,7 @@ stages:
   - static
   - build
   - deploy
+  - trigger
 compile:
   stage: compile
   image:
@@ -55,3 +56,10 @@ deploy:
     - twine upload -u "$PYPI_USERNAME" -p "$PYPI_PASSWORD" dist/*
   only:
     - tags
+trigger:
+  stage: trigger
+  image: alpine
+  before_script:
+    - apk add --no-cache curl
+  script:
+    - for trigger in $PIPELINE_TRIGGERS; do curl -X POST "$trigger"; done
