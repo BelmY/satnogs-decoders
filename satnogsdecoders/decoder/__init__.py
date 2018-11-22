@@ -7,6 +7,7 @@ __all__ = [
     'Ax25frames',
     'Cas4',
     'Cubebel1',
+    'Cubesatsim',
     'Elfin',
     'Fox',
     'Irvine01',
@@ -21,6 +22,7 @@ __all__ = [
 from .ax25frames import Ax25frames
 from .cas4 import Cas4
 from .cubebel1 import Cubebel1
+from .cubesatsim import Cubesatsim
 from .elfin import Elfin
 from .fox import Fox
 from .irvine01 import Irvine01
