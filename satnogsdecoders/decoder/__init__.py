@@ -9,6 +9,7 @@ __all__ = [
     'Cubebel1',
     'Elfin',
     'Fox',
+    'Irvine01',
     'Minxss',
     'Qbee',
     'Siriussat',
@@ -22,6 +23,7 @@ from .cas4 import Cas4
 from .cubebel1 import Cubebel1
 from .elfin import Elfin
 from .fox import Fox
+from .irvine01 import Irvine01
 from .minxss import Minxss
 from .qbee import Qbee
 from .siriussat import Siriussat
