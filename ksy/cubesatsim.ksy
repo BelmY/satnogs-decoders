@@ -322,30 +322,30 @@ types:
           doc: '0.15 * value [V]'
         channel_3d_val:
           value: 95.8 - 1.48 * ((channel_3d_val_raw[0] - 0x30) * 10 + (channel_3d_val_raw[1] - 0x30))
-          doc: '95.8 - 1.48 * value [°C]'
+          doc: '95.8 - 1.48 * value [C]'
 
         channel_4a_val:
           value: 95.8 - 1.48 * ((channel_4a_val_raw[0] - 0x30) * 10 + (channel_4a_val_raw[1] - 0x30))
-          doc: '95.8 - 1.48 * value [°C]'
+          doc: '95.8 - 1.48 * value [C]'
         channel_4b_val:
           value: 95.8 - 1.48 * ((channel_4b_val_raw[0] - 0x30) * 10 + (channel_4b_val_raw[1] - 0x30))
-          doc: '95.8 - 1.48 * value [°C]'
+          doc: '95.8 - 1.48 * value [C]'
         channel_4c_val:
           value: 95.8 - 1.48 * ((channel_4c_val_raw[0] - 0x30) * 10 + (channel_4c_val_raw[1] - 0x30))
-          doc: '95.8 - 1.48 * value [°C]'
+          doc: '95.8 - 1.48 * value [C]'
         channel_4d_val:
           value: 95.8 - 1.48 * ((channel_4d_val_raw[0] - 0x30) * 10 + (channel_4d_val_raw[1] - 0x30))
-          doc: '95.8 - 1.48 * value [°C]'
+          doc: '95.8 - 1.48 * value [C]'
 
         channel_5a_val:
           value: 95.8 - 1.48 * ((channel_5a_val_raw[0] - 0x30) * 10 + (channel_5a_val_raw[1] - 0x30))
-          doc: '95.8 - 1.48 * value [°C]'
+          doc: '95.8 - 1.48 * value [C]'
         channel_5b_val:
           value: 11.67 * ((channel_5b_val_raw[0] - 0x30) * 10 + (channel_5b_val_raw[1] - 0x30))
           doc: '11.67 * value [mA]'
         channel_5c_val:
           value: 95.8 - 1.48 * ((channel_5c_val_raw[0] - 0x30) * 10 + (channel_5c_val_raw[1] - 0x30))
-          doc: '95.8 - 1.48 * value [°C]'
+          doc: '95.8 - 1.48 * value [C]'
         channel_5d_val:
           value: 11 + 0.82 * ((channel_5d_val_raw[0] - 0x30) * 10 + (channel_5d_val_raw[1] - 0x30))
           doc: '11 + 0.82 * value [mA]'

@@ -481,13 +481,13 @@ types:
         doc: 'value = mag / (1024.0 * 1024.0) [nT]'
       - id: daughter_a_tmp_sensor
         type: s2
-        doc: 'value daughter_a_tmp_sensor / 64.0 [°C]'
+        doc: 'value daughter_a_tmp_sensor / 64.0 [C]'
       - id: three_v_pl_tmp_sensor
         type: s2
-        doc: 'value = three_v_pl_tmp_sensor / 64.0 [°C]'
+        doc: 'value = three_v_pl_tmp_sensor / 64.0 [C]'
       - id: temp_nz
         type: s2
-        doc: 'value = temp_nz / 64.0 [°C]'
+        doc: 'value = temp_nz / 64.0 [C]'
       - id: volt3v
         type: s4
         doc: 'value = volt3v / (256.0 * 256.0)'
@@ -538,7 +538,7 @@ types:
         value: three_v_pl_tmp_sensor_val_k - 273.15
       temp_nz_val_deg_c:
         value: temp_nz_val_k - 273.15
-        doc: 'Temperatures in [°C]!'
+        doc: 'Temperatures in [C]!'
 
       volt3v_val:
         value: volt3v / (256.0 * 256.0)
