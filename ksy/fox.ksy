@@ -1,5 +1,52 @@
 meta:
   id: fox
+doc: |
+  :field fox_id: fox_raw.fox_hdr.fox_id
+  :field fox_reset_count: fox_raw.fox_hdr.fox_reset_count
+  :field fox_uptime: fox_raw.fox_hdr.fox_uptime
+  :field fox_frm_type: fox_raw.fox_hdr.fox_frm_type
+  :field fox_debug_data: fox_raw.fox_frame.fox_debug_data
+  :field fox_batt_a_v: fox_raw.fox_frame.fox_rt_tlm.fox_batt_a_v
+  :field fox_batt_b_v: fox_raw.fox_frame.fox_rt_tlm.fox_batt_b_v
+  :field fox_batt_c_v: fox_raw.fox_frame.fox_rt_tlm.fox_batt_c_v
+  :field fox_batt_a_t: fox_raw.fox_frame.fox_rt_tlm.fox_batt_a_t
+  :field fox_batt_b_t: fox_raw.fox_frame.fox_rt_tlm.fox_batt_b_t
+  :field fox_batt_c_t: fox_raw.fox_frame.fox_rt_tlm.fox_batt_c_t
+  :field fox_total_batt_i: fox_raw.fox_frame.fox_rt_tlm.fox_total_batt_i
+  :field fox_batt_board_temp: fox_raw.fox_frame.fox_rt_tlm.fox_batt_board_temp
+  :field fox_pos_x_panel_v: fox_raw.fox_frame.fox_rt_tlm.fox_pos_x_panel_v
+  :field fox_neg_x_panel_v: fox_raw.fox_frame.fox_rt_tlm.fox_neg_x_panel_v
+  :field fox_pos_y_panel_v: fox_raw.fox_frame.fox_rt_tlm.fox_pos_y_panel_v
+  :field fox_neg_y_panel_v: fox_raw.fox_frame.fox_rt_tlm.fox_neg_y_panel_v
+  :field fox_pos_z_panel_v: fox_raw.fox_frame.fox_rt_tlm.fox_pos_z_panel_v
+  :field fox_neg_z_panel_v: fox_raw.fox_frame.fox_rt_tlm.fox_neg_z_panel_v
+  :field fox_pos_x_panel_t: fox_raw.fox_frame.fox_rt_tlm.fox_pos_x_panel_t
+  :field fox_neg_x_panel_t: fox_raw.fox_frame.fox_rt_tlm.fox_neg_x_panel_t
+  :field fox_pos_y_panel_t: fox_raw.fox_frame.fox_rt_tlm.fox_pos_y_panel_t
+  :field fox_neg_y_panel_t: fox_raw.fox_frame.fox_rt_tlm.fox_neg_y_panel_t
+  :field fox_pos_z_panel_t: fox_raw.fox_frame.fox_rt_tlm.fox_pos_z_panel_t
+  :field fox_neg_z_panel_t: fox_raw.fox_frame.fox_rt_tlm.fox_neg_z_panel_t
+  :field fox_psu_temp: fox_raw.fox_frame.fox_rt_tlm.fox_psu_temp
+  :field fox_spin: fox_raw.fox_frame.fox_rt_tlm.fox_spin
+  :field fox_tx_pa_curr: fox_raw.fox_frame.fox_rt_tlm.fox_tx_pa_curr
+  :field fox_tx_temp: fox_raw.fox_frame.fox_rt_tlm.fox_tx_temp
+  :field fox_rx_temp: fox_raw.fox_frame.fox_rt_tlm.fox_rx_temp
+  :field fox_rssi: fox_raw.fox_frame.fox_rt_tlm.fox_rssi
+  :field fox_ihu_cpu_temp: fox_raw.fox_frame.fox_rt_tlm.fox_ihu_cpu_temp
+  :field fox_sat_x_ang_vcty: fox_raw.fox_frame.fox_rt_tlm.fox_sat_x_ang_vcty
+  :field fox_sat_y_ang_vcty: fox_raw.fox_frame.fox_rt_tlm.fox_sat_y_ang_vcty
+  :field fox_sat_z_ang_vcty: fox_raw.fox_frame.fox_rt_tlm.fox_sat_z_ang_vcty
+  :field fox_exp_4_temp: fox_raw.fox_frame.fox_rt_tlm.fox_exp_4_temp
+  :field fox_psu_curr: fox_raw.fox_frame.fox_rt_tlm.fox_psu_curr
+  :field fox_ihu_diag_data: fox_raw.fox_frame.fox_rt_tlm.fox_ihu_diag_data
+  :field fox_exp_fail_ind: fox_raw.fox_frame.fox_rt_tlm.fox_exp_fail_ind
+  :field fox_sys_i2c_fail_ind: fox_raw.fox_frame.fox_rt_tlm.fox_sys_i2c_fail_ind
+  :field fox_grnd_cmded_tlm_rsts: fox_raw.fox_frame.fox_rt_tlm.fox_grnd_cmded_tlm_rsts
+  :field fox_ant_deploy_sensors: fox_raw.fox_frame.fox_rt_tlm.fox_ant_deploy_sensors
+  :field fox_max_vals_tlm: fox_raw.fox_frame.fox_max_vals_tlm.b
+  :field fox_min_vals_tlm: fox_raw.fox_frame.fox_min_vals_tlm.b
+  :field fox_exp_tlm: fox_raw.fox_frame.fox_exp_tlm
+  :field fox_cam_jpeg_data: fox_raw.fox_frame.fox_cam_jpeg_data
 
 seq:
   - id: fox_raw
