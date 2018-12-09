@@ -2,6 +2,27 @@ meta:
   id: qbee
   endian: le
 
+doc: |
+  :field qbee_wod_time: beacon_data.qbee_wod.qbee_wod_time
+  :field qbee_wod_mode: beacon_data.qbee_wod.qbee_wod_mode
+  :field qbee_wod_voltage_battery: beacon_data.qbee_wod.qbee_wod_voltage_battery
+  :field qbee_wod_current_battery: beacon_data.qbee_wod.qbee_wod_current_battery
+  :field qbee_wod_current_3v3: beacon_data.qbee_wod.qbee_wod_current_3v3
+  :field qbee_wod_current_5v: beacon_data.qbee_wod.qbee_wod_current_5v
+  :field qbee_wod_temperature_comms: beacon_data.qbee_wod.qbee_wod_temperature_comms
+  :field qbee_wod_temperature_eps: beacon_data.qbee_wod.qbee_wod_temperature_eps
+  :field qbee_wod_temperature_battery: beacon_data.qbee_wod.qbee_wod_temperature_battery
+  :field qbee_pwr_info_adcs: beacon_data.qbee_power_info.qbee_pwr_info_adcs
+  :field qbee_pwr_info_fipex: beacon_data.qbee_power_info.qbee_pwr_info_fipex
+  :field qbee_pwr_info_gps: beacon_data.qbee_power_info.qbee_pwr_info_gps
+  :field qbee_pwr_info_ocobc: beacon_data.qbee_power_info.qbee_pwr_info_ocobc
+  :field qbee_service_enabled_adcs: beacon_data.qbee_service_enabled.qbee_service_enabled_adcs
+  :field qbee_service_enabled_fipex: beacon_data.qbee_service_enabled.qbee_service_enabled_fipex
+  :field qbee_service_enabled_ocobc: beacon_data.qbee_service_enabled.qbee_service_enabled_ocobc
+  :field qbee_service_running_adcs: beacon_data.qbee_service_running.qbee_service_running_adcs
+  :field qbee_service_running_fipex: beacon_data.qbee_service_running.qbee_service_running_fipex
+  :field qbee_service_running_ocobc: beacon_data.qbee_service_running.qbee_service_running_ocobc
+
 seq:
   - id:   ax_header
     type: ax_header
@@ -40,7 +61,7 @@ types:
 
       - id: qbee_pid
         type: u1
-  
+
   beacon_data:
     seq:
       - id:   qbee_wod
@@ -78,10 +99,10 @@ types:
 
       - id:   qbee_wod_current_5v
         type: u1
-        
+
       - id:   qbee_wod_temperature_comms
         type: u1
-        
+
       - id:   qbee_wod_temperature_eps
         type: u1
 
@@ -93,7 +114,7 @@ types:
     seq:
       - id:   qbee_pwr_info_adcs
         type: b1
-        
+
       - id:   qbee_pwr_info_fipex
         type: b1
 
