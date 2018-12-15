@@ -1,60 +1,95 @@
 meta:
   id: cubesatsim
   endian: be
+doc: |
+  :field cubesatsim_dest_callsign: ax25_frame.ax25_header.dest_callsign_raw.callsign_ror.callsign
+  :field cubesatsim_src_callsign: ax25_frame.ax25_header.src_callsign_raw.callsign_ror.callsign
+  :field cubesatsim_src_ssid: ax25_frame.ax25_header.src_ssid_raw.ssid
+  :field cubesatsim_dest_ssid: ax25_frame.ax25_header.dest_ssid_raw.ssid
+  :field cubesatsim_ctl: ax25_frame.ax25_header.ctl
+  :field cubesatsim_pid: ax25_frame.payload.pid
+  :field cubesatsim_data_type: ax25_frame.payload.ax25_info.data_type
+  :field cubesatsim_channel_1a_val: ax25_frame.payload.ax25_info.payload.channel_1a_val
+  :field cubesatsim_channel_1b_val: ax25_frame.payload.ax25_info.payload.channel_1b_val
+  :field cubesatsim_channel_1c_val: ax25_frame.payload.ax25_info.payload.channel_1c_val
+  :field cubesatsim_channel_1d_val: ax25_frame.payload.ax25_info.payload.channel_1d_val
+  :field cubesatsim_channel_2a_val: ax25_frame.payload.ax25_info.payload.channel_2a_val
+  :field cubesatsim_channel_2b_val: ax25_frame.payload.ax25_info.payload.channel_2b_val
+  :field cubesatsim_channel_2c_val: ax25_frame.payload.ax25_info.payload.channel_2c_val
+  :field cubesatsim_channel_2d_val: ax25_frame.payload.ax25_info.payload.channel_2d_val
+  :field cubesatsim_channel_3a_val: ax25_frame.payload.ax25_info.payload.channel_3a_val
+  :field cubesatsim_channel_3b_val: ax25_frame.payload.ax25_info.payload.channel_3b_val
+  :field cubesatsim_channel_3c_val: ax25_frame.payload.ax25_info.payload.channel_3c_val
+  :field cubesatsim_channel_3d_val: ax25_frame.payload.ax25_info.payload.channel_3d_val
+  :field cubesatsim_channel_4a_val: ax25_frame.payload.ax25_info.payload.channel_4a_val
+  :field cubesatsim_channel_4b_val: ax25_frame.payload.ax25_info.payload.channel_4b_val
+  :field cubesatsim_channel_4c_val: ax25_frame.payload.ax25_info.payload.channel_4c_val
+  :field cubesatsim_channel_4d_val: ax25_frame.payload.ax25_info.payload.channel_4d_val
+  :field cubesatsim_channel_5a_val: ax25_frame.payload.ax25_info.payload.channel_5a_val
+  :field cubesatsim_channel_5b_val: ax25_frame.payload.ax25_info.payload.channel_5b_val
+  :field cubesatsim_channel_5c_val: ax25_frame.payload.ax25_info.payload.channel_5c_val
+  :field cubesatsim_channel_5d_val: ax25_frame.payload.ax25_info.payload.channel_5d_val
+  :field cubesatsim_channel_6a_val: ax25_frame.payload.ax25_info.payload.channel_6a_val
+  :field cubesatsim_channel_6b_val: ax25_frame.payload.ax25_info.payload.channel_6b_val
+  :field cubesatsim_channel_6c_val: ax25_frame.payload.ax25_info.payload.channel_6c_val
+  :field cubesatsim_channel_6d_val: ax25_frame.payload.ax25_info.payload.channel_6d_val
 
 seq:
-  - id: ax25_header
+  - id: ax25_frame
+    type: ax25_frame
     doc-ref: 'https://www.tapr.org/pub_ax25.html'
-    type: hdr
-    size: 15
-  - id: frametype
-    type:
-      switch-on: ax25_header.ctrl & 0x13
-      cases:
-        0x03: ui_frame
-        0x13: ui_frame
-        0x00: i_frame
-        0x02: i_frame
-        0x10: i_frame
-        0x12: i_frame
-#        0x11: s_frame
 
 types:
-  dest_address:
+  ax25_frame:
     seq:
-      - id: dest_address_str
-        type: str
-        size: 6
-        encoding: ASCII
+    - id: ax25_header
+      type: ax25_header
+    - id: payload
+      type:
+        switch-on: ax25_header.ctl & 0x13
+        cases:
+          0x03: ui_frame
+          0x13: ui_frame
+          0x00: i_frame
+          0x02: i_frame
+          0x10: i_frame
+          0x12: i_frame
+          #0x11: s_frame
 
-  src_address:
+  ax25_header:
     seq:
-      - id: src_address_str
-        type: str
-        size: 6
-        encoding: ASCII
+      - id: dest_callsign_raw
+        type: callsign_raw
+      - id: dest_ssid_raw
+        type: ssid_mask
+      - id: src_callsign_raw
+        type: callsign_raw
+      - id: src_ssid_raw
+        type: ssid_mask
+      - id: ctl
+        type: u1
 
-  hdr:
+  callsign_raw:
     seq:
-    - id: dest_address
-      type: dest_address
-      process: ror(1)
-      size: 6
-    - id: u_dest_ssid
-      type: u1
-    - id: src_address
-      type: src_address
-      process: ror(1)
-      size: 6
-    - id: u_src_ssid
-      type: u1
-    - id: ctrl
-      type: u1
+      - id: callsign_ror
+        process: ror(1)
+        size: 6
+        type: callsign
+
+  callsign:
+    seq:
+      - id: callsign
+        type: str
+        encoding: ASCII
+        size: 6
+
+  ssid_mask:
+    seq:
+      - id: ssid_mask
+        type: u1
     instances:
-      src_ssid:
-        value: (u_src_ssid & 0x0f) >> 1
-      dest_ssid:
-        value: (u_dest_ssid & 0x0f) >> 1
+      ssid:
+        value: (ssid_mask & 0x0f) >> 1
 
   i_frame:
     seq:

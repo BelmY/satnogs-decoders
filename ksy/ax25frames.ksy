@@ -1,6 +1,14 @@
 meta:
   id: ax25frames
   endian: be
+doc: |
+  :field ax25frames_dest_callsign: ax25_frame.ax25_header.dest_callsign_raw.callsign_ror.callsign
+  :field ax25frames_src_callsign: ax25_frame.ax25_header.src_callsign_raw.callsign_ror.callsign
+  :field ax25frames_src_ssid: ax25_frame.ax25_header.src_ssid_raw.ssid
+  :field ax25frames_dest_ssid: ax25_frame.ax25_header.dest_ssid_raw.ssid
+  :field ax25frames_ctl: ax25_frame.ax25_header.ctl
+  :field ax25frames_pid: ax25_frame.payload.pid
+  :field ax25frames_info: ax25_frame.payload.ax25_info
 
 seq:
   - id: ax25_frame
@@ -27,44 +35,37 @@ types:
   ax25_header:
     seq:
       - id: dest_callsign_raw
-        type: dest_callsign_raw
+        type: callsign_raw
       - id: dest_ssid_raw
-        type: u1
+        type: ssid_mask
       - id: src_callsign_raw
-        type: src_callsign_raw
+        type: callsign_raw
       - id: src_ssid_raw
-        type: u1
+        type: ssid_mask
       - id: ctl
         type: u1
+
+  callsign_raw:
+    seq:
+      - id: callsign_ror
+        process: ror(1)
+        size: 6
+        type: callsign
+
+  callsign:
+    seq:
+      - id: callsign
+        type: str
+        encoding: ASCII
+        size: 6
+
+  ssid_mask:
+    seq:
+      - id: ssid_mask
+        type: u1
     instances:
-      src_ssid:
-        value: (src_ssid_raw & 0x0f) >> 1
-      dest_ssid:
-        value: (dest_ssid_raw & 0x0f) >> 1
-  dest_callsign_raw:
-    seq:
-      - id: dest_callsign_ror
-        process: ror(1)
-        size: 6
-        type: dest_callsign
-  src_callsign_raw:
-    seq:
-      - id: src_callsign_ror
-        process: ror(1)
-        type: src_callsign
-        size: 6
-  dest_callsign:
-    seq:
-      - id: dest_callsign
-        type: str
-        encoding: ASCII
-        size: 6
-  src_callsign:
-    seq:
-      - id: src_callsign
-        type: str
-        encoding: ASCII
-        size: 6
+      ssid:
+        value: (ssid_mask & 0x0f) >> 1
 
   i_frame:
     seq:
@@ -79,4 +80,3 @@ types:
         type: u1
       - id: ax25_info
         size-eos: true
-

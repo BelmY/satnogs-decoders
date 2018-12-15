@@ -1,6 +1,30 @@
 meta:
-  id: irvine01
+  id: irvine
   endian: be
+doc: |
+  :field irvine_dest_callsign: ax25_frame.ax25_header.dest_callsign_raw.callsign_ror.callsign
+  :field irvine_src_callsign: ax25_frame.ax25_header.src_callsign_raw.callsign_ror.callsign
+  :field irvine_src_ssid: ax25_frame.ax25_header.src_ssid_raw.ssid
+  :field irvine_dest_ssid: ax25_frame.ax25_header.dest_ssid_raw.ssid
+  :field irvine_ctl: ax25_frame.ax25_header.ctl
+  :field irvine_pid: ax25_frame.payload.pid
+  :field irvine_spacecraft_response: ax25_frame.payload.ax25_info.body.body.spacecraft_response
+  :field irvine_spacecraft_id: ax25_frame.payload.ax25_info.body.body.spacecraft_id
+  :field irvine_ldc: ax25_frame.payload.ax25_info.body.body.ldc
+  :field irvine_gyro: ax25_frame.payload.ax25_info.body.body.gyro
+  :field irvine_mag: ax25_frame.payload.ax25_info.body.body.mag
+  :field irvine_daughter_a_tmp_sensor: ax25_frame.payload.ax25_info.body.body.daughter_a_tmp_sensor
+  :field irvine_three_v_pl_tmp_sensor: ax25_frame.payload.ax25_info.body.body.three_v_pl_tmp_sensor
+  :field irvine_temp_nz: ax25_frame.payload.ax25_info.body.body.temp_nz
+  :field irvine_volt3v: ax25_frame.payload.ax25_info.body.body.volt3v
+  :field irvine_curr3v: ax25_frame.payload.ax25_info.body.body.curr3v
+  :field irvine_volt5vpl: ax25_frame.payload.ax25_info.body.body.volt5vpl
+  :field irvine_curr5vpl: ax25_frame.payload.ax25_info.body.body.curr5vpl
+  :field irvine_src_port: ax25_frame.payload.ax25_info.body.body.src_port
+  :field irvine_dst_port: ax25_frame.payload.ax25_info.body.body.dst_port
+  :field irvine_src_ip_addr: ax25_frame.payload.ax25_info.src_ip_addr
+  :field irvine_dst_ip_addr: ax25_frame.payload.ax25_info.dst_ip_addr
+
 
 seq:
   - id: ax25_frame
@@ -27,44 +51,37 @@ types:
   ax25_header:
     seq:
       - id: dest_callsign_raw
-        type: dest_callsign_raw
+        type: callsign_raw
       - id: dest_ssid_raw
-        type: u1
+        type: ssid_mask
       - id: src_callsign_raw
-        type: src_callsign_raw
+        type: callsign_raw
       - id: src_ssid_raw
-        type: u1
+        type: ssid_mask
       - id: ctl
         type: u1
+
+  callsign_raw:
+    seq:
+      - id: callsign_ror
+        process: ror(1)
+        size: 6
+        type: callsign
+
+  callsign:
+    seq:
+      - id: callsign
+        type: str
+        encoding: ASCII
+        size: 6
+
+  ssid_mask:
+    seq:
+      - id: ssid_mask
+        type: u1
     instances:
-      src_ssid:
-        value: (src_ssid_raw & 0x0f) >> 1
-      dest_ssid:
-        value: (dest_ssid_raw & 0x0f) >> 1
-  dest_callsign_raw:
-    seq:
-      - id: dest_callsign_ror
-        process: ror(1)
-        size: 6
-        type: dest_callsign
-  src_callsign_raw:
-    seq:
-      - id: src_callsign_ror
-        process: ror(1)
-        type: src_callsign
-        size: 6
-  dest_callsign:
-    seq:
-      - id: dest_callsign
-        type: str
-        encoding: ASCII
-        size: 6
-  src_callsign:
-    seq:
-      - id: src_callsign
-        type: str
-        encoding: ASCII
-        size: 6
+      ssid:
+        value: (ssid_mask & 0x0f) >> 1
 
   i_frame:
     seq:
@@ -408,7 +425,7 @@ types:
       - id: checksum
         type: u2
       - id: body
-        type: irvine01_udp_payload
+        type: irvine_udp_payload
         size-eos: true
 
   ipv6_pkt:
@@ -458,7 +475,7 @@ types:
             6: tcp_segm
             59: no_next_header
 
-  irvine01_udp_payload:
+  irvine_udp_payload:
     seq:
       - id: spacecraft_response
         type: u1
@@ -551,6 +568,6 @@ types:
         doc: 'Voltages in [V]! Currents in [A]!'
 
         doc: |
-          IRVINE-01 payload inside a UDP datagram multicast packet
+          IRVINE payload inside a UDP datagram multicast packet
           Currently partially reverse-engineered
           Conversion values taken from source-code

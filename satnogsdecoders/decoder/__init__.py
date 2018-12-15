@@ -10,7 +10,7 @@ __all__ = [
     'Cubesatsim',
     'Elfin',
     'Fox',
-    'Irvine01',
+    'Irvine',
     'Minxss',
     'Pwsat2',
     'Qbee',
@@ -28,7 +28,7 @@ from .cubebel1 import Cubebel1
 from .cubesatsim import Cubesatsim
 from .elfin import Elfin
 from .fox import Fox
-from .irvine01 import Irvine01
+from .irvine import Irvine
 from .minxss import Minxss
 from .pwsat2 import Pwsat2
 from .qbee import Qbee

@@ -52,7 +52,7 @@ seq:
   - id: fox_raw
     size-eos: true
     type: fox_frame
-  
+
 types:
   fox_frame:
     seq:
@@ -69,7 +69,7 @@ types:
             0x3: fox_min_vals_tlm_t
             0x4: fox_exp_tlm_t
             0x5: fox_cam_jpeg_data_t
-  
+
   fox_hdr:
     seq:
       - id: b
@@ -208,4 +208,3 @@ types:
       - id: b
         type: u1
         repeat: eos
-
