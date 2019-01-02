@@ -18,6 +18,7 @@ __all__ = [
     'Skcube',
     'Strand',
     'Us6',
+    'Uwe4',
 ]
 
 import re
@@ -36,6 +37,7 @@ from .siriussat import Siriussat
 from .skcube import Skcube
 from .strand import Strand
 from .us6 import Us6
+from .uwe4 import Uwe4
 
 FIELD_REGEX = re.compile(
     r':field (?P<field>[\*\w]+): (?P<attribute>.*?)'
