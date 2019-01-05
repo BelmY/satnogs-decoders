@@ -36,6 +36,7 @@ celerybeat-schedule
 /manage/py2_decoders/*
 !/satnogsdecoders/decoder/__init__.py
 /satnogsdecoders/decoder/
+satnogsdecoders.egg-info/
 
 # backup files
 *~
