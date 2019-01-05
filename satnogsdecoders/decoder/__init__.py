@@ -22,6 +22,7 @@ __all__ = [
 ]
 
 import re
+import functools
 
 from .ax25frames import Ax25frames
 from .cas4 import Cas4
@@ -57,7 +58,7 @@ def get_fields(struct, empty=False):
 
     for key, value in doc_fields:
         try:
-            fields[key] = reduce(getattr, value.split('.'), struct)
+            fields[key] = functools.reduce(getattr, value.split('.'), struct)
         except AttributeError:
             if empty:
                 fields[key] = None
