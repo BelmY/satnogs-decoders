@@ -3,25 +3,25 @@ meta:
   endian: le
 
 doc: |
-  :field qbee_wod_time: beacon_data.qbee_wod.qbee_wod_time
-  :field qbee_wod_mode: beacon_data.qbee_wod.qbee_wod_mode
-  :field qbee_wod_voltage_battery: beacon_data.qbee_wod.qbee_wod_voltage_battery
-  :field qbee_wod_current_battery: beacon_data.qbee_wod.qbee_wod_current_battery
-  :field qbee_wod_current_3v3: beacon_data.qbee_wod.qbee_wod_current_3v3
-  :field qbee_wod_current_5v: beacon_data.qbee_wod.qbee_wod_current_5v
-  :field qbee_wod_temperature_comms: beacon_data.qbee_wod.qbee_wod_temperature_comms
-  :field qbee_wod_temperature_eps: beacon_data.qbee_wod.qbee_wod_temperature_eps
-  :field qbee_wod_temperature_battery: beacon_data.qbee_wod.qbee_wod_temperature_battery
-  :field qbee_pwr_info_adcs: beacon_data.qbee_power_info.qbee_pwr_info_adcs
-  :field qbee_pwr_info_fipex: beacon_data.qbee_power_info.qbee_pwr_info_fipex
-  :field qbee_pwr_info_gps: beacon_data.qbee_power_info.qbee_pwr_info_gps
-  :field qbee_pwr_info_ocobc: beacon_data.qbee_power_info.qbee_pwr_info_ocobc
-  :field qbee_service_enabled_adcs: beacon_data.qbee_service_enabled.qbee_service_enabled_adcs
-  :field qbee_service_enabled_fipex: beacon_data.qbee_service_enabled.qbee_service_enabled_fipex
-  :field qbee_service_enabled_ocobc: beacon_data.qbee_service_enabled.qbee_service_enabled_ocobc
-  :field qbee_service_running_adcs: beacon_data.qbee_service_running.qbee_service_running_adcs
-  :field qbee_service_running_fipex: beacon_data.qbee_service_running.qbee_service_running_fipex
-  :field qbee_service_running_ocobc: beacon_data.qbee_service_running.qbee_service_running_ocobc
+  :field wod_time: beacon_data.wod.wod_time
+  :field wod_mode: beacon_data.wod.wod_mode
+  :field wod_voltage_battery: beacon_data.wod.wod_voltage_battery
+  :field wod_current_battery: beacon_data.wod.wod_current_battery
+  :field wod_current_3v3: beacon_data.wod.wod_current_3v3
+  :field wod_current_5v: beacon_data.wod.wod_current_5v
+  :field wod_temperature_comms: beacon_data.wod.wod_temperature_comms
+  :field wod_temperature_eps: beacon_data.wod.wod_temperature_eps
+  :field wod_temperature_battery: beacon_data.wod.wod_temperature_battery
+  :field pwr_info_adcs: beacon_data.power_info.pwr_info_adcs
+  :field pwr_info_fipex: beacon_data.power_info.pwr_info_fipex
+  :field pwr_info_gps: beacon_data.power_info.pwr_info_gps
+  :field pwr_info_ocobc: beacon_data.power_info.pwr_info_ocobc
+  :field service_enabled_adcs: beacon_data.service_enabled.service_enabled_adcs
+  :field service_enabled_fipex: beacon_data.service_enabled.service_enabled_fipex
+  :field service_enabled_ocobc: beacon_data.service_enabled.service_enabled_ocobc
+  :field service_running_adcs: beacon_data.service_running.service_running_adcs
+  :field service_running_fipex: beacon_data.service_running.service_running_fipex
+  :field service_running_ocobc: beacon_data.service_running.service_running_ocobc
 
 seq:
   - id:   ax_header
@@ -40,117 +40,117 @@ seq:
 types:
   ax_header:
     seq:
-      - id: qbee_destination
+      - id: destination
         type: str
         encoding: ASCII
         size: 6
 
-      - id: qbee_destination_ssid
+      - id: destination_ssid
         type: u1
 
-      - id: qbee_source
+      - id: source
         type: str
         encoding: ASCII
         size: 6
 
-      - id: qbee_source_ssid
+      - id: source_ssid
         type: u1
 
-      - id: qbee_control
+      - id: control
         type: u1
 
-      - id: qbee_pid
+      - id: pid
         type: u1
 
   beacon_data:
     seq:
-      - id:   qbee_wod
-        type: qbee_wod
+      - id:   wod
+        type: wod
 
-      - id:   qbee_power_info
-        type: qbee_power_info
+      - id:   power_info
+        type: power_info
 
-      - id:   qbee_service_enabled
-        type: qbee_service_enabled
+      - id:   service_enabled
+        type: service_enabled
 
-      - id:   qbee_service_running
-        type: qbee_service_running
+      - id:   service_running
+        type: service_running
 
-      - id:   qbee_reserved
+      - id:   reserved
         size: 14
 
-  qbee_wod:
+  wod:
       seq:
-      - id:   qbee_wod_time
+      - id:   wod_time
         type: u4
         doc-ref: https://www.qb50.eu/index.php/tech-docs/category/QB50%20Whole%20Orbit%20Data%20-%20Iss42aac.pdf?download=80:whole-orbital-data-issue-4
 
-      - id:   qbee_wod_mode
+      - id:   wod_mode
         type: u1
 
-      - id:   qbee_wod_voltage_battery
+      - id:   wod_voltage_battery
         type: u1
 
-      - id:   qbee_wod_current_battery
+      - id:   wod_current_battery
         type: u1
 
-      - id:   qbee_wod_current_3v3
+      - id:   wod_current_3v3
         type: u1
 
-      - id:   qbee_wod_current_5v
+      - id:   wod_current_5v
         type: u1
 
-      - id:   qbee_wod_temperature_comms
+      - id:   wod_temperature_comms
         type: u1
 
-      - id:   qbee_wod_temperature_eps
+      - id:   wod_temperature_eps
         type: u1
 
-      - id:   qbee_wod_temperature_battery
+      - id:   wod_temperature_battery
         type: u1
 
 
-  qbee_power_info:
+  power_info:
     seq:
-      - id:   qbee_pwr_info_adcs
+      - id:   pwr_info_adcs
         type: b1
 
-      - id:   qbee_pwr_info_fipex
+      - id:   pwr_info_fipex
         type: b1
 
-      - id:   qbee_pwr_info_gps
+      - id:   pwr_info_gps
         type: b1
 
-      - id:   qbee_pwr_info_ocobc
+      - id:   pwr_info_ocobc
         type: b1
 
-      - id:   qbee_pwr_info_reserved
+      - id:   pwr_info_reserved
         type: b4
 
-  qbee_service_enabled:
+  service_enabled:
     seq:
-      - id: qbee_service_enabled_adcs
+      - id: service_enabled_adcs
         type: b1
 
-      - id: qbee_service_enabled_fipex
+      - id: service_enabled_fipex
         type: b1
 
-      - id: qbee_service_enabled_ocobc
+      - id: service_enabled_ocobc
         type: b1
 
-      - id: qbee_service_enabled_reserved
+      - id: service_enabled_reserved
         type: b5
 
-  qbee_service_running:
+  service_running:
     seq:
-      - id: qbee_service_running_adcs
+      - id: service_running_adcs
         type: b1
 
-      - id: qbee_service_running_fipex
+      - id: service_running_fipex
         type: b1
 
-      - id: qbee_service_running_ocobc
+      - id: service_running_ocobc
         type: b1
 
-      - id: qbee_service_running_reserved
+      - id: service_running_reserved
         type: b5

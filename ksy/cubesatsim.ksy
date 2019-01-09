@@ -2,37 +2,37 @@ meta:
   id: cubesatsim
   endian: be
 doc: |
-  :field cubesatsim_dest_callsign: ax25_frame.ax25_header.dest_callsign_raw.callsign_ror.callsign
-  :field cubesatsim_src_callsign: ax25_frame.ax25_header.src_callsign_raw.callsign_ror.callsign
-  :field cubesatsim_src_ssid: ax25_frame.ax25_header.src_ssid_raw.ssid
-  :field cubesatsim_dest_ssid: ax25_frame.ax25_header.dest_ssid_raw.ssid
-  :field cubesatsim_ctl: ax25_frame.ax25_header.ctl
-  :field cubesatsim_pid: ax25_frame.payload.pid
-  :field cubesatsim_data_type: ax25_frame.payload.ax25_info.data_type
-  :field cubesatsim_channel_1a_val: ax25_frame.payload.ax25_info.payload.channel_1a_val
-  :field cubesatsim_channel_1b_val: ax25_frame.payload.ax25_info.payload.channel_1b_val
-  :field cubesatsim_channel_1c_val: ax25_frame.payload.ax25_info.payload.channel_1c_val
-  :field cubesatsim_channel_1d_val: ax25_frame.payload.ax25_info.payload.channel_1d_val
-  :field cubesatsim_channel_2a_val: ax25_frame.payload.ax25_info.payload.channel_2a_val
-  :field cubesatsim_channel_2b_val: ax25_frame.payload.ax25_info.payload.channel_2b_val
-  :field cubesatsim_channel_2c_val: ax25_frame.payload.ax25_info.payload.channel_2c_val
-  :field cubesatsim_channel_2d_val: ax25_frame.payload.ax25_info.payload.channel_2d_val
-  :field cubesatsim_channel_3a_val: ax25_frame.payload.ax25_info.payload.channel_3a_val
-  :field cubesatsim_channel_3b_val: ax25_frame.payload.ax25_info.payload.channel_3b_val
-  :field cubesatsim_channel_3c_val: ax25_frame.payload.ax25_info.payload.channel_3c_val
-  :field cubesatsim_channel_3d_val: ax25_frame.payload.ax25_info.payload.channel_3d_val
-  :field cubesatsim_channel_4a_val: ax25_frame.payload.ax25_info.payload.channel_4a_val
-  :field cubesatsim_channel_4b_val: ax25_frame.payload.ax25_info.payload.channel_4b_val
-  :field cubesatsim_channel_4c_val: ax25_frame.payload.ax25_info.payload.channel_4c_val
-  :field cubesatsim_channel_4d_val: ax25_frame.payload.ax25_info.payload.channel_4d_val
-  :field cubesatsim_channel_5a_val: ax25_frame.payload.ax25_info.payload.channel_5a_val
-  :field cubesatsim_channel_5b_val: ax25_frame.payload.ax25_info.payload.channel_5b_val
-  :field cubesatsim_channel_5c_val: ax25_frame.payload.ax25_info.payload.channel_5c_val
-  :field cubesatsim_channel_5d_val: ax25_frame.payload.ax25_info.payload.channel_5d_val
-  :field cubesatsim_channel_6a_val: ax25_frame.payload.ax25_info.payload.channel_6a_val
-  :field cubesatsim_channel_6b_val: ax25_frame.payload.ax25_info.payload.channel_6b_val
-  :field cubesatsim_channel_6c_val: ax25_frame.payload.ax25_info.payload.channel_6c_val
-  :field cubesatsim_channel_6d_val: ax25_frame.payload.ax25_info.payload.channel_6d_val
+  :field dest_callsign: ax25_frame.ax25_header.dest_callsign_raw.callsign_ror.callsign
+  :field src_callsign: ax25_frame.ax25_header.src_callsign_raw.callsign_ror.callsign
+  :field src_ssid: ax25_frame.ax25_header.src_ssid_raw.ssid
+  :field dest_ssid: ax25_frame.ax25_header.dest_ssid_raw.ssid
+  :field ctl: ax25_frame.ax25_header.ctl
+  :field pid: ax25_frame.payload.pid
+  :field data_type: ax25_frame.payload.ax25_info.data_type
+  :field channel_1a_val: ax25_frame.payload.ax25_info.payload.channel_1a_val
+  :field channel_1b_val: ax25_frame.payload.ax25_info.payload.channel_1b_val
+  :field channel_1c_val: ax25_frame.payload.ax25_info.payload.channel_1c_val
+  :field channel_1d_val: ax25_frame.payload.ax25_info.payload.channel_1d_val
+  :field channel_2a_val: ax25_frame.payload.ax25_info.payload.channel_2a_val
+  :field channel_2b_val: ax25_frame.payload.ax25_info.payload.channel_2b_val
+  :field channel_2c_val: ax25_frame.payload.ax25_info.payload.channel_2c_val
+  :field channel_2d_val: ax25_frame.payload.ax25_info.payload.channel_2d_val
+  :field channel_3a_val: ax25_frame.payload.ax25_info.payload.channel_3a_val
+  :field channel_3b_val: ax25_frame.payload.ax25_info.payload.channel_3b_val
+  :field channel_3c_val: ax25_frame.payload.ax25_info.payload.channel_3c_val
+  :field channel_3d_val: ax25_frame.payload.ax25_info.payload.channel_3d_val
+  :field channel_4a_val: ax25_frame.payload.ax25_info.payload.channel_4a_val
+  :field channel_4b_val: ax25_frame.payload.ax25_info.payload.channel_4b_val
+  :field channel_4c_val: ax25_frame.payload.ax25_info.payload.channel_4c_val
+  :field channel_4d_val: ax25_frame.payload.ax25_info.payload.channel_4d_val
+  :field channel_5a_val: ax25_frame.payload.ax25_info.payload.channel_5a_val
+  :field channel_5b_val: ax25_frame.payload.ax25_info.payload.channel_5b_val
+  :field channel_5c_val: ax25_frame.payload.ax25_info.payload.channel_5c_val
+  :field channel_5d_val: ax25_frame.payload.ax25_info.payload.channel_5d_val
+  :field channel_6a_val: ax25_frame.payload.ax25_info.payload.channel_6a_val
+  :field channel_6b_val: ax25_frame.payload.ax25_info.payload.channel_6b_val
+  :field channel_6c_val: ax25_frame.payload.ax25_info.payload.channel_6c_val
+  :field channel_6d_val: ax25_frame.payload.ax25_info.payload.channel_6d_val
 
 seq:
   - id: ax25_frame
@@ -104,9 +104,9 @@ types:
         type: u1
       - id: ax25_info
         size-eos: true
-        type: cubesatsim_data
+        type: data
 
-  cubesatsim_data:
+  data:
     seq:
       - id: data_type
         type: u2
@@ -114,10 +114,10 @@ types:
         type:
           switch-on: data_type
           cases:
-            _:  cubesatsim_ao_7
-            0x6869:  cubesatsim_ao_7
+            _:  ao_7
+            0x6869:  ao_7
 
-  cubesatsim_ao_7:
+  ao_7:
     seq:
       - id: ao_7_magic
         contents: ' hi '

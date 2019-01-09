@@ -3,32 +3,32 @@ meta:
   title: CAS-4 Telemetry Decoder
   endian: le
 doc: |
-  :field cas4_pwr_volt: pwr_volt
-  :field cas4_pwr_cur: pwr_cur
-  :field cas4_convert_volt: convert_volt
-  :field cas4_convert_cur: convert_cur
-  :field cas4_obc_temp: obc_temp
-  :field cas4_rf_amp_temp: rf_amp_temp
-  :field cas4_rcv_agc_volt: rcv_agc_volt
-  :field cas4_rf_fwd: rf_fwd
-  :field cas4_rf_ref: rf_ref
-  :field cas4_obc_volt: obc_volt
-  :field cas4_obc_reset: obc_reset
-  :field cas4_pkt_cnt: pkt_cnt
-  :field cas4_sat_num: sat_num
-  :field cas4_op_mode: op_mode
-  :field cas4_pwr_on_op_mode: pwr_on_op_mode
-  :field cas4_i2c_watchdog: i2c_watchdog
-  :field cas4_i2c_recon_cnt: i2c_recon_cnt
-  :field cas4_tc_watchdog: tc_watchdog
-  :field cas4_tc_reset_cnt: tc_reset_cnt
-  :field cas4_adc_watchdog: adc_watchdog
-  :field cas4_adc_reset_cnt: adc_reset_cnt
-  :field cas4_spi_watchdog: spi_watchdog
-  :field cas4_spi_init_cnt: spi_init_cnt
-  :field cas4_cpu_watchdog: cpu_watchdog
-  :field cas4_cpu_reset_cnt: cpu_reset_cnt
-  :field cas4_framecounter: framecounter
+  :field pwr_volt: pwr_volt
+  :field pwr_cur: pwr_cur
+  :field convert_volt: convert_volt
+  :field convert_cur: convert_cur
+  :field obc_temp: obc_temp
+  :field rf_amp_temp: rf_amp_temp
+  :field rcv_agc_volt: rcv_agc_volt
+  :field rf_fwd: rf_fwd
+  :field rf_ref: rf_ref
+  :field obc_volt: obc_volt
+  :field obc_reset: obc_reset
+  :field pkt_cnt: pkt_cnt
+  :field sat_num: sat_num
+  :field op_mode: op_mode
+  :field pwr_on_op_mode: pwr_on_op_mode
+  :field i2c_watchdog: i2c_watchdog
+  :field i2c_recon_cnt: i2c_recon_cnt
+  :field tc_watchdog: tc_watchdog
+  :field tc_reset_cnt: tc_reset_cnt
+  :field adc_watchdog: adc_watchdog
+  :field adc_reset_cnt: adc_reset_cnt
+  :field spi_watchdog: spi_watchdog
+  :field spi_init_cnt: spi_init_cnt
+  :field cpu_watchdog: cpu_watchdog
+  :field cpu_reset_cnt: cpu_reset_cnt
+  :field framecounter: framecounter
 
 seq:
   - id: ax25header

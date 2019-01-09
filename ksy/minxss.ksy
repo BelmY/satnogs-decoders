@@ -2,37 +2,37 @@ meta:
   id: minxss
   endian: be
 doc: |
-  :field minxss_dest_callsign: ax25_frame.ax25_header.dest_callsign_raw.callsign_ror.callsign
-  :field minxss_src_callsign: ax25_frame.ax25_header.src_callsign_raw.callsign_ror.callsign
-  :field minxss_src_ssid: ax25_frame.ax25_header.src_ssid_raw.ssid
-  :field minxss_dest_ssid: ax25_frame.ax25_header.dest_ssid_raw.ssid
-  :field minxss_ctl: ax25_frame.ax25_header.ctl
-  :field minxss_pid: ax25_frame.payload.pid
-  :field minxss_spacecraft_flags: ax25_frame.payload.ax25_info.minxss_beacon.minxss_spacecraft_flags
-  :field minxss_pointing_mode: ax25_frame.payload.ax25_info.minxss_beacon.minxss_pointing_mode
-  :field minxss_cmd_accept_cnt: ax25_frame.payload.ax25_info.minxss_beacon.minxss_cmd_accept_cnt
-  :field minxss_flight_model: ax25_frame.payload.ax25_info.minxss_beacon.minxss_flight_model
-  :field minxss_cdh_board_temp: ax25_frame.payload.ax25_info.minxss_beacon.minxss_cdh_board_temp
-  :field minxss_enable_flags: ax25_frame.payload.ax25_info.minxss_beacon.minxss_enable_flags
-  :field minxss_comm_brd_temp: ax25_frame.payload.ax25_info.minxss_beacon.minxss_comm_brd_temp
-  :field minxss_mbrd_temp: ax25_frame.payload.ax25_info.minxss_beacon.minxss_mbrd_temp
-  :field minxss_eps_brd_temp: ax25_frame.payload.ax25_info.minxss_beacon.minxss_eps_brd_temp
-  :field minxss_battery_voltage: ax25_frame.payload.ax25_info.minxss_beacon.minxss_battery_voltage
-  :field minxss_solar_panel_minus_y_curr: ax25_frame.payload.ax25_info.minxss_beacon.minxss_solar_panel_minus_y_curr
-  :field minxss_solar_panel_minus_y_volt: ax25_frame.payload.ax25_info.minxss_beacon.minxss_solar_panel_minus_y_volt
-  :field minxss_solar_panel_plus_x_curr: ax25_frame.payload.ax25_info.minxss_beacon.minxss_solar_panel_plus_x_curr
-  :field minxss_solar_panel_plus_x_volt: ax25_frame.payload.ax25_info.minxss_beacon.minxss_solar_panel_plus_x_volt
-  :field minxss_solar_panel_plus_y_curr: ax25_frame.payload.ax25_info.minxss_beacon.minxss_solar_panel_plus_y_curr
-  :field minxss_solar_panel_plus_y_volt: ax25_frame.payload.ax25_info.minxss_beacon.minxss_solar_panel_plus_y_volt
-  :field minxss_solar_panel_minus_y_temp: ax25_frame.payload.ax25_info.minxss_beacon.minxss_solar_panel_minus_y_temp
-  :field minxss_solar_panel_plus_x_temp: ax25_frame.payload.ax25_info.minxss_beacon.minxss_solar_panel_plus_x_temp
-  :field minxss_solar_panel_plus_y_temp: ax25_frame.payload.ax25_info.minxss_beacon.minxss_solar_panel_plus_y_temp
-  :field minxss_battery_chrg_curr: ax25_frame.payload.ax25_info.minxss_beacon.minxss_battery_chrg_curr
-  :field minxss_battery_dchrg_curr: ax25_frame.payload.ax25_info.minxss_beacon.minxss_battery_dchrg_curr
-  :field minxss_battery_temp: ax25_frame.payload.ax25_info.minxss_beacon.minxss_battery_temp
-  :field minxss_xp: ax25_frame.payload.ax25_info.minxss_beacon.minxss_xp
-  :field minxss_sps_x: ax25_frame.payload.ax25_info.minxss_beacon.minxss_sps_x
-  :field minxss_sps_y: ax25_frame.payload.ax25_info.minxss_beacon.minxss_sps_y
+  :field dest_callsign: ax25_frame.ax25_header.dest_callsign_raw.callsign_ror.callsign
+  :field src_callsign: ax25_frame.ax25_header.src_callsign_raw.callsign_ror.callsign
+  :field src_ssid: ax25_frame.ax25_header.src_ssid_raw.ssid
+  :field dest_ssid: ax25_frame.ax25_header.dest_ssid_raw.ssid
+  :field ctl: ax25_frame.ax25_header.ctl
+  :field pid: ax25_frame.payload.pid
+  :field spacecraft_flags: ax25_frame.payload.ax25_info.beacon.spacecraft_flags
+  :field pointing_mode: ax25_frame.payload.ax25_info.beacon.pointing_mode
+  :field cmd_accept_cnt: ax25_frame.payload.ax25_info.beacon.cmd_accept_cnt
+  :field flight_model: ax25_frame.payload.ax25_info.beacon.flight_model
+  :field cdh_board_temp: ax25_frame.payload.ax25_info.beacon.cdh_board_temp
+  :field enable_flags: ax25_frame.payload.ax25_info.beacon.enable_flags
+  :field comm_brd_temp: ax25_frame.payload.ax25_info.beacon.comm_brd_temp
+  :field mbrd_temp: ax25_frame.payload.ax25_info.beacon.mbrd_temp
+  :field eps_brd_temp: ax25_frame.payload.ax25_info.beacon.eps_brd_temp
+  :field battery_voltage: ax25_frame.payload.ax25_info.beacon.battery_voltage
+  :field solar_panel_minus_y_curr: ax25_frame.payload.ax25_info.beacon.solar_panel_minus_y_curr
+  :field solar_panel_minus_y_volt: ax25_frame.payload.ax25_info.beacon.solar_panel_minus_y_volt
+  :field solar_panel_plus_x_curr: ax25_frame.payload.ax25_info.beacon.solar_panel_plus_x_curr
+  :field solar_panel_plus_x_volt: ax25_frame.payload.ax25_info.beacon.solar_panel_plus_x_volt
+  :field solar_panel_plus_y_curr: ax25_frame.payload.ax25_info.beacon.solar_panel_plus_y_curr
+  :field solar_panel_plus_y_volt: ax25_frame.payload.ax25_info.beacon.solar_panel_plus_y_volt
+  :field solar_panel_minus_y_temp: ax25_frame.payload.ax25_info.beacon.solar_panel_minus_y_temp
+  :field solar_panel_plus_x_temp: ax25_frame.payload.ax25_info.beacon.solar_panel_plus_x_temp
+  :field solar_panel_plus_y_temp: ax25_frame.payload.ax25_info.beacon.solar_panel_plus_y_temp
+  :field battery_chrg_curr: ax25_frame.payload.ax25_info.beacon.battery_chrg_curr
+  :field battery_dchrg_curr: ax25_frame.payload.ax25_info.beacon.battery_dchrg_curr
+  :field battery_temp: ax25_frame.payload.ax25_info.beacon.battery_temp
+  :field xp: ax25_frame.payload.ax25_info.beacon.xp
+  :field sps_x: ax25_frame.payload.ax25_info.beacon.sps_x
+  :field sps_y: ax25_frame.payload.ax25_info.beacon.sps_y
 
 seq:
   - id: ax25_frame
@@ -103,62 +103,62 @@ types:
       - id: pid
         type: u1
       - id: ax25_info
-        type: minxss_telemetry
+        type: telemetry
         size-eos: true
 
-  minxss_telemetry:
+  telemetry:
     seq:
-      - id: minxss_start_sync_flag
+      - id: start_sync_flag
         type: u2
-      - id: minxss_beacon
+      - id: beacon
         size: _io.size - 4
         type:
-          switch-on: minxss_start_sync_flag
+          switch-on: start_sync_flag
           cases:
-            0x0819: minxss_hskp_data  # be
-            0x081d: minxss_rt_data    # be
-      - id: minxss_stop_sync_flag
+            0x0819: hskp_data  # be
+            0x081d: rt_data    # be
+      - id: stop_sync_flag
         size: u2le
         contents: [0xa5, 0xa5]
 
-  minxss_hskp_data:
+  hskp_data:
     seq:
-      - id: minxss_res_1
+      - id: res_1
         type: u1
         repeat: expr
         repeat-expr: 10
 
-      - id: minxss_spacecraft_flags
+      - id: spacecraft_flags
         type: u1
         doc: |
-          minxss_spacecraft_mode:
-          bit0 to bit2 = (minxss_spacecraft_flags & 0x0030) >> 4
+          spacecraft_mode:
+          bit0 to bit2 = (spacecraft_flags & 0x0030) >> 4
 
-          minxss_eclipse:
-          bit3 = (minxss_spacecraft_flags & 0x08) >> 3
+          eclipse:
+          bit3 = (spacecraft_flags & 0x08) >> 3
 
-      - id: minxss_pointing_mode
+      - id: pointing_mode
         type: u1
         doc: |
-          minxss_pointing_mode:
-          bit0 = minxss_pointing_mode & 0x01
+          pointing_mode:
+          bit0 = pointing_mode & 0x01
 
-      - id: minxss_res_2
+      - id: res_2
         type: u2
 
-      - id: minxss_cmd_accept_cnt
+      - id: cmd_accept_cnt
         type: u2le
 
-      - id: minxss_res_3
+      - id: res_3
         type: u1
         repeat: expr
         repeat-expr: 33
 
-      - id: minxss_flight_model
+      - id: flight_model
         type: u1
         doc: |
-          minxss_flight_model:
-          flight_model = (minxss_flight_model & 0x0030) >> 4
+          flight_model:
+          flight_model = (flight_model & 0x0030) >> 4
 
           Fix mistaken flight model number in final flight software burn
 
@@ -168,136 +168,136 @@ types:
             flight_model = 3  # This is the engineering test unit (AKA FlatSat)
           return flight_model
 
-      - id: minxss_res_4
+      - id: res_4
         type: u1
         repeat: expr
         repeat-expr: 34
 
-      - id: minxss_cdh_board_temp
+      - id: cdh_board_temp
         type: s2le
         doc: '/ 256.0 # [deg C]'
 
-      - id: minxss_enable_flags
+      - id: enable_flags
         type: u2
         doc: |
-          minxss_enable_x123:
-          bit1 = (minxss_enable_flags & 0x0002) >> 1
+          enable_x123:
+          bit1 = (enable_flags & 0x0002) >> 1
 
-          minxss_enable_sps:
-          bit2 = (minxss_enable_flags & 0x0004) >> 2
+          enable_sps:
+          bit2 = (enable_flags & 0x0004) >> 2
 
-      - id: minxss_res_5
+      - id: res_5
         type: u1
         repeat: expr
         repeat-expr: 32
 
-      - id: minxss_comm_brd_temp
+      - id: comm_brd_temp
         type: s2le
         doc: '/ 256.0 # [deg C]'
 
-      - id: minxss_mbrd_temp
+      - id: mbrd_temp
         type: s2le
         doc: '/ 256.0 # [deg C]'
 
-      - id: minxss_res_6
+      - id: res_6
         type: u2
 
-      - id: minxss_eps_brd_temp
+      - id: eps_brd_temp
         type: s2le
         doc: '/ 256.0 # [deg C]'
 
-      - id: minxss_res_7
+      - id: res_7
         type: u2
 
-      - id: minxss_battery_voltage
+      - id: battery_voltage
         type: u2le
         doc: '/ 6415.0 # [V]'
 
-      - id: minxss_res_8
+      - id: res_8
         type: u2
 
-      - id: minxss_solar_panel_minus_y_curr
+      - id: solar_panel_minus_y_curr
         type: u2le
         doc: '* 163.8 / 327.68 # [mA]'
 
-      - id: minxss_solar_panel_minus_y_volt
+      - id: solar_panel_minus_y_volt
         type: u2le
         doc: '* 32.76 / 32768.0 # [V]'
 
-      - id: minxss_solar_panel_plus_x_curr
+      - id: solar_panel_plus_x_curr
         type: u2le
         doc: '* 163.8 / 327.68 # [mA]'
 
-      - id: minxss_solar_panel_plus_x_volt
+      - id: solar_panel_plus_x_volt
         type: u2le
         doc: '* 32.76 / 32768.0 # [V]'
 
-      - id: minxss_solar_panel_plus_y_curr
+      - id: solar_panel_plus_y_curr
         type: u2le
         doc: '* 163.8 / 327.68 # [mA]'
 
-      - id: minxss_solar_panel_plus_y_volt
+      - id: solar_panel_plus_y_volt
         type: u2le
         doc: '* 32.76 / 32768.0 # [V]'
 
-      - id: minxss_res_9
+      - id: res_9
         type: u1
         repeat: expr
         repeat-expr: 12
 
-      - id: minxss_solar_panel_minus_y_temp
+      - id: solar_panel_minus_y_temp
         type: u2le
         doc: '* 0.1744 - 216.0 # [deg C]'
 
-      - id: minxss_solar_panel_plus_x_temp
+      - id: solar_panel_plus_x_temp
         type: u2le
         doc: '* 0.1744 - 216.0 # [deg C]'
 
-      - id: minxss_solar_panel_plus_y_temp
+      - id: solar_panel_plus_y_temp
         type: u2le
         doc: '* 0.1744 - 216.0 # [deg C]'
 
-      - id: minxss_res_0
+      - id: res_0
         type: u2
 
-      - id: minxss_battery_chrg_curr
+      - id: battery_chrg_curr
         type: u2le
         doc: '* 3.5568 - 61.6 # [mA]'
 
-      - id: minxss_res_a
+      - id: res_a
         type: u2
 
-      - id: minxss_battery_dchrg_curr
+      - id: battery_dchrg_curr
         type: u2le
         doc: '* 3.5568 - 61.6 # [mA]'
 
-      - id: minxss_battery_temp
+      - id: battery_temp
         type: u2le
         doc: '* 0.18766 - 250.2 # [deg C]'
 
-      - id: minxss_res_b
+      - id: res_b
         type: u1
         repeat: expr
         repeat-expr: 16
 
-      - id: minxss_xp
+      - id: xp
         type: u4le
         doc: '# [DN]'
 
-      - id: minxss_res_c
+      - id: res_c
         type: u1
         repeat: expr
         repeat-expr: 10
 
-      - id: minxss_sps_x
+      - id: sps_x
         type: u2le
         doc: '/ 1e4 * 3.0 # [deg]'
 
-      - id: minxss_sps_y
+      - id: sps_y
         type: u2le
         doc: '/ 1e4 * 3.0 # [deg]'
 
-  minxss_rt_data:
+  rt_data:
     seq:
-      - id: minxss_rt_data_raw
-        size: _io.size - 4                      # minxss_start_sync_flag + minxss_stop_sync_flag
+      - id: rt_data_raw
+        size: _io.size - 4                      # start_sync_flag + stop_sync_flag

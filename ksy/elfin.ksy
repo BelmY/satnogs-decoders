@@ -2,233 +2,233 @@ meta:
   id: elfin
   endian: be
 doc: |
-  :field elfin_dest_callsign: ax25_frame.ax25_header.dest_callsign_raw.callsign_ror.callsign
-  :field elfin_src_callsign: ax25_frame.ax25_header.src_callsign_raw.callsign_ror.callsign
-  :field elfin_src_ssid: ax25_frame.ax25_header.src_ssid_raw.ssid
-  :field elfin_dest_ssid: ax25_frame.ax25_header.dest_ssid_raw.ssid
-  :field elfin_ctl: ax25_frame.ax25_header.ctl
-  :field elfin_pid: ax25_frame.payload.pid
-  :field elfin_frame_start: ax25_frame.payload.ax25_info.elfin_frame_start
-  :field elfin_beacon_setting: ax25_frame.payload.ax25_info.elfin_beacon_setting
-  :field elfin_status_1_safe_mode: ax25_frame.payload.ax25_info.elfin_status_1_safe_mode
-  :field elfin_status_1_reserved: ax25_frame.payload.ax25_info.elfin_status_1_reserved
-  :field elfin_status_1_early_orbit: ax25_frame.payload.ax25_info.elfin_status_1_early_orbit
-  :field elfin_status_2_payload_power: ax25_frame.payload.ax25_info.elfin_status_2_payload_power
-  :field elfin_status_2_9v_boost: ax25_frame.payload.ax25_info.elfin_status_2_9v_boost
-  :field elfin_status_2_bat_htr_allow: ax25_frame.payload.ax25_info.
-  :field elfin_status_2_htr_force: ax25_frame.payload.ax25_info.elfin_status_2_htr_force
-  :field elfin_status_2_htr_alert: ax25_frame.payload.ax25_info.elfin_status_2_htr_alert
-  :field elfin_status_2_reserved: ax25_frame.payload.ax25_info.elfin_status_2_reserved
-  :field elfin_reserved: ax25_frame.payload.ax25_info.elfin_reserved
-  :field elfin_hskp_pwr1_rtcc_year: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_rtcc_year
-  :field elfin_hskp_pwr1_rtcc_month: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_rtcc_month
-  :field elfin_hskp_pwr1_rtcc_day: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_rtcc_day
-  :field elfin_hskp_pwr1_rtcc_hour: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_rtcc_hour
-  :field elfin_hskp_pwr1_rtcc_minute: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_rtcc_minute
-  :field elfin_hskp_pwr1_rtcc_second: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_rtcc_second
-  :field elfin_hskp_pwr1_adc_data_adc_sa_volt_12: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_adc_data_adc_sa_volt_12
-  :field elfin_hskp_pwr1_adc_data_adc_sa_volt_34: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_adc_data_adc_sa_volt_34
-  :field elfin_hskp_pwr1_adc_data_adc_sa_volt_56: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_adc_data_adc_sa_volt_56
-  :field elfin_hskp_pwr1_adc_data_sa_short_circuit_current: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_adc_data_sa_short_circuit_current
-  :field elfin_hskp_pwr1_adc_data_bat_2_volt: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_adc_data_bat_2_volt
-  :field elfin_hskp_pwr1_adc_data_bat_1_volt: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_adc_data_bat_1_volt
-  :field elfin_hskp_pwr1_adc_data_reg_sa_volt_1: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_adc_data_reg_sa_volt_1
-  :field elfin_hskp_pwr1_adc_data_reg_sa_volt_2: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_adc_data_reg_sa_volt_2
-  :field elfin_hskp_pwr1_adc_data_reg_sa_volt_3: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_adc_data_reg_sa_volt_3
-  :field elfin_hskp_pwr1_adc_data_power_bus_current_1: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_adc_data_power_bus_current_1
-  :field elfin_hskp_pwr1_adc_data_power_bus_current_2: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_adc_data_power_bus_current_2
-  :field elfin_hskp_pwr1_bat_mon_1_avg_cur_reg: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_bat_mon_1_avg_cur_reg
-  :field elfin_hskp_pwr1_bat_mon_1_temperature_register: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_bat_mon_1_temperature_register
-  :field elfin_hskp_pwr1_bat_mon_1_volt_reg: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_bat_mon_1_volt_reg
-  :field elfin_hskp_pwr1_bat_mon_1_cur_reg: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_bat_mon_1_cur_reg
-  :field elfin_hskp_pwr1_bat_mon_1_acc_curr_reg: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_bat_mon_1_acc_curr_reg
-  :field elfin_hskp_pwr1_bat_mon_2_avg_cur_reg: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_bat_mon_2_avg_cur_reg
-  :field elfin_hskp_pwr1_bat_mon_2_temperature_register: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_bat_mon_2_temperature_register
-  :field elfin_hskp_pwr1_bat_mon_2_volt_reg: ax2_frame.payload.ax25_info.elfin_hskp_pwr1_bat_mon_2_volt_reg
-  :field elfin_hskp_pwr1_bat_mon_2_cur_reg: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_bat_mon_2_cur_reg
-  :field elfin_hskp_pwr1_bat_mon_2_acc_curr_reg: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_bat_mon_2_acc_curr_reg
-  :field elfin_hskp_pwr1_bv_mon: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_bv_mon
-  :field elfin_hskp_pwr1_tmps_tmp1: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_tmps_tmp1
-  :field elfin_hskp_pwr1_tmps_tmp2: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_tmps_tmp2
-  :field elfin_hskp_pwr1_tmps_tmp3: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_tmps_tmp3
-  :field elfin_hskp_pwr1_tmps_tmp4: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_tmps_tmp4
-  :field elfin_hskp_pwr1_accumulated_curr_bat1_rarc: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_accumulated_curr_bat1_rarc
-  :field elfin_hskp_pwr1_accumulated_curr_bat1_rsrc: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_accumulated_curr_bat1_rsrc
-  :field elfin_hskp_pwr1_accumulated_curr_bat2_rarc: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_accumulated_curr_bat2_rarc
-  :field elfin_hskp_pwr1_accumulated_curr_bat2_rsrc: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_accumulated_curr_bat2_rsrc
-  :field elfin_hskp_pwr2_rtcc_year: ax25_frame.payload.ax25_info.elfin_hskp_pwr2_rtcc_year
-  :field elfin_hskp_pwr2_rtcc_month: ax25_frame.payload.ax25_info.elfin_hskp_pwr2_rtcc_month
-  :field elfin_hskp_pwr2_rtcc_day: ax25_frame.payload.ax25_info.elfin_hskp_pwr2_rtcc_day
-  :field elfin_hskp_pwr2_rtcc_hour: ax25_frame.payload.ax25_info.elfin_hskp_pwr2_rtcc_hour
-  :field elfin_hskp_pwr2_rtcc_minute: ax25_frame.payload.ax25_info.elfin_hskp_pwr2_rtcc_minute
-  :field elfin_hskp_pwr2_rtcc_second: ax25_frame.payload.ax25_info.elfin_hskp_pwr2_rtcc_second
-  :field elfin_hskp_pwr2_adc_data_adc_sa_volt_12: ax25_frame.payload.ax25_info.elfin_hskp_pwr2_adc_data_adc_sa_volt_12
-  :field elfin_hskp_pwr2_adc_data_adc_sa_volt_34: ax25_frame.payload.ax25_info.elfin_hskp_pwr2_adc_data_adc_sa_volt_34
-  :field elfin_hskp_pwr2_adc_data_adc_sa_volt_56: ax25_frame.payload.ax25_info.elfin_hskp_pwr2_adc_data_adc_sa_volt_56
-  :field elfin_hskp_pwr2_adc_data_sa_short_circuit_current: ax25_frame.payload.ax25_info.elfin_hskp_pwr2_adc_data_sa_short_circuit_current
-  :field elfin_hskp_pwr2_adc_data_bat_2_volt: ax25_frame.payload.ax25_info.elfin_hskp_pwr2_adc_data_bat_2_volt
-  :field elfin_hskp_pwr2_adc_data_bat_1_volt: ax25_frame.payload.ax25_info.elfin_hskp_pwr2_adc_data_bat_1_volt
-  :field elfin_hskp_pwr2_adc_data_reg_sa_volt_1: ax25_frame.payload.ax25_info.elfin_hskp_pwr2_adc_data_reg_sa_volt_1
-  :field elfin_hskp_pwr2_adc_data_reg_sa_volt_2: ax25_frame.payload.ax25_info.elfin_hskp_pwr2_adc_data_reg_sa_volt_2
-  :field elfin_hskp_pwr2_adc_data_reg_sa_volt_3: ax25_frame.payload.ax25_info.elfin_hskp_pwr2_adc_data_reg_sa_volt_3
-  :field elfin_hskp_pwr2_adc_data_power_bus_current_1: ax25_frame.payload.ax25_info.elfin_hskp_pwr2_adc_data_power_bus_current_1
-  :field elfin_hskp_pwr2_adc_data_power_bus_current_2: ax25_frame.payload.ax25_info.elfin_hskp_pwr2_adc_data_power_bus_current_2
-  :field elfin_hskp_pwr2_bat_mon_1_avg_cur_reg: ax25_frame.payload.ax25_info.elfin_hskp_pwr2_bat_mon_1_avg_cur_reg
-  :field elfin_hskp_pwr2_bat_mon_1_temperature_register: ax25_frame.payload.ax25_info.elfin_hskp_pwr2_bat_mon_1_temperature_register
-  :field elfin_hskp_pwr2_bat_mon_1_volt_reg: ax25_frame.payload.ax25_info.elfin_hskp_pwr2_bat_mon_1_volt_reg
-  :field elfin_hskp_pwr2_bat_mon_1_cur_reg: ax25_frame.payload.ax25_info.elfin_hskp_pwr2_bat_mon_1_cur_reg
-  :field elfin_hskp_pwr2_bat_mon_1_acc_curr_reg: ax25_frame.payload.ax25_info.elfin_hskp_pwr2_bat_mon_1_acc_curr_reg
-  :field elfin_hskp_pwr2_bat_mon_2_avg_cur_reg: ax25_frame.payload.ax25_info.elfin_hskp_pwr2_bat_mon_2_avg_cur_reg
-  :field elfin_hskp_pwr2_bat_mon_2_temperature_register: ax25_frame.payload.ax25_info.elfin_hskp_pwr2_bat_mon_2_temperature_register
-  :field elfin_hskp_pwr2_bat_mon_2_volt_reg: ax25_frame.payload.ax25_info.elfin_hskp_pwr2_bat_mon_2_volt_reg
-  :field elfin_hskp_pwr2_bat_mon_2_cur_reg: ax25_frame.payload.ax25_info.elfin_hskp_pwr2_bat_mon_2_cur_reg
-  :field elfin_hskp_pwr2_bat_mon_2_acc_curr_reg: ax25_frame.payload.ax25_info.elfin_hskp_pwr2_bat_mon_2_acc_curr_reg
-  :field elfin_hskp_pwr2_bv_mon: ax25_frame.payload.ax25_info.elfin_hskp_pwr2_bv_mon
-  :field elfin_hskp_pwr2_tmps_tmp1: ax25_frame.payload.ax25_info.elfin_hskp_pwr2_tmps_tmp1
-  :field elfin_hskp_pwr2_tmps_tmp2: ax25_frame.payload.ax25_info.elfin_hskp_pwr2_tmps_tmp2
-  :field elfin_hskp_pwr2_tmps_tmp3: ax25_frame.payload.ax25_info.elfin_hskp_pwr2_tmps_tmp3
-  :field elfin_hskp_pwr2_tmps_tmp4: ax25_frame.payload.ax25_info.elfin_hskp_pwr2_tmps_tmp4
-  :field elfin_hskp_pwr2_accumulated_curr_bat1_rarc: ax25_frame.payload.ax25_info.elfin_hskp_pwr2_accumulated_curr_bat1_rarc
-  :field elfin_hskp_pwr2_accumulated_curr_bat1_rsrc: ax25_frame.payload.ax25_info.elfin_hskp_pwr2_accumulated_curr_bat1_rsrc
-  :field elfin_hskp_pwr2_accumulated_curr_bat2_rarc: ax25_frame.payload.ax25_info.elfin_hskp_pwr2_accumulated_curr_bat2_rarc
-  :field elfin_hskp_pwr2_accumulated_curr_bat2_rsrc: ax25_frame.payload.ax25_info.elfin_hskp_pwr2_accumulated_curr_bat2_rsrc
-  :field elfin_acb_pc_data1_rtcc_year: ax25_frame.payload.ax25_info.elfin_acb_pc_data1_rtcc_year
-  :field elfin_acb_pc_data1_rtcc_month: ax25_frame.payload.ax25_info.elfin_acb_pc_data1_rtcc_month
-  :field elfin_acb_pc_data1_rtcc_day: ax25_frame.payload.ax25_info.elfin_acb_pc_data1_rtcc_day
-  :field elfin_acb_pc_data1_rtcc_hour: ax25_frame.payload.ax25_info.elfin_acb_pc_data1_rtcc_hour
-  :field elfin_acb_pc_data1_rtcc_minute: ax25_frame.payload.ax25_info.elfin_acb_pc_data1_rtcc_minute
-  :field elfin_acb_pc_data1_rtcc_second: ax25_frame.payload.ax25_info.elfin_acb_pc_data1_rtcc_second
-  :field elfin_acb_pc_data1_acb_mrm_x: ax25_frame.payload.ax25_info.elfin_acb_pc_data1_acb_mrm_x
-  :field elfin_acb_pc_data1_acb_mrm_y: ax25_frame.payload.ax25_info.elfin_acb_pc_data1_acb_mrm_y
-  :field elfin_acb_pc_data1_acb_mrm_z: ax25_frame.payload.ax25_info.elfin_acb_pc_data1_acb_mrm_z
-  :field elfin_acb_pc_data1_ipdu_mrm_x: ax25_frame.payload.ax25_info.elfin_acb_pc_data1_ipdu_mrm_x
-  :field elfin_acb_pc_data1_ipdu_mrm_y: ax25_frame.payload.ax25_info.elfin_acb_pc_data1_ipdu_mrm_y
-  :field elfin_acb_pc_data1_ipdu_mrm_z: ax25_frame.payload.ax25_info.elfin_acb_pc_data1_ipdu_mrm_z
-  :field elfin_acb_pc_data1_tmps_tmp1: ax25_frame.payload.ax25_info.elfin_acb_pc_data1_tmps_tmp1
-  :field elfin_acb_pc_data1_tmps_tmp2: ax25_frame.payload.ax25_info.elfin_acb_pc_data1_tmps_tmp2
-  :field elfin_acb_pc_data1_tmps_tmp3: ax25_frame.payload.ax25_info.elfin_acb_pc_data1_tmps_tmp3
-  :field elfin_acb_pc_data1_tmps_tmp4: ax25_frame.payload.ax25_info.elfin_acb_pc_data1_tmps_tmp4
-  :field elfin_acb_pc_data2_rtcc_year: ax25_frame.payload.ax25_info.elfin_acb_pc_data2_rtcc_year
-  :field elfin_acb_pc_data2_rtcc_month: ax25_frame.payload.ax25_info.elfin_acb_pc_data2_rtcc_month
-  :field elfin_acb_pc_data2_rtcc_day: ax25_frame.payload.ax25_info.elfin_acb_pc_data2_rtcc_day
-  :field elfin_acb_pc_data2_rtcc_hour: ax25_frame.payload.ax25_info.elfin_acb_pc_data2_rtcc_hour
-  :field elfin_acb_pc_data2_rtcc_minute: ax25_frame.payload.ax25_info.elfin_acb_pc_data2_rtcc_minute
-  :field elfin_acb_pc_data2_rtcc_second: ax25_frame.payload.ax25_info.elfin_acb_pc_data2_rtcc_second
-  :field elfin_acb_pc_data2_acb_mrm_x: ax25_frame.payload.ax25_info.elfin_acb_pc_data2_acb_mrm_x
-  :field elfin_acb_pc_data2_acb_mrm_y: ax25_frame.payload.ax25_info.elfin_acb_pc_data2_acb_mrm_y
-  :field elfin_acb_pc_data2_acb_mrm_z: ax25_frame.payload.ax25_info.elfin_acb_pc_data2_acb_mrm_z
-  :field elfin_acb_pc_data2_ipdu_mrm_x: ax25_frame.payload.ax25_info.elfin_acb_pc_data2_ipdu_mrm_x
-  :field elfin_acb_pc_data2_ipdu_mrm_y: ax25_frame.payload.ax25_info.elfin_acb_pc_data2_ipdu_mrm_y
-  :field elfin_acb_pc_data2_ipdu_mrm_z: ax25_frame.payload.ax25_info.elfin_acb_pc_data2_ipdu_mrm_z
-  :field elfin_acb_pc_data2_tmps_tmp1: ax25_frame.payload.ax25_info.elfin_acb_pc_data2_tmps_tmp1
-  :field elfin_acb_pc_data2_tmps_tmp2: ax25_frame.payload.ax25_info.elfin_acb_pc_data2_tmps_tmp2
-  :field elfin_acb_pc_data2_tmps_tmp3: ax25_frame.payload.ax25_info.elfin_acb_pc_data2_tmps_tmp3
-  :field elfin_acb_pc_data2_tmps_tmp4: ax25_frame.payload.ax25_info.elfin_acb_pc_data2_tmps_tmp4
-  :field elfin_acb_sense_adc_data_current: ax25_frame.payload.ax25_info.elfin_acb_sense_adc_data_current
-  :field elfin_acb_sense_adc_data_voltage: ax25_frame.payload.ax25_info.elfin_acb_sense_adc_data_voltage
-  :field elfin_fc_counters_cmds_recv: ax25_frame.payload.ax25_info.elfin_fc_counters_cmds_recv
-  :field elfin_fc_counters_badcmds_recv: ax25_frame.payload.ax25_info.elfin_fc_counters_badcmds_recv
-  :field elfin_fc_counters_badpkts_fm_radio: ax25_frame.payload.ax25_info.elfin_fc_counters_badpkts_fm_radio
-  :field elfin_fc_counters_fcpkts_fm_radio: ax25_frame.payload.ax25_info.elfin_fc_counters_fcpkts_fm_radio
-  :field elfin_fc_counters_errors: ax25_frame.payload.ax25_info.elfin_fc_counters_errors
-  :field elfin_fc_counters_reboots: ax25_frame.payload.ax25_info.elfin_fc_counters_reboots
-  :field elfin_fc_counters_intrnl_wdttmout: ax25_frame.payload.ax25_info.elfin_fc_counters_intrnl_wdttmout
-  :field elfin_fc_counters_brwnouts: ax25_frame.payload.ax25_info.elfin_fc_counters_brwnouts
-  :field elfin_fc_counters_wdpicrst: ax25_frame.payload.ax25_info.elfin_fc_counters_wdpicrst
-  :field elfin_fc_counters_porst: ax25_frame.payload.ax25_info.elfin_fc_counters_porst
-  :field elfin_fc_counters_uart1_recvpkts: ax25_frame.payload.ax25_info.elfin_fc_counters_uart1_recvpkts
-  :field elfin_fc_counters_uart1_parseerrs: ax25_frame.payload.ax25_info.elfin_fc_counters_uart1_parseerrs
-  :field elfin_fc_counters_sips_ovcur_evts: ax25_frame.payload.ax25_info.elfin_fc_counters_sips_ovcur_evts
-  :field elfin_fc_counters_vu1_on: ax25_frame.payload.ax25_info.elfin_fc_counters_vu1_on
-  :field elfin_fc_counters_vu1_off: ax25_frame.payload.ax25_info.elfin_fc_counters_vu1_off
-  :field elfin_fc_counters_vu2_on: ax25_frame.payload.ax25_info.elfin_fc_counters_vu2_on
-  :field elfin_fc_counters_vu2_off: ax25_frame.payload.ax25_info.elfin_fc_counters_vu2_off
-  :field elfin_radio_tlm_rssi: ax25_frame.payload.ax25_info.elfin_radio_tlm_rssi
-  :field elfin_radio_tlm_bytes_rx: ax25_frame.payload.ax25_info.elfin_radio_tlm_bytes_rx
-  :field elfin_radio_tlm_bytes_tx: ax25_frame.payload.ax25_info.elfin_radio_tlm_bytes_tx
-  :field elfin_radio_cfg_read_radio_palvl: ax25_frame.payload.ax25_info.elfin_radio_cfg_read_radio_palvl
-  :field elfin_errors_error1_day: ax25_frame.payload.ax25_info.elfin_errors_error1_day
-  :field elfin_errors_error1_hour: ax25_frame.payload.ax25_info.elfin_errors_error1_hour
-  :field elfin_errors_error1_minute: ax25_frame.payload.ax25_info.elfin_errors_error1_minute
-  :field elfin_errors_error1_second: ax25_frame.payload.ax25_info.elfin_errors_error1_second
-  :field elfin_errors_error1_error: ax25_frame.payload.ax25_info.elfin_errors_error1_error
-  :field elfin_errors_error2_day: ax25_frame.payload.ax25_info.elfin_errors_error2_day
-  :field elfin_errors_error2_hour: ax25_frame.payload.ax25_info.elfin_errors_error2_hour
-  :field elfin_errors_error2_minute: ax25_frame.payload.ax25_info.elfin_errors_error2_minute
-  :field elfin_errors_error2_second: ax25_frame.payload.ax25_info.elfin_errors_error2_second
-  :field elfin_errors_error2_error: ax25_frame.payload.ax25_info.elfin_errors_error2_error
-  :field elfin_errors_error3_day: ax25_frame.payload.ax25_info.elfin_errors_error3_day
-  :field elfin_errors_error3_hour: ax25_frame.payload.ax25_info.elfin_errors_error3_hour
-  :field elfin_errors_error3_minute: ax25_frame.payload.ax25_info.elfin_errors_error3_minute
-  :field elfin_errors_error3_second: ax25_frame.payload.ax25_info.elfin_errors_error3_second
-  :field elfin_errors_error3_error: ax25_frame.payload.ax25_info.elfin_errors_error3_error
-  :field elfin_errors_error4_day: ax25_frame.payload.ax25_info.elfin_errors_error4_day
-  :field elfin_errors_error4_hour: ax25_frame.payload.ax25_info.elfin_errors_error4_hour
-  :field elfin_errors_error4_minute: ax25_frame.payload.ax25_info.elfin_errors_error4_minute
-  :field elfin_errors_error4_second: ax25_frame.payload.ax25_info.elfin_errors_error4_second
-  :field elfin_errors_error4_error: ax25_frame.payload.ax25_info.elfin_errors_error4_error
-  :field elfin_errors_error5_day: ax25_frame.payload.ax25_info.elfin_errors_error5_day
-  :field elfin_errors_error5_hour: ax25_frame.payload.ax25_info.elfin_errors_error5_hour
-  :field elfin_errors_error5_minute: ax25_frame.payload.ax25_info.elfin_errors_error5_minute
-  :field elfin_errors_error5_second: ax25_frame.payload.ax25_info.elfin_errors_error5_second
-  :field elfin_errors_error5_error: ax25_frame.payload.ax25_info.elfin_errors_error5_error
-  :field elfin_errors_error6_day: ax25_frame.payload.ax25_info.elfin_errors_error6_day
-  :field elfin_errors_error6_hour: ax25_frame.payload.ax25_info.elfin_errors_error6_hour
-  :field elfin_errors_error6_minute: ax25_frame.payload.ax25_info.elfin_errors_error6_minute
-  :field elfin_errors_error6_second: ax25_frame.payload.ax25_info.elfin_errors_error6_second
-  :field elfin_errors_error6_error: ax25_frame.payload.ax25_info.elfin_errors_error6_error
-  :field elfin_errors_error7_day: ax25_frame.payload.ax25_info.elfin_errors_error7_day
-  :field elfin_errors_error7_hour: ax25_frame.payload.ax25_info.elfin_errors_error7_hour
-  :field elfin_errors_error7_minute: ax25_frame.payload.ax25_info.elfin_errors_error7_minute
-  :field elfin_errors_error7_second: ax25_frame.payload.ax25_info.elfin_errors_error7_second
-  :field elfin_errors_error7_error: ax25_frame.payload.ax25_info.elfin_errors_error7_error
-  :field elfin_fc_salt: ax25_frame.payload.ax25_info.elfin_fc_salt
-  :field elfin_fc_crc: ax25_frame.payload.ax25_info.elfin_fc_crc
-  :field elfin_frame_end: ax25_frame.payload.ax25_info.elfin_frame_end
-  :field elfin_hskp_pwr1_rtcc_year: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_rtcc_year
-  :field elfin_hskp_pwr1_rtcc_month: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_rtcc_month
-  :field elfin_hskp_pwr1_rtcc_day: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_rtcc_day
-  :field elfin_hskp_pwr1_rtcc_hour: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_rtcc_hour
-  :field elfin_hskp_pwr1_rtcc_minute: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_rtcc_minute
-  :field elfin_hskp_pwr1_rtcc_second: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_rtcc_second
-  :field elfin_hskp_pwr1_pwr_board_id: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_pwr_board_id
-  :field elfin_hskp_pwr1_adc_data_adc_sa_volt_12: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_adc_data_adc_sa_volt_12
-  :field elfin_hskp_pwr1_adc_data_adc_sa_volt_34: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_adc_data_adc_sa_volt_34
-  :field elfin_hskp_pwr1_adc_data_adc_sa_volt_56: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_adc_data_adc_sa_volt_56
-  :field elfin_hskp_pwr1_adc_data_sa_short_circuit_current: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_adc_data_sa_short_circuit_current
-  :field elfin_hskp_pwr1_adc_data_bat_2_volt: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_adc_data_bat_2_volt
-  :field elfin_hskp_pwr1_adc_data_bat_1_volt: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_adc_data_bat_1_volt
-  :field elfin_hskp_pwr1_adc_data_reg_sa_volt_1: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_adc_data_reg_sa_volt_1
-  :field elfin_hskp_pwr1_adc_data_reg_sa_volt_2: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_adc_data_reg_sa_volt_2
-  :field elfin_hskp_pwr1_adc_data_reg_sa_volt_3: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_adc_data_reg_sa_volt_3
-  :field elfin_hskp_pwr1_adc_data_power_bus_current_1: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_adc_data_power_bus_current_1
-  :field elfin_hskp_pwr1_adc_data_power_bus_current_2: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_adc_data_power_bus_current_2
-  :field elfin_hskp_pwr1_bat_mon_1_avg_cur_reg: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_bat_mon_1_avg_cur_reg
-  :field elfin_hskp_pwr1_bat_mon_1_temperature_register: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_bat_mon_1_temperature_register
-  :field elfin_hskp_pwr1_bat_mon_1_volt_reg: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_bat_mon_1_volt_reg
-  :field elfin_hskp_pwr1_bat_mon_1_cur_reg: ax25_frame.payload.ax25_info.
-  :field elfin_hskp_pwr1_bat_mon_1_acc_curr_reg: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_bat_mon_1_acc_curr_reg
-  :field elfin_hskp_pwr1_bat_mon_2_avg_cur_reg: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_bat_mon_2_avg_cur_reg
-  :field elfin_hskp_pwr1_bat_mon_2_temperature_register: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_bat_mon_2_temperature_register
-  :field elfin_hskp_pwr1_bat_mon_2_volt_reg: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_bat_mon_2_volt_reg
-  :field elfin_hskp_pwr1_bat_mon_2_cur_reg: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_bat_mon_2_cur_reg
-  :field elfin_hskp_pwr1_bat_mon_2_acc_curr_reg: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_bat_mon_2_acc_curr_reg
-  :field elfin_hskp_pwr1_bv_mon: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_bv_mon
-  :field elfin_hskp_pwr1_tmps_tmp1: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_tmps_tmp1
-  :field elfin_hskp_pwr1_tmps_tmp2: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_tmps_tmp2
-  :field elfin_hskp_pwr1_tmps_tmp3: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_tmps_tmp3
-  :field elfin_hskp_pwr1_tmps_tmp4: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_tmps_tmp4
-  :field elfin_hskp_pwr1_accumulated_curr_bat1_rsrc: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_accumulated_curr_bat1_rsrc
-  :field elfin_hskp_pwr1_accumulated_curr_bat2_rsrc: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_accumulated_curr_bat2_rsrc
-  :field elfin_hskp_pwr1_accumulated_curr_bat1_rarc: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_accumulated_curr_bat1_rarc
-  :field elfin_hskp_pwr1_accumulated_curr_bat2_rarc: ax25_frame.payload.ax25_info.elfin_hskp_pwr1_accumulated_curr_bat2_rarc
-  :field elfin_fc_status_safe_mode: ax25_frame.payload.ax25_info.elfin_fc_status_safe_mode
-  :field elfin_fc_status_reserved: ax25_frame.payload.ax25_info.elfin_fc_status_reserved
-  :field elfin_fc_status_early_orbit: ax25_frame.payload.ax25_info.elfin_fc_status_early_orbit
-  :field elfin_frame_start: ax25_frame.payload.ax25_info.elfin_frame_start
-  :field elfin_opcode: ax25_frame.payload.ax25_info.elfin_opcode
-  :field elfin_fc_crc: ax25_frame.payload.ax25_info.elfin_fc_crc
-  :field elfin_frame_end: ax25_frame.payload.ax25_info.elfin_frame_end
+  :field dest_callsign: ax25_frame.ax25_header.dest_callsign_raw.callsign_ror.callsign
+  :field src_callsign: ax25_frame.ax25_header.src_callsign_raw.callsign_ror.callsign
+  :field src_ssid: ax25_frame.ax25_header.src_ssid_raw.ssid
+  :field dest_ssid: ax25_frame.ax25_header.dest_ssid_raw.ssid
+  :field ctl: ax25_frame.ax25_header.ctl
+  :field pid: ax25_frame.payload.pid
+  :field frame_start: ax25_frame.payload.ax25_info.frame_start
+  :field beacon_setting: ax25_frame.payload.ax25_info.beacon_setting
+  :field status_1_safe_mode: ax25_frame.payload.ax25_info.status_1_safe_mode
+  :field status_1_reserved: ax25_frame.payload.ax25_info.status_1_reserved
+  :field status_1_early_orbit: ax25_frame.payload.ax25_info.status_1_early_orbit
+  :field status_2_payload_power: ax25_frame.payload.ax25_info.status_2_payload_power
+  :field status_2_9v_boost: ax25_frame.payload.ax25_info.status_2_9v_boost
+  :field status_2_bat_htr_allow: ax25_frame.payload.ax25_info.
+  :field status_2_htr_force: ax25_frame.payload.ax25_info.status_2_htr_force
+  :field status_2_htr_alert: ax25_frame.payload.ax25_info.status_2_htr_alert
+  :field status_2_reserved: ax25_frame.payload.ax25_info.status_2_reserved
+  :field reserved: ax25_frame.payload.ax25_info.reserved
+  :field hskp_pwr1_rtcc_year: ax25_frame.payload.ax25_info.hskp_pwr1_rtcc_year
+  :field hskp_pwr1_rtcc_month: ax25_frame.payload.ax25_info.hskp_pwr1_rtcc_month
+  :field hskp_pwr1_rtcc_day: ax25_frame.payload.ax25_info.hskp_pwr1_rtcc_day
+  :field hskp_pwr1_rtcc_hour: ax25_frame.payload.ax25_info.hskp_pwr1_rtcc_hour
+  :field hskp_pwr1_rtcc_minute: ax25_frame.payload.ax25_info.hskp_pwr1_rtcc_minute
+  :field hskp_pwr1_rtcc_second: ax25_frame.payload.ax25_info.hskp_pwr1_rtcc_second
+  :field hskp_pwr1_adc_data_adc_sa_volt_12: ax25_frame.payload.ax25_info.hskp_pwr1_adc_data_adc_sa_volt_12
+  :field hskp_pwr1_adc_data_adc_sa_volt_34: ax25_frame.payload.ax25_info.hskp_pwr1_adc_data_adc_sa_volt_34
+  :field hskp_pwr1_adc_data_adc_sa_volt_56: ax25_frame.payload.ax25_info.hskp_pwr1_adc_data_adc_sa_volt_56
+  :field hskp_pwr1_adc_data_sa_short_circuit_current: ax25_frame.payload.ax25_info.hskp_pwr1_adc_data_sa_short_circuit_current
+  :field hskp_pwr1_adc_data_bat_2_volt: ax25_frame.payload.ax25_info.hskp_pwr1_adc_data_bat_2_volt
+  :field hskp_pwr1_adc_data_bat_1_volt: ax25_frame.payload.ax25_info.hskp_pwr1_adc_data_bat_1_volt
+  :field hskp_pwr1_adc_data_reg_sa_volt_1: ax25_frame.payload.ax25_info.hskp_pwr1_adc_data_reg_sa_volt_1
+  :field hskp_pwr1_adc_data_reg_sa_volt_2: ax25_frame.payload.ax25_info.hskp_pwr1_adc_data_reg_sa_volt_2
+  :field hskp_pwr1_adc_data_reg_sa_volt_3: ax25_frame.payload.ax25_info.hskp_pwr1_adc_data_reg_sa_volt_3
+  :field hskp_pwr1_adc_data_power_bus_current_1: ax25_frame.payload.ax25_info.hskp_pwr1_adc_data_power_bus_current_1
+  :field hskp_pwr1_adc_data_power_bus_current_2: ax25_frame.payload.ax25_info.hskp_pwr1_adc_data_power_bus_current_2
+  :field hskp_pwr1_bat_mon_1_avg_cur_reg: ax25_frame.payload.ax25_info.hskp_pwr1_bat_mon_1_avg_cur_reg
+  :field hskp_pwr1_bat_mon_1_temperature_register: ax25_frame.payload.ax25_info.hskp_pwr1_bat_mon_1_temperature_register
+  :field hskp_pwr1_bat_mon_1_volt_reg: ax25_frame.payload.ax25_info.hskp_pwr1_bat_mon_1_volt_reg
+  :field hskp_pwr1_bat_mon_1_cur_reg: ax25_frame.payload.ax25_info.hskp_pwr1_bat_mon_1_cur_reg
+  :field hskp_pwr1_bat_mon_1_acc_curr_reg: ax25_frame.payload.ax25_info.hskp_pwr1_bat_mon_1_acc_curr_reg
+  :field hskp_pwr1_bat_mon_2_avg_cur_reg: ax25_frame.payload.ax25_info.hskp_pwr1_bat_mon_2_avg_cur_reg
+  :field hskp_pwr1_bat_mon_2_temperature_register: ax25_frame.payload.ax25_info.hskp_pwr1_bat_mon_2_temperature_register
+  :field hskp_pwr1_bat_mon_2_volt_reg: ax2_frame.payload.ax25_info.hskp_pwr1_bat_mon_2_volt_reg
+  :field hskp_pwr1_bat_mon_2_cur_reg: ax25_frame.payload.ax25_info.hskp_pwr1_bat_mon_2_cur_reg
+  :field hskp_pwr1_bat_mon_2_acc_curr_reg: ax25_frame.payload.ax25_info.hskp_pwr1_bat_mon_2_acc_curr_reg
+  :field hskp_pwr1_bv_mon: ax25_frame.payload.ax25_info.hskp_pwr1_bv_mon
+  :field hskp_pwr1_tmps_tmp1: ax25_frame.payload.ax25_info.hskp_pwr1_tmps_tmp1
+  :field hskp_pwr1_tmps_tmp2: ax25_frame.payload.ax25_info.hskp_pwr1_tmps_tmp2
+  :field hskp_pwr1_tmps_tmp3: ax25_frame.payload.ax25_info.hskp_pwr1_tmps_tmp3
+  :field hskp_pwr1_tmps_tmp4: ax25_frame.payload.ax25_info.hskp_pwr1_tmps_tmp4
+  :field hskp_pwr1_accumulated_curr_bat1_rarc: ax25_frame.payload.ax25_info.hskp_pwr1_accumulated_curr_bat1_rarc
+  :field hskp_pwr1_accumulated_curr_bat1_rsrc: ax25_frame.payload.ax25_info.hskp_pwr1_accumulated_curr_bat1_rsrc
+  :field hskp_pwr1_accumulated_curr_bat2_rarc: ax25_frame.payload.ax25_info.hskp_pwr1_accumulated_curr_bat2_rarc
+  :field hskp_pwr1_accumulated_curr_bat2_rsrc: ax25_frame.payload.ax25_info.hskp_pwr1_accumulated_curr_bat2_rsrc
+  :field hskp_pwr2_rtcc_year: ax25_frame.payload.ax25_info.hskp_pwr2_rtcc_year
+  :field hskp_pwr2_rtcc_month: ax25_frame.payload.ax25_info.hskp_pwr2_rtcc_month
+  :field hskp_pwr2_rtcc_day: ax25_frame.payload.ax25_info.hskp_pwr2_rtcc_day
+  :field hskp_pwr2_rtcc_hour: ax25_frame.payload.ax25_info.hskp_pwr2_rtcc_hour
+  :field hskp_pwr2_rtcc_minute: ax25_frame.payload.ax25_info.hskp_pwr2_rtcc_minute
+  :field hskp_pwr2_rtcc_second: ax25_frame.payload.ax25_info.hskp_pwr2_rtcc_second
+  :field hskp_pwr2_adc_data_adc_sa_volt_12: ax25_frame.payload.ax25_info.hskp_pwr2_adc_data_adc_sa_volt_12
+  :field hskp_pwr2_adc_data_adc_sa_volt_34: ax25_frame.payload.ax25_info.hskp_pwr2_adc_data_adc_sa_volt_34
+  :field hskp_pwr2_adc_data_adc_sa_volt_56: ax25_frame.payload.ax25_info.hskp_pwr2_adc_data_adc_sa_volt_56
+  :field hskp_pwr2_adc_data_sa_short_circuit_current: ax25_frame.payload.ax25_info.hskp_pwr2_adc_data_sa_short_circuit_current
+  :field hskp_pwr2_adc_data_bat_2_volt: ax25_frame.payload.ax25_info.hskp_pwr2_adc_data_bat_2_volt
+  :field hskp_pwr2_adc_data_bat_1_volt: ax25_frame.payload.ax25_info.hskp_pwr2_adc_data_bat_1_volt
+  :field hskp_pwr2_adc_data_reg_sa_volt_1: ax25_frame.payload.ax25_info.hskp_pwr2_adc_data_reg_sa_volt_1
+  :field hskp_pwr2_adc_data_reg_sa_volt_2: ax25_frame.payload.ax25_info.hskp_pwr2_adc_data_reg_sa_volt_2
+  :field hskp_pwr2_adc_data_reg_sa_volt_3: ax25_frame.payload.ax25_info.hskp_pwr2_adc_data_reg_sa_volt_3
+  :field hskp_pwr2_adc_data_power_bus_current_1: ax25_frame.payload.ax25_info.hskp_pwr2_adc_data_power_bus_current_1
+  :field hskp_pwr2_adc_data_power_bus_current_2: ax25_frame.payload.ax25_info.hskp_pwr2_adc_data_power_bus_current_2
+  :field hskp_pwr2_bat_mon_1_avg_cur_reg: ax25_frame.payload.ax25_info.hskp_pwr2_bat_mon_1_avg_cur_reg
+  :field hskp_pwr2_bat_mon_1_temperature_register: ax25_frame.payload.ax25_info.hskp_pwr2_bat_mon_1_temperature_register
+  :field hskp_pwr2_bat_mon_1_volt_reg: ax25_frame.payload.ax25_info.hskp_pwr2_bat_mon_1_volt_reg
+  :field hskp_pwr2_bat_mon_1_cur_reg: ax25_frame.payload.ax25_info.hskp_pwr2_bat_mon_1_cur_reg
+  :field hskp_pwr2_bat_mon_1_acc_curr_reg: ax25_frame.payload.ax25_info.hskp_pwr2_bat_mon_1_acc_curr_reg
+  :field hskp_pwr2_bat_mon_2_avg_cur_reg: ax25_frame.payload.ax25_info.hskp_pwr2_bat_mon_2_avg_cur_reg
+  :field hskp_pwr2_bat_mon_2_temperature_register: ax25_frame.payload.ax25_info.hskp_pwr2_bat_mon_2_temperature_register
+  :field hskp_pwr2_bat_mon_2_volt_reg: ax25_frame.payload.ax25_info.hskp_pwr2_bat_mon_2_volt_reg
+  :field hskp_pwr2_bat_mon_2_cur_reg: ax25_frame.payload.ax25_info.hskp_pwr2_bat_mon_2_cur_reg
+  :field hskp_pwr2_bat_mon_2_acc_curr_reg: ax25_frame.payload.ax25_info.hskp_pwr2_bat_mon_2_acc_curr_reg
+  :field hskp_pwr2_bv_mon: ax25_frame.payload.ax25_info.hskp_pwr2_bv_mon
+  :field hskp_pwr2_tmps_tmp1: ax25_frame.payload.ax25_info.hskp_pwr2_tmps_tmp1
+  :field hskp_pwr2_tmps_tmp2: ax25_frame.payload.ax25_info.hskp_pwr2_tmps_tmp2
+  :field hskp_pwr2_tmps_tmp3: ax25_frame.payload.ax25_info.hskp_pwr2_tmps_tmp3
+  :field hskp_pwr2_tmps_tmp4: ax25_frame.payload.ax25_info.hskp_pwr2_tmps_tmp4
+  :field hskp_pwr2_accumulated_curr_bat1_rarc: ax25_frame.payload.ax25_info.hskp_pwr2_accumulated_curr_bat1_rarc
+  :field hskp_pwr2_accumulated_curr_bat1_rsrc: ax25_frame.payload.ax25_info.hskp_pwr2_accumulated_curr_bat1_rsrc
+  :field hskp_pwr2_accumulated_curr_bat2_rarc: ax25_frame.payload.ax25_info.hskp_pwr2_accumulated_curr_bat2_rarc
+  :field hskp_pwr2_accumulated_curr_bat2_rsrc: ax25_frame.payload.ax25_info.hskp_pwr2_accumulated_curr_bat2_rsrc
+  :field acb_pc_data1_rtcc_year: ax25_frame.payload.ax25_info.acb_pc_data1_rtcc_year
+  :field acb_pc_data1_rtcc_month: ax25_frame.payload.ax25_info.acb_pc_data1_rtcc_month
+  :field acb_pc_data1_rtcc_day: ax25_frame.payload.ax25_info.acb_pc_data1_rtcc_day
+  :field acb_pc_data1_rtcc_hour: ax25_frame.payload.ax25_info.acb_pc_data1_rtcc_hour
+  :field acb_pc_data1_rtcc_minute: ax25_frame.payload.ax25_info.acb_pc_data1_rtcc_minute
+  :field acb_pc_data1_rtcc_second: ax25_frame.payload.ax25_info.acb_pc_data1_rtcc_second
+  :field acb_pc_data1_acb_mrm_x: ax25_frame.payload.ax25_info.acb_pc_data1_acb_mrm_x
+  :field acb_pc_data1_acb_mrm_y: ax25_frame.payload.ax25_info.acb_pc_data1_acb_mrm_y
+  :field acb_pc_data1_acb_mrm_z: ax25_frame.payload.ax25_info.acb_pc_data1_acb_mrm_z
+  :field acb_pc_data1_ipdu_mrm_x: ax25_frame.payload.ax25_info.acb_pc_data1_ipdu_mrm_x
+  :field acb_pc_data1_ipdu_mrm_y: ax25_frame.payload.ax25_info.acb_pc_data1_ipdu_mrm_y
+  :field acb_pc_data1_ipdu_mrm_z: ax25_frame.payload.ax25_info.acb_pc_data1_ipdu_mrm_z
+  :field acb_pc_data1_tmps_tmp1: ax25_frame.payload.ax25_info.acb_pc_data1_tmps_tmp1
+  :field acb_pc_data1_tmps_tmp2: ax25_frame.payload.ax25_info.acb_pc_data1_tmps_tmp2
+  :field acb_pc_data1_tmps_tmp3: ax25_frame.payload.ax25_info.acb_pc_data1_tmps_tmp3
+  :field acb_pc_data1_tmps_tmp4: ax25_frame.payload.ax25_info.acb_pc_data1_tmps_tmp4
+  :field acb_pc_data2_rtcc_year: ax25_frame.payload.ax25_info.acb_pc_data2_rtcc_year
+  :field acb_pc_data2_rtcc_month: ax25_frame.payload.ax25_info.acb_pc_data2_rtcc_month
+  :field acb_pc_data2_rtcc_day: ax25_frame.payload.ax25_info.acb_pc_data2_rtcc_day
+  :field acb_pc_data2_rtcc_hour: ax25_frame.payload.ax25_info.acb_pc_data2_rtcc_hour
+  :field acb_pc_data2_rtcc_minute: ax25_frame.payload.ax25_info.acb_pc_data2_rtcc_minute
+  :field acb_pc_data2_rtcc_second: ax25_frame.payload.ax25_info.acb_pc_data2_rtcc_second
+  :field acb_pc_data2_acb_mrm_x: ax25_frame.payload.ax25_info.acb_pc_data2_acb_mrm_x
+  :field acb_pc_data2_acb_mrm_y: ax25_frame.payload.ax25_info.acb_pc_data2_acb_mrm_y
+  :field acb_pc_data2_acb_mrm_z: ax25_frame.payload.ax25_info.acb_pc_data2_acb_mrm_z
+  :field acb_pc_data2_ipdu_mrm_x: ax25_frame.payload.ax25_info.acb_pc_data2_ipdu_mrm_x
+  :field acb_pc_data2_ipdu_mrm_y: ax25_frame.payload.ax25_info.acb_pc_data2_ipdu_mrm_y
+  :field acb_pc_data2_ipdu_mrm_z: ax25_frame.payload.ax25_info.acb_pc_data2_ipdu_mrm_z
+  :field acb_pc_data2_tmps_tmp1: ax25_frame.payload.ax25_info.acb_pc_data2_tmps_tmp1
+  :field acb_pc_data2_tmps_tmp2: ax25_frame.payload.ax25_info.acb_pc_data2_tmps_tmp2
+  :field acb_pc_data2_tmps_tmp3: ax25_frame.payload.ax25_info.acb_pc_data2_tmps_tmp3
+  :field acb_pc_data2_tmps_tmp4: ax25_frame.payload.ax25_info.acb_pc_data2_tmps_tmp4
+  :field acb_sense_adc_data_current: ax25_frame.payload.ax25_info.acb_sense_adc_data_current
+  :field acb_sense_adc_data_voltage: ax25_frame.payload.ax25_info.acb_sense_adc_data_voltage
+  :field fc_counters_cmds_recv: ax25_frame.payload.ax25_info.fc_counters_cmds_recv
+  :field fc_counters_badcmds_recv: ax25_frame.payload.ax25_info.fc_counters_badcmds_recv
+  :field fc_counters_badpkts_fm_radio: ax25_frame.payload.ax25_info.fc_counters_badpkts_fm_radio
+  :field fc_counters_fcpkts_fm_radio: ax25_frame.payload.ax25_info.fc_counters_fcpkts_fm_radio
+  :field fc_counters_errors: ax25_frame.payload.ax25_info.fc_counters_errors
+  :field fc_counters_reboots: ax25_frame.payload.ax25_info.fc_counters_reboots
+  :field fc_counters_intrnl_wdttmout: ax25_frame.payload.ax25_info.fc_counters_intrnl_wdttmout
+  :field fc_counters_brwnouts: ax25_frame.payload.ax25_info.fc_counters_brwnouts
+  :field fc_counters_wdpicrst: ax25_frame.payload.ax25_info.fc_counters_wdpicrst
+  :field fc_counters_porst: ax25_frame.payload.ax25_info.fc_counters_porst
+  :field fc_counters_uart1_recvpkts: ax25_frame.payload.ax25_info.fc_counters_uart1_recvpkts
+  :field fc_counters_uart1_parseerrs: ax25_frame.payload.ax25_info.fc_counters_uart1_parseerrs
+  :field fc_counters_sips_ovcur_evts: ax25_frame.payload.ax25_info.fc_counters_sips_ovcur_evts
+  :field fc_counters_vu1_on: ax25_frame.payload.ax25_info.fc_counters_vu1_on
+  :field fc_counters_vu1_off: ax25_frame.payload.ax25_info.fc_counters_vu1_off
+  :field fc_counters_vu2_on: ax25_frame.payload.ax25_info.fc_counters_vu2_on
+  :field fc_counters_vu2_off: ax25_frame.payload.ax25_info.fc_counters_vu2_off
+  :field radio_tlm_rssi: ax25_frame.payload.ax25_info.radio_tlm_rssi
+  :field radio_tlm_bytes_rx: ax25_frame.payload.ax25_info.radio_tlm_bytes_rx
+  :field radio_tlm_bytes_tx: ax25_frame.payload.ax25_info.radio_tlm_bytes_tx
+  :field radio_cfg_read_radio_palvl: ax25_frame.payload.ax25_info.radio_cfg_read_radio_palvl
+  :field errors_error1_day: ax25_frame.payload.ax25_info.errors_error1_day
+  :field errors_error1_hour: ax25_frame.payload.ax25_info.errors_error1_hour
+  :field errors_error1_minute: ax25_frame.payload.ax25_info.errors_error1_minute
+  :field errors_error1_second: ax25_frame.payload.ax25_info.errors_error1_second
+  :field errors_error1_error: ax25_frame.payload.ax25_info.errors_error1_error
+  :field errors_error2_day: ax25_frame.payload.ax25_info.errors_error2_day
+  :field errors_error2_hour: ax25_frame.payload.ax25_info.errors_error2_hour
+  :field errors_error2_minute: ax25_frame.payload.ax25_info.errors_error2_minute
+  :field errors_error2_second: ax25_frame.payload.ax25_info.errors_error2_second
+  :field errors_error2_error: ax25_frame.payload.ax25_info.errors_error2_error
+  :field errors_error3_day: ax25_frame.payload.ax25_info.errors_error3_day
+  :field errors_error3_hour: ax25_frame.payload.ax25_info.errors_error3_hour
+  :field errors_error3_minute: ax25_frame.payload.ax25_info.errors_error3_minute
+  :field errors_error3_second: ax25_frame.payload.ax25_info.errors_error3_second
+  :field errors_error3_error: ax25_frame.payload.ax25_info.errors_error3_error
+  :field errors_error4_day: ax25_frame.payload.ax25_info.errors_error4_day
+  :field errors_error4_hour: ax25_frame.payload.ax25_info.errors_error4_hour
+  :field errors_error4_minute: ax25_frame.payload.ax25_info.errors_error4_minute
+  :field errors_error4_second: ax25_frame.payload.ax25_info.errors_error4_second
+  :field errors_error4_error: ax25_frame.payload.ax25_info.errors_error4_error
+  :field errors_error5_day: ax25_frame.payload.ax25_info.errors_error5_day
+  :field errors_error5_hour: ax25_frame.payload.ax25_info.errors_error5_hour
+  :field errors_error5_minute: ax25_frame.payload.ax25_info.errors_error5_minute
+  :field errors_error5_second: ax25_frame.payload.ax25_info.errors_error5_second
+  :field errors_error5_error: ax25_frame.payload.ax25_info.errors_error5_error
+  :field errors_error6_day: ax25_frame.payload.ax25_info.errors_error6_day
+  :field errors_error6_hour: ax25_frame.payload.ax25_info.errors_error6_hour
+  :field errors_error6_minute: ax25_frame.payload.ax25_info.errors_error6_minute
+  :field errors_error6_second: ax25_frame.payload.ax25_info.errors_error6_second
+  :field errors_error6_error: ax25_frame.payload.ax25_info.errors_error6_error
+  :field errors_error7_day: ax25_frame.payload.ax25_info.errors_error7_day
+  :field errors_error7_hour: ax25_frame.payload.ax25_info.errors_error7_hour
+  :field errors_error7_minute: ax25_frame.payload.ax25_info.errors_error7_minute
+  :field errors_error7_second: ax25_frame.payload.ax25_info.errors_error7_second
+  :field errors_error7_error: ax25_frame.payload.ax25_info.errors_error7_error
+  :field fc_salt: ax25_frame.payload.ax25_info.fc_salt
+  :field fc_crc: ax25_frame.payload.ax25_info.fc_crc
+  :field frame_end: ax25_frame.payload.ax25_info.frame_end
+  :field hskp_pwr1_rtcc_year: ax25_frame.payload.ax25_info.hskp_pwr1_rtcc_year
+  :field hskp_pwr1_rtcc_month: ax25_frame.payload.ax25_info.hskp_pwr1_rtcc_month
+  :field hskp_pwr1_rtcc_day: ax25_frame.payload.ax25_info.hskp_pwr1_rtcc_day
+  :field hskp_pwr1_rtcc_hour: ax25_frame.payload.ax25_info.hskp_pwr1_rtcc_hour
+  :field hskp_pwr1_rtcc_minute: ax25_frame.payload.ax25_info.hskp_pwr1_rtcc_minute
+  :field hskp_pwr1_rtcc_second: ax25_frame.payload.ax25_info.hskp_pwr1_rtcc_second
+  :field hskp_pwr1_pwr_board_id: ax25_frame.payload.ax25_info.hskp_pwr1_pwr_board_id
+  :field hskp_pwr1_adc_data_adc_sa_volt_12: ax25_frame.payload.ax25_info.hskp_pwr1_adc_data_adc_sa_volt_12
+  :field hskp_pwr1_adc_data_adc_sa_volt_34: ax25_frame.payload.ax25_info.hskp_pwr1_adc_data_adc_sa_volt_34
+  :field hskp_pwr1_adc_data_adc_sa_volt_56: ax25_frame.payload.ax25_info.hskp_pwr1_adc_data_adc_sa_volt_56
+  :field hskp_pwr1_adc_data_sa_short_circuit_current: ax25_frame.payload.ax25_info.hskp_pwr1_adc_data_sa_short_circuit_current
+  :field hskp_pwr1_adc_data_bat_2_volt: ax25_frame.payload.ax25_info.hskp_pwr1_adc_data_bat_2_volt
+  :field hskp_pwr1_adc_data_bat_1_volt: ax25_frame.payload.ax25_info.hskp_pwr1_adc_data_bat_1_volt
+  :field hskp_pwr1_adc_data_reg_sa_volt_1: ax25_frame.payload.ax25_info.hskp_pwr1_adc_data_reg_sa_volt_1
+  :field hskp_pwr1_adc_data_reg_sa_volt_2: ax25_frame.payload.ax25_info.hskp_pwr1_adc_data_reg_sa_volt_2
+  :field hskp_pwr1_adc_data_reg_sa_volt_3: ax25_frame.payload.ax25_info.hskp_pwr1_adc_data_reg_sa_volt_3
+  :field hskp_pwr1_adc_data_power_bus_current_1: ax25_frame.payload.ax25_info.hskp_pwr1_adc_data_power_bus_current_1
+  :field hskp_pwr1_adc_data_power_bus_current_2: ax25_frame.payload.ax25_info.hskp_pwr1_adc_data_power_bus_current_2
+  :field hskp_pwr1_bat_mon_1_avg_cur_reg: ax25_frame.payload.ax25_info.hskp_pwr1_bat_mon_1_avg_cur_reg
+  :field hskp_pwr1_bat_mon_1_temperature_register: ax25_frame.payload.ax25_info.hskp_pwr1_bat_mon_1_temperature_register
+  :field hskp_pwr1_bat_mon_1_volt_reg: ax25_frame.payload.ax25_info.hskp_pwr1_bat_mon_1_volt_reg
+  :field hskp_pwr1_bat_mon_1_cur_reg: ax25_frame.payload.ax25_info.
+  :field hskp_pwr1_bat_mon_1_acc_curr_reg: ax25_frame.payload.ax25_info.hskp_pwr1_bat_mon_1_acc_curr_reg
+  :field hskp_pwr1_bat_mon_2_avg_cur_reg: ax25_frame.payload.ax25_info.hskp_pwr1_bat_mon_2_avg_cur_reg
+  :field hskp_pwr1_bat_mon_2_temperature_register: ax25_frame.payload.ax25_info.hskp_pwr1_bat_mon_2_temperature_register
+  :field hskp_pwr1_bat_mon_2_volt_reg: ax25_frame.payload.ax25_info.hskp_pwr1_bat_mon_2_volt_reg
+  :field hskp_pwr1_bat_mon_2_cur_reg: ax25_frame.payload.ax25_info.hskp_pwr1_bat_mon_2_cur_reg
+  :field hskp_pwr1_bat_mon_2_acc_curr_reg: ax25_frame.payload.ax25_info.hskp_pwr1_bat_mon_2_acc_curr_reg
+  :field hskp_pwr1_bv_mon: ax25_frame.payload.ax25_info.hskp_pwr1_bv_mon
+  :field hskp_pwr1_tmps_tmp1: ax25_frame.payload.ax25_info.hskp_pwr1_tmps_tmp1
+  :field hskp_pwr1_tmps_tmp2: ax25_frame.payload.ax25_info.hskp_pwr1_tmps_tmp2
+  :field hskp_pwr1_tmps_tmp3: ax25_frame.payload.ax25_info.hskp_pwr1_tmps_tmp3
+  :field hskp_pwr1_tmps_tmp4: ax25_frame.payload.ax25_info.hskp_pwr1_tmps_tmp4
+  :field hskp_pwr1_accumulated_curr_bat1_rsrc: ax25_frame.payload.ax25_info.hskp_pwr1_accumulated_curr_bat1_rsrc
+  :field hskp_pwr1_accumulated_curr_bat2_rsrc: ax25_frame.payload.ax25_info.hskp_pwr1_accumulated_curr_bat2_rsrc
+  :field hskp_pwr1_accumulated_curr_bat1_rarc: ax25_frame.payload.ax25_info.hskp_pwr1_accumulated_curr_bat1_rarc
+  :field hskp_pwr1_accumulated_curr_bat2_rarc: ax25_frame.payload.ax25_info.hskp_pwr1_accumulated_curr_bat2_rarc
+  :field fc_status_safe_mode: ax25_frame.payload.ax25_info.fc_status_safe_mode
+  :field fc_status_reserved: ax25_frame.payload.ax25_info.fc_status_reserved
+  :field fc_status_early_orbit: ax25_frame.payload.ax25_info.fc_status_early_orbit
+  :field frame_start: ax25_frame.payload.ax25_info.frame_start
+  :field opcode: ax25_frame.payload.ax25_info.opcode
+  :field fc_crc: ax25_frame.payload.ax25_info.fc_crc
+  :field frame_end: ax25_frame.payload.ax25_info.frame_end
 
 seq:
   - id: ax25_frame
@@ -299,18 +299,18 @@ types:
       - id: pid
         type: u1
       - id: ax25_info
-        process: satnogsdecoders.process.elfin_pp
+        process: satnogsdecoders.process.pp
         size-eos: true
         type:
           switch-on: _io.size
           cases:
-            269: elfin_tlm_data
-            _: elfin_cmd_response
+            269: tlm_data
+            _: cmd_response
 
-  elfin_tlm_data:
+  tlm_data:
     doc-ref: 'https://elfin.igpp.ucla.edu/s/Beacon-Format_v2.xlsx'
     seq:
-      - id: elfin_frame_start
+      - id: frame_start
         type: u1
         doc: |
           0x93 marks the framestart
@@ -327,487 +327,487 @@ types:
           With some values containing 0x27 the maximum size of an ax.25 UI
           frame is exceeded (254 bytes).
           The 'preprocessing' to remove the escapoe sequences is done by an
-          external process called 'elfin_pp' and is implemented in a separate
+          external process called 'pp' and is implemented in a separate
           file.
 
-      - id: elfin_beacon_setting
+      - id: beacon_setting
         type: u1
-      - id: elfin_status_1_safe_mode
+      - id: status_1_safe_mode
         type: b1
-      - id: elfin_status_1_reserved
+      - id: status_1_reserved
         type: b3
-      - id: elfin_status_1_early_orbit
+      - id: status_1_early_orbit
         type: b4
         doc: 'Safe mode (first bit), early orbit flags (last 4 bits)'
 
-      - id: elfin_status_2_payload_power
+      - id: status_2_payload_power
         type: b1
-      - id: elfin_status_2_9v_boost
+      - id: status_2_9v_boost
         type: b1
-      - id: elfin_status_2_bat_htr_allow
+      - id: status_2_bat_htr_allow
         type: b1
-      - id: elfin_status_2_htr_force
+      - id: status_2_htr_force
         type: b1
-      - id: elfin_status_2_htr_alert
+      - id: status_2_htr_alert
         type: b1
-      - id: elfin_status_2_reserved
+      - id: status_2_reserved
         type: b3
         doc: |
           Bits 7 to 3 (in order):
           Payload Power, 9V Boost, battery heater allow, heater force,
           heater alert
 
-      - id: elfin_reserved
+      - id: reserved
         type: u1
 
-      - id: elfin_hskp_pwr1_rtcc_year
+      - id: hskp_pwr1_rtcc_year
         type: u1
-      - id: elfin_hskp_pwr1_rtcc_month
+      - id: hskp_pwr1_rtcc_month
         type: u1
-      - id: elfin_hskp_pwr1_rtcc_day
+      - id: hskp_pwr1_rtcc_day
         type: u1
-      - id: elfin_hskp_pwr1_rtcc_hour
+      - id: hskp_pwr1_rtcc_hour
         type: u1
-      - id: elfin_hskp_pwr1_rtcc_minute
+      - id: hskp_pwr1_rtcc_minute
         type: u1
-      - id: elfin_hskp_pwr1_rtcc_second
+      - id: hskp_pwr1_rtcc_second
         type: u1
-      - id: elfin_hskp_pwr1_adc_data_adc_sa_volt_12
+      - id: hskp_pwr1_adc_data_adc_sa_volt_12
         type: u2
-      - id: elfin_hskp_pwr1_adc_data_adc_sa_volt_34
+      - id: hskp_pwr1_adc_data_adc_sa_volt_34
         type: u2
-      - id: elfin_hskp_pwr1_adc_data_adc_sa_volt_56
+      - id: hskp_pwr1_adc_data_adc_sa_volt_56
         type: u2
-      - id: elfin_hskp_pwr1_adc_data_sa_short_circuit_current
+      - id: hskp_pwr1_adc_data_sa_short_circuit_current
         type: u2
-      - id: elfin_hskp_pwr1_adc_data_bat_2_volt
+      - id: hskp_pwr1_adc_data_bat_2_volt
         type: u2
-      - id: elfin_hskp_pwr1_adc_data_bat_1_volt
+      - id: hskp_pwr1_adc_data_bat_1_volt
         type: u2
-      - id: elfin_hskp_pwr1_adc_data_reg_sa_volt_1
+      - id: hskp_pwr1_adc_data_reg_sa_volt_1
         type: u2
-      - id: elfin_hskp_pwr1_adc_data_reg_sa_volt_2
+      - id: hskp_pwr1_adc_data_reg_sa_volt_2
         type: u2
-      - id: elfin_hskp_pwr1_adc_data_reg_sa_volt_3
+      - id: hskp_pwr1_adc_data_reg_sa_volt_3
         type: u2
-      - id: elfin_hskp_pwr1_adc_data_power_bus_current_1
+      - id: hskp_pwr1_adc_data_power_bus_current_1
         type: u2
-      - id: elfin_hskp_pwr1_adc_data_power_bus_current_2
+      - id: hskp_pwr1_adc_data_power_bus_current_2
         type: u2
-      - id: elfin_hskp_pwr1_bat_mon_1_avg_cur_reg
+      - id: hskp_pwr1_bat_mon_1_avg_cur_reg
         type: s2
-      - id: elfin_hskp_pwr1_bat_mon_1_temperature_register
+      - id: hskp_pwr1_bat_mon_1_temperature_register
         type: s2
-      - id: elfin_hskp_pwr1_bat_mon_1_volt_reg
+      - id: hskp_pwr1_bat_mon_1_volt_reg
         type: s2
-      - id: elfin_hskp_pwr1_bat_mon_1_cur_reg
+      - id: hskp_pwr1_bat_mon_1_cur_reg
         type: s2
-      - id: elfin_hskp_pwr1_bat_mon_1_acc_curr_reg
+      - id: hskp_pwr1_bat_mon_1_acc_curr_reg
         type: s2
-      - id: elfin_hskp_pwr1_bat_mon_2_avg_cur_reg
+      - id: hskp_pwr1_bat_mon_2_avg_cur_reg
         type: s2
-      - id: elfin_hskp_pwr1_bat_mon_2_temperature_register
+      - id: hskp_pwr1_bat_mon_2_temperature_register
         type: s2
-      - id: elfin_hskp_pwr1_bat_mon_2_volt_reg
+      - id: hskp_pwr1_bat_mon_2_volt_reg
         type: s2
-      - id: elfin_hskp_pwr1_bat_mon_2_cur_reg
+      - id: hskp_pwr1_bat_mon_2_cur_reg
         type: s2
-      - id: elfin_hskp_pwr1_bat_mon_2_acc_curr_reg
+      - id: hskp_pwr1_bat_mon_2_acc_curr_reg
         type: s2
-      - id: elfin_hskp_pwr1_bv_mon
+      - id: hskp_pwr1_bv_mon
         type: u2
-      - id: elfin_hskp_pwr1_tmps_tmp1
+      - id: hskp_pwr1_tmps_tmp1
         type: s2
-      - id: elfin_hskp_pwr1_tmps_tmp2
+      - id: hskp_pwr1_tmps_tmp2
         type: s2
-      - id: elfin_hskp_pwr1_tmps_tmp3
+      - id: hskp_pwr1_tmps_tmp3
         type: s2
-      - id: elfin_hskp_pwr1_tmps_tmp4
+      - id: hskp_pwr1_tmps_tmp4
         type: s2
-      - id: elfin_hskp_pwr1_accumulated_curr_bat1_rarc
+      - id: hskp_pwr1_accumulated_curr_bat1_rarc
         type: u1
-      - id: elfin_hskp_pwr1_accumulated_curr_bat1_rsrc
+      - id: hskp_pwr1_accumulated_curr_bat1_rsrc
         type: u1
-      - id: elfin_hskp_pwr1_accumulated_curr_bat2_rarc
+      - id: hskp_pwr1_accumulated_curr_bat2_rarc
         type: u1
-      - id: elfin_hskp_pwr1_accumulated_curr_bat2_rsrc
+      - id: hskp_pwr1_accumulated_curr_bat2_rsrc
         type: u1
 
-      - id: elfin_hskp_pwr2_rtcc_year
+      - id: hskp_pwr2_rtcc_year
         type: u1
-      - id: elfin_hskp_pwr2_rtcc_month
+      - id: hskp_pwr2_rtcc_month
         type: u1
-      - id: elfin_hskp_pwr2_rtcc_day
+      - id: hskp_pwr2_rtcc_day
         type: u1
-      - id: elfin_hskp_pwr2_rtcc_hour
+      - id: hskp_pwr2_rtcc_hour
         type: u1
-      - id: elfin_hskp_pwr2_rtcc_minute
+      - id: hskp_pwr2_rtcc_minute
         type: u1
-      - id: elfin_hskp_pwr2_rtcc_second
+      - id: hskp_pwr2_rtcc_second
         type: u1
-      - id: elfin_hskp_pwr2_adc_data_adc_sa_volt_12
+      - id: hskp_pwr2_adc_data_adc_sa_volt_12
         type: u2
-      - id: elfin_hskp_pwr2_adc_data_adc_sa_volt_34
+      - id: hskp_pwr2_adc_data_adc_sa_volt_34
         type: u2
-      - id: elfin_hskp_pwr2_adc_data_adc_sa_volt_56
+      - id: hskp_pwr2_adc_data_adc_sa_volt_56
         type: u2
-      - id: elfin_hskp_pwr2_adc_data_sa_short_circuit_current
+      - id: hskp_pwr2_adc_data_sa_short_circuit_current
         type: u2
-      - id: elfin_hskp_pwr2_adc_data_bat_2_volt
+      - id: hskp_pwr2_adc_data_bat_2_volt
         type: u2
-      - id: elfin_hskp_pwr2_adc_data_bat_1_volt
+      - id: hskp_pwr2_adc_data_bat_1_volt
         type: u2
-      - id: elfin_hskp_pwr2_adc_data_reg_sa_volt_1
+      - id: hskp_pwr2_adc_data_reg_sa_volt_1
         type: u2
-      - id: elfin_hskp_pwr2_adc_data_reg_sa_volt_2
+      - id: hskp_pwr2_adc_data_reg_sa_volt_2
         type: u2
-      - id: elfin_hskp_pwr2_adc_data_reg_sa_volt_3
+      - id: hskp_pwr2_adc_data_reg_sa_volt_3
         type: u2
-      - id: elfin_hskp_pwr2_adc_data_power_bus_current_1
+      - id: hskp_pwr2_adc_data_power_bus_current_1
         type: u2
-      - id: elfin_hskp_pwr2_adc_data_power_bus_current_2
+      - id: hskp_pwr2_adc_data_power_bus_current_2
         type: u2
-      - id: elfin_hskp_pwr2_bat_mon_1_avg_cur_reg
+      - id: hskp_pwr2_bat_mon_1_avg_cur_reg
         type: s2
-      - id: elfin_hskp_pwr2_bat_mon_1_temperature_register
+      - id: hskp_pwr2_bat_mon_1_temperature_register
         type: s2
-      - id: elfin_hskp_pwr2_bat_mon_1_volt_reg
+      - id: hskp_pwr2_bat_mon_1_volt_reg
         type: s2
-      - id: elfin_hskp_pwr2_bat_mon_1_cur_reg
+      - id: hskp_pwr2_bat_mon_1_cur_reg
         type: s2
-      - id: elfin_hskp_pwr2_bat_mon_1_acc_curr_reg
+      - id: hskp_pwr2_bat_mon_1_acc_curr_reg
         type: s2
-      - id: elfin_hskp_pwr2_bat_mon_2_avg_cur_reg
+      - id: hskp_pwr2_bat_mon_2_avg_cur_reg
         type: s2
-      - id: elfin_hskp_pwr2_bat_mon_2_temperature_register
+      - id: hskp_pwr2_bat_mon_2_temperature_register
         type: s2
-      - id: elfin_hskp_pwr2_bat_mon_2_volt_reg
+      - id: hskp_pwr2_bat_mon_2_volt_reg
         type: s2
-      - id: elfin_hskp_pwr2_bat_mon_2_cur_reg
+      - id: hskp_pwr2_bat_mon_2_cur_reg
         type: s2
-      - id: elfin_hskp_pwr2_bat_mon_2_acc_curr_reg
+      - id: hskp_pwr2_bat_mon_2_acc_curr_reg
         type: s2
-      - id: elfin_hskp_pwr2_bv_mon
+      - id: hskp_pwr2_bv_mon
         type: s2
-      - id: elfin_hskp_pwr2_tmps_tmp1
+      - id: hskp_pwr2_tmps_tmp1
         type: s2
-      - id: elfin_hskp_pwr2_tmps_tmp2
+      - id: hskp_pwr2_tmps_tmp2
         type: s2
-      - id: elfin_hskp_pwr2_tmps_tmp3
+      - id: hskp_pwr2_tmps_tmp3
         type: s2
-      - id: elfin_hskp_pwr2_tmps_tmp4
+      - id: hskp_pwr2_tmps_tmp4
         type: s2
-      - id: elfin_hskp_pwr2_accumulated_curr_bat1_rarc
+      - id: hskp_pwr2_accumulated_curr_bat1_rarc
         type: u1
-      - id: elfin_hskp_pwr2_accumulated_curr_bat1_rsrc
+      - id: hskp_pwr2_accumulated_curr_bat1_rsrc
         type: u1
-      - id: elfin_hskp_pwr2_accumulated_curr_bat2_rarc
+      - id: hskp_pwr2_accumulated_curr_bat2_rarc
         type: u1
-      - id: elfin_hskp_pwr2_accumulated_curr_bat2_rsrc
+      - id: hskp_pwr2_accumulated_curr_bat2_rsrc
         type: u1
 
-      - id: elfin_acb_pc_data1_rtcc_year
+      - id: acb_pc_data1_rtcc_year
         type: u1
-      - id: elfin_acb_pc_data1_rtcc_month
+      - id: acb_pc_data1_rtcc_month
         type: u1
-      - id: elfin_acb_pc_data1_rtcc_day
+      - id: acb_pc_data1_rtcc_day
         type: u1
-      - id: elfin_acb_pc_data1_rtcc_hour
+      - id: acb_pc_data1_rtcc_hour
         type: u1
-      - id: elfin_acb_pc_data1_rtcc_minute
+      - id: acb_pc_data1_rtcc_minute
         type: u1
-      - id: elfin_acb_pc_data1_rtcc_second
+      - id: acb_pc_data1_rtcc_second
         type: u1
-      - id: elfin_acb_pc_data1_acb_mrm_x
+      - id: acb_pc_data1_acb_mrm_x
         type: s2
-      - id: elfin_acb_pc_data1_acb_mrm_y
+      - id: acb_pc_data1_acb_mrm_y
         type: s2
-      - id: elfin_acb_pc_data1_acb_mrm_z
+      - id: acb_pc_data1_acb_mrm_z
         type: s2
-      - id: elfin_acb_pc_data1_ipdu_mrm_x
+      - id: acb_pc_data1_ipdu_mrm_x
         type: s2
-      - id: elfin_acb_pc_data1_ipdu_mrm_y
+      - id: acb_pc_data1_ipdu_mrm_y
         type: s2
-      - id: elfin_acb_pc_data1_ipdu_mrm_z
+      - id: acb_pc_data1_ipdu_mrm_z
         type: s2
-      - id: elfin_acb_pc_data1_tmps_tmp1
+      - id: acb_pc_data1_tmps_tmp1
         type: u2
-      - id: elfin_acb_pc_data1_tmps_tmp2
+      - id: acb_pc_data1_tmps_tmp2
         type: u2
-      - id: elfin_acb_pc_data1_tmps_tmp3
+      - id: acb_pc_data1_tmps_tmp3
         type: u2
-      - id: elfin_acb_pc_data1_tmps_tmp4
-        type: u2
-
-      - id: elfin_acb_pc_data2_rtcc_year
-        type: u1
-      - id: elfin_acb_pc_data2_rtcc_month
-        type: u1
-      - id: elfin_acb_pc_data2_rtcc_day
-        type: u1
-      - id: elfin_acb_pc_data2_rtcc_hour
-        type: u1
-      - id: elfin_acb_pc_data2_rtcc_minute
-        type: u1
-      - id: elfin_acb_pc_data2_rtcc_second
-        type: u1
-      - id: elfin_acb_pc_data2_acb_mrm_x
-        type: s2
-      - id: elfin_acb_pc_data2_acb_mrm_y
-        type: s2
-      - id: elfin_acb_pc_data2_acb_mrm_z
-        type: s2
-      - id: elfin_acb_pc_data2_ipdu_mrm_x
-        type: s2
-      - id: elfin_acb_pc_data2_ipdu_mrm_y
-        type: s2
-      - id: elfin_acb_pc_data2_ipdu_mrm_z
-        type: s2
-      - id: elfin_acb_pc_data2_tmps_tmp1
-        type: u2
-      - id: elfin_acb_pc_data2_tmps_tmp2
-        type: u2
-      - id: elfin_acb_pc_data2_tmps_tmp3
-        type: u2
-      - id: elfin_acb_pc_data2_tmps_tmp4
+      - id: acb_pc_data1_tmps_tmp4
         type: u2
 
-      - id: elfin_acb_sense_adc_data_current
+      - id: acb_pc_data2_rtcc_year
+        type: u1
+      - id: acb_pc_data2_rtcc_month
+        type: u1
+      - id: acb_pc_data2_rtcc_day
+        type: u1
+      - id: acb_pc_data2_rtcc_hour
+        type: u1
+      - id: acb_pc_data2_rtcc_minute
+        type: u1
+      - id: acb_pc_data2_rtcc_second
+        type: u1
+      - id: acb_pc_data2_acb_mrm_x
+        type: s2
+      - id: acb_pc_data2_acb_mrm_y
+        type: s2
+      - id: acb_pc_data2_acb_mrm_z
+        type: s2
+      - id: acb_pc_data2_ipdu_mrm_x
+        type: s2
+      - id: acb_pc_data2_ipdu_mrm_y
+        type: s2
+      - id: acb_pc_data2_ipdu_mrm_z
+        type: s2
+      - id: acb_pc_data2_tmps_tmp1
+        type: u2
+      - id: acb_pc_data2_tmps_tmp2
+        type: u2
+      - id: acb_pc_data2_tmps_tmp3
+        type: u2
+      - id: acb_pc_data2_tmps_tmp4
+        type: u2
+
+      - id: acb_sense_adc_data_current
         type: u2le
-      - id: elfin_acb_sense_adc_data_voltage
+      - id: acb_sense_adc_data_voltage
         type: u2le
 
-      - id: elfin_fc_counters_cmds_recv
+      - id: fc_counters_cmds_recv
         type: u1
-      - id: elfin_fc_counters_badcmds_recv
+      - id: fc_counters_badcmds_recv
         type: u1
-      - id: elfin_fc_counters_badpkts_fm_radio
+      - id: fc_counters_badpkts_fm_radio
         type: u1
-      - id: elfin_fc_counters_fcpkts_fm_radio
+      - id: fc_counters_fcpkts_fm_radio
         type: u1
-      - id: elfin_fc_counters_errors
+      - id: fc_counters_errors
         type: u1
-      - id: elfin_fc_counters_reboots
+      - id: fc_counters_reboots
         type: u1
-      - id: elfin_fc_counters_intrnl_wdttmout
+      - id: fc_counters_intrnl_wdttmout
         type: u1
-      - id: elfin_fc_counters_brwnouts
+      - id: fc_counters_brwnouts
         type: u1
-      - id: elfin_fc_counters_wdpicrst
+      - id: fc_counters_wdpicrst
         type: u1
-      - id: elfin_fc_counters_porst
+      - id: fc_counters_porst
         type: u1
-      - id: elfin_fc_counters_uart1_recvpkts
+      - id: fc_counters_uart1_recvpkts
         type: u1
-      - id: elfin_fc_counters_uart1_parseerrs
+      - id: fc_counters_uart1_parseerrs
         type: u1
-      - id: elfin_fc_counters_sips_ovcur_evts
+      - id: fc_counters_sips_ovcur_evts
         type: u1
-      - id: elfin_fc_counters_vu1_on
+      - id: fc_counters_vu1_on
         type: u1
-      - id: elfin_fc_counters_vu1_off
+      - id: fc_counters_vu1_off
         type: u1
-      - id: elfin_fc_counters_vu2_on
+      - id: fc_counters_vu2_on
         type: u1
-      - id: elfin_fc_counters_vu2_off
+      - id: fc_counters_vu2_off
         type: u1
 
-      - id: elfin_radio_tlm_rssi
+      - id: radio_tlm_rssi
         type: u1
-      - id: elfin_radio_tlm_bytes_rx
+      - id: radio_tlm_bytes_rx
         type: u4
-      - id: elfin_radio_tlm_bytes_tx
+      - id: radio_tlm_bytes_tx
         type: u4
 
-      - id: elfin_radio_cfg_read_radio_palvl
+      - id: radio_cfg_read_radio_palvl
         type: u1
 
-      - id: elfin_errors_error1_day
+      - id: errors_error1_day
         type: u1
-      - id: elfin_errors_error1_hour
+      - id: errors_error1_hour
         type: u1
-      - id: elfin_errors_error1_minute
+      - id: errors_error1_minute
         type: u1
-      - id: elfin_errors_error1_second
+      - id: errors_error1_second
         type: u1
-      - id: elfin_errors_error1_error
+      - id: errors_error1_error
         type: u1
-      - id: elfin_errors_error2_day
+      - id: errors_error2_day
         type: u1
-      - id: elfin_errors_error2_hour
+      - id: errors_error2_hour
         type: u1
-      - id: elfin_errors_error2_minute
+      - id: errors_error2_minute
         type: u1
-      - id: elfin_errors_error2_second
+      - id: errors_error2_second
         type: u1
-      - id: elfin_errors_error2_error
+      - id: errors_error2_error
         type: u1
-      - id: elfin_errors_error3_day
+      - id: errors_error3_day
         type: u1
-      - id: elfin_errors_error3_hour
+      - id: errors_error3_hour
         type: u1
-      - id: elfin_errors_error3_minute
+      - id: errors_error3_minute
         type: u1
-      - id: elfin_errors_error3_second
+      - id: errors_error3_second
         type: u1
-      - id: elfin_errors_error3_error
+      - id: errors_error3_error
         type: u1
-      - id: elfin_errors_error4_day
+      - id: errors_error4_day
         type: u1
-      - id: elfin_errors_error4_hour
+      - id: errors_error4_hour
         type: u1
-      - id: elfin_errors_error4_minute
+      - id: errors_error4_minute
         type: u1
-      - id: elfin_errors_error4_second
+      - id: errors_error4_second
         type: u1
-      - id: elfin_errors_error4_error
+      - id: errors_error4_error
         type: u1
-      - id: elfin_errors_error5_day
+      - id: errors_error5_day
         type: u1
-      - id: elfin_errors_error5_hour
+      - id: errors_error5_hour
         type: u1
-      - id: elfin_errors_error5_minute
+      - id: errors_error5_minute
         type: u1
-      - id: elfin_errors_error5_second
+      - id: errors_error5_second
         type: u1
-      - id: elfin_errors_error5_error
+      - id: errors_error5_error
         type: u1
-      - id: elfin_errors_error6_day
+      - id: errors_error6_day
         type: u1
-      - id: elfin_errors_error6_hour
+      - id: errors_error6_hour
         type: u1
-      - id: elfin_errors_error6_minute
+      - id: errors_error6_minute
         type: u1
-      - id: elfin_errors_error6_second
+      - id: errors_error6_second
         type: u1
-      - id: elfin_errors_error6_error
+      - id: errors_error6_error
         type: u1
-      - id: elfin_errors_error7_day
+      - id: errors_error7_day
         type: u1
-      - id: elfin_errors_error7_hour
+      - id: errors_error7_hour
         type: u1
-      - id: elfin_errors_error7_minute
+      - id: errors_error7_minute
         type: u1
-      - id: elfin_errors_error7_second
+      - id: errors_error7_second
         type: u1
-      - id: elfin_errors_error7_error
+      - id: errors_error7_error
         type: u1
 
-      - id: elfin_fc_salt
+      - id: fc_salt
         size: 4
 
-      - id: elfin_fc_crc
+      - id: fc_crc
         type: u1
 
-      - id: elfin_frame_end
+      - id: frame_end
         type: u1
         doc: '0x5e marks the end of a frame'
 
-#  elfin_hskp_data:
+#  hskp_data:
 #    seq:
-#    - id: elfin_hskp_pkt
-#        type: elfin_hskp_packet
+#    - id: hskp_pkt
+#        type: hskp_packet
 #        repeat: eos
 
-  elfin_hskp_packet:
+  hskp_packet:
     seq:
-      - id: elfin_hskp_pwr1_rtcc_year
+      - id: hskp_pwr1_rtcc_year
         type: u1
-      - id: elfin_hskp_pwr1_rtcc_month
+      - id: hskp_pwr1_rtcc_month
         type: u1
-      - id: elfin_hskp_pwr1_rtcc_day
+      - id: hskp_pwr1_rtcc_day
         type: u1
-      - id: elfin_hskp_pwr1_rtcc_hour
+      - id: hskp_pwr1_rtcc_hour
         type: u1
-      - id: elfin_hskp_pwr1_rtcc_minute
+      - id: hskp_pwr1_rtcc_minute
         type: u1
-      - id: elfin_hskp_pwr1_rtcc_second
+      - id: hskp_pwr1_rtcc_second
         type: u1
-      - id: elfin_hskp_pwr1_pwr_board_id
+      - id: hskp_pwr1_pwr_board_id
         type: u1
-      - id: elfin_hskp_pwr1_adc_data_adc_sa_volt_12
+      - id: hskp_pwr1_adc_data_adc_sa_volt_12
         type: u2
-      - id: elfin_hskp_pwr1_adc_data_adc_sa_volt_34
+      - id: hskp_pwr1_adc_data_adc_sa_volt_34
         type: u2
-      - id: elfin_hskp_pwr1_adc_data_adc_sa_volt_56
+      - id: hskp_pwr1_adc_data_adc_sa_volt_56
         type: u2
-      - id: elfin_hskp_pwr1_adc_data_sa_short_circuit_current
+      - id: hskp_pwr1_adc_data_sa_short_circuit_current
         type: u2
-      - id: elfin_hskp_pwr1_adc_data_bat_2_volt
+      - id: hskp_pwr1_adc_data_bat_2_volt
         type: u2
-      - id: elfin_hskp_pwr1_adc_data_bat_1_volt
+      - id: hskp_pwr1_adc_data_bat_1_volt
         type: u2
-      - id: elfin_hskp_pwr1_adc_data_reg_sa_volt_1
+      - id: hskp_pwr1_adc_data_reg_sa_volt_1
         type: u2
-      - id: elfin_hskp_pwr1_adc_data_reg_sa_volt_2
+      - id: hskp_pwr1_adc_data_reg_sa_volt_2
         type: u2
-      - id: elfin_hskp_pwr1_adc_data_reg_sa_volt_3
+      - id: hskp_pwr1_adc_data_reg_sa_volt_3
         type: u2
-      - id: elfin_hskp_pwr1_adc_data_power_bus_current_1
+      - id: hskp_pwr1_adc_data_power_bus_current_1
         type: u2
-      - id: elfin_hskp_pwr1_adc_data_power_bus_current_2
+      - id: hskp_pwr1_adc_data_power_bus_current_2
         type: u2
-      - id: elfin_hskp_pwr1_bat_mon_1_avg_cur_reg
+      - id: hskp_pwr1_bat_mon_1_avg_cur_reg
         type: s2
-      - id: elfin_hskp_pwr1_bat_mon_1_temperature_register
+      - id: hskp_pwr1_bat_mon_1_temperature_register
         type: s2
-      - id: elfin_hskp_pwr1_bat_mon_1_volt_reg
+      - id: hskp_pwr1_bat_mon_1_volt_reg
         type: s2
-      - id: elfin_hskp_pwr1_bat_mon_1_cur_reg
+      - id: hskp_pwr1_bat_mon_1_cur_reg
         type: s2
-      - id: elfin_hskp_pwr1_bat_mon_1_acc_curr_reg
+      - id: hskp_pwr1_bat_mon_1_acc_curr_reg
         type: s2
-      - id: elfin_hskp_pwr1_bat_mon_2_avg_cur_reg
+      - id: hskp_pwr1_bat_mon_2_avg_cur_reg
         type: s2
-      - id: elfin_hskp_pwr1_bat_mon_2_temperature_register
+      - id: hskp_pwr1_bat_mon_2_temperature_register
         type: s2
-      - id: elfin_hskp_pwr1_bat_mon_2_volt_reg
+      - id: hskp_pwr1_bat_mon_2_volt_reg
         type: s2
-      - id: elfin_hskp_pwr1_bat_mon_2_cur_reg
+      - id: hskp_pwr1_bat_mon_2_cur_reg
         type: s2
-      - id: elfin_hskp_pwr1_bat_mon_2_acc_curr_reg
+      - id: hskp_pwr1_bat_mon_2_acc_curr_reg
         type: s2
-      - id: elfin_hskp_pwr1_bv_mon
+      - id: hskp_pwr1_bv_mon
         type: u2
-      - id: elfin_hskp_pwr1_tmps_tmp1
+      - id: hskp_pwr1_tmps_tmp1
         type: s2
-      - id: elfin_hskp_pwr1_tmps_tmp2
+      - id: hskp_pwr1_tmps_tmp2
         type: s2
-      - id: elfin_hskp_pwr1_tmps_tmp3
+      - id: hskp_pwr1_tmps_tmp3
         type: s2
-      - id: elfin_hskp_pwr1_tmps_tmp4
+      - id: hskp_pwr1_tmps_tmp4
         type: s2
-      - id: elfin_hskp_pwr1_accumulated_curr_bat1_rsrc
+      - id: hskp_pwr1_accumulated_curr_bat1_rsrc
         type: u1
-      - id: elfin_hskp_pwr1_accumulated_curr_bat2_rsrc
+      - id: hskp_pwr1_accumulated_curr_bat2_rsrc
         type: u1
-      - id: elfin_hskp_pwr1_accumulated_curr_bat1_rarc
+      - id: hskp_pwr1_accumulated_curr_bat1_rarc
         type: u1
-      - id: elfin_hskp_pwr1_accumulated_curr_bat2_rarc
+      - id: hskp_pwr1_accumulated_curr_bat2_rarc
         type: u1
-      - id: elfin_fc_status_safe_mode
+      - id: fc_status_safe_mode
         type: b1
-      - id: elfin_fc_status_reserved
+      - id: fc_status_reserved
         type: b3
-      - id: elfin_fc_status_early_orbit
+      - id: fc_status_early_orbit
         type: b4
         doc: 'Safe mode (first bit), early orbit flags (last 4 bits)'
 
-  elfin_cmd_response:
+  cmd_response:
     seq:
-      - id: elfin_frame_start
+      - id: frame_start
         type: u1
         doc: '0x93 marks the framestart'
-      - id: elfin_opcode
+      - id: opcode
         type: u1
       - id: cmd_response
 #        repeat: eos
         type:
-          switch-on: elfin_opcode
+          switch-on: opcode
           cases:
-            0x30: elfin_hskp_packet
-      - id: elfin_fc_crc
+            0x30: hskp_packet
+      - id: fc_crc
         type: u1
-      - id: elfin_frame_end
+      - id: frame_end
         type: u1
         doc: '0x5e marks the end of a frame'

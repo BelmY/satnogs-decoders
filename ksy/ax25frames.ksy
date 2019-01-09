@@ -2,12 +2,12 @@ meta:
   id: ax25frames
   endian: be
 doc: |
-  :field ax25frames_dest_callsign: ax25_frame.ax25_header.dest_callsign_raw.callsign_ror.callsign
-  :field ax25frames_src_callsign: ax25_frame.ax25_header.src_callsign_raw.callsign_ror.callsign
-  :field ax25frames_src_ssid: ax25_frame.ax25_header.src_ssid_raw.ssid
-  :field ax25frames_dest_ssid: ax25_frame.ax25_header.dest_ssid_raw.ssid
-  :field ax25frames_ctl: ax25_frame.ax25_header.ctl
-  :field ax25frames_pid: ax25_frame.payload.pid
+  :field dest_callsign: ax25_frame.ax25_header.dest_callsign_raw.callsign_ror.callsign
+  :field src_callsign: ax25_frame.ax25_header.src_callsign_raw.callsign_ror.callsign
+  :field src_ssid: ax25_frame.ax25_header.src_ssid_raw.ssid
+  :field dest_ssid: ax25_frame.ax25_header.dest_ssid_raw.ssid
+  :field ctl: ax25_frame.ax25_header.ctl
+  :field pid: ax25_frame.payload.pid
 
 seq:
   - id: ax25_frame

@@ -2,28 +2,28 @@ meta:
   id: irvine
   endian: be
 doc: |
-  :field irvine_dest_callsign: ax25_frame.ax25_header.dest_callsign_raw.callsign_ror.callsign
-  :field irvine_src_callsign: ax25_frame.ax25_header.src_callsign_raw.callsign_ror.callsign
-  :field irvine_src_ssid: ax25_frame.ax25_header.src_ssid_raw.ssid
-  :field irvine_dest_ssid: ax25_frame.ax25_header.dest_ssid_raw.ssid
-  :field irvine_ctl: ax25_frame.ax25_header.ctl
-  :field irvine_pid: ax25_frame.payload.pid
-  :field irvine_spacecraft_response: ax25_frame.payload.ax25_info.body.body.spacecraft_response
-  :field irvine_spacecraft_id: ax25_frame.payload.ax25_info.body.body.spacecraft_id
-  :field irvine_ldc: ax25_frame.payload.ax25_info.body.body.ldc
-  :field irvine_gyro: ax25_frame.payload.ax25_info.body.body.gyro
-  :field irvine_mag: ax25_frame.payload.ax25_info.body.body.mag
-  :field irvine_daughter_a_tmp_sensor: ax25_frame.payload.ax25_info.body.body.daughter_a_tmp_sensor
-  :field irvine_three_v_pl_tmp_sensor: ax25_frame.payload.ax25_info.body.body.three_v_pl_tmp_sensor
-  :field irvine_temp_nz: ax25_frame.payload.ax25_info.body.body.temp_nz
-  :field irvine_volt3v: ax25_frame.payload.ax25_info.body.body.volt3v
-  :field irvine_curr3v: ax25_frame.payload.ax25_info.body.body.curr3v
-  :field irvine_volt5vpl: ax25_frame.payload.ax25_info.body.body.volt5vpl
-  :field irvine_curr5vpl: ax25_frame.payload.ax25_info.body.body.curr5vpl
-  :field irvine_src_port: ax25_frame.payload.ax25_info.body.body.src_port
-  :field irvine_dst_port: ax25_frame.payload.ax25_info.body.body.dst_port
-  :field irvine_src_ip_addr: ax25_frame.payload.ax25_info.src_ip_addr
-  :field irvine_dst_ip_addr: ax25_frame.payload.ax25_info.dst_ip_addr
+  :field dest_callsign: ax25_frame.ax25_header.dest_callsign_raw.callsign_ror.callsign
+  :field src_callsign: ax25_frame.ax25_header.src_callsign_raw.callsign_ror.callsign
+  :field src_ssid: ax25_frame.ax25_header.src_ssid_raw.ssid
+  :field dest_ssid: ax25_frame.ax25_header.dest_ssid_raw.ssid
+  :field ctl: ax25_frame.ax25_header.ctl
+  :field pid: ax25_frame.payload.pid
+  :field spacecraft_response: ax25_frame.payload.ax25_info.body.body.spacecraft_response
+  :field spacecraft_id: ax25_frame.payload.ax25_info.body.body.spacecraft_id
+  :field ldc: ax25_frame.payload.ax25_info.body.body.ldc
+  :field gyro: ax25_frame.payload.ax25_info.body.body.gyro
+  :field mag: ax25_frame.payload.ax25_info.body.body.mag
+  :field daughter_a_tmp_sensor: ax25_frame.payload.ax25_info.body.body.daughter_a_tmp_sensor
+  :field three_v_pl_tmp_sensor: ax25_frame.payload.ax25_info.body.body.three_v_pl_tmp_sensor
+  :field temp_nz: ax25_frame.payload.ax25_info.body.body.temp_nz
+  :field volt3v: ax25_frame.payload.ax25_info.body.body.volt3v
+  :field curr3v: ax25_frame.payload.ax25_info.body.body.curr3v
+  :field volt5vpl: ax25_frame.payload.ax25_info.body.body.volt5vpl
+  :field curr5vpl: ax25_frame.payload.ax25_info.body.body.curr5vpl
+  :field src_port: ax25_frame.payload.ax25_info.body.body.src_port
+  :field dst_port: ax25_frame.payload.ax25_info.body.body.dst_port
+  :field src_ip_addr: ax25_frame.payload.ax25_info.src_ip_addr
+  :field dst_ip_addr: ax25_frame.payload.ax25_info.dst_ip_addr
 
 
 seq:
@@ -425,7 +425,7 @@ types:
       - id: checksum
         type: u2
       - id: body
-        type: irvine_udp_payload
+        type: udp_payload
         size-eos: true
 
   ipv6_pkt:
@@ -475,7 +475,7 @@ types:
             6: tcp_segm
             59: no_next_header
 
-  irvine_udp_payload:
+  udp_payload:
     seq:
       - id: spacecraft_response
         type: u1
