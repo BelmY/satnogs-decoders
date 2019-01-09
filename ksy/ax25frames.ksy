@@ -8,7 +8,6 @@ doc: |
   :field ax25frames_dest_ssid: ax25_frame.ax25_header.dest_ssid_raw.ssid
   :field ax25frames_ctl: ax25_frame.ax25_header.ctl
   :field ax25frames_pid: ax25_frame.payload.pid
-  :field ax25frames_info: ax25_frame.payload.ax25_info
 
 seq:
   - id: ax25_frame

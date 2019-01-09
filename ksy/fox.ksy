@@ -5,7 +5,6 @@ doc: |
   :field fox_reset_count: fox_raw.fox_hdr.fox_reset_count
   :field fox_uptime: fox_raw.fox_hdr.fox_uptime
   :field fox_frm_type: fox_raw.fox_hdr.fox_frm_type
-  :field fox_debug_data: fox_raw.fox_frame.fox_debug_data
   :field fox_batt_a_v: fox_raw.fox_frame.fox_rt_tlm.fox_batt_a_v
   :field fox_batt_b_v: fox_raw.fox_frame.fox_rt_tlm.fox_batt_b_v
   :field fox_batt_c_v: fox_raw.fox_frame.fox_rt_tlm.fox_batt_c_v
@@ -43,10 +42,6 @@ doc: |
   :field fox_sys_i2c_fail_ind: fox_raw.fox_frame.fox_rt_tlm.fox_sys_i2c_fail_ind
   :field fox_grnd_cmded_tlm_rsts: fox_raw.fox_frame.fox_rt_tlm.fox_grnd_cmded_tlm_rsts
   :field fox_ant_deploy_sensors: fox_raw.fox_frame.fox_rt_tlm.fox_ant_deploy_sensors
-  :field fox_max_vals_tlm: fox_raw.fox_frame.fox_max_vals_tlm.b
-  :field fox_min_vals_tlm: fox_raw.fox_frame.fox_min_vals_tlm.b
-  :field fox_exp_tlm: fox_raw.fox_frame.fox_exp_tlm
-  :field fox_cam_jpeg_data: fox_raw.fox_frame.fox_cam_jpeg_data
 
 seq:
   - id: fox_raw
