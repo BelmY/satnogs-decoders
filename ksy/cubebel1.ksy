@@ -8,22 +8,22 @@ doc: |
   :field dest_ssid: ax25_frame.ax25_header.dest_ssid_raw.ssid
   :field ctl: ax25_frame.ax25_header.ctl
   :field pid: ax25_frame.payload.pid
-  :field rf_id: ax25_frame.payload.ax25_info.header.rf_id
-  :field opr_time: ax25_frame.payload.ax25_info.header.opr_time
-  :field reboot_cnt: ax25_frame.payload.ax25_info.header.reboot_cnt
-  :field mcusr: ax25_frame.payload.ax25_info.header.mcusr
-  :field pamp_temp: ax25_frame.payload.ax25_info.header.pamp_temp
-  :field pamp_voltage: ax25_frame.payload.ax25_info.header.pamp_voltage
-  :field tx_attenuator: ax25_frame.payload.ax25_info.header.tx_attenuator
-  :field battery_voltage: ax25_frame.payload.ax25_info.header.battery_voltage
-  :field system_voltage: ax25_frame.payload.ax25_info.header.system_voltage
-  :field seq_number: ax25_frame.payload.ax25_info.header.
-  :field pwr_save_state: ax25_frame.payload.ax25_info.header.pwr_save_state
-  :field modem_on_period: ax25_frame.payload.ax25_info.header.modem_on_period
-  :field obc_can_status: ax25_frame.payload.ax25_info.header.obc_can_status
-  :field eps_can_status: ax25_frame.payload.ax25_info.header.eps_can_status
-  :field info_size: ax25_frame.payload.ax25_info.header.info_size
-  :field data_type: ax25_frame.payload.ax25_info.header.data_type
+  :field hdr_rf_id: ax25_frame.payload.ax25_info.header.rf_id
+  :field hdr_opr_time: ax25_frame.payload.ax25_info.header.opr_time
+  :field hdr_reboot_cnt: ax25_frame.payload.ax25_info.header.reboot_cnt
+  :field hdr_mcusr: ax25_frame.payload.ax25_info.header.mcusr
+  :field hdr_pamp_temp: ax25_frame.payload.ax25_info.header.pamp_temp
+  :field hdr_pamp_voltage: ax25_frame.payload.ax25_info.header.pamp_voltage
+  :field hdr_tx_attenuator: ax25_frame.payload.ax25_info.header.tx_attenuator
+  :field hdr_battery_voltage: ax25_frame.payload.ax25_info.header.battery_voltage
+  :field hdr_system_voltage: ax25_frame.payload.ax25_info.header.system_voltage
+  :field hdr_seq_number: ax25_frame.payload.ax25_info.header.
+  :field hdr_pwr_save_state: ax25_frame.payload.ax25_info.header.pwr_save_state
+  :field hdr_modem_on_period: ax25_frame.payload.ax25_info.header.modem_on_period
+  :field hdr_obc_can_status: ax25_frame.payload.ax25_info.header.obc_can_status
+  :field hdr_eps_can_status: ax25_frame.payload.ax25_info.header.eps_can_status
+  :field hdr_info_size: ax25_frame.payload.ax25_info.header.info_size
+  :field hdr_data_type: ax25_frame.payload.ax25_info.header.data_type
   :field fec_crc_status: ax25_frame.payload.ax25_info.data.fec_crc_status
   :field rx_msg_state: ax25_frame.payload.ax25_info.data.rx_msg_state
   :field rssi: ax25_frame.payload.ax25_info.data.rssi
