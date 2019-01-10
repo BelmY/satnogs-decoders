@@ -16,7 +16,7 @@ doc: |
   :field pamp_voltage: ax25_frame.payload.ax25_info.header.pamp_voltage
   :field tx_attenuator: ax25_frame.payload.ax25_info.header.tx_attenuator
   :field battery_voltage: ax25_frame.payload.ax25_info.header.battery_voltage
-  :field system_voltage: ax25_frame.payload.ax25_info.header.header.system_voltage
+  :field system_voltage: ax25_frame.payload.ax25_info.header.system_voltage
   :field seq_number: ax25_frame.payload.ax25_info.header.
   :field pwr_save_state: ax25_frame.payload.ax25_info.header.pwr_save_state
   :field modem_on_period: ax25_frame.payload.ax25_info.header.modem_on_period
