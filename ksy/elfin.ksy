@@ -299,7 +299,7 @@ types:
       - id: pid
         type: u1
       - id: ax25_info
-        process: satnogsdecoders.process.pp
+        process: satnogsdecoders.process.elfin_pp
         size-eos: true
         type:
           switch-on: _io.size
@@ -327,7 +327,7 @@ types:
           With some values containing 0x27 the maximum size of an ax.25 UI
           frame is exceeded (254 bytes).
           The 'preprocessing' to remove the escapoe sequences is done by an
-          external process called 'pp' and is implemented in a separate
+          external process called 'elfin_pp' and is implemented in a separate
           file.
 
       - id: beacon_setting
