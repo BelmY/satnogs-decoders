@@ -13,7 +13,6 @@ doc: |
   :field pid: ax25_frame.payload.pid
   :field packetindex: ax25_frame.payload.ax25_info.packetindex
   :field groundindexack: ax25_frame.payload.ax25_info.groundindexack
-  :field packettype: ax25_frame.payload.ax25_info.packettype
   :field payloadsize: ax25_frame.payload.ax25_info.payloadsize
   :field rebootcounter: ax25_frame.payload.ax25_info.rebootcounter
   :field uptime: ax25_frame.payload.ax25_info.uptime
@@ -114,7 +113,8 @@ types:
       - id: groundindexack
         type: u2
       - id: packettype
-        type: u1
+        size: 1
+        contents: [0x01]
       - id: payloadsize
         type: u1
       - id: rebootcounter
