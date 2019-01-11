@@ -128,8 +128,10 @@ types:
       - id: beacon_payload_typeandlength
         type: u2le
         doc: 'to be ignored'
-      - id: beacon_payload_timestamp
-        size: 6
+      - id: beacon_payload_timestamp_raw
+        type: u1
+        repeat: expr
+        repeat-expr: 6
         doc: '48 bit unix timestamp'
       - id: beacon_payload_beacon_rate
         type: u4le
@@ -141,7 +143,6 @@ types:
         doc: '[s]'
       - id: beacon_payload_subsystem_status
         type: bitmap16_subsystem_status
-        size: 2
       - id: beacon_payload_batt_a_temp
         type: s1
         doc: '[degC]'
@@ -196,11 +197,14 @@ types:
       - id: beacon_payload_crc
         type: u2le
         doc: 'CRC of Header+Payload (Fletchers Algorithm)'
+    instances:
+      beacon_payload_timestamp:
+        value: '((beacon_payload_timestamp_raw[5]) | (beacon_payload_timestamp_raw[4] << 8) | (beacon_payload_timestamp_raw[3] << 16) | (beacon_payload_timestamp_raw[2] << 24) | (beacon_payload_timestamp_raw[1] << 32) | (beacon_payload_timestamp_raw[0] << 48))'
 
   bitmap16_subsystem_status:
     seq:
       - id: beacon_payload_subsystem_status_bitmap
-        size: 2
+        type: u2le
 
   beacon_header:
     seq:
