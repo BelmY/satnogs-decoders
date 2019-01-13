@@ -5,6 +5,7 @@ from __future__ import absolute_import, division, print_function
 
 __all__ = [
     'Ax25frames',
+    'Ax25monitor',
     'Cas4',
     'Cubebel1',
     'Cubesatsim',
@@ -25,6 +26,7 @@ import re
 import functools
 
 from .ax25frames import Ax25frames
+from .ax25monitor import Ax25monitor
 from .cas4 import Cas4
 from .cubebel1 import Cubebel1
 from .cubesatsim import Cubesatsim
