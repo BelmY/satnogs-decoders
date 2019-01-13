@@ -17,32 +17,32 @@ doc: |
   :field beacon_header_to_subsystem_id: ax25_frame.payload.ax25_info.beacon_header.beacon_header_to_subsystem_id
   :field beacon_header_api: ax25_frame.payload.ax25_info.beacon_header.beacon_header_api
   :field beacon_header_payload_size: ax25_frame.payload.ax25_info.beacon_header.beacon_header_payload_size
-  :field beacon_payload_command: ax25_frame.payload.ax25_info.beacon_payload_command
-  :field beacon_payload_var_id: ax25_frame.payload.ax25_info.beacon_payload_var_id
-  :field beacon_payload_typeandlength: ax25_frame.payload.ax25_info.beacon_payload_typeandlength
-  :field beacon_payload_timestamp: ax25_frame.payload.ax25_info.beacon_payload_timestamp
-  :field beacon_payload_beacon_rate: ax25_frame.payload.ax25_info.beacon_payload_beacon_rate
-  :field beacon_payload_vals_out_of_range: ax25_frame.payload.ax25_info.beacon_payload_vals_out_of_range
-  :field beacon_payload_uptime: ax25_frame.payload.ax25_info.beacon_payload_uptime
-  :field beacon_payload_subsystem_status_bitmap: ax25_frame.payload.ax25_info.beacon_payload_subsystem_status.beacon_payload_subsystem_status_bitmap
-  :field beacon_payload_batt_a_temp: ax25_frame.payload.ax25_info.beacon_payload_batt_a_temp
-  :field beacon_payload_batt_a_state_of_charge: ax25_frame.payload.ax25_info.beacon_payload_batt_a_state_of_charge
-  :field beacon_payload_batt_b_temp: ax25_frame.payload.ax25_info.beacon_payload_batt_b_temp
-  :field beacon_payload_batt_b_state_of_charge: ax25_frame.payload.ax25_info.beacon_payload_batt_b_state_of_charge
-  :field beacon_payload_batt_a_current: ax25_frame.payload.ax25_info.beacon_payload_batt_a_current
-  :field beacon_payload_batt_a_voltage: ax25_frame.payload.ax25_info.beacon_payload_batt_a_voltage
-  :field beacon_payload_batt_b_current: ax25_frame.payload.ax25_info.beacon_payload_batt_b_current
-  :field beacon_payload_batt_b_voltage: ax25_frame.payload.ax25_info.beacon_payload_batt_b_voltage
-  :field beacon_payload_power_consumption: ax25_frame.payload.ax25_info.beacon_payload_power_consumption
-  :field beacon_payload_obc_temp: ax25_frame.payload.ax25_info.beacon_payload_obc_temp
-  :field beacon_payload_panel_pos_x_temp: ax25_frame.payload.ax25_info.beacon_payload_panel_pos_x_temp
-  :field beacon_payload_panel_neg_x_temp: ax25_frame.payload.ax25_info.beacon_payload_panel_neg_x_temp
-  :field beacon_payload_panel_pos_y_temp: ax25_frame.payload.ax25_info.beacon_payload_panel_pos_y_temp
-  :field beacon_payload_panel_neg_y_temp: ax25_frame.payload.ax25_info.beacon_payload_panel_neg_y_temp
-  :field beacon_payload_panel_pos_z_temp: ax25_frame.payload.ax25_info.beacon_payload_panel_pos_z_temp
-  :field beacon_payload_panel_neg_z_temp: ax25_frame.payload.ax25_info.beacon_payload_panel_neg_z_temp
-  :field beacon_payload_freq: ax25_frame.payload.ax25_info.beacon_payload_freq
-  :field beacon_payload_crc: ax25_frame.payload.ax25_info.beacon_payload_crc
+  :field beacon_payload_command: ax25_frame.payload.ax25_info.beacon_payload.beacon_payload_command
+  :field beacon_payload_var_id: ax25_frame.payload.ax25_info.beacon_payload.beacon_payload_var_id
+  :field beacon_payload_typeandlength: ax25_frame.payload.ax25_info.beacon_payload.beacon_payload_typeandlength
+  :field beacon_payload_timestamp: ax25_frame.payload.ax25_info.beacon_payload.beacon_payload_timestamp
+  :field beacon_payload_beacon_rate: ax25_frame.payload.ax25_info.beacon_payload.beacon_payload_beacon_rate
+  :field beacon_payload_vals_out_of_range: ax25_frame.payload.ax25_info.beacon_payload.beacon_payload_vals_out_of_range
+  :field beacon_payload_uptime: ax25_frame.payload.ax25_info.beacon_payload.beacon_payload_uptime
+  :field beacon_payload_subsystem_status_bitmap: ax25_frame.payload.ax25_info.beacon_payload.beacon_payload_subsystem_status.beacon_payload_subsystem_status_bitmap
+  :field beacon_payload_batt_a_temp: ax25_frame.payload.ax25_info.beacon_payload.beacon_payload_batt_a_temp
+  :field beacon_payload_batt_a_state_of_charge: ax25_frame.payload.ax25_info.beacon_payload.beacon_payload_batt_a_state_of_charge
+  :field beacon_payload_batt_b_temp: ax25_frame.payload.ax25_info.beacon_payload.beacon_payload_batt_b_temp
+  :field beacon_payload_batt_b_state_of_charge: ax25_frame.payload.ax25_info.beacon_payload.beacon_payload_batt_b_state_of_charge
+  :field beacon_payload_batt_a_current: ax25_frame.payload.ax25_info.beacon_payload.beacon_payload_batt_a_current
+  :field beacon_payload_batt_a_voltage: ax25_frame.payload.ax25_info.beacon_payload.beacon_payload_batt_a_voltage
+  :field beacon_payload_batt_b_current: ax25_frame.payload.ax25_info.beacon_payload.beacon_payload_batt_b_current
+  :field beacon_payload_batt_b_voltage: ax25_frame.payload.ax25_info.beacon_payload.beacon_payload_batt_b_voltage
+  :field beacon_payload_power_consumption: ax25_frame.payload.ax25_info.beacon_payload.beacon_payload_power_consumption
+  :field beacon_payload_obc_temp: ax25_frame.payload.ax25_info.beacon_payload.beacon_payload_obc_temp
+  :field beacon_payload_panel_pos_x_temp: ax25_frame.payload.ax25_info.beacon_payload.beacon_payload_panel_pos_x_temp
+  :field beacon_payload_panel_neg_x_temp: ax25_frame.payload.ax25_info.beacon_payload.beacon_payload_panel_neg_x_temp
+  :field beacon_payload_panel_pos_y_temp: ax25_frame.payload.ax25_info.beacon_payload.beacon_payload_panel_pos_y_temp
+  :field beacon_payload_panel_neg_y_temp: ax25_frame.payload.ax25_info.beacon_payload.beacon_payload_panel_neg_y_temp
+  :field beacon_payload_panel_pos_z_temp: ax25_frame.payload.ax25_info.beacon_payload.beacon_payload_panel_pos_z_temp
+  :field beacon_payload_panel_neg_z_temp: ax25_frame.payload.ax25_info.beacon_payload.beacon_payload_panel_neg_z_temp
+  :field beacon_payload_freq: ax25_frame.payload.ax25_info.beacon_payload.beacon_payload_freq
+  :field beacon_payload_crc: ax25_frame.payload.ax25_info.beacon_payload.beacon_payload_crc
 
 seq:
   - id: ax25_frame
@@ -74,6 +74,10 @@ types:
         type: ssid_mask
       - id: src_callsign_raw
         type: callsign_raw
+        contents: [0x88, 0xa0, 0x60, 0xaa, 0xae, 0x90]
+        doc: |
+          `contents:` does not work here; no exception possible!
+
       - id: src_ssid_raw
         type: ssid_mask
       - id: ctl
@@ -90,7 +94,7 @@ types:
     seq:
       - id: callsign
         type: str
-        encoding: ASCII
+        encoding: utf-8
         size: 6
 
   ssid_mask:
@@ -119,8 +123,62 @@ types:
   beacon:
     seq:
       - id: beacon_header
-        type: beacon_header
-        size: 10
+        type:
+          switch-on: is_valid_source
+          cases:
+            true: beacon_header
+      - id: beacon_payload
+        type:
+          switch-on: is_valid_payload
+          cases:
+            true: beacon_payload
+    instances:
+      is_valid_source:
+        value: >-
+          (1 == 1) or
+          (_root.ax25_frame.ax25_header.src_callsign_raw.callsign_ror.callsign
+          == 'DP0UWH')
+        doc: |
+          This is work in progress as it never returns `true` without the
+          `(1 == 1)` statement. It DOES NOT check the source for now!
+
+      is_valid_payload:
+        value: >-
+          (beacon_header.beacon_header_fm_system_id == 2)
+          and (beacon_header.beacon_header_fm_subsystem_id == 1)
+          and (beacon_header.beacon_header_to_system_id == 1)
+          and (beacon_header.beacon_header_to_subsystem_id == 0)
+          and (beacon_header.beacon_header_payload_size == 46)
+          and (beacon_header.beacon_header_api == 14)
+
+  bitmap16_subsystem_status:
+    seq:
+      - id: beacon_payload_subsystem_status_bitmap
+        type: u2le
+
+  beacon_header:
+    seq:
+      - id: beacon_header_flags1
+        type: u1
+      - id: beacon_header_flags2
+        type: u1
+      - id: beacon_header_packet_id
+        type: u2le
+      - id: beacon_header_fm_system_id
+        type: u1
+      - id: beacon_header_fm_subsystem_id
+        type: u1
+      - id: beacon_header_to_system_id
+        type: u1
+      - id: beacon_header_to_subsystem_id
+        type: u1
+      - id: beacon_header_api
+        type: u1
+      - id: beacon_header_payload_size
+        type: u1
+
+  beacon_payload:
+    seq:
       - id: beacon_payload_command
         type: u1
       - id: beacon_payload_var_id
@@ -199,31 +257,10 @@ types:
         doc: 'CRC of Header+Payload (Fletchers Algorithm)'
     instances:
       beacon_payload_timestamp:
-        value: '((beacon_payload_timestamp_raw[5]) | (beacon_payload_timestamp_raw[4] << 8) | (beacon_payload_timestamp_raw[3] << 16) | (beacon_payload_timestamp_raw[2] << 24) | (beacon_payload_timestamp_raw[1] << 32) | (beacon_payload_timestamp_raw[0] << 48))'
-
-  bitmap16_subsystem_status:
-    seq:
-      - id: beacon_payload_subsystem_status_bitmap
-        type: u2le
-
-  beacon_header:
-    seq:
-      - id: beacon_header_flags1
-        type: u1
-      - id: beacon_header_flags2
-        type: u1
-      - id: beacon_header_packet_id
-        type: u2le
-      - id: beacon_header_fm_system_id
-        type: u1
-      - id: beacon_header_fm_subsystem_id
-        type: u1
-      - id: beacon_header_to_system_id
-        type: u1
-      - id: beacon_header_to_subsystem_id
-        type: u1
-      - id: beacon_header_api
-        type: u1
-      - id: beacon_header_payload_size
-        type: u1
-
+        value: >-
+          ((beacon_payload_timestamp_raw[0])
+          + (beacon_payload_timestamp_raw[1] << 8)
+          + (beacon_payload_timestamp_raw[2] << 16)
+          + (beacon_payload_timestamp_raw[3] << 24)
+          + (beacon_payload_timestamp_raw[4] << 32)
+          + (beacon_payload_timestamp_raw[5] << 48))
