@@ -5,9 +5,14 @@ doc: |
   :field src_callsign: ax25_frame.ax25_header.src_callsign_raw.callsign_ror.callsign
   :field src_ssid: ax25_frame.ax25_header.src_ssid_raw.ssid
   :field dest_ssid: ax25_frame.ax25_header.dest_ssid_raw.ssid
+  :field rpt_callsign: ax25_frame.ax25_header.repeater.rpt_instance[0].rpt_callsign_raw.callsign_ror.callsign
   :field ctl: ax25_frame.ax25_header.ctl
   :field pid: ax25_frame.payload.pid
   :field monitor: ax25_frame.payload.ax25_info.data_monitor
+
+  Attention: `rpt_callsign` cannot be accessed because `rpt_instance` is an
+  array of unknown size at the beginning of the parsing process! Left an
+  example in here.
 
 seq:
   - id: ax25_frame
@@ -41,8 +46,27 @@ types:
         type: callsign_raw
       - id: src_ssid_raw
         type: ssid_mask
+      - id: repeater
+        type: repeater
+        if: (src_ssid_raw.ssid_mask & 0x01) == 0
+        doc: 'Repeater flag is set!'
       - id: ctl
         type: u1
+
+  repeater:
+    seq:
+      - id: rpt_instance
+        type: repeaters
+        repeat: until
+        repeat-until: ((_.rpt_ssid_raw.ssid_mask & 0x1) == 0x1)
+        doc: 'Repeat until no repeater flag is set!'
+
+  repeaters:
+    seq:
+      - id: rpt_callsign_raw
+        type: callsign_raw
+      - id: rpt_ssid_raw
+        type: ssid_mask
 
   callsign_raw:
     seq:
