@@ -223,13 +223,24 @@ types:
         type: b7
       - id: rssi
         type: u1
+    instances:
+      fec_crc_status:
+        value: >-
+          (
+          (status_bits)
+          ) & 0x1
+      rx_msg_state:
+        value: >-
+          (
+          (status_bits)
+          ) >> 1
 
   rf_message:
     seq:
       - id: rf_msg
-        #type: str
-        #encoding: ASCII
-        size: _parent.header.info_size - 1
+        type: str
+        encoding: utf-8
+        size: _parent.header.info_size - 2
 
   eps_full_tel:
     seq:
@@ -259,92 +270,601 @@ types:
         type: b12
       - id: numb_oc_obc
         type: u1
-      - id: numb_oc_out_gamma
-        type: u1
-      - id: numb_oc_out_rf1
-        type: u1
-      - id: numb_oc_out_rf2
-        type: u1
-      - id: numb_oc_out_flash
-        type: u1
-      - id: numb_oc_out_irsens
-        type: u1
-      - id: numb_oc_coil_x
-        type: u1
-      - id: numb_oc_coil_y
-        type: u1
-      - id: numb_oc_coil_pz
-        type: u1
-      - id: numb_oc_coil_nz
-        type: u1
-      - id: numb_oc_magnetcoils
-        type: u1
-      - id: numb_oc_solarsens
-        type: u1
-      - id: reset_num
-        type: u2
-      - id: reset_reason
-        type: u1
-      - id: pwr_sat
-        type: b1
-      - id: pwr_rf1
-        type: b1
-      - id: pwr_rf2
-        type: b1
-      - id: pwr_sunsensor
-        type: b1
-      - id: pwr_gamma
-        type: b1
-      - id: pwr_irsensor
-        type: b1
-      - id: pwr_flash
-        type: b1
-      - id: pwr_magnet_x
-        type: b1
-      - id: pwr_magnet_y
-        type: b1
-      - id: pwr_magnet_z
-        type: b1
+        repeat: eos
+    instances:
+      sys_time:
+        value: >-
+          (bytes[0]) |
+          (bytes[1] << 8)
+        doc: '16 bits'
+      adc_correctness:
+        value: >-
+          (
+          (bytes[2])
+          ) & 0x3
+        doc: '2 bits'
+      t_adc1:
+        value: >-
+          (
+          (
+          (bytes[2]) |
+          (bytes[3] << 8)
+          ) >> 2
+          ) & 0xFFF
+        doc: '12 bits'
+      t_adc2:
+         value: >-
+          (
+          (
+          (bytes[3]) |
+          (bytes[4] << 8) |
+          (bytes[5] << 16)
+          ) >> 6
+          ) & 0xFFF
+        doc: '12 bits'
+      stepup_current:
+        value: >-
+          (
+          (
+          (bytes[5]) |
+          (bytes[6] << 8)
+          ) >> 2
+          ) & 0xFFF
+        doc: '12 bits'
+      stepup_voltage:
+        value: >-
+          (
+          (
+          (bytes[6]) |
+          (bytes[7] << 8) |
+          (bytes[8] << 16)
+          ) >> 6
+          ) & 0xFFF
+        doc: '12 bits'
+      afterbq_current:
+        value: >-
+          (
+          (
+          (bytes[8]) |
+          (bytes[9] << 8)
+          ) >> 2
+          ) & 0xFFF
+        doc: '12 bits'
+      battery_voltage:
+        value: >-
+          (
+          (
+          (bytes[9]) |
+          (bytes[10] << 8) |
+          (bytes[11] << 16)
+          ) >> 6
+          ) & 0xFFF
+        doc: '12 bits'
+      sys_voltage_50:
+        value: >-
+          (
+          (
+          (bytes[11]) |
+          (bytes[12] << 8)
+          ) >> 2
+          ) & 0xFFF
+        doc: '12 bits'
+      sys_voltage_33:
+        value: >-
+          (
+          (
+          (bytes[12]) |
+          (bytes[13] << 8) |
+          (bytes[14] << 16)
+          ) >> 6
+          ) & 0xFFF
+        doc: '12 bits'
+      eps_uc_current:
+        value: >-
+          (
+          (
+          (bytes[14]) |
+          (bytes[15] << 8)
+          ) >> 2
+          ) & 0xFFF
+        doc: '12 bits'
+      obc_uc_current:
+        value: >-
+          (
+          (bytes[15]) |
+          (bytes[16] << 8)
+          ) >> 6
+        doc: '10 bits'
+      rf1_uc_current:
+        value: >-
+          (
+          (bytes[17]) |
+          (bytes[18] << 8)
+          ) & 0x3FF
+        doc: '10 bits'
+      rf2_uc_current:
+        value: >-
+          (
+          (
+          (bytes[18]) |
+          (bytes[19] << 8)
+          ) >> 2
+          ) & 0xFFF
+        doc: '12 bits'
+      solar_voltage:
+        value: >-
+          (
+          (
+          (bytes[19]) |
+          (bytes[20] << 8) |
+          (bytes[21] << 16)
+          ) >> 6
+          ) & 0xFFF
+        doc: '12 bits'
+      side_x_current:
+        value: >-
+          (
+          (
+          (bytes[21]) |
+          (bytes[22] << 8)
+          ) >> 2
+          ) & 0xFFF
+        doc: '12 bits'
+      side_py_current:
+        value: >-
+          (
+          (
+          (bytes[22]) |
+          (bytes[23] << 8) |
+          (bytes[24] << 16)
+          ) >> 6
+          ) & 0xFFF
+        doc: '12 bits'
+      side_ny_current:
+        value: >-
+          (
+          (
+          (bytes[24]) |
+          (bytes[25] << 8)
+          ) >> 2
+          ) & 0xFFF
+        doc: '12 bits'
+      side_pz_current:
+        value: >-
+          (
+          (
+          (bytes[25]) |
+          (bytes[26] << 8) |
+          (bytes[27] << 16)
+          ) >> 6
+          ) & 0xFFF
+        doc: '12 bits'
+      side_nz_current:
+        value: >-
+          (
+          (
+          (bytes[27]) |
+          (bytes[28] << 8)
+          ) >> 2
+          ) & 0xFFF
+        doc: '12 bits'
+      # --- end of eps_short_tel
+      current_to_gamma:
+         value: >-
+          (
+          (
+          (bytes[28]) |
+          (bytes[29] << 8) |
+          (bytes[30] << 16)
+          ) >> 6
+          ) & 0xFFF
+        doc: '12 bits'
+      current_to_irsensor:
+        value: >-
+          (
+          (
+          (bytes[30]) |
+          (bytes[31] << 8)
+          ) >> 2
+          ) & 0xFFF
+        doc: '12 bits'
+      current_to_extflash:
+        value: >-
+          (
+          (
+          (bytes[31]) |
+          (bytes[32] << 8) |
+          (bytes[33] << 16)
+          ) >> 6
+          ) & 0xFFF
+        doc: '12 bits'
+      current_to_solarsens:
+        value: >-
+          (
+          (
+          (bytes[33]) |
+          (bytes[34] << 8)
+          ) >> 2
+          ) & 0xFFF
+        doc: '12 bits'
+      current_to_magnetcoils:
+        value: >-
+          (
+          (
+          (bytes[34]) |
+          (bytes[35] << 8) |
+          (bytes[36] << 16)
+          ) >> 6
+          ) & 0xFFF
+        doc: '12 bits'
+      current_to_coil_x:
+        value: >-
+          (
+          (
+          (bytes[36]) |
+          (bytes[37] << 8)
+          ) >> 2
+          ) & 0xFFF
+        doc: '12 bits'
+      current_to_coil_y:
+        value: >-
+          (
+          (
+          (bytes[37]) |
+          (bytes[38] << 8) |
+          (bytes[39] << 16)
+          ) >> 6
+          ) & 0xFFF
+        doc: '12 bits'
+      current_to_coil_pz:
+        value: >-
+          (
+          (
+          (bytes[39]) |
+          (bytes[40] << 8)
+          ) >> 2
+          ) & 0xFFF
+        doc: '12 bits'
+      current_to_coil_nz:
+        value: >-
+          (
+          (
+          (bytes[40]) |
+          (bytes[41] << 8) |
+          (bytes[42] << 16)
+          ) >> 6
+          ) & 0xFFF
+        doc: '12 bits'
+      battery1_temp:
+        value: >-
+          (
+          (
+          (bytes[42]) |
+          (bytes[43] << 8)
+          ) >> 2
+          ) & 0xFFF
+        doc: '12 bits'
+      battery2_temp:
+        value: >-
+          (
+          (
+          (bytes[43]) |
+          (bytes[44] << 8) |
+          (bytes[45] << 16)
+          ) >> 6
+          ) & 0xFFF
+        doc: '12 bits'
+      numb_oc_obc:
+        value: >-
+          (bytes[46])
+        doc: '8 bits'
+      numb_oc_out_gamma:
+        value: >-
+          (bytes[47])
+        doc: '8 bits'
+      numb_oc_out_rf1:
+        value: >-
+          (bytes[48])
+        doc: '8 bits'
+      numb_oc_out_rf2:
+        value: >-
+          (bytes[49])
+        doc: '8 bits'
+      numb_oc_out_flash:
+        value: >-
+          (bytes[50])
+        doc: '8 bits'
+      numb_oc_out_irsens:
+        value: >-
+          (bytes[51])
+        doc: '8 bits'
+      numb_oc_coil_x:
+        value: >-
+          (bytes[52])
+        doc: '8 bits'
+      numb_oc_coil_y:
+        value: >-
+          (bytes[53])
+        doc: '8 bits'
+      numb_oc_coil_pz:
+        value: >-
+          (bytes[54])
+        doc: '8 bits'
+      numb_oc_coil_nz:
+        value: >-
+          (bytes[55])
+        doc: '8 bits'
+      numb_oc_magnetcoils:
+        value: >-
+          (bytes[56])
+        doc: '8 bits'
+      numb_oc_solarsens:
+        value: >-
+          (bytes[57])
+        doc: '8 bits'
+      reset_num:
+        value: >-
+          (bytes[58]) |
+          (bytes[59] << 8)
+        doc: '16 bits'
+      reset_reason:
+        value: >-
+          (bytes[60])
+        doc: '8 bits'
+      pwr_sat:
+        value: >-
+          (
+          (bytes[61])
+          ) & 0x1
+        doc: '1 bits'
+      pwr_rf1:
+        value: >-
+          (
+          (
+          (bytes[61])
+          ) >> 1
+          ) & 0x1
+        doc: '1 bits'
+      pwr_rf2:
+        value: >-
+          (
+          (
+          (bytes[61])
+          ) >> 2
+          ) & 0x1
+        doc: '1 bits'
+      pwr_sunsensor:
+        value: >-
+          (
+          (
+          (bytes[61])
+          ) >> 3
+          ) & 0x1
+        doc: '1 bits'
+      pwr_gamma:
+        value: >-
+          (
+          (
+          (bytes[61])
+          ) >> 4
+          ) & 0x1
+        doc: '1 bits'
+      pwr_irsensor:
+        value: >-
+          (
+          (
+          (bytes[61])
+          ) >> 5
+          ) & 0x1
+        doc: '1 bits'
+      pwr_flash:
+        value: >-
+          (
+          (
+          (bytes[61])
+          ) >> 6
+          ) & 0x1
+        doc: '1 bits'
+      pwr_magnet_x:
+        value: >-
+          (
+          (bytes[61])
+          ) >> 7
+        doc: '1 bits'
+      pwr_magnet_y:
+        value: >-
+          (
+          (bytes[62])
+          ) & 0x1
+        doc: '1 bits'
+      pwr_magnet_z:
+        value: >-
+          (
+          (
+          (bytes[62])
+          ) >> 1
+          ) & 0x1
+        doc: '1 bits'
 
   eps_short_tel:
     seq:
-      - id: sys_time
-        type: u2
-      - id: adc_correctness
-        type: b2
-      - id: t_adc1
-        type: b12
-      - id: t_adc2
-        type: b12
-      - id: stepup_current
-        type: b12
-      - id: stetup_voltage
-        type: b12
-      - id: afterbq_current
-        type: b12
-      - id: battery_voltage
-        type: b12
-      - id: sys_voltage_50
-        type: b12
-      - id: sys_voltage_33
-        type: b12
-      - id: eps_uc_current
-        type: b12
-      - id: obc_uc_current
-        type: b10
-      - id: rf1_uc_current
-        type: b10
-      - id: rf2_uc_current
-        type: b12
-      - id: solar_voltage
-        type: b12
-      - id: side_x_current
-        type: b12
-      - id: side_py_current
-        type: b12
-      - id: side_ny_current
-        type: b12
-      - id: side_pz_current
-        type: b12
-      - id: side_nz_current
-        type: b12
+      - id: b
+        type: u1
+        repeat: eos
+    instances:
+      sys_time:
+        value: >-
+          (bytes[0]) |
+          (bytes[1] << 8)
+        doc: '16 bits'
+      adc_correctness:
+        value: >-
+          (
+          (bytes[2])
+          ) & 0x3
+        doc: '2 bits'
+      t_adc1:
+        value: >-
+          (
+          (
+          (bytes[2]) |
+          (bytes[3] << 8)
+          ) >> 2
+          ) & 0xFFF
+        doc: '12 bits'
+      t_adc2:
+         value: >-
+          (
+          (
+          (bytes[3]) |
+          (bytes[4] << 8) |
+          (bytes[5] << 16)
+          ) >> 6
+          ) & 0xFFF
+        doc: '12 bits'
+      stepup_current:
+        value: >-
+          (
+          (
+          (bytes[5]) |
+          (bytes[6] << 8)
+          ) >> 2
+          ) & 0xFFF
+        doc: '12 bits'
+      stepup_voltage:
+        value: >-
+          (
+          (
+          (bytes[6]) |
+          (bytes[7] << 8) |
+          (bytes[8] << 16)
+          ) >> 6
+          ) & 0xFFF
+        doc: '12 bits'
+      afterbq_current:
+        value: >-
+          (
+          (
+          (bytes[8]) |
+          (bytes[9] << 8)
+          ) >> 2
+          ) & 0xFFF
+        doc: '12 bits'
+      battery_voltage:
+        value: >-
+          (
+          (
+          (bytes[9]) |
+          (bytes[10] << 8) |
+          (bytes[11] << 16)
+          ) >> 6
+          ) & 0xFFF
+        doc: '12 bits'
+      sys_voltage_50:
+        value: >-
+          (
+          (
+          (bytes[11]) |
+          (bytes[12] << 8)
+          ) >> 2
+          ) & 0xFFF
+        doc: '12 bits'
+      sys_voltage_33:
+        value: >-
+          (
+          (
+          (bytes[12]) |
+          (bytes[13] << 8) |
+          (bytes[14] << 16)
+          ) >> 6
+          ) & 0xFFF
+        doc: '12 bits'
+      eps_uc_current:
+        value: >-
+          (
+          (
+          (bytes[14]) |
+          (bytes[15] << 8)
+          ) >> 2
+          ) & 0xFFF
+        doc: '12 bits'
+      obc_uc_current:
+        value: >-
+          (
+          (bytes[15]) |
+          (bytes[16] << 8)
+          ) >> 6
+        doc: '10 bits'
+      rf1_uc_current:
+        value: >-
+          (
+          (bytes[17]) |
+          (bytes[18] << 8)
+          ) & 0x3FF
+        doc: '10 bits'
+      rf2_uc_current:
+        value: >-
+          (
+          (
+          (bytes[18]) |
+          (bytes[19] << 8)
+          ) >> 2
+          ) & 0xFFF
+        doc: '12 bits'
+      solar_voltage:
+        value: >-
+          (
+          (
+          (bytes[19]) |
+          (bytes[20] << 8) |
+          (bytes[21] << 16)
+          ) >> 6
+          ) & 0xFFF
+        doc: '12 bits'
+      side_x_current:
+        value: >-
+          (
+          (
+          (bytes[21]) |
+          (bytes[22] << 8)
+          ) >> 2
+          ) & 0xFFF
+        doc: '12 bits'
+      side_py_current:
+        value: >-
+          (
+          (
+          (bytes[22]) |
+          (bytes[23] << 8) |
+          (bytes[24] << 16)
+          ) >> 6
+          ) & 0xFFF
+        doc: '12 bits'
+      side_ny_current:
+        value: >-
+          (
+          (
+          (bytes[24]) |
+          (bytes[25] << 8)
+          ) >> 2
+          ) & 0xFFF
+        doc: '12 bits'
+      side_pz_current:
+        value: >-
+          (
+          (
+          (bytes[25]) |
+          (bytes[26] << 8) |
+          (bytes[27] << 16)
+          ) >> 6
+          ) & 0xFFF
+        doc: '12 bits'
+      side_nz_current:
+        value: >-
+          (
+          (
+          (bytes[27]) |
+          (bytes[28] << 8)
+          ) >> 2
+          ) & 0xFFF
+        doc: '12 bits'
