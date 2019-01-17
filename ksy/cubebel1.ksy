@@ -1,6 +1,7 @@
 meta:
   id: cubebel1
   endian: le
+doc-ref: 'https://bsusat.com/media/docs/2018/bsusat-1_data_struct.xlsx'
 doc: |
   :field dest_callsign: ax25_frame.ax25_header.dest_callsign_raw.callsign_ror.callsign
   :field src_callsign: ax25_frame.ax25_header.src_callsign_raw.callsign_ror.callsign
