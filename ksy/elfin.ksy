@@ -8,7 +8,6 @@ doc: |
   :field dest_ssid: ax25_frame.ax25_header.dest_ssid_raw.ssid
   :field ctl: ax25_frame.ax25_header.ctl
   :field pid: ax25_frame.payload.pid
-  :field frame_start: ax25_frame.payload.ax25_info.frame_start
   :field beacon_setting: ax25_frame.payload.ax25_info.beacon_setting
   :field status_1_safe_mode: ax25_frame.payload.ax25_info.status_1_safe_mode
   :field status_1_reserved: ax25_frame.payload.ax25_info.status_1_reserved
@@ -184,51 +183,47 @@ doc: |
   :field errors_error7_error: ax25_frame.payload.ax25_info.errors_error7_error
   :field fc_salt: ax25_frame.payload.ax25_info.fc_salt
   :field fc_crc: ax25_frame.payload.ax25_info.fc_crc
-  :field frame_end: ax25_frame.payload.ax25_info.frame_end
-  :field hskp_pwr1_rtcc_year: ax25_frame.payload.ax25_info.hskp_pwr1_rtcc_year
-  :field hskp_pwr1_rtcc_month: ax25_frame.payload.ax25_info.hskp_pwr1_rtcc_month
-  :field hskp_pwr1_rtcc_day: ax25_frame.payload.ax25_info.hskp_pwr1_rtcc_day
-  :field hskp_pwr1_rtcc_hour: ax25_frame.payload.ax25_info.hskp_pwr1_rtcc_hour
-  :field hskp_pwr1_rtcc_minute: ax25_frame.payload.ax25_info.hskp_pwr1_rtcc_minute
-  :field hskp_pwr1_rtcc_second: ax25_frame.payload.ax25_info.hskp_pwr1_rtcc_second
-  :field hskp_pwr1_pwr_board_id: ax25_frame.payload.ax25_info.hskp_pwr1_pwr_board_id
-  :field hskp_pwr1_adc_data_adc_sa_volt_12: ax25_frame.payload.ax25_info.hskp_pwr1_adc_data_adc_sa_volt_12
-  :field hskp_pwr1_adc_data_adc_sa_volt_34: ax25_frame.payload.ax25_info.hskp_pwr1_adc_data_adc_sa_volt_34
-  :field hskp_pwr1_adc_data_adc_sa_volt_56: ax25_frame.payload.ax25_info.hskp_pwr1_adc_data_adc_sa_volt_56
-  :field hskp_pwr1_adc_data_sa_short_circuit_current: ax25_frame.payload.ax25_info.hskp_pwr1_adc_data_sa_short_circuit_current
-  :field hskp_pwr1_adc_data_bat_2_volt: ax25_frame.payload.ax25_info.hskp_pwr1_adc_data_bat_2_volt
-  :field hskp_pwr1_adc_data_bat_1_volt: ax25_frame.payload.ax25_info.hskp_pwr1_adc_data_bat_1_volt
-  :field hskp_pwr1_adc_data_reg_sa_volt_1: ax25_frame.payload.ax25_info.hskp_pwr1_adc_data_reg_sa_volt_1
-  :field hskp_pwr1_adc_data_reg_sa_volt_2: ax25_frame.payload.ax25_info.hskp_pwr1_adc_data_reg_sa_volt_2
-  :field hskp_pwr1_adc_data_reg_sa_volt_3: ax25_frame.payload.ax25_info.hskp_pwr1_adc_data_reg_sa_volt_3
-  :field hskp_pwr1_adc_data_power_bus_current_1: ax25_frame.payload.ax25_info.hskp_pwr1_adc_data_power_bus_current_1
-  :field hskp_pwr1_adc_data_power_bus_current_2: ax25_frame.payload.ax25_info.hskp_pwr1_adc_data_power_bus_current_2
-  :field hskp_pwr1_bat_mon_1_avg_cur_reg: ax25_frame.payload.ax25_info.hskp_pwr1_bat_mon_1_avg_cur_reg
-  :field hskp_pwr1_bat_mon_1_temperature_register: ax25_frame.payload.ax25_info.hskp_pwr1_bat_mon_1_temperature_register
-  :field hskp_pwr1_bat_mon_1_volt_reg: ax25_frame.payload.ax25_info.hskp_pwr1_bat_mon_1_volt_reg
-  :field hskp_pwr1_bat_mon_1_cur_reg: ax25_frame.payload.ax25_info.
-  :field hskp_pwr1_bat_mon_1_acc_curr_reg: ax25_frame.payload.ax25_info.hskp_pwr1_bat_mon_1_acc_curr_reg
-  :field hskp_pwr1_bat_mon_2_avg_cur_reg: ax25_frame.payload.ax25_info.hskp_pwr1_bat_mon_2_avg_cur_reg
-  :field hskp_pwr1_bat_mon_2_temperature_register: ax25_frame.payload.ax25_info.hskp_pwr1_bat_mon_2_temperature_register
-  :field hskp_pwr1_bat_mon_2_volt_reg: ax25_frame.payload.ax25_info.hskp_pwr1_bat_mon_2_volt_reg
-  :field hskp_pwr1_bat_mon_2_cur_reg: ax25_frame.payload.ax25_info.hskp_pwr1_bat_mon_2_cur_reg
-  :field hskp_pwr1_bat_mon_2_acc_curr_reg: ax25_frame.payload.ax25_info.hskp_pwr1_bat_mon_2_acc_curr_reg
-  :field hskp_pwr1_bv_mon: ax25_frame.payload.ax25_info.hskp_pwr1_bv_mon
-  :field hskp_pwr1_tmps_tmp1: ax25_frame.payload.ax25_info.hskp_pwr1_tmps_tmp1
-  :field hskp_pwr1_tmps_tmp2: ax25_frame.payload.ax25_info.hskp_pwr1_tmps_tmp2
-  :field hskp_pwr1_tmps_tmp3: ax25_frame.payload.ax25_info.hskp_pwr1_tmps_tmp3
-  :field hskp_pwr1_tmps_tmp4: ax25_frame.payload.ax25_info.hskp_pwr1_tmps_tmp4
-  :field hskp_pwr1_accumulated_curr_bat1_rsrc: ax25_frame.payload.ax25_info.hskp_pwr1_accumulated_curr_bat1_rsrc
-  :field hskp_pwr1_accumulated_curr_bat2_rsrc: ax25_frame.payload.ax25_info.hskp_pwr1_accumulated_curr_bat2_rsrc
-  :field hskp_pwr1_accumulated_curr_bat1_rarc: ax25_frame.payload.ax25_info.hskp_pwr1_accumulated_curr_bat1_rarc
-  :field hskp_pwr1_accumulated_curr_bat2_rarc: ax25_frame.payload.ax25_info.hskp_pwr1_accumulated_curr_bat2_rarc
   :field fc_status_safe_mode: ax25_frame.payload.ax25_info.fc_status_safe_mode
   :field fc_status_reserved: ax25_frame.payload.ax25_info.fc_status_reserved
   :field fc_status_early_orbit: ax25_frame.payload.ax25_info.fc_status_early_orbit
-  :field frame_start: ax25_frame.payload.ax25_info.frame_start
   :field opcode: ax25_frame.payload.ax25_info.opcode
-  :field fc_crc: ax25_frame.payload.ax25_info.fc_crc
-  :field frame_end: ax25_frame.payload.ax25_info.frame_end
+  :field hskp_pwr1_rtcc_year: ax25_frame.payload.ax25_info.cmd_response.hskp_pwr1_rtcc_year
+  :field hskp_pwr1_rtcc_month: ax25_frame.payload.ax25_info.cmd_response.hskp_pwr1_rtcc_month
+  :field hskp_pwr1_rtcc_day: ax25_frame.payload.ax25_info.cmd_response.hskp_pwr1_rtcc_day
+  :field hskp_pwr1_rtcc_hour: ax25_frame.payload.ax25_info.cmd_response.hskp_pwr1_rtcc_hour
+  :field hskp_pwr1_rtcc_minute: ax25_frame.payload.ax25_info.cmd_response.hskp_pwr1_rtcc_minute
+  :field hskp_pwr1_rtcc_second: ax25_frame.payload.ax25_info.cmd_response.hskp_pwr1_rtcc_second
+  :field hskp_pwr1_pwr_board_id: ax25_frame.payload.ax25_info.cmd_response.hskp_pwr1_pwr_board_id
+  :field hskp_pwr1_adc_data_adc_sa_volt_12: ax25_frame.payload.ax25_info.cmd_response.hskp_pwr1_adc_data_adc_sa_volt_12
+  :field hskp_pwr1_adc_data_adc_sa_volt_34: ax25_frame.payload.ax25_info.cmd_response.hskp_pwr1_adc_data_adc_sa_volt_34
+  :field hskp_pwr1_adc_data_adc_sa_volt_56: ax25_frame.payload.ax25_info.cmd_response.hskp_pwr1_adc_data_adc_sa_volt_56
+  :field hskp_pwr1_adc_data_sa_short_circuit_current: ax25_frame.payload.ax25_info.cmd_response.hskp_pwr1_adc_data_sa_short_circuit_current
+  :field hskp_pwr1_adc_data_bat_2_volt: ax25_frame.payload.ax25_info.cmd_response.hskp_pwr1_adc_data_bat_2_volt
+  :field hskp_pwr1_adc_data_bat_1_volt: ax25_frame.payload.ax25_info.cmd_response.hskp_pwr1_adc_data_bat_1_volt
+  :field hskp_pwr1_adc_data_reg_sa_volt_1: ax25_frame.payload.ax25_info.cmd_response.hskp_pwr1_adc_data_reg_sa_volt_1
+  :field hskp_pwr1_adc_data_reg_sa_volt_2: ax25_frame.payload.ax25_info.cmd_response.hskp_pwr1_adc_data_reg_sa_volt_2
+  :field hskp_pwr1_adc_data_reg_sa_volt_3: ax25_frame.payload.ax25_info.cmd_response.hskp_pwr1_adc_data_reg_sa_volt_3
+  :field hskp_pwr1_adc_data_power_bus_current_1: ax25_frame.payload.ax25_info.cmd_response.hskp_pwr1_adc_data_power_bus_current_1
+  :field hskp_pwr1_adc_data_power_bus_current_2: ax25_frame.payload.ax25_info.cmd_response.hskp_pwr1_adc_data_power_bus_current_2
+  :field hskp_pwr1_bat_mon_1_avg_cur_reg: ax25_frame.payload.ax25_info.cmd_response.hskp_pwr1_bat_mon_1_avg_cur_reg
+  :field hskp_pwr1_bat_mon_1_temperature_register: ax25_frame.payload.ax25_info.cmd_response.hskp_pwr1_bat_mon_1_temperature_register
+  :field hskp_pwr1_bat_mon_1_volt_reg: ax25_frame.payload.ax25_info.cmd_response.hskp_pwr1_bat_mon_1_volt_reg
+  :field hskp_pwr1_bat_mon_1_cur_reg: ax25_frame.payload.ax25_info.cmd_response.hskp_pwr1_bat_mon_1_cur_reg
+  :field hskp_pwr1_bat_mon_1_acc_curr_reg: ax25_frame.payload.ax25_info.cmd_response.hskp_pwr1_bat_mon_1_acc_curr_reg
+  :field hskp_pwr1_bat_mon_2_avg_cur_reg: ax25_frame.payload.ax25_info.cmd_response.hskp_pwr1_bat_mon_2_avg_cur_reg
+  :field hskp_pwr1_bat_mon_2_temperature_register: ax25_frame.payload.ax25_info.cmd_response.hskp_pwr1_bat_mon_2_temperature_register
+  :field hskp_pwr1_bat_mon_2_volt_reg: ax25_frame.payload.ax25_info.cmd_response.hskp_pwr1_bat_mon_2_volt_reg
+  :field hskp_pwr1_bat_mon_2_cur_reg: ax25_frame.payload.ax25_info.cmd_response.hskp_pwr1_bat_mon_2_cur_reg
+  :field hskp_pwr1_bat_mon_2_acc_curr_reg: ax25_frame.payload.ax25_info.cmd_response.hskp_pwr1_bat_mon_2_acc_curr_reg
+  :field hskp_pwr1_bv_mon: ax25_frame.payload.ax25_info.cmd_response.hskp_pwr1_bv_mon
+  :field hskp_pwr1_tmps_tmp1: ax25_frame.payload.ax25_info.cmd_response.hskp_pwr1_tmps_tmp1
+  :field hskp_pwr1_tmps_tmp2: ax25_frame.payload.ax25_info.cmd_response.hskp_pwr1_tmps_tmp2
+  :field hskp_pwr1_tmps_tmp3: ax25_frame.payload.ax25_info.cmd_response.hskp_pwr1_tmps_tmp3
+  :field hskp_pwr1_tmps_tmp4: ax25_frame.payload.ax25_info.cmd_response.hskp_pwr1_tmps_tmp4
+  :field hskp_pwr1_accumulated_curr_bat1_rsrc: ax25_frame.payload.ax25_info.cmd_response.hskp_pwr1_accumulated_curr_bat1_rsrc
+  :field hskp_pwr1_accumulated_curr_bat2_rsrc: ax25_frame.payload.ax25_info.cmd_response.hskp_pwr1_accumulated_curr_bat2_rsrc
+  :field hskp_pwr1_accumulated_curr_bat1_rarc: ax25_frame.payload.ax25_info.cmd_response.hskp_pwr1_accumulated_curr_bat1_rarc
+  :field hskp_pwr1_accumulated_curr_bat2_rarc: ax25_frame.payload.ax25_info.cmd_response.hskp_pwr1_accumulated_curr_bat2_rarc
 
 seq:
   - id: ax25_frame
@@ -311,7 +306,7 @@ types:
     doc-ref: 'https://elfin.igpp.ucla.edu/s/Beacon-Format_v2.xlsx'
     seq:
       - id: frame_start
-        type: u1
+        contents: [0x93]
         doc: |
           0x93 marks the framestart
           Any data byte following after this framestart must not contain:
@@ -332,26 +327,26 @@ types:
 
       - id: beacon_setting
         type: u1
-      - id: status_1_safe_mode
-        type: b1
-      - id: status_1_reserved
-        type: b3
       - id: status_1_early_orbit
         type: b4
+      - id: status_1_reserved
+        type: b3
+      - id: status_1_safe_mode
+        type: b1
         doc: 'Safe mode (first bit), early orbit flags (last 4 bits)'
 
-      - id: status_2_payload_power
-        type: b1
-      - id: status_2_9v_boost
-        type: b1
-      - id: status_2_bat_htr_allow
+      - id: status_2_reserved
+        type: b3
+      - id: status_2_htr_alert
         type: b1
       - id: status_2_htr_force
         type: b1
-      - id: status_2_htr_alert
+      - id: status_2_bat_htr_allow
         type: b1
-      - id: status_2_reserved
-        type: b3
+      - id: status_2_9v_boost
+        type: b1
+      - id: status_2_payload_power
+        type: b1
         doc: |
           Bits 7 to 3 (in order):
           Payload Power, 9V Boost, battery heater allow, heater force,
@@ -694,13 +689,15 @@ types:
         type: u1
 
       - id: fc_salt
+        type: str
+        encoding: utf-8
         size: 4
 
       - id: fc_crc
         type: u1
 
       - id: frame_end
-        type: u1
+        contents: [0x5e]
         doc: '0x5e marks the end of a frame'
 
 #  hskp_data:
@@ -785,18 +782,18 @@ types:
         type: u1
       - id: hskp_pwr1_accumulated_curr_bat2_rarc
         type: u1
-      - id: fc_status_safe_mode
-        type: b1
-      - id: fc_status_reserved
-        type: b3
       - id: fc_status_early_orbit
         type: b4
+      - id: fc_status_reserved
+        type: b3
+      - id: fc_status_safe_mode
+        type: b1
         doc: 'Safe mode (first bit), early orbit flags (last 4 bits)'
 
   cmd_response:
     seq:
       - id: frame_start
-        type: u1
+        contents: [0x93]
         doc: '0x93 marks the framestart'
       - id: opcode
         type: u1
@@ -809,5 +806,5 @@ types:
       - id: fc_crc
         type: u1
       - id: frame_end
-        type: u1
+        contents: [0x5e]
         doc: '0x5e marks the end of a frame'

@@ -28,20 +28,21 @@ class ElfinPp(object):  # pylint: disable=too-few-public-methods
     def __init__(self):
         pass
 
-    def decode(self, bindata):  # pylint: disable=no-self-use
+    def decode(self, in_bindata):  # pylint: disable=no-self-use
         """
         ELFIN preprocessor decoding method
         """
+        bindata = bytearray(in_bindata)
         i = 0
         binlen = len(bindata)
-        out = b''
+        out = bytearray(b'')
         while i < binlen:
-            char = ord(bindata[i])
+            char = bindata[i]
             if char == 0x27 and i + 1 < binlen:
-                next_char = ord(bindata[i + 1])
+                next_char = bindata[i + 1]
                 if next_char in [0x27, 0x5e, 0x9e]:
                     i += 1
-            out += bindata[i]
+            out.append(bindata[i])
             i += 1
         return out
 
