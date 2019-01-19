@@ -217,10 +217,8 @@ types:
 
   rf_response:
     seq:
-      - id: fec_crc_status
-        type: b1
-      - id: rx_msg_state
-        type: b7
+      - id: status_bits
+        type: u1
       - id: rssi
         type: u1
     instances:
@@ -244,31 +242,7 @@ types:
 
   eps_full_tel:
     seq:
-      - id: eps_short_tel
-        type: eps_short_tel
-      - id: current_to_gamma
-        type: b12
-      - id: current_to_irsensor
-        type: b12
-      - id: current_to_extflash
-        type: b12
-      - id: current_to_solarsens
-        type: b12
-      - id: current_to_magnetcoils
-        type: b12
-      - id: current_to_coil_x
-        type: b12
-      - id: current_to_coil_y
-        type: b12
-      - id: current_to_coil_pz
-        type: b12
-      - id: current_to_coil_nz
-        type: b12
-      - id: battery1_temp
-        type: b12
-      - id: battery2_temp
-        type: b12
-      - id: numb_oc_obc
+      - id: bytes
         type: u1
         repeat: eos
     instances:
@@ -293,7 +267,7 @@ types:
           ) & 0xFFF
         doc: '12 bits'
       t_adc2:
-         value: >-
+        value: >-
           (
           (
           (bytes[3]) |
@@ -450,7 +424,7 @@ types:
         doc: '12 bits'
       # --- end of eps_short_tel
       current_to_gamma:
-         value: >-
+        value: >-
           (
           (
           (bytes[28]) |
@@ -688,7 +662,7 @@ types:
 
   eps_short_tel:
     seq:
-      - id: b
+      - id: bytes
         type: u1
         repeat: eos
     instances:
@@ -713,7 +687,7 @@ types:
           ) & 0xFFF
         doc: '12 bits'
       t_adc2:
-         value: >-
+        value: >-
           (
           (
           (bytes[3]) |
