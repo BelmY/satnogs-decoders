@@ -18,7 +18,7 @@ doc: |
   :field hdr_tx_attenuator: ax25_frame.payload.ax25_info.header.tx_attenuator
   :field hdr_battery_voltage: ax25_frame.payload.ax25_info.header.battery_voltage
   :field hdr_system_voltage: ax25_frame.payload.ax25_info.header.system_voltage
-  :field hdr_seq_number: ax25_frame.payload.ax25_info.header.
+  :field hdr_seq_number: ax25_frame.payload.ax25_info.header.seq_number
   :field hdr_pwr_save_state: ax25_frame.payload.ax25_info.header.pwr_save_state
   :field hdr_modem_on_period: ax25_frame.payload.ax25_info.header.modem_on_period
   :field hdr_obc_can_status: ax25_frame.payload.ax25_info.header.obc_can_status
