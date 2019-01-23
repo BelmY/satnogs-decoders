@@ -14,6 +14,7 @@ __all__ = [
     'Fox',
     'Irvine',
     'Minxss',
+    'Origamisat1',
     'Pwsat2',
     'Qbee',
     'Siriussat',
@@ -36,6 +37,7 @@ from .elfin import Elfin
 from .fox import Fox
 from .irvine import Irvine
 from .minxss import Minxss
+from .origamisat1 import Origamisat1
 from .pwsat2 import Pwsat2
 from .qbee import Qbee
 from .siriussat import Siriussat
