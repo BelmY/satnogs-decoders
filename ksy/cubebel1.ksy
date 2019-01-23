@@ -69,7 +69,7 @@ doc: |
   :field t_adc1: ax25_frame.payload.ax25_info.data.t_adc1
   :field t_adc2: ax25_frame.payload.ax25_info.data.t_adc2
   :field stepup_current: ax25_frame.payload.ax25_info.data.stepup_current
-  :field stetup_voltage: ax25_frame.payload.ax25_info.data.stetup_voltage
+  :field stepup_voltage: ax25_frame.payload.ax25_info.data.stepup_voltage
   :field afterbq_current: ax25_frame.payload.ax25_info.data.afterbq_current
   :field battery_voltage: ax25_frame.payload.ax25_info.data.battery_voltage
   :field sys_voltage_50: ax25_frame.payload.ax25_info.data.sys_voltage_50
