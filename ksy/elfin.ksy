@@ -410,7 +410,7 @@ types:
       - id: hskp_pwr1_bat_mon_2_acc_curr_reg
         type: s2
       - id: hskp_pwr1_bv_mon
-        type: u2
+        type: s2
       - id: hskp_pwr1_tmps_tmp1
         type: s2
       - id: hskp_pwr1_tmps_tmp2
@@ -526,13 +526,13 @@ types:
       - id: acb_pc_data1_ipdu_mrm_z
         type: s2
       - id: acb_pc_data1_tmps_tmp1
-        type: u2
+        type: s2
       - id: acb_pc_data1_tmps_tmp2
-        type: u2
+        type: s2
       - id: acb_pc_data1_tmps_tmp3
-        type: u2
+        type: s2
       - id: acb_pc_data1_tmps_tmp4
-        type: u2
+        type: s2
 
       - id: acb_pc_data2_rtcc_year
         type: u1
@@ -559,13 +559,13 @@ types:
       - id: acb_pc_data2_ipdu_mrm_z
         type: s2
       - id: acb_pc_data2_tmps_tmp1
-        type: u2
+        type: s2
       - id: acb_pc_data2_tmps_tmp2
-        type: u2
+        type: s2
       - id: acb_pc_data2_tmps_tmp3
-        type: u2
+        type: s2
       - id: acb_pc_data2_tmps_tmp4
-        type: u2
+        type: s2
 
       - id: acb_sense_adc_data_current
         type: u2le
@@ -765,7 +765,7 @@ types:
       - id: hskp_pwr1_bat_mon_2_acc_curr_reg
         type: s2
       - id: hskp_pwr1_bv_mon
-        type: u2
+        type: s2
       - id: hskp_pwr1_tmps_tmp1
         type: s2
       - id: hskp_pwr1_tmps_tmp2
