@@ -2,21 +2,213 @@ meta:
   id: siriussat
   title: Siriussat Telemetry Decoder
   endian: le
+doc: |
+  :field dest_callsign: ax25_frame.ax25_header.dest_callsign_raw.callsign_ror.callsign
+  :field src_callsign: ax25_frame.ax25_header.src_callsign_raw.callsign_ror.callsign
+  :field src_ssid: ax25_frame.ax25_header.src_ssid_raw.ssid
+  :field dest_ssid: ax25_frame.ax25_header.dest_ssid_raw.ssid
+  :field rpt_callsign: ax25_frame.ax25_header.repeater.rpt_instance[0].rpt_callsign_raw.callsign_ror.callsign
+  :field ctl: ax25_frame.ax25_header.ctl
+  :field pid: ax25_frame.payload.pid
+  :field beacon_type: ax25_frame.payload.ax25_info.beacon_type
+  :field usb1: ax25_frame.payload.ax25_info.body.usb1
+  :field usb2: ax25_frame.payload.ax25_info.body.usb2
+  :field usb3: ax25_frame.payload.ax25_info.body.usb3
+  :field isb1: ax25_frame.payload.ax25_info.body.isb1
+  :field isb2: ax25_frame.payload.ax25_info.body.isb2
+  :field isb3: ax25_frame.payload.ax25_info.body.isb3
+  :field iab: ax25_frame.payload.ax25_info.body.iab
+  :field ich1: ax25_frame.payload.ax25_info.body.ich1
+  :field ich2: ax25_frame.payload.ax25_info.body.ich2
+  :field ich3: ax25_frame.payload.ax25_info.body.ich3
+  :field ich4: ax25_frame.payload.ax25_info.body.ich4
+  :field t1_pw: ax25_frame.payload.ax25_info.body.t1_pw
+  :field t2_pw: ax25_frame.payload.ax25_info.body.t2_pw
+  :field t3_pw: ax25_frame.payload.ax25_info.body.t3_pw
+  :field t4_pw: ax25_frame.payload.ax25_info.body.t4_pw
+  :field uab_crit: ax25_frame.payload.ax25_info.body.uab_crit
+  :field uab_min: ax25_frame.payload.ax25_info.body.uab_min
+  :field heater2_manual: ax25_frame.payload.ax25_info.body.heater2_manual
+  :field heater1_manual: ax25_frame.payload.ax25_info.body.heater1_manual
+  :field heater2_on: ax25_frame.payload.ax25_info.body.heater2_on
+  :field heater1_on: ax25_frame.payload.ax25_info.body.heater1_on
+  :field tab_max: ax25_frame.payload.ax25_info.body.tab_max
+  :field tab_min: ax25_frame.payload.ax25_info.body.tab_min
+  :field channelon4: ax25_frame.payload.ax25_info.body.channelon4
+  :field channelon3: ax25_frame.payload.ax25_info.body.channelon3
+  :field channelon2: ax25_frame.payload.ax25_info.body.channelon2
+  :field channelon1: ax25_frame.payload.ax25_info.body.channelon1
+  :field ich_limit4: ax25_frame.payload.ax25_info.body.ich_limit4
+  :field ich_limit3: ax25_frame.payload.ax25_info.body.ich_limit3
+  :field ich_limit2: ax25_frame.payload.ax25_info.body.ich_limit2
+  :field ich_limit1: ax25_frame.payload.ax25_info.body.ich_limit1
+  :field reserved0: ax25_frame.payload.ax25_info.body.reserved0
+  :field charger: ax25_frame.payload.ax25_info.body.charger
+  :field reserved1: ax25_frame.payload.ax25_info.body.reserved1
+  :field uab: ax25_frame.payload.ax25_info.body.uab
+  :field reg_tel_id: ax25_frame.payload.ax25_info.body.reg_tel_id
+  :field pss_time: ax25_frame.payload.ax25_info.body.pss_time
+  :field pss_nres: ax25_frame.payload.ax25_info.body.pss_nres
+  :field psdd_fl: ax25_frame.payload.ax25_info.body.psdd_fl
+  :field t_amp: ax25_frame.payload.ax25_info.body.t_amp
+  :field t_uhf: ax25_frame.payload.ax25_info.body.t_uhf
+  :field rssirx: ax25_frame.payload.ax25_info.body.rssirx
+  :field rssiidle: ax25_frame.payload.ax25_info.body.rssiidle
+  :field pf: ax25_frame.payload.ax25_info.body.pf
+  :field pb: ax25_frame.payload.ax25_info.body.pb
+  :field uhf_nres: ax25_frame.payload.ax25_info.body.uhf_nres
+  :field uhf_fl: ax25_frame.payload.ax25_info.body.uhf_fl
+  :field uhf_time: ax25_frame.payload.ax25_info.body.uhf_time
+  :field uptime: ax25_frame.payload.ax25_info.body.uptime
+  :field current: ax25_frame.payload.ax25_info.body.current
+  :field uuhf: ax25_frame.payload.ax25_info.body.uuhf
+  :field t_mb: ax25_frame.payload.ax25_info.body.t_mb
+  :field mx: ax25_frame.payload.ax25_info.body.mx
+  :field my: ax25_frame.payload.ax25_info.body.my
+  :field mz: ax25_frame.payload.ax25_info.body.mz
+  :field vx: ax25_frame.payload.ax25_info.body.vx
+  :field vy: ax25_frame.payload.ax25_info.body.vy
+  :field vz: ax25_frame.payload.ax25_info.body.vz
+  :field nres: ax25_frame.payload.ax25_info.body.nres
+  :field rcon: ax25_frame.payload.ax25_info.body.rcon
+  :field fl: ax25_frame.payload.ax25_info.body.fl
+  :field time: ax25_frame.payload.ax25_info.body.time
+  :field payload_flags: ax25_frame.payload.ax25_info.body.payload_flags
+  :field timesend: ax25_frame.payload.ax25_info.body.timesend
+  :field t_plate: ax25_frame.payload.ax25_info.body.t_plate
+  :field t_cpu: ax25_frame.payload.ax25_info.body.t_cpu
+  :field cursens1: ax25_frame.payload.ax25_info.body.cursens1
+  :field cursens2: ax25_frame.payload.ax25_info.body.cursens2
+  :field nrst: ax25_frame.payload.ax25_info.body.nrst
+  :field timerst: ax25_frame.payload.ax25_info.body.timerst
+  :field ch1rate: ax25_frame.payload.ax25_info.body.ch1rate
+  :field ch2rate: ax25_frame.payload.ax25_info.body.ch2rate
+  :field ch3rate: ax25_frame.payload.ax25_info.body.ch3rate
+  :field ch4rate: ax25_frame.payload.ax25_info.body.ch4rate
+  :field ch5rate: ax25_frame.payload.ax25_info.body.ch5rate
+  :field ch6rate: ax25_frame.payload.ax25_info.body.ch6rate
+  :field ptrend1: ax25_frame.payload.ax25_info.body.ptrend1
+  :field ptrcrt1: ax25_frame.payload.ax25_info.body.ptrcrt1
+  :field ptrend2: ax25_frame.payload.ax25_info.body.ptrend2
+  :field ptrcrt2: ax25_frame.payload.ax25_info.body.ptrcrt2
+  :field ptrend3: ax25_frame.payload.ax25_info.body.ptrend3
+  :field ptrcrt3: ax25_frame.payload.ax25_info.body.ptrcrt3
+  :field lastevent_ch1_1: ax25_frame.payload.ax25_info.body.lastevent_ch1_1
+  :field lastevent_ch1_2: ax25_frame.payload.ax25_info.body.lastevent_ch1_2
+  :field lastevent_ch1_3: ax25_frame.payload.ax25_info.body.lastevent_ch1_3
+  :field lastevent_ch2_1: ax25_frame.payload.ax25_info.body.lastevent_ch2_1
+  :field lastevent_ch2_2: ax25_frame.payload.ax25_info.body.lastevent_ch2_2
+  :field lastevent_ch2_3: ax25_frame.payload.ax25_info.body.lastevent_ch2_3
+
+  Attention: `rpt_callsign` cannot be accessed because `rpt_instance` is an
+  array of unknown size at the beginning of the parsing process! Left an
+  example in here.
+
 seq:
-- id: ax25header
-  size: 16
-- id: unknown0
-  type: u1
-- id: unknown1
-  size: 7
-- id: body
-  type:
-    switch-on: unknown0
-    cases:
-      22: beacon
-      23: extendedbeacon
-      
+  - id: ax25_frame
+    type: ax25_frame
+    doc-ref: 'https://www.tapr.org/pub_ax25.html'
+
 types:
+  ax25_frame:
+    seq:
+    - id: ax25_header
+      type: ax25_header
+    - id: payload
+      type:
+        switch-on: ax25_header.ctl & 0x13
+        cases:
+          0x03: ui_frame
+          0x13: ui_frame
+          0x00: i_frame
+          0x02: i_frame
+          0x10: i_frame
+          0x12: i_frame
+          #0x11: s_frame
+
+  ax25_header:
+    seq:
+      - id: dest_callsign_raw
+        type: callsign_raw
+      - id: dest_ssid_raw
+        type: ssid_mask
+      - id: src_callsign_raw
+        type: callsign_raw
+      - id: src_ssid_raw
+        type: ssid_mask
+      - id: repeater
+        type: repeater
+        if: (src_ssid_raw.ssid_mask & 0x01) == 0
+        doc: 'Repeater flag is set!'
+      - id: ctl
+        type: u1
+
+  repeater:
+    seq:
+      - id: rpt_instance
+        type: repeaters
+        repeat: until
+        repeat-until: ((_.rpt_ssid_raw.ssid_mask & 0x1) == 0x1)
+        doc: 'Repeat until no repeater flag is set!'
+
+  repeaters:
+    seq:
+      - id: rpt_callsign_raw
+        type: callsign_raw
+      - id: rpt_ssid_raw
+        type: ssid_mask
+
+  callsign_raw:
+    seq:
+      - id: callsign_ror
+        process: ror(1)
+        size: 6
+        type: callsign
+
+  callsign:
+    seq:
+      - id: callsign
+        type: str
+        encoding: ASCII
+        size: 6
+
+  ssid_mask:
+    seq:
+      - id: ssid_mask
+        type: u1
+    instances:
+      ssid:
+        value: (ssid_mask & 0x0f) >> 1
+
+  i_frame:
+    seq:
+      - id: pid
+        type: u1
+      - id: ax25_info
+        type: tlm
+        size-eos: true
+
+  ui_frame:
+    seq:
+      - id: pid
+        type: u1
+      - id: ax25_info
+        type: tlm
+        size-eos: true
+
+  tlm:
+    seq:
+      - id: beacon_type
+        type: u1
+      - id: unknown1
+        size: 7
+      - id: body
+        type:
+          switch-on: beacon_type
+          cases:
+            22: beacon
+            23: extendedbeacon
+
   beacon:
     seq:
     - id: usb1
