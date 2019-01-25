@@ -1,7 +1,59 @@
 meta:
   id: strand
-doc-ref: https://ukamsat.files.wordpress.com/2013/03/amsat-strand-1-20130327.xlsx
-doc-ref: https://amsat-uk.org/satellites/telemetry/strand-1/strand-1-telemetry/
+doc-ref: 'https://ukamsat.files.wordpress.com/2013/03/amsat-strand-1-20130327.xlsx'
+doc-ref: 'https://amsat-uk.org/satellites/telemetry/strand-1/strand-1-telemetry/'
+doc: |
+  :field seq_no: seq_no
+  :field length: length
+  :field packet_type: packet_type
+  :field channel: body.channel
+  :field time_since_last_obc_i2c_message: body.data.time_since_last_obc_i2c_message
+  :field packets_up_count: body.data.packets_up_count
+  :field packets_down_count: body.data.packets_down_count
+  :field packets_up_dropped_count: body.data.packets_up_dropped_count
+  :field packets_down_dropped_count: body.data.packets_down_dropped_count
+  :field i2c_node_address: body.i2c_node_address
+  :field i2c_node_address: body.node.i2c_node_address
+  :field battery_0_current_direction: body.node.node.battery_0_current_direction
+  :field battery_0_current_ma: body.node.node.battery_0_current_ma
+  :field battery_0_voltage_v: body.node.node.battery_0_voltage_v
+  :field battery_0_temperature_deg_c: body.node.node.battery_0_temperature_deg_c
+  :field battery_1_current_direction: body.node.node.battery_1_current_direction
+  :field battery_1_current_ma: body.node.node.battery_1_current_ma
+  :field battery_1_voltage_v: body.node.node.battery_1_voltage_v
+  :field battery_1_temperature_deg_c: body.node.node.battery_1_temperature_deg_c
+  :field adc1_py_array_current: body.node.node.adc1_py_array_current
+  :field adc2_py_array_temperature: body.node.node.adc2_py_array_temperature
+  :field adc3_array_pair_y_voltage: body.node.node.adc3_array_pair_y_voltage
+  :field adc4_my_array_current: body.node.node.adc4_my_array_current
+  :field adc5_my_array_temperature: body.node.node.adc5_my_array_temperature
+  :field adc6_array_pair_x_voltage: body.node.node.adc6_array_pair_x_voltage
+  :field adc7_mx_array_current: body.node.node.adc7_mx_array_current
+  :field adc8_mx_array_temperature: body.node.node.adc8_mx_array_temperature
+  :field adc9_array_pair_z_voltage: body.node.node.adc9_array_pair_z_voltage
+  :field adc10_pz_array_current: body.node.node.adc10_pz_array_current
+  :field adc11_pz_array_temperature: body.node.node.adc11_pz_array_temperature
+  :field adc13_px_array_current: body.node.node.adc13_px_array_current
+  :field adc14_px_array_temperature: body.node.node.adc14_px_array_temperature
+  :field adc17_battery_bus_current: body.node.node.adc17_battery_bus_current
+  :field adc26_5v_bus_current: body.node.node.adc26_5v_bus_current
+  :field adc27_33v_bus_current: body.node.node.adc27_33v_bus_current
+  :field adc30_mz_array_temperature: body.node.node.adc30_mz_array_temperature
+  :field adc31_mz_array_current: body.node.node.adc31_mz_array_current
+  :field switch_0_ppt_power_supply_status: body.node.node.switch_0_ppt_power_supply_status
+  :field switch_1_ppt_1_2_status: body.node.node.switch_1_ppt_1_2_status
+  :field switch_2_phone_5v_webcam: body.node.node.switch_2_phone_5v_webcam
+  :field switch_3_warp_valve_status: body.node.node.switch_3_warp_valve_status
+  :field switch_4_warp_heater_status: body.node.node.switch_4_warp_heater_status
+  :field switch_5_digi_wi9c_status: body.node.node.switch_5_digi_wi9c_status
+  :field switch_6_sgr05_status: body.node.node.switch_6_sgr05_status
+  :field switch_7_reaction_wheels: body.node.node.switch_7_reaction_wheels
+  :field switch_8_solar_panel_deploy_arm: body.node.node.switch_8_solar_panel_deploy_arm
+  :field switch_9_solar_panel_deploy_fire: body.node.node.switch_9_solar_panel_deploy_fire
+  :field unix_time_little_endian: body.node.node.unix_time_little_endian
+  :field magnetometer_set_1: body.node.node.magnetometer_set_1
+  :field magnetometer_set_2: body.node.node.magnetometer_set_2
+
 seq:
 - id: hdlc_flag
   contents: [0xc0, 0x80]
