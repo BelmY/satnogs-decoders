@@ -8,6 +8,7 @@ import re
 
 from .aausat4 import Aausat4
 from .acrux1 import Acrux1
+from .alsat1n import Alsat1n
 from .armadillo import Armadillo
 from .ascii85test import Ascii85test
 from .ax25frames import Ax25frames
@@ -42,6 +43,7 @@ from .uwe4 import Uwe4
 __all__ = [
     'Aausat4',
     'Acrux1',
+    'Alsat1n',
     'Armadillo',
     'Ascii85test',
     'Ax25frames',
