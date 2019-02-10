@@ -43,6 +43,7 @@ doc: |
   :field beacon_payload_panel_neg_z_temp: ax25_frame.payload.ax25_info.beacon_payload.beacon_payload_panel_neg_z_temp
   :field beacon_payload_freq: ax25_frame.payload.ax25_info.beacon_payload.beacon_payload_freq
   :field beacon_payload_crc: ax25_frame.payload.ax25_info.beacon_payload.beacon_payload_crc
+  :field rf_message: ax25_frame.payload.ax25_info.beacon_payload.message
 
 seq:
   - id: ax25_frame
@@ -128,10 +129,12 @@ types:
           cases:
             true: beacon_header
       - id: beacon_payload
+        if: is_valid_payload
         type:
-          switch-on: is_valid_payload
+          switch-on: beacon_header.beacon_header_api
           cases:
-            true: beacon_payload
+            14: hskp_payload
+            103: rf_message
     instances:
       is_valid_source:
         value: >-
@@ -144,12 +147,22 @@ types:
 
       is_valid_payload:
         value: >-
+          (
           (beacon_header.beacon_header_fm_system_id == 2)
           and (beacon_header.beacon_header_fm_subsystem_id == 1)
           and (beacon_header.beacon_header_to_system_id == 1)
           and (beacon_header.beacon_header_to_subsystem_id == 0)
           and (beacon_header.beacon_header_payload_size == 46)
           and (beacon_header.beacon_header_api == 14)
+          )
+          or
+          (
+          (beacon_header.beacon_header_fm_system_id == 2)
+          and (beacon_header.beacon_header_fm_subsystem_id == 1)
+          and (beacon_header.beacon_header_to_system_id == 1)
+          and (beacon_header.beacon_header_to_subsystem_id == 0)
+          and (beacon_header.beacon_header_api == 103)
+          )
 
   bitmap16_subsystem_status:
     seq:
@@ -177,7 +190,7 @@ types:
       - id: beacon_header_payload_size
         type: u1
 
-  beacon_payload:
+  hskp_payload:
     seq:
       - id: beacon_payload_command
         type: u1
@@ -264,3 +277,15 @@ types:
           + (beacon_payload_timestamp_raw[3] << 24)
           + (beacon_payload_timestamp_raw[4] << 32)
           + (beacon_payload_timestamp_raw[5] << 48))
+  rf_message:
+    seq:
+      - id: offset_0
+        type: u1
+        repeat: expr
+        repeat-expr: 6
+      - id: message
+        type: str
+        encoding: utf-8
+        size: _parent.beacon_header.beacon_header_payload_size - 6
+      - id: rf_message_crc
+        type: u2le
