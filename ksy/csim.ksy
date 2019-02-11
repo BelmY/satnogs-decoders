@@ -1,7 +1,7 @@
 meta:
   id: csim
   title: CSIM-FD decoder struct
-  endian: le
+  endian: be
 doc: |
   :field dest_callsign: ax25_frame.ax25_header.dest_callsign_raw.callsign_ror.callsign
   :field src_callsign: ax25_frame.ax25_header.src_callsign_raw.callsign_ror.callsign
