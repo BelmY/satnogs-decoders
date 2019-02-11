@@ -10,6 +10,7 @@ __all__ = [
     'Cas4',
     'Cubebel1',
     'Cubesatsim',
+    'Csim',
     'Elfin',
     'Fox',
     'Irvine',
@@ -33,6 +34,7 @@ from .bugsat1 import Bugsat1
 from .cas4 import Cas4
 from .cubebel1 import Cubebel1
 from .cubesatsim import Cubesatsim
+from .csim import Csim
 from .elfin import Elfin
 from .fox import Fox
 from .irvine import Irvine
