@@ -12,6 +12,18 @@ Kaitai Structs, preprocessors and helper scripts for decoding SatNOGS received d
      * KS compiler output: `cubebel1.py`
      * Python capitalized function name: `Cubebel1`
      * The python module name should match the python function naming rules in [PEP8](https://www.python.org/dev/peps/pep-0008/#id40).
+   - Add documentation fields in kaitai structure
+     * Add "doc-ref", is the source of information about the decoder
+     * Add -orig-id, is the name of field which is the same with the source of information, "doc-ref"
+     * At the beginning of kaitai struct after the meta data it is necessary to add, the way that the influxdb value it matches to the kaitai field. For example:
+     ```yaml
+     doc: |
+       :field influxdb_field: katai_field
+
+     doc: |
+       :field dest_callsign: ax25_frame.ax25_header.dest_callsign_raw.callsign_ror.callsign
+    ```
+
 2. Add the python class name of your decoder to the list in `satnogsdecoders/decoder/__init__.py`
 
 `__init__.py`:
