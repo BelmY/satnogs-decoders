@@ -16,6 +16,9 @@ doc: |
   :field obc_reset_counter: ax25_frame.payload.ax25_info.beacon_type.obc_reset_counter
   :field obc_uptime: ax25_frame.payload.ax25_info.beacon_type.obc_uptime
   :field gyro_norm: ax25_frame.payload.ax25_info.beacon_type.gyro_norm
+  :field eps_reset_counter: ax25_frame.payload.ax25_info.beacon_type.eps_reset_counter
+  :field eps_last_boot_cause: ax25_frame.payload.ax25_info.beacon_type.eps_last_boot_cause
+  :field eps_battery_mode: ax25_frame.payload.ax25_info.beacon_type.eps_battery_mode
   :field timestamp: ax25_frame.payload.ax25_info.beacon_type.timestamp
   :field obc_temperature: ax25_frame.payload.ax25_info.beacon_type.obc_temperature
   :field obc_daughterboard_temperature: ax25_frame.payload.ax25_info.beacon_type.obc_daughterboard_temperature
@@ -24,14 +27,8 @@ doc: |
   :field ants_temperature: ax25_frame.payload.ax25_info.beacon_type.ants_temperature
   :field trxvu_temperature: ax25_frame.payload.ax25_info.beacon_type.trxvu_temperature
   :field adcs_temperature: ax25_frame.payload.ax25_info.beacon_type.adcs_temperature
-  :field sp1_temperature: ax25_frame.payload.ax25_info.beacon_type.sp1_temperature
-  :field sp2_temperature: ax25_frame.payload.ax25_info.beacon_type.sp2_temperature
-  :field sp3_temperature: ax25_frame.payload.ax25_info.beacon_type.sp3_temperature
-  :field sp4_temperature: ax25_frame.payload.ax25_info.beacon_type.sp4_temperature
-  :field sp5_temperature: ax25_frame.payload.ax25_info.beacon_type.sp5_temperature
-  :field sp6_temperature: ax25_frame.payload.ax25_info.beacon_type.sp6_temperature
   :field obc_3v3_voltage: ax25_frame.payload.ax25_info.beacon_type.obc_3v3_voltage
-  :field obc_5v_voltage: ax25_frame.payload.ax25_info.beacon_type.obc_5v_voltage
+  :field camera_voltage: ax25_frame.payload.ax25_info.beacon_type.camera_voltage
   :field trxvu_voltage: ax25_frame.payload.ax25_info.beacon_type.trxvu_voltage
   :field eps_battery_voltage: ax25_frame.payload.ax25_info.beacon_type.eps_battery_voltage
   :field obc_5v_current: ax25_frame.payload.ax25_info.beacon_type.obc_5v_current
@@ -39,6 +36,7 @@ doc: |
   :field eps_total_system_current: ax25_frame.payload.ax25_info.beacon_type.eps_total_system_current
   :field data_monitor: ax25_frame.payload.ax25_info.beacon_type.message
 
+doc: |
   Attention: `rpt_callsign` cannot be accessed because `rpt_instance` is an
   array of unknown size at the beginning of the parsing process! Left an
   example in here.
@@ -170,6 +168,34 @@ types:
         type: u1
         doc: 'value = gyro_norm [sec]'
         doc: 'Norm of angular rates for 3 axes'
+      - id: eps_reset_counter
+        -orig-id: EPS Reset Counter
+        type: u4
+        doc: 'value = eps_reset_counter [n]'
+      - id: eps_last_boot_cause
+        -orig-id: EPS Last Boot Cause
+        type: u1
+        doc: 'value = eps_last_boot_cause [n]'
+        doc: |
+          0: Unknown reset
+          1: Dedicated WDT reset
+          2: I2C WDT reset
+          3: Hard reset
+          4: Soft reset
+          5: Stack overflow
+          6: Timer overflow
+          7: Brownout or power-on reset
+          8: Internal WDT reset
+      - id: eps_battery_mode
+        -orig-id: EPS Battery Mode
+        type: u1
+        doc: 'value = eps_battery_mode [n]'
+        doc: |
+          0: initial
+          1: undervoltage
+          2: safemode
+          3: nominal
+          4: full
       - id: timestamp
         -orig-id: Timestamp
         type: u4
@@ -203,38 +229,14 @@ types:
         -orig-id: ADCS Temperature
         type: u1
         doc: 'value = adcs_temperature - 128 [degC]'
-      - id: sp1_temperature
-        -orig-id: Solar Panel 1 Temperature
-        type: u1
-        doc: 'value = sp1_temperature - 128 [degC]'
-      - id: sp2_temperature
-        -orig-id: Solar Panel 2 Temperature
-        type: u1
-        doc: 'value = sp2_temperature - 128 [degC]'
-      - id: sp3_temperature
-        -orig-id: Solar Panel 3 Temperature
-        type: u1
-        doc: 'value = sp3_temperature - 128 [degC]'
-      - id: sp4_temperature
-        -orig-id: Solar Panel 4 Temperature
-        type: u1
-        doc: 'value = sp4_temperature - 128 [degC]'
-      - id: sp5_temperature
-        -orig-id: Solar Panel 5 Temperature
-        type: u1
-        doc: 'value = sp5_temperature - 128 [degC]'
-      - id: sp6_temperature
-        -orig-id: Solar Panel 6 Temperature
-        type: u1
-        doc: 'value = sp6_temperature - 128 [degC]'
       - id: obc_3v3_voltage
         -orig-id: OBC 3.3 Voltage
         type: u1
         doc: 'value = obc_3v3_voltage / 10 [V]'
-      - id: obc_5v_voltage
-        -orig-id: OBC 5.0 Voltage
+      - id: camera_voltage
+        -orig-id: Camera Voltage
         type: u1
-        doc: 'value = obc_5v_voltage / 10 [V]'
+        doc: 'value = camera_voltage / 10 [V]'
       - id: trxvu_voltage
         -orig-id: TRXVU Voltage
         type: u1
@@ -257,7 +259,7 @@ types:
         doc: 'value = eps_total_system_current [mA]'
   mysat_message:
     seq:
-      - id: message
+      - id: data_monitor
         type: str
         encoding: utf-8
         size-eos: true
