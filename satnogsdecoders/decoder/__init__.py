@@ -12,6 +12,7 @@ __all__ = [
     'Cubesatsim',
     'Csim',
     'Elfin',
+    'Eshail2',
     'Fox',
     'Irvine',
     'Minxss',
@@ -37,6 +38,7 @@ from .cubebel1 import Cubebel1
 from .cubesatsim import Cubesatsim
 from .csim import Csim
 from .elfin import Elfin
+from .eshail2 import Eshail2
 from .fox import Fox
 from .irvine import Irvine
 from .minxss import Minxss
