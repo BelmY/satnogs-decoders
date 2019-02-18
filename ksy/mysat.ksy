@@ -34,9 +34,8 @@ doc: |
   :field obc_5v_current: ax25_frame.payload.ax25_info.beacon_type.obc_5v_current
   :field eps_total_pv_current: ax25_frame.payload.ax25_info.beacon_type.eps_total_pv_current
   :field eps_total_system_current: ax25_frame.payload.ax25_info.beacon_type.eps_total_system_current
-  :field data_monitor: ax25_frame.payload.ax25_info.beacon_type.message
+  :field message: ax25_frame.payload.ax25_info.beacon_type.message
 
-doc: |
   Attention: `rpt_callsign` cannot be accessed because `rpt_instance` is an
   array of unknown size at the beginning of the parsing process! Left an
   example in here.
@@ -259,7 +258,7 @@ types:
         doc: 'value = eps_total_system_current [mA]'
   mysat_message:
     seq:
-      - id: data_monitor
+      - id: message
         type: str
         encoding: utf-8
         size-eos: true
