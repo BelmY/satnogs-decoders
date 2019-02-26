@@ -24,6 +24,7 @@ DEFAULT_TARGET="python"
 DEFAULT_OUTDIR="satnogsdecoders/decoder"
 DEFAULT_FILE="ksy/*.ksy"
 
+docker pull "$IMAGE"
 # shellcheck disable=SC2068
 docker run \
 	-u "$USER" \
