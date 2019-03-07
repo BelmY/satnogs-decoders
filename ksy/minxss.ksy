@@ -1,3 +1,4 @@
+---
 meta:
   id: minxss
   endian: be
@@ -42,19 +43,19 @@ seq:
 types:
   ax25_frame:
     seq:
-    - id: ax25_header
-      type: ax25_header
-    - id: payload
-      type:
-        switch-on: ax25_header.ctl & 0x13
-        cases:
-          0x03: ui_frame
-          0x13: ui_frame
-          0x00: i_frame
-          0x02: i_frame
-          0x10: i_frame
-          0x12: i_frame
-          #0x11: s_frame
+      - id: ax25_header
+        type: ax25_header
+      - id: payload
+        type:
+          switch-on: ax25_header.ctl & 0x13
+          cases:
+            0x03: ui_frame
+            0x13: ui_frame
+            0x00: i_frame
+            0x02: i_frame
+            0x10: i_frame
+            0x12: i_frame
+            # 0x11: s_frame
 
   ax25_header:
     seq:

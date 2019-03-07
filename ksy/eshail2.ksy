@@ -1,3 +1,4 @@
+---
 meta:
   id: eshail2
   title: Es'Hail2 (QO-100) decoder struct
@@ -41,140 +42,140 @@ types:
         type: u2
   ao40_message_k:
     seq:
-    - id: ao40_message_line1
-      type: str
-      encoding: ASCII
-      size: 63
-    - id: ao40_message_line2
-      type: str
-      encoding: ASCII
-      size: 64
-    - id: ao40_message_line3
-      type: str
-      encoding: ASCII
-      size: 64
-    - id: ao40_message_line4
-      type: str
-      encoding: ASCII
-      size: 64
-    - id: ao40_message_line5
-      type: str
-      encoding: ASCII
-      size: 64
-    - id: ao40_message_line6
-      type: str
-      encoding: ASCII
-      size: 64
-    - id: ao40_message_line7
-      type: str
-      encoding: ASCII
-      size: 64
-    - id: ao40_message_line8
-      type: str
-      encoding: ASCII
-      size: 64
+      - id: ao40_message_line1
+        type: str
+        encoding: ASCII
+        size: 63
+      - id: ao40_message_line2
+        type: str
+        encoding: ASCII
+        size: 64
+      - id: ao40_message_line3
+        type: str
+        encoding: ASCII
+        size: 64
+      - id: ao40_message_line4
+        type: str
+        encoding: ASCII
+        size: 64
+      - id: ao40_message_line5
+        type: str
+        encoding: ASCII
+        size: 64
+      - id: ao40_message_line6
+        type: str
+        encoding: ASCII
+        size: 64
+      - id: ao40_message_line7
+        type: str
+        encoding: ASCII
+        size: 64
+      - id: ao40_message_line8
+        type: str
+        encoding: ASCII
+        size: 64
   ao40_message_l:
     seq:
-    - id: ao40_message_line1
-      type: str
-      encoding: ASCII
-      size: 63
-    - id: ao40_message_line2
-      type: str
-      encoding: ASCII
-      size: 64
-    - id: ao40_message_line3
-      type: str
-      encoding: ASCII
-      size: 64
-    - id: ao40_message_line4
-      type: str
-      encoding: ASCII
-      size: 64
-    - id: ao40_message_line5
-      type: str
-      encoding: ASCII
-      size: 64
-    - id: ao40_message_line6
-      type: str
-      encoding: ASCII
-      size: 64
-    - id: ao40_message_line7
-      type: str
-      encoding: ASCII
-      size: 64
-    - id: ao40_message_line8
-      type: str
-      encoding: ASCII
-      size: 64
+      - id: ao40_message_line1
+        type: str
+        encoding: ASCII
+        size: 63
+      - id: ao40_message_line2
+        type: str
+        encoding: ASCII
+        size: 64
+      - id: ao40_message_line3
+        type: str
+        encoding: ASCII
+        size: 64
+      - id: ao40_message_line4
+        type: str
+        encoding: ASCII
+        size: 64
+      - id: ao40_message_line5
+        type: str
+        encoding: ASCII
+        size: 64
+      - id: ao40_message_line6
+        type: str
+        encoding: ASCII
+        size: 64
+      - id: ao40_message_line7
+        type: str
+        encoding: ASCII
+        size: 64
+      - id: ao40_message_line8
+        type: str
+        encoding: ASCII
+        size: 64
   ao40_message_spare:
     seq:
-    - id: ao40_message_line1
-      type: str
-      encoding: ASCII
-      size: 63
-    - id: ao40_message_line2
-      type: str
-      encoding: ASCII
-      size: 64
-    - id: ao40_message_line3
-      type: str
-      encoding: ASCII
-      size: 64
-    - id: ao40_message_line4
-      type: str
-      encoding: ASCII
-      size: 64
-    - id: ao40_message_line5
-      type: str
-      encoding: ASCII
-      size: 64
-    - id: ao40_message_line6
-      type: str
-      encoding: ASCII
-      size: 64
-    - id: ao40_message_line7
-      type: str
-      encoding: ASCII
-      size: 64
-    - id: ao40_message_line8
-      type: str
-      encoding: ASCII
-      size: 64
+      - id: ao40_message_line1
+        type: str
+        encoding: ASCII
+        size: 63
+      - id: ao40_message_line2
+        type: str
+        encoding: ASCII
+        size: 64
+      - id: ao40_message_line3
+        type: str
+        encoding: ASCII
+        size: 64
+      - id: ao40_message_line4
+        type: str
+        encoding: ASCII
+        size: 64
+      - id: ao40_message_line5
+        type: str
+        encoding: ASCII
+        size: 64
+      - id: ao40_message_line6
+        type: str
+        encoding: ASCII
+        size: 64
+      - id: ao40_message_line7
+        type: str
+        encoding: ASCII
+        size: 64
+      - id: ao40_message_line8
+        type: str
+        encoding: ASCII
+        size: 64
   ao40_command_response:
     seq:
-    - id: ao40_message_line1
-      type: str
-      encoding: ASCII
-      size: 63
-    - id: ao40_message_line2
-      type: str
-      encoding: ASCII
-      size: 64
-    - id: ao40_message_line3
-      type: str
-      encoding: ASCII
-      size: 64
-    - id: ao40_message_line4
-      type: str
-      encoding: ASCII
-      size: 64
-    - id: ao40_message_line5
-      type: str
-      encoding: ASCII
-      size: 64
-    - id: ao40_message_line6
-      type: str
-      encoding: ASCII
-      size: 64
-    - id: ao40_message_line7
-      type: str
-      encoding: ASCII
-      size: 64
-    - id: ao40_message_line8
-      type: str
-      encoding: ASCII
-      size: 64
+      - id: ao40_message_line1
+        type: str
+        encoding: ASCII
+        size: 63
+      - id: ao40_message_line2
+        type: str
+        encoding: ASCII
+        size: 64
+      - id: ao40_message_line3
+        type: str
+        encoding: ASCII
+        size: 64
+      - id: ao40_message_line4
+        type: str
+        encoding: ASCII
+        size: 64
+      - id: ao40_message_line5
+        type: str
+        encoding: ASCII
+        size: 64
+      - id: ao40_message_line6
+        type: str
+        encoding: ASCII
+        size: 64
+      - id: ao40_message_line7
+        type: str
+        encoding: ASCII
+        size: 64
+      - id: ao40_message_line8
+        type: str
+        encoding: ASCII
+        size: 64
 instances:
   frame_length:
     value: _io.size

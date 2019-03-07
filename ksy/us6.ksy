@@ -1,3 +1,4 @@
+---
 meta:
   id: us6
   title: Unisat-6 Telemetry Decoder
@@ -55,11 +56,10 @@ seq:
 types:
   ax25_frame:
     seq:
-    - id: ax25_header
-      type: ax25_header
-    - id: payload
-      type:
-        us6_frame
+      - id: ax25_header
+        type: ax25_header
+      - id: payload
+        type: us6_frame
 
   ax25_header:
     seq:

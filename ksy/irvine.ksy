@@ -1,3 +1,4 @@
+---
 meta:
   id: irvine
   endian: be
@@ -34,19 +35,19 @@ seq:
 types:
   ax25_frame:
     seq:
-    - id: ax25_header
-      type: ax25_header
-    - id: payload
-      type:
-        switch-on: ax25_header.ctl & 0x13
-        cases:
-          0x03: ui_frame
-          0x13: ui_frame
-          0x00: i_frame
-          0x02: i_frame
-          0x10: i_frame
-          0x12: i_frame
-          #0x11: s_frame
+      - id: ax25_header
+        type: ax25_header
+      - id: payload
+        type:
+          switch-on: ax25_header.ctl & 0x13
+          cases:
+            0x03: ui_frame
+            0x13: ui_frame
+            0x00: i_frame
+            0x02: i_frame
+            0x10: i_frame
+            0x12: i_frame
+            # 0x11: s_frame
 
   ax25_header:
     seq:
@@ -230,7 +231,8 @@ types:
         82: secure_vmtp
         83: vines
         84: ttp
-        84: iptm
+        # FIXME: Possible enumeration bug!
+        # 84: iptm
         85: nsfnet_igp
         86: dgp
         87: tcf
@@ -565,9 +567,8 @@ types:
         value: volt5vpl / (256.0 * 256.0)
       curr5vpl_val:
         value: curr5vpl / (256.0 * 256.0)
-        doc: 'Voltages in [V]! Currents in [A]!'
-
         doc: |
+          Voltages in [V]! Currents in [A]!
           IRVINE payload inside a UDP datagram multicast packet
           Currently partially reverse-engineered
           Conversion values taken from source-code

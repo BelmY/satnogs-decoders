@@ -1,3 +1,4 @@
+---
 meta:
   id: cubesatsim
   endian: be
@@ -42,19 +43,19 @@ seq:
 types:
   ax25_frame:
     seq:
-    - id: ax25_header
-      type: ax25_header
-    - id: payload
-      type:
-        switch-on: ax25_header.ctl & 0x13
-        cases:
-          0x03: ui_frame
-          0x13: ui_frame
-          0x00: i_frame
-          0x02: i_frame
-          0x10: i_frame
-          0x12: i_frame
-          #0x11: s_frame
+      - id: ax25_header
+        type: ax25_header
+      - id: payload
+        type:
+          switch-on: ax25_header.ctl & 0x13
+          cases:
+            0x03: ui_frame
+            0x13: ui_frame
+            0x00: i_frame
+            0x02: i_frame
+            0x10: i_frame
+            0x12: i_frame
+            # 0x11: s_frame
 
   ax25_header:
     seq:
@@ -114,8 +115,8 @@ types:
         type:
           switch-on: data_type
           cases:
-            _:  ao_7
-            0x6869:  ao_7
+            _: ao_7
+            0x6869: ao_7
 
   ao_7:
     seq:
@@ -320,80 +321,80 @@ types:
         size: 1
 
     instances:
-        channel_1a_val:
-          value: ((channel_1a_val_raw[0] - 0x30) * 10 + (channel_1a_val_raw[1] - 0x30)) * 29.5
-          doc: 'value * 29.5 [mA]'
-        channel_1b_val:
-          value: 1970 - (20 * ((channel_1b_val_raw[0] - 0x30) * 10 + (channel_1b_val_raw[1] - 0x30)))
-          doc: '1970 - (20 * value) [mA]'
-        channel_1c_val:
-          value: 1970 - (20 * ((channel_1c_val_raw[0] - 0x30) * 10 + (channel_1c_val_raw[1] - 0x30)))
-          doc: '1970 - (20 * value) [mA]'
-        channel_1d_val:
-          value: (channel_1d_val_raw[0] - 0x30) * 10 + (channel_1d_val_raw[1] - 0x30)
-          doc: '1970 - (20 * value) [mA]'
+      channel_1a_val:
+        value: ((channel_1a_val_raw[0] - 0x30) * 10 + (channel_1a_val_raw[1] - 0x30)) * 29.5
+        doc: 'value * 29.5 [mA]'
+      channel_1b_val:
+        value: 1970 - (20 * ((channel_1b_val_raw[0] - 0x30) * 10 + (channel_1b_val_raw[1] - 0x30)))
+        doc: '1970 - (20 * value) [mA]'
+      channel_1c_val:
+        value: 1970 - (20 * ((channel_1c_val_raw[0] - 0x30) * 10 + (channel_1c_val_raw[1] - 0x30)))
+        doc: '1970 - (20 * value) [mA]'
+      channel_1d_val:
+        value: (channel_1d_val_raw[0] - 0x30) * 10 + (channel_1d_val_raw[1] - 0x30)
+        doc: '1970 - (20 * value) [mA]'
 
-        channel_2a_val:
-          value: 1970 - (20 * ((channel_2a_val_raw[0] - 0x30) * 10 + (channel_2a_val_raw[1] - 0x30)))
-          doc: '1970 - (20 * value) [mA]'
-        channel_2b_val:
-          value: 8 * ((1 - 0.01 * ((channel_2b_val_raw[0] - 0x30) * 10 + (channel_2b_val_raw[1] - 0x30))) * (1 - 0.01 * ((channel_2b_val_raw[0] - 0x30) * 10 + (channel_2b_val_raw[1] - 0x30))))
-          doc: '8 * (1 - 0.01 * value)^2 [W]'
-        channel_2c_val:
-          value: 15.16 * ((channel_2c_val_raw[0] - 0x30) * 10 + (channel_2c_val_raw[1] - 0x30))
-          doc: '15.16 * value [h]'
-        channel_2d_val:
-          value: 40 * (((channel_2d_val_raw[0] - 0x30) * 10 + (channel_2d_val_raw[1] - 0x30)) - 50)
-          doc: '40 * (value - 50) [mA]'
+      channel_2a_val:
+        value: 1970 - (20 * ((channel_2a_val_raw[0] - 0x30) * 10 + (channel_2a_val_raw[1] - 0x30)))
+        doc: '1970 - (20 * value) [mA]'
+      channel_2b_val:
+        value: 8 * ((1 - 0.01 * ((channel_2b_val_raw[0] - 0x30) * 10 + (channel_2b_val_raw[1] - 0x30))) * (1 - 0.01 * ((channel_2b_val_raw[0] - 0x30) * 10 + (channel_2b_val_raw[1] - 0x30))))
+        doc: '8 * (1 - 0.01 * value)^2 [W]'
+      channel_2c_val:
+        value: 15.16 * ((channel_2c_val_raw[0] - 0x30) * 10 + (channel_2c_val_raw[1] - 0x30))
+        doc: '15.16 * value [h]'
+      channel_2d_val:
+        value: 40 * (((channel_2d_val_raw[0] - 0x30) * 10 + (channel_2d_val_raw[1] - 0x30)) - 50)
+        doc: '40 * (value - 50) [mA]'
 
-        channel_3a_val:
-          value: 0.1 * ((channel_3a_val_raw[0] - 0x30) * 10 + (channel_3a_val_raw[1] - 0x30)) + 6.4
-          doc: '0.1 * value + 6.4 [V]'
-        channel_3b_val:
-          value: 0.1 * ((channel_3b_val_raw[0] - 0x30) * 10 + (channel_3b_val_raw[1] - 0x30))
-          doc: '0.1 * value [V]'
-        channel_3c_val:
-          value: 0.15 * ((channel_3c_val_raw[0] - 0x30) * 10 + (channel_3c_val_raw[1] - 0x30))
-          doc: '0.15 * value [V]'
-        channel_3d_val:
-          value: 95.8 - 1.48 * ((channel_3d_val_raw[0] - 0x30) * 10 + (channel_3d_val_raw[1] - 0x30))
-          doc: '95.8 - 1.48 * value [C]'
+      channel_3a_val:
+        value: 0.1 * ((channel_3a_val_raw[0] - 0x30) * 10 + (channel_3a_val_raw[1] - 0x30)) + 6.4
+        doc: '0.1 * value + 6.4 [V]'
+      channel_3b_val:
+        value: 0.1 * ((channel_3b_val_raw[0] - 0x30) * 10 + (channel_3b_val_raw[1] - 0x30))
+        doc: '0.1 * value [V]'
+      channel_3c_val:
+        value: 0.15 * ((channel_3c_val_raw[0] - 0x30) * 10 + (channel_3c_val_raw[1] - 0x30))
+        doc: '0.15 * value [V]'
+      channel_3d_val:
+        value: 95.8 - 1.48 * ((channel_3d_val_raw[0] - 0x30) * 10 + (channel_3d_val_raw[1] - 0x30))
+        doc: '95.8 - 1.48 * value [C]'
 
-        channel_4a_val:
-          value: 95.8 - 1.48 * ((channel_4a_val_raw[0] - 0x30) * 10 + (channel_4a_val_raw[1] - 0x30))
-          doc: '95.8 - 1.48 * value [C]'
-        channel_4b_val:
-          value: 95.8 - 1.48 * ((channel_4b_val_raw[0] - 0x30) * 10 + (channel_4b_val_raw[1] - 0x30))
-          doc: '95.8 - 1.48 * value [C]'
-        channel_4c_val:
-          value: 95.8 - 1.48 * ((channel_4c_val_raw[0] - 0x30) * 10 + (channel_4c_val_raw[1] - 0x30))
-          doc: '95.8 - 1.48 * value [C]'
-        channel_4d_val:
-          value: 95.8 - 1.48 * ((channel_4d_val_raw[0] - 0x30) * 10 + (channel_4d_val_raw[1] - 0x30))
-          doc: '95.8 - 1.48 * value [C]'
+      channel_4a_val:
+        value: 95.8 - 1.48 * ((channel_4a_val_raw[0] - 0x30) * 10 + (channel_4a_val_raw[1] - 0x30))
+        doc: '95.8 - 1.48 * value [C]'
+      channel_4b_val:
+        value: 95.8 - 1.48 * ((channel_4b_val_raw[0] - 0x30) * 10 + (channel_4b_val_raw[1] - 0x30))
+        doc: '95.8 - 1.48 * value [C]'
+      channel_4c_val:
+        value: 95.8 - 1.48 * ((channel_4c_val_raw[0] - 0x30) * 10 + (channel_4c_val_raw[1] - 0x30))
+        doc: '95.8 - 1.48 * value [C]'
+      channel_4d_val:
+        value: 95.8 - 1.48 * ((channel_4d_val_raw[0] - 0x30) * 10 + (channel_4d_val_raw[1] - 0x30))
+        doc: '95.8 - 1.48 * value [C]'
 
-        channel_5a_val:
-          value: 95.8 - 1.48 * ((channel_5a_val_raw[0] - 0x30) * 10 + (channel_5a_val_raw[1] - 0x30))
-          doc: '95.8 - 1.48 * value [C]'
-        channel_5b_val:
-          value: 11.67 * ((channel_5b_val_raw[0] - 0x30) * 10 + (channel_5b_val_raw[1] - 0x30))
-          doc: '11.67 * value [mA]'
-        channel_5c_val:
-          value: 95.8 - 1.48 * ((channel_5c_val_raw[0] - 0x30) * 10 + (channel_5c_val_raw[1] - 0x30))
-          doc: '95.8 - 1.48 * value [C]'
-        channel_5d_val:
-          value: 11 + 0.82 * ((channel_5d_val_raw[0] - 0x30) * 10 + (channel_5d_val_raw[1] - 0x30))
-          doc: '11 + 0.82 * value [mA]'
+      channel_5a_val:
+        value: 95.8 - 1.48 * ((channel_5a_val_raw[0] - 0x30) * 10 + (channel_5a_val_raw[1] - 0x30))
+        doc: '95.8 - 1.48 * value [C]'
+      channel_5b_val:
+        value: 11.67 * ((channel_5b_val_raw[0] - 0x30) * 10 + (channel_5b_val_raw[1] - 0x30))
+        doc: '11.67 * value [mA]'
+      channel_5c_val:
+        value: 95.8 - 1.48 * ((channel_5c_val_raw[0] - 0x30) * 10 + (channel_5c_val_raw[1] - 0x30))
+        doc: '95.8 - 1.48 * value [C]'
+      channel_5d_val:
+        value: 11 + 0.82 * ((channel_5d_val_raw[0] - 0x30) * 10 + (channel_5d_val_raw[1] - 0x30))
+        doc: '11 + 0.82 * value [mA]'
 
-        channel_6a_val:
-          value: (((channel_6a_val_raw[0] - 0x30) * 10 + (channel_6a_val_raw[1] - 0x30)) * ((channel_6a_val_raw[0] - 0x30) * 10 + (channel_6a_val_raw[1] - 0x30))) / 1.56
-          doc: 'value^2 / 1.56 [mA]'
-        channel_6b_val:
-          value: 0.1 * (((channel_6b_val_raw[0] - 0x30) * 10 + (channel_6b_val_raw[1] - 0x30)) * ((channel_6b_val_raw[0] - 0x30) * 10 + (channel_6b_val_raw[1] - 0x30))) + 35
-          doc: '0.1 * value^2 + 35 [mA]'
-        channel_6c_val:
-          value: 0.041 * (((channel_6c_val_raw[0] - 0x30) * 10 + (channel_6c_val_raw[1] - 0x30)) * ((channel_6c_val_raw[0] - 0x30) * 10 + (channel_6c_val_raw[1] - 0x30)))
-          doc: '0.041 * value^2 [mA]'
-        channel_6d_val:
-          value: 0.01 * ((channel_6d_val_raw[0] - 0x30) * 10 + (channel_6d_val_raw[1] - 0x30))
-          doc: '0.01 * value'
+      channel_6a_val:
+        value: (((channel_6a_val_raw[0] - 0x30) * 10 + (channel_6a_val_raw[1] - 0x30)) * ((channel_6a_val_raw[0] - 0x30) * 10 + (channel_6a_val_raw[1] - 0x30))) / 1.56
+        doc: 'value^2 / 1.56 [mA]'
+      channel_6b_val:
+        value: 0.1 * (((channel_6b_val_raw[0] - 0x30) * 10 + (channel_6b_val_raw[1] - 0x30)) * ((channel_6b_val_raw[0] - 0x30) * 10 + (channel_6b_val_raw[1] - 0x30))) + 35
+        doc: '0.1 * value^2 + 35 [mA]'
+      channel_6c_val:
+        value: 0.041 * (((channel_6c_val_raw[0] - 0x30) * 10 + (channel_6c_val_raw[1] - 0x30)) * ((channel_6c_val_raw[0] - 0x30) * 10 + (channel_6c_val_raw[1] - 0x30)))
+        doc: '0.041 * value^2 [mA]'
+      channel_6d_val:
+        value: 0.01 * ((channel_6d_val_raw[0] - 0x30) * 10 + (channel_6d_val_raw[1] - 0x30))
+        doc: '0.01 * value'

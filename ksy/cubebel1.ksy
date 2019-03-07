@@ -1,3 +1,4 @@
+---
 meta:
   id: cubebel1
   endian: le
@@ -93,19 +94,19 @@ seq:
 types:
   ax25_frame:
     seq:
-    - id: ax25_header
-      type: ax25_header
-    - id: payload
-      type:
-        switch-on: ax25_header.ctl & 0x13
-        cases:
-          0x03: ui_frame
-          0x13: ui_frame
-          0x00: i_frame
-          0x02: i_frame
-          0x10: i_frame
-          0x12: i_frame
-          #0x11: s_frame
+      - id: ax25_header
+        type: ax25_header
+      - id: payload
+        type:
+          switch-on: ax25_header.ctl & 0x13
+          cases:
+            0x03: ui_frame
+            0x13: ui_frame
+            0x00: i_frame
+            0x02: i_frame
+            0x10: i_frame
+            0x12: i_frame
+            # 0x11: s_frame
 
   ax25_header:
     seq:
@@ -166,17 +167,17 @@ types:
         type:
           switch-on: header.data_type
           cases:
-            #0x00: rf_beacon
+            # 0x00: rf_beacon
             0x01: rf_response
-            #0x02: rf_image
+            # 0x02: rf_image
             0x03: rf_message
-            #0x04: rf_command_list
-            #0x05: rf_current_settings
-            #0x06: rf_default_settings
-            #0x07: rf_logo
-            #0x08: rf_saved_eps_tel
-            #0x09: rf_saved_obc_tel
-            #0x80: obc_tlm
+            # 0x04: rf_command_list
+            # 0x05: rf_current_settings
+            # 0x06: rf_default_settings
+            # 0x07: rf_logo
+            # 0x08: rf_saved_eps_tel
+            # 0x09: rf_saved_obc_tel
+            # 0x80: obc_tlm
             0xfe: eps_full_tel
             0xff: eps_short_tel
 

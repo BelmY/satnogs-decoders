@@ -1,3 +1,4 @@
+---
 meta:
   id: csim
   title: CSIM-FD decoder struct
@@ -186,19 +187,19 @@ seq:
 types:
   ax25_frame:
     seq:
-    - id: ax25_header
-      type: ax25_header
-    - id: payload
-      type:
-        switch-on: ax25_header.ctl & 0x13
-        cases:
-          0x03: ui_frame
-          0x13: ui_frame
-          0x00: i_frame
-          0x02: i_frame
-          0x10: i_frame
-          0x12: i_frame
-          #0x11: s_frame
+      - id: ax25_header
+        type: ax25_header
+      - id: payload
+        type:
+          switch-on: ax25_header.ctl & 0x13
+          cases:
+            0x03: ui_frame
+            0x13: ui_frame
+            0x00: i_frame
+            0x02: i_frame
+            0x10: i_frame
+            0x12: i_frame
+            # 0x11: s_frame
 
   ax25_header:
     seq:
@@ -286,23 +287,27 @@ types:
       - id: l0_status
         -orig-id: L0_Status
         type: u1
-        doc: 'L0 System Status'
-        doc: 'value = l0_status [n]'
+        doc: |
+          L0 System Status
+          value = l0_status [n]
       - id: l0_acpt_cnt
         -orig-id: L0_ACPT_CNT
         type: u1
-        doc: 'Level 0 Accept Counter'
-        doc: 'value = l0_acpt_cnt [n]'
+        doc: |
+          Level 0 Accept Counter
+          value = l0_acpt_cnt [n]
       - id: l0_rjct_cnt
         -orig-id: L0_RJCT_CNT
         type: u1
-        doc: 'Level 0 Reject Counter'
-        doc: 'value = l0_rjct_cnt [n]'
+        doc: |
+          Level 0 Reject Counter
+          value = l0_rjct_cnt [n]
       - id: hw_sec_cnt
         -orig-id: HW_SEC_CNT
         type: u1
-        doc: 'Hardware Second Counter'
-        doc: 'value = hw_sec_cnt [s]'
+        doc: |
+          Hardware Second Counter
+          value = hw_sec_cnt [s]
       - id: offset_1
         type: u1
         repeat: expr
@@ -310,8 +315,9 @@ types:
       - id: time_tag
         -orig-id: TIME_TAG
         type: u4
-        doc: 'Time Tag of Last Incoming Command'
-        doc: 'value = time_tag [usec]'
+        doc: |
+          Time Tag of Last Incoming Command
+          value = time_tag [usec]
       - id: offset_2
         type: u1
         repeat: expr
@@ -319,32 +325,36 @@ types:
       - id: pld_tlm_ack_cnt
         -orig-id: PLD_TLM_ACK_CNT
         type: u1
-        doc: 'Number of accepted telemetry packets'
-        doc: 'value = pld_tlm_ack_cnt [n]'
+        doc: |
+          Number of accepted telemetry packets
+          value = pld_tlm_ack_cnt [n]
       - id: pld_cmd_cnt
         -orig-id: PLD_CMD_CNT
         type: u1
-        doc: 'Number of commands sent'
-        doc: 'value = pld_cmd_cnt [n]'
+        doc: |
+          Number of commands sent
+          value = pld_cmd_cnt [n]
       - id: pld_tlm_to_cnt
         -orig-id: PLD_TLM_TO_CNT
         type: u1
-        doc: 'Number of timeouts waiting for telemetry'
-        doc: 'value = pld_tlm_to_cnt [n]'
+        doc: |
+          Number of timeouts waiting for telemetry
+          value = pld_tlm_to_cnt [n]
       - id: pld_tlm_nak_cnt
         -orig-id: PLD_TLM_NAK_CNT
         type: u1
-        doc: 'Number of rejected telemetry packets'
-        doc: 'value = pld_tlm_nak_cnt [n]'
+        doc: |
+          Number of rejected telemetry packets
+          value = pld_tlm_nak_cnt [n]
       - id: spare_end
         -orig-id: SPARE_END
         type: u8
       - id: cmd_status
         -orig-id: CMD_STATUS
         type: u1
-        doc: 'Command Status'
-        doc: 'value = cmd_status [n]'
         doc: |
+          Command Status
+          value = cmd_status [n]
           0/OK
           1/BAD_APID
           2/BAD_OPCODE
@@ -366,493 +376,571 @@ types:
       - id: realtime_cmd_accept_count
         -orig-id: REALTIME_CMD_ACCEPT_COUNT
         type: u1
-        doc: 'Realtime Command Accept Count'
-        doc: 'value = realtime_cmd_accept_count [n]'
+        doc: |
+          Realtime Command Accept Count
+          value = realtime_cmd_accept_count [n]
       - id: realtime_cmd_reject_count
         -orig-id: REALTIME_CMD_REJECT_COUNT
         type: u1
-        doc: 'Realtime Command Reject Count'
-        doc: 'value = realtime_command_reject_count [n]'
+        doc: |
+          Realtime Command Reject Count
+          value = realtime_command_reject_count [n]
       - id: stored_cmd_accept_cnt
         -orig-id: STORED_CMD_ACCEPT_COUNT
         type: u1
-        doc: 'Stored Command Accept Count'
-        doc: 'value = stored_command_accept_count [n]'
+        doc: |
+          Stored Command Accept Count
+          value = stored_command_accept_count [n]
       - id: stored_cmd_reject_cnt
         -orig-id: STORED_CMD_REJECT_COUNT
         type: u1
-        doc: 'Stored Command Reject Count'
-        doc: 'value = stored_command_reject_count [n]'
+        doc: |
+          Stored Command Reject Count
+          value = stored_command_reject_count [n]
       - id: macros_status_1
         -orig-id: MACROS_STATUS_1
         type: u2
-        doc: 'Macros Status'
-        doc: 'value = macros_status_1 [n]'
+        doc: |
+          Macros Status
+          value = macros_status_1 [n]
       - id: scrub_status_overall
         -orig-id: SCRUB_STATUS_OVERALL
         type: s1
-        doc: 'Scrub Status Overall'
-        doc: 'value = scrub_status_overall [n]'
+        doc: |
+          Scrub Status Overall
+          value = scrub_status_overall [n]
       - id: scrub_count
         -orig-id: SCRUB_COUNT
         type: u1
-        doc: 'Number of times flash scrubbing has run'
-        doc: 'value = scrub_count [n]'
+        doc: |
+          Number of times flash scrubbing has run
+          value = scrub_count [n]
       - id: image_booted
         -orig-id: IMAGE_BOOTED
         type: u1
-        doc: 'Which image was booted'
-        doc: 'value = image_booted [n]'
         doc: |
+          Which image was booted
+          value = image_booted [n]
           0/PRIMARY
           1/REDUNDANT
       - id: image_auto_failover
         -orig-id: IMAGE_AUTO_FAILOVER
         type: u1
-        doc: 'Automatic image failover occured'
-        doc: 'value = image_auto_failover [n]'
         doc: |
+          Automatic image failover occured
+          value = image_auto_failover [n]
           0/OK
           1/FAIL
       - id: tai_seconds
         -orig-id: TAI_SECONDS
         type: f8
-        doc: 'TAI Seconds'
-        doc: 'value = tai_seconds [sec]'
+        doc: |
+          TAI Seconds
+          value = tai_seconds [sec]
       - id: time_valid
         -orig-id: TIME_VALID
         type: u1
-        doc: 'Time Valid'
-        doc: 'value = time_valid [n]'
         doc: |
+          Time Valid
+          value = time_valid [n]
           0/NO
           1/YES
       - id: position_wrt_eci1
         -orig-id: POSITION_WRT_ECI1
         type: s4
-        doc: 'Orbit Position ECI'
-        doc: 'value = 2.00E-05 * position_wrt_eci1 [km]'
+        doc: |
+          Orbit Position ECI
+          value = 2.00E-05 * position_wrt_eci1 [km]
       - id: position_wrt_eci2
         -orig-id: POSITION_WRT_ECI2
         type: s4
-        doc: 'Orbit Position ECI'
-        doc: 'value = 2.00E-05 * position_wrt_eci2 [km]'
+        doc: |
+          Orbit Position ECI
+          value = 2.00E-05 * position_wrt_eci2 [km]
       - id: position_wrt_eci3
         -orig-id: POSITION_WRT_ECI3
         type: s4
-        doc: 'Orbit Position ECI'
-        doc: 'value = 2.00E-05 * position_wrt_eci3 [km]'
+        doc: |
+          Orbit Position ECI
+          value = 2.00E-05 * position_wrt_eci3 [km]
       - id: velocity_wrt_eci1
         -orig-id: VELOCITY_WRT_ECI1
         type: s4
-        doc: 'Orbit Velocity ECI'
-        doc: 'value = 5.00E-09 * velocity_wrt_eci1 [km/sec]'
+        doc: |
+          Orbit Velocity ECI
+          value = 5.00E-09 * velocity_wrt_eci1 [km/sec]
       - id: velocity_wrt_eci2
         -orig-id: VELOCITY_WRT_ECI2
         type: s4
-        doc: 'Orbit Velocity ECI'
-        doc: 'value = 5.00E-09 * velocity_wrt_eci2 [km/sec]'
+        doc: |
+          Orbit Velocity ECI
+          value = 5.00E-09 * velocity_wrt_eci2 [km/sec]
       - id: velocity_wrt_eci3
         -orig-id: VELOCITY_WRT_ECI3
         type: s4
-        doc: 'Orbit Velocity ECI'
-        doc: 'value = 5.00E-09 * velocity_wrt_eci3 [km/sec]'
+        doc: |
+          Orbit Velocity ECI
+          value = 5.00E-09 * velocity_wrt_eci3 [km/sec]
       - id: nadir_vector_body1
         -orig-id: NADIR_VECTOR_BODY1
         type: s2
-        doc: 'Nadir Vector in Body'
-        doc: 'value = 4.00E-05 * nadir_vector_body1 [n]'
+        doc: |
+          Nadir Vector in Body
+          value = 4.00E-05 * nadir_vector_body1 [n]
       - id: nadir_vector_body2
         -orig-id: NADIR_VECTOR_BODY2
         type: s2
-        doc: 'Nadir Vector in Body'
-        doc: 'value = 4.00E-05 * nadir_vector_body2 [n]'
+        doc: |
+          Nadir Vector in Body
+          value = 4.00E-05 * nadir_vector_body2 [n]
       - id: nadir_vector_body3
         -orig-id: NADIR_VECTOR_BODY3
         type: s2
-        doc: 'Nadir Vector in Body'
-        doc: 'value = 4.00E-05 * nadir_vector_body3 [n]'
+        doc: |
+          Nadir Vector in Body
+          value = 4.00E-05 * nadir_vector_body3 [n]
       - id: sun_vector_body1
         -orig-id: SUN_VECTOR_BODY1
         type: s2
-        doc: 'Sun vector in spacecraft body frame'
-        doc: 'value = 4.00E-05 * sun_vector_body1 [n]'
+        doc: |
+          Sun vector in spacecraft body frame
+          value = 4.00E-05 * sun_vector_body1 [n]
       - id: sun_vector_body2
         -orig-id: SUN_VECTOR_BODY2
         type: s2
-        doc: 'Sun vector in spacecraft body frame'
-        doc: 'value = 4.00E-05 * sun_vector_body2 [n]'
+        doc: |
+          Sun vector in spacecraft body frame
+          value = 4.00E-05 * sun_vector_body2 [n]
       - id: sun_vector_body3
         -orig-id: SUN_VECTOR_BODY3
         type: s2
-        doc: 'Sun vector in spacecraft body frame'
-        doc: 'value = 4.00E-05 * sun_vector_body3 [n]'
+        doc: |
+          Sun vector in spacecraft body frame
+          value = 4.00E-05 * sun_vector_body3 [n]
       - id: sun_position_wrt_eci1
         -orig-id: SUN_POSITION_WRT_ECI1
         type: s4
-        doc: 'Sun Position ECI'
-        doc: 'value = 0.0714 * sun_position_wrt_eci1 [km]'
+        doc: |
+          Sun Position ECI
+          value = 0.0714 * sun_position_wrt_eci1 [km]
       - id: sun_position_wrt_eci2
         -orig-id: SUN_POSITION_WRT_ECI2
         type: s4
-        doc: 'Sun Position ECI'
-        doc: 'value = 0.0714 * sun_position_wrt_eci2 [km]'
+        doc: |
+          Sun Position ECI
+          value = 0.0714 * sun_position_wrt_eci2 [km]
       - id: sun_position_wrt_eci3
         -orig-id: SUN_POSITION_WRT_ECI3
         type: s4
-        doc: 'Sun Position ECI'
-        doc: 'value = 0.0714 * sun_position_wrt_eci3 [km]'
+        doc: |
+          Sun Position ECI
+          value = 0.0714 * sun_position_wrt_eci3 [km]
       - id: moon_position_wrt_eci1
         -orig-id: MOON_POSITION_WRT_ECI1
         type: s4
-        doc: 'Moon Position ECI'
-        doc: 'value = 0.00019999999 * moon_position_wrt_eci1 [km]'
+        doc: |
+          Moon Position ECI
+          value = 0.00019999999 * moon_position_wrt_eci1 [km]
       - id: moon_position_wrt_eci2
         -orig-id: MOON_POSITION_WRT_ECI2
         type: s4
-        doc: 'Moon Position ECI'
-        doc: 'value = 0.00019999999 * moon_position_wrt_eci2 [km]'
+        doc: |
+          Moon Position ECI
+          value = 0.00019999999 * moon_position_wrt_eci2 [km]
       - id: moon_position_wrt_eci3
         -orig-id: MOON_POSITION_WRT_ECI3
         type: s4
-        doc: 'Moon Position ECI'
-        doc: 'value = 0.00019999999 * moon_position_wrt_eci3 [km]'
+        doc: |
+          Moon Position ECI
+          value = 0.00019999999 * moon_position_wrt_eci3 [km]
       - id: refs_valid
         -orig-id: REFS_VALID
         type: u1
-        doc: 'Refs valid'
-        doc: 'value = refs_valid [n]'
         doc: |
+          Refs valid
+          value = refs_valid [n]
           0/NO
           1/YES
       - id: esm_valid
         -orig-id: ESM_VALID
         type: u1
-        doc: 'Earth, Sun, Moon valid'
-        doc: 'value = esm_valid [n]'
         doc: |
+          Earth, Sun, Moon valid
+          value = esm_valid [n]
           0/NO
           1/YES
       - id: run_low_rate_task
         -orig-id: RUN_LOW_RATE_TASK
         type: u1
-        doc: 'RunLowRateTask'
-        doc: 'value = run_low_rate_task [n]'
         doc: |
+          RunLowRateTask
+          value = run_low_rate_task [n]
           0/NO
           1/YES
       - id: q_body_wrt_eci1
         -orig-id: Q_BODY_WRT_ECI1
         type: s4
-        doc: 'Attitude Quaternion'
-        doc: 'value = 5.00E-10 * q_body_wrt_eci1 [n]'
+        doc: |
+          Attitude Quaternion
+          value = 5.00E-10 * q_body_wrt_eci1 [n]
       - id: q_body_wrt_eci2
         -orig-id: Q_BODY_WRT_ECI2
         type: s4
-        doc: 'Attitude Quaternion'
-        doc: 'value = 5.00E-10 * q_body_wrt_eci2 [n]'
+        doc: |
+          Attitude Quaternion
+          value = 5.00E-10 * q_body_wrt_eci2 [n]
       - id: q_body_wrt_eci3
         -orig-id: Q_BODY_WRT_ECI3
         type: s4
-        doc: 'Attitude Quaternion'
-        doc: 'value = 5.00E-10 * q_body_wrt_eci3 [n]'
+        doc: |
+          Attitude Quaternion
+          value = 5.00E-10 * q_body_wrt_eci3 [n]
       - id: q_body_wrt_eci4
         -orig-id: Q_BODY_WRT_ECI4
         type: s4
-        doc: 'Attitude Quaternion'
-        doc: 'value = 5.00E-10 * q_body_wrt_eci4 [n]'
+        doc: |
+          Attitude Quaternion
+          value = 5.00E-10 * q_body_wrt_eci4 [n]
       - id: body_rate1_dps
         -orig-id: BODY_RATE1_DPS
         type: s4
-        doc: 'Body Frame Rate (deg/s)'
-        doc: 'value = 2.86E-07 * body_rate1_dps [deg/sec]'
+        doc: |
+          Body Frame Rate (deg/s)
+          value = 2.86E-07 * body_rate1_dps [deg/sec]
       - id: body_rate2_dps
         -orig-id: BODY_RATE2_DPS
         type: s4
-        doc: 'Body Frame Rate (deg/s)'
-        doc: 'value = 2.86E-07 * body_rate2_dps [deg/sec]'
+        doc: |
+          Body Frame Rate (deg/s)
+          value = 2.86E-07 * body_rate2_dps [deg/sec]
       - id: body_rate3_dps
         -orig-id: BODY_RATE3_DPS
         type: s4
-        doc: 'Body Frame Rate (deg/s)'
-        doc: 'value = 2.86E-07 * body_rate3_dps [deg/sec]'
+        doc: |
+          Body Frame Rate (deg/s)
+          value = 2.86E-07 * body_rate3_dps [deg/sec]
       - id: bad_att_timer
         -orig-id: BAD_ATT_TIMER
         type: u4
-        doc: 'BadAttTimer'
-        doc: 'value = bad_att_timer [cycles]'
+        doc: |
+          BadAttTimer
+          value = bad_att_timer [cycles]
       - id: bad_rate_timer
         -orig-id: BAD_RATE_TIMER
         type: u4
-        doc: 'BadRateTimer'
-        doc: 'value = bad_rate_timer [cycles]'
+        doc: |
+          BadRateTimer
+          value = bad_rate_timer [cycles]
       - id: reinit_count
         -orig-id: REINIT_COUNT
         type: u4
-        doc: 'Attitude Filter Reinit Count'
-        doc: 'value = reinit_count [n]'
+        doc: |
+          Attitude Filter Reinit Count
+          value = reinit_count [n]
       - id: gnc_status_1
         -orig-id: GNC_STATUS_1
         type: u4
-        doc: 'GNC Status'
-        doc: 'value = gnc_status [n]'
+        doc: |
+          GNC Status
+          value = gnc_status [n]
       - id: hr_cycle_safe_mode
         -orig-id: HR_CYCLE_SAFE_MODE
         type: u4
-        doc: 'HR Run Count at Time of Safe Mode'
-        doc: 'value = hr_cycle_safe_mode [cycles]'
+        doc: |
+          HR Run Count at Time of Safe Mode
+          value = hr_cycle_safe_mode [cycles]
       - id: rotisserie_rate_dps
         -orig-id: ROTISSERIE_RATE_DPS
         type: s2
-        doc: 'Desired Sun Rot Rate (deg/s)'
-        doc: 'value = 0.002292 * rotisserie_rate_dps [deg/sec]'
+        doc: |
+          Desired Sun Rot Rate (deg/s)
+          value = 0.002292 * rotisserie_rate_dps [deg/sec]
       - id: adcs_mode
         -orig-id: ADCS_MODE
         type: u1
-        doc: 'ADCS Mode'
-        doc: 'value = adcs_mode [n]'
+        doc: |
+          ADCS Mode
+          value = adcs_mode [n]
       - id: gnc_status_2
         -orig-id: GNC_STATUS_2
         type: u2
-        doc: 'GNC Status'
-        doc: 'value = gnc_status [n]'
+        doc: |
+          GNC Status
+          value = gnc_status [n]
       - id: filtered_speed_rpm1
         -orig-id: FILTERED_SPEED_RPM1
         type: s2
-        doc: 'Wheel Meas Speed'
-        doc: 'value = 0.4 * filtered_speed_rpm1 [rpm]'
+        doc: |
+          Wheel Meas Speed
+          value = 0.4 * filtered_speed_rpm1 [rpm]
       - id: filtered_speed_rpm2
         -orig-id: FILTERED_SPEED_RPM2
         type: s2
-        doc: 'Wheel Meas Speed'
-        doc: 'value = 0.4 * filtered_speed_rpm2 [rpm]'
+        doc: |
+          Wheel Meas Speed
+          value = 0.4 * filtered_speed_rpm2 [rpm]
       - id: filtered_speed_rpm3
         -orig-id: FILTERED_SPEED_RPM3
         type: s2
-        doc: 'Wheel Meas Speed'
-        doc: 'value = 0.4 * filtered_speed_rpm3 [rpm]'
+        doc: |
+          Wheel Meas Speed
+          value = 0.4 * filtered_speed_rpm3 [rpm]
       - id: operating_mode1
         -orig-id: OPERATING_MODE1
         type: u1
-        doc: 'Wheel Operating Mode'
-        doc: 'value = operating_mode1 [n]'
         doc: |
+          Wheel Operating Mode
+          value = operating_mode1 [n]
           0/IDLE
           1/INT
           2/EXT
       - id: operating_mode2
         -orig-id: OPERATING_MODE2
         type: u1
-        doc: 'Wheel Operating Mode'
-        doc: 'value = operating_mode2 [n]'
         doc: |
+          Wheel Operating Mode
+          value = operating_mode2 [n]
           0/IDLE
           1/INT
           2/EXT
       - id: operating_mode3
         -orig-id: OPERATING_MODE3
         type: u1
-        doc: 'Wheel Operating Mode'
-        doc: 'value = operating_mode3 [n]'
         doc: |
+          Wheel Operating Mode
+          value = operating_mode3 [n]
           0/IDLE
           1/INT
           2/EXT
       - id: operating_mode
         -orig-id: OPERATING_MODE
         type: u1
-        doc: 'Tracker Operating Mode'
-        doc: 'value = operating_mode [n]'
+        doc: |
+          Tracker Operating Mode
+          value = operating_mode [n]
       - id: star_id_step
         -orig-id: STAR_ID_STEP
         type: u1
-        doc: 'Star ID Step'
-        doc: 'value = star_id_step [n]'
+        doc: |
+          Star ID Step
+          value = star_id_step [n]
       - id: att_status
         -orig-id: ATT_STATUS
         type: u1
-        doc: 'Tracker Attitude Status'
-        doc: 'value = att_status [n]'
+        doc: |
+          Tracker Attitude Status
+          value = att_status [n]
       - id: det_timeout_count
         -orig-id: DET_TIMEOUT_COUNT
         type: u2
-        doc: 'Number of detector timeouts'
-        doc: 'value = det_timeout_count [counts]'
+        doc: |
+          Number of detector timeouts
+          value = det_timeout_count [counts]
       - id: num_attitude_stars
         -orig-id: NUM_ATTITUDE_STARS
         type: u1
-        doc: 'Number Stars Used in Att'
-        doc: 'value = num_attitude_stars [n]'
+        doc: |
+          Number Stars Used in Att
+          value = num_attitude_stars [n]
       - id: position_error1
         -orig-id: POSITION_ERROR1
         type: s4
-        doc: 'Attitude Error'
-        doc: 'value = 2.00E-09 * position_error1 [rad]'
+        doc: |
+          Attitude Error
+          value = 2.00E-09 * position_error1 [rad]
       - id: position_error2
         -orig-id: POSITION_ERROR2
         type: s4
-        doc: 'Attitude Error'
-        doc: 'value = 2.00E-09 * position_error2 [rad]'
+        doc: |
+          Attitude Error
+          value = 2.00E-09 * position_error2 [rad]
       - id: position_error3
         -orig-id: POSITION_ERROR3
         type: s4
-        doc: 'Attitude Error'
-        doc: 'value = 2.00E-09 * position_error3 [rad]'
+        doc: |
+          Attitude Error
+          value = 2.00E-09 * position_error3 [rad]
       - id: eigen_error
         -orig-id: EIGEN_ERROR
         type: u4
-        doc: 'Eigen Error'
-        doc: 'value = 1.52E-09 * eigen_error [rad]'
+        doc: |
+          Eigen Error
+          value = 1.52E-09 * eigen_error [rad]
       - id: time_into_search
         -orig-id: TIME_INTO_SEARCH
         type: u2
-        doc: 'Time Into Sun Search'
-        doc: 'value = time_into_search [sec]'
+        doc: |
+          Time Into Sun Search
+          value = time_into_search [sec]
       - id: wait_timer
         -orig-id: WAIT_TIMER
         type: u2
-        doc: 'Sun Search Wait Timer'
-        doc: 'value = wait_timer [sec]'
+        doc: |
+          Sun Search Wait Timer
+          value = wait_timer [sec]
       - id: sun_point_angle_error
         -orig-id: SUN_POINT_ANGLE_ERROR
         type: u2
-        doc: 'Sun Point Angle Error'
-        doc: 'value = 0.0029999998 * sun_point_angle_error [deg]'
+        doc: |
+          Sun Point Angle Error
+          value = 0.0029999998 * sun_point_angle_error [deg]
       - id: sun_point_state
         -orig-id: SUN_POINT_STATE
         type: u1
-        doc: 'Sun Point State'
-        doc: 'value = sun_point_angle_error [n]'
+        doc: |
+          Sun Point State
+          value = sun_point_angle_error [n]
       - id: momentum_vector_body1
         -orig-id: MOMENTUM_VECTOR_BODY1
         type: s2
-        doc: 'System Momentum in Body Frame'
-        doc: 'value = 0.00019999999 * momentum_vector_body1 [Nms]'
+        doc: |
+          System Momentum in Body Frame
+          value = 0.00019999999 * momentum_vector_body1 [Nms]
       - id: momentum_vector_body2
         -orig-id: MOMENTUM_VECTOR_BODY2
         type: s2
-        doc: 'System Momentum in Body Frame'
-        doc: 'value = 0.00019999999 * momentum_vector_body2 [Nms]'
+        doc: |
+          System Momentum in Body Frame
+          value = 0.00019999999 * momentum_vector_body2 [Nms]
       - id: momentum_vector_body3
         -orig-id: MOMENTUM_VECTOR_BODY3
         type: s2
-        doc: 'System Momentum in Body Frame'
-        doc: 'value = 0.00019999999 * momentum_vector_body3 [Nms]'
+        doc: |
+          System Momentum in Body Frame
+          value = 0.00019999999 * momentum_vector_body3 [Nms]
       - id: total_momentum_mag
         -orig-id: TOTAL_MOMENTUM_MAG
         type: u2
-        doc: 'System Momentum Magnitude'
-        doc: 'value = 0.00050000002 * total_momentum_mag [Nms]'
+        doc: |
+          System Momentum Magnitude
+          value = 0.00050000002 * total_momentum_mag [Nms]
       - id: duty_cycle1
         -orig-id: DUTY_CYCLE1
         type: s1
-        doc: 'Torque Rod Duty Cycle'
-        doc: 'value = duty_cycle1 [n]'
+        doc: |
+          Torque Rod Duty Cycle
+          value = duty_cycle1 [n]
       - id: duty_cycle2
         -orig-id: DUTY_CYCLE2
         type: s1
-        doc: 'Torque Rod Duty Cycle'
-        doc: 'value = duty_cycle2 [n]'
+        doc: |
+          Torque Rod Duty Cycle
+          value = duty_cycle2 [n]
       - id: duty_cycle3
         -orig-id: DUTY_CYCLE3
         type: s1
-        doc: 'Torque Rod Duty Cycle'
-        doc: 'value = duty_cycle3 [n]'
+        doc: |
+          Torque Rod Duty Cycle
+          value = duty_cycle3 [n]
       - id: torque_rod_mode1
         -orig-id: TORQUE_ROD_MODE1
         type: u1
-        doc: 'Torque Rod Ctrl Mode'
-        doc: 'value = torque_rod_mode1 [n]'
+        doc: |
+          Torque Rod Ctrl Mode
+          value = torque_rod_mode1 [n]
       - id: torque_rod_mode2
         -orig-id: TORQUE_ROD_MODE2
         type: u1
-        doc: 'Torque Rod Ctrl Mode'
-        doc: 'value = torque_rod_mode2 [n]'
+        doc: |
+          Torque Rod Ctrl Mode
+          value = torque_rod_mode2 [n]
       - id: torque_rod_mode3
         -orig-id: TORQUE_ROD_MODE3
         type: u1
-        doc: 'Torque Rod Ctrl Mode'
-        doc: 'value = torque_rod_mode3 [n]'
+        doc: |
+          Torque Rod Ctrl Mode
+          value = torque_rod_mode3 [n]
       - id: mag_source_used
         -orig-id: MAG_SOURCE_USED
         type: u1
-        doc: 'Mag Field Source'
-        doc: 'value = mag_source_used [n]'
+        doc: |
+          Mag Field Source
+          value = mag_source_used [n]
       - id: momentum_vector_valid
         -orig-id: MOMENTUM_VECTOR_VALID
         type: u1
-        doc: 'Momentum Vector Valid'
-        doc: 'value = momentum_vector_valid [n]'
         doc: |
+          Momentum Vector Valid
+          value = momentum_vector_valid [n]
           0/NO
           1/YES
       - id: sun_vector_body1_meas
         -orig-id: SUN_VECTOR_BODY1
         type: s2
-        doc: 'Meas Sun Body Vector'
-        doc: 'value = 1.00E-04 * sun_vector_body1_meas [n]'
+        doc: |
+          Meas Sun Body Vector
+          value = 1.00E-04 * sun_vector_body1_meas [n]
       - id: sun_vector_body2_meas
         -orig-id: SUN_VECTOR_BODY2
         type: s2
-        doc: 'Meas Sun Body Vector'
-        doc: 'value = 1.00E-04 * sun_vector_body2_meas [n]'
+        doc: |
+          Meas Sun Body Vector
+          value = 1.00E-04 * sun_vector_body2_meas [n]
       - id: sun_vector_body3_meas
         -orig-id: SUN_VECTOR_BODY3
         type: s2
-        doc: 'Meas Sun Body Vector'
-        doc: 'value = 1.00E-04 * sun_vector_body3_meas [n]'
+        doc: |
+          Meas Sun Body Vector
+          value = 1.00E-04 * sun_vector_body3_meas [n]
       - id: sun_vector_status
         -orig-id: SUN_VECTOR_STATUS
         type: u1
-        doc: 'Meas Sun Body Vector Status'
-        doc: 'value = sun_vector_status [n]'
         doc: |
+          Meas Sun Body Vector Status
+          value = sun_vector_status [n]
           0/GOOD
           1/COARSE
           2/BAD
       - id: css_invalid_count
         -orig-id: CSS_INVALID_COUNT
         type: u2
-        doc: 'CSS Invalid Measurement Count'
-        doc: 'value = css_invalid_count [n]'
+        doc: |
+          CSS Invalid Measurement Count
+          value = css_invalid_count [n]
       - id: sun_sensor_used
         -orig-id: SUN_SENSOR_USED
         type: u1
-        doc: 'Sun Sensor Package Used'
-        doc: 'value = sun_sensor_used [n]'
+        doc: |
+          Sun Sensor Package Used
+          value = sun_sensor_used [n]
       - id: mag_vector_body1
         -orig-id: MAG_VECTOR_BODY1
         type: s2
-        doc: 'Meas Mag Field Body'
-        doc: 'value = 5.00E-09 * mag_vector_body1 [T]'
+        doc: |
+          Meas Mag Field Body
+          value = 5.00E-09 * mag_vector_body1 [T]
       - id: mag_vector_body2
         -orig-id: MAG_VECTOR_BODY2
         type: s2
-        doc: 'Meas Mag Field Body'
-        doc: 'value = 5.00E-09 * mag_vector_body2 [T]'
+        doc: |
+          Meas Mag Field Body
+          value = 5.00E-09 * mag_vector_body2 [T]
       - id: mag_vector_body3
         -orig-id: MAG_VECTOR_BODY3
         type: s2
-        doc: 'Meas Mag Field Body'
-        doc: 'value = 5.00E-09 * mag_vector_body3 [T]'
+        doc: |
+          Meas Mag Field Body
+          value = 5.00E-09 * mag_vector_body3 [T]
       - id: mag_invalid_count
         -orig-id: MAG_INVALID_COUNT
         type: u2
-        doc: 'Cycles with invalid Measured Mag Data'
-        doc: 'value = mag_invalid_count [counts]'
+        doc: |
+          Cycles with invalid Measured Mag Data
+          value = mag_invalid_count [counts]
       - id: mag_vector_valid
         -orig-id: MAG_VECTOR_VALID
         type: u1
-        doc: 'Meas Mag Field Valid'
-        doc: 'value = mag_vector_valid [n]'
         doc: |
+          Meas Mag Field Valid
+          value = mag_vector_valid [n]
           0/NO
           1/YES
       - id: mag_sensor_used
         -orig-id: MAG_SENSOR_USED
         type: u1
-        doc: 'Mag Sensor Used'
-        doc: 'value = mag_sensor_used [n]'
+        doc: |
+          Mag Sensor Used
+          value = mag_sensor_used [n]
 
   beacon_short:
     seq:
@@ -863,333 +951,390 @@ types:
       - id: imu_invalid_count
         -orig-id: IMU_INVALID_COUNT
         type: u2
-        doc: 'IMU Invalid Count'
-        doc: 'value = imu_invalid_count [n]'
+        doc: |
+          IMU Invalid Count
+          value = imu_invalid_count [n]
       - id: new_packet_count
         -orig-id: NEW_PACKET_COUNT
         type: u1
-        doc: 'IMU Packet Count'
-        doc: 'value = new_packet_count [n]'
+        doc: |
+          IMU Packet Count
+          value = new_packet_count [n]
       - id: imu_vector_valid
         -orig-id: IMU_VECTOR_VALID
         type: u1
-        doc: 'IMU Rate Valid'
-        doc: 'value = imu_vector_valid [n]'
         doc: |
+          IMU Rate Valid
+          value = imu_vector_valid [n]
           0/NO
           1/YES
       - id: hr_run_count
         -orig-id: HR_RUN_COUNT
         type: u4
-        doc: 'High Rate Run Count'
-        doc: 'value = hr_run_count [n]'
+        doc: |
+          High Rate Run Count
+          value = hr_run_count [n]
       - id: hr_exec_time_ms1
         -orig-id: HR_EXEC_TIME_MS1
         type: u1
-        doc: 'High Rate Duration'
-        doc: 'value = hr_exec_time_ms1 [n]'
+        doc: |
+          High Rate Duration
+          value = hr_exec_time_ms1 [n]
       - id: hr_exec_time_ms2
         -orig-id: HR_EXEC_TIME_MS2
         type: u1
-        doc: 'High Rate Duration'
-        doc: 'value = hr_exec_time_ms2 [n]'
+        doc: |
+          High Rate Duration
+          value = hr_exec_time_ms2 [n]
       - id: hr_exec_time_ms3
         -orig-id: HR_EXEC_TIME_MS3
         type: u1
-        doc: 'High Rate Duration'
-        doc: 'value = hr_exec_time_ms3 [n]'
+        doc: |
+          High Rate Duration
+          value = hr_exec_time_ms3 [n]
       - id: hr_exec_time_ms4
         -orig-id: HR_EXEC_TIME_MS4
         type: u1
-        doc: 'High Rate Duration'
-        doc: 'value = hr_exec_time_ms4 [n]'
+        doc: |
+          High Rate Duration
+          value = hr_exec_time_ms4 [n]
       - id: hr_exec_time_ms5
         -orig-id: HR_EXEC_TIME_MS5
         type: u1
-        doc: 'High Rate Duration'
-        doc: 'value = hr_exec_time_ms5 [n]'
+        doc: |
+          High Rate Duration
+          value = hr_exec_time_ms5 [n]
       - id: payload_sec_since_last_tlm
         -orig-id: PAYLOAD_SEC_SINCE_LAST_TLM
         type: u4
-        doc: 'Seconds since last TLM received (by SW)'
-        doc: 'value = payload_sec_since_last_tlm [sec]'
+        doc: |
+          Seconds since last TLM received (by SW)
+          value = payload_sec_since_last_tlm [sec]
       - id: payload_tlm_rx_count
         -orig-id: PAYLOAD_TLM_RX_COUNT
         type: u2
-        doc: 'Payload Tlm Receive Counter (by SW)'
-        doc: 'value = payload_tlm_rx_count [n]'
+        doc: |
+          Payload Tlm Receive Counter (by SW)
+          value = payload_tlm_rx_count [n]
       - id: payload_tlm_ack_count
         -orig-id: PAYLOAD_TLM_ACK_COUNT
         type: u2
-        doc: 'Payload Tlm ACK Counter'
-        doc: 'value = payload_tlm_ack_count [n]'
+        doc: |
+          Payload Tlm ACK Counter
+          value = payload_tlm_ack_count [n]
       - id: payload_tlm_nak_count
         -orig-id: PAYLOAD_TLM_NAK_COUNT
         type: u2
-        doc: 'Payload Tlm NAK Counter'
-        doc: 'value = payload_tlm_nak_count [n]'
+        doc: |
+          Payload Tlm NAK Counter
+          value = payload_tlm_nak_count [n]
       - id: voltage_12p0
         -orig-id: VOLTAGE_12P0
         type: u1
-        doc: 'Voltage_12p0'
-        doc: 'value = 0.1 * voltage_12p0 [V]'
+        doc: |
+          Voltage_12p0
+          value = 0.1 * voltage_12p0 [V]
       - id: voltage_8p0
         -orig-id: VOLTAGE_8P0
         type: u1
-        doc: 'Voltage_8p0'
-        doc: 'value = 0.1 * voltage_8p0 [V]'
+        doc: |
+          Voltage_8p0
+          value = 0.1 * voltage_8p0 [V]
       - id: voltage_5p0
         -orig-id: VOLTAGE_5P0
         type: u1
-        doc: 'Voltage_5p0'
-        doc: 'value = 0.025 * voltage_5p0 [V]'
+        doc: |
+          Voltage_5p0
+          value = 0.025 * voltage_5p0 [V]
       - id: voltage_3p3
         -orig-id: VOLTAGE_3P3
         type: u1
-        doc: 'Voltage_3p3'
-        doc: 'value = 0.015 * voltage_3p3 [V]'
+        doc: |
+          Voltage_3p3
+          value = 0.015 * voltage_3p3 [V]
       - id: det_temp
         -orig-id: DET_TEMP
         type: s1
-        doc: 'Tracker Detector temperature'
-        doc: 'value = 0.8 * det_temp [degC]'
+        doc: |
+          Tracker Detector temperature
+          value = 0.8 * det_temp [degC]
       - id: det2_temp
         -orig-id: DET2_TEMP
         type: s1
-        doc: 'Tracker 2 Detector temperature'
-        doc: 'value = 0.8 * det2_temp [degC]'
+        doc: |
+          Tracker 2 Detector temperature
+          value = 0.8 * det2_temp [degC]
       - id: box1_temp
         -orig-id: BOX1_TEMP
         type: s2
-        doc: 'Box 1 Temp'
-        doc: 'value = 0.0049999999 * box1_temp [degC]'
+        doc: |
+          Box 1 Temp
+          value = 0.0049999999 * box1_temp [degC]
       - id: imu_temp
         -orig-id: IMU_TEMP
         type: s2
-        doc: 'IMU Temp'
-        doc: 'value = 0.0049999999 * imu_temp [degC]'
+        doc: |
+          IMU Temp
+          value = 0.0049999999 * imu_temp [degC]
       - id: motor1_temp
         -orig-id: MOTOR1_TEMP
         type: s2
-        doc: 'Wheel 1 Temp'
-        doc: 'value = 0.0049999999 * motor1_temp [degC]'
+        doc: |
+          Wheel 1 Temp
+          value = 0.0049999999 * motor1_temp [degC]
       - id: motor2_temp
         -orig-id: MOTOR2_TEMP
         type: s2
-        doc: 'Wheel 2 Temp'
-        doc: 'value = 0.0049999999 * motor2_temp [degC]'
+        doc: |
+          Wheel 2 Temp
+          value = 0.0049999999 * motor2_temp [degC]
       - id: motor3_temp
         -orig-id: MOTOR3_TEMP
         type: s2
-        doc: 'Wheel 3 Temp'
-        doc: 'value = 0.0049999999 * motor3_temp [degC]'
+        doc: |
+          Wheel 3 Temp
+          value = 0.0049999999 * motor3_temp [degC]
       - id: bus_voltage
         -orig-id: BUS_VOLTAGE
         type: s2
-        doc: 'Bus Voltage'
-        doc: 'value = 0.001 * bus_voltage [V]'
+        doc: |
+          Bus Voltage
+          value = 0.001 * bus_voltage [V]
       - id: battery_voltage
         -orig-id: BATTERY_VOLTAGE
         type: u2
-        doc: 'Battery Voltage'
-        doc: 'value = 0.0020000001 * battery_voltage [V]'
+        doc: |
+          Battery Voltage
+          value = 0.0020000001 * battery_voltage [V]
       - id: battery_current
         -orig-id: BATTERY_CURRENT
         type: s2
-        doc: 'Battery Current'
-        doc: 'value = 0.0020000001 * battery_current [A]'
+        doc: |
+          Battery Current
+          value = 0.0020000001 * battery_current [A]
       - id: battery1_temp
         -orig-id: BATTERY1_TEMP
         type: s2
-        doc: 'Battery 1 Temp'
-        doc: 'value = 0.0049999999 * battery1_temp [degC]'
+        doc: |
+          Battery 1 Temp
+          value = 0.0049999999 * battery1_temp [degC]
       - id: battery2_temp
         -orig-id: BATTERY2_TEMP
         type: s2
-        doc: 'Battery 2 Temp'
-        doc: 'value = 0.0049999999 * battery2_temp [degC]'
+        doc: |
+          Battery 2 Temp
+          value = 0.0049999999 * battery2_temp [degC]
       - id: user_analog1
         -orig-id: USER_ANALOG1
         type: s4
-        doc: 'User Analogs'
-        doc: 'value = 0.0050000002 * user_analog1 [n]'
+        doc: |
+          User Analogs
+          value = 0.0050000002 * user_analog1 [n]
       - id: user_analog2
         -orig-id: USER_ANALOG2
         type: s4
-        doc: 'User Analogs'
-        doc: 'value = 0.0050000002 * user_analog2 [n]'
+        doc: |
+          User Analogs
+          value = 0.0050000002 * user_analog2 [n]
       - id: operating_mode
         -orig-id: OPERATING_MODE
         type: u1
-        doc: 'Tracker Operating Mode'
-        doc: 'value = operating_mode [n]'
+        doc: |
+          Tracker Operating Mode
+          value = operating_mode [n]
       - id: star_id_step
         -orig-id: STAR_ID_STEP
         type: u1
-        doc: 'Star ID Step'
-        doc: 'value = star_id_step [n]'
+        doc: |
+          Star ID Step
+          value = star_id_step [n]
       - id: att_status
         -orig-id: ATT_STATUS
         type: u1
-        doc: 'Tracker Attitude Status'
-        doc: 'value = att_status [n]'
+        doc: |
+          Tracker Attitude Status
+          value = att_status [n]
       - id: det_timeout_count
         -orig-id: DET_TIMEOUT_COUNT
         type: u2
-        doc: 'Number of detector timeouts'
-        doc: 'value = det_timeout_count [counts]'
+        doc: |
+          Number of detector timeouts
+          value = det_timeout_count [counts]
       - id: num_attitude_stars
         -orig-id: NUM_ATTITUDE_STARS
         type: u1
-        doc: 'Num Stars Used in Att'
-        doc: 'value = num_attitude_stars [n]'
+        doc: |
+          Num Stars Used in Att
+          value = num_attitude_stars [n]
       - id: cycles_since_crc_data
         -orig-id: CYCLES_SINCE_CRC_DATA
         type: u4
-        doc: 'Cycles Since Correct CRC GPS Data'
-        doc: 'value = cycles_sinse_crc_data [n]'
+        doc: |
+          Cycles Since Correct CRC GPS Data
+          value = cycles_sinse_crc_data [n]
       - id: gps_lock_count
         -orig-id: GPS_LOCK_COUNT
         type: u2
-        doc: 'spare'
-        doc: 'value = gps_lock_count [n]'
+        doc: |
+          spare
+          value = gps_lock_count [n]
       - id: gps_valid
         -orig-id: GPS_VALID
         type: u1
-        doc: 'GPS Valid'
-        doc: 'value = gps_valid [n]'
         doc: |
+          GPS Valid
+          value = gps_valid [n]
           0/NO
           1/YES
       - id: gps_enabled
         -orig-id: GPS_ENABLED
         type: u1
-        doc: 'GPS Enabled'
-        doc: 'value = gps_enabled [n]'
         doc: |
+          GPS Enabled
+          value = gps_enabled [n]
           0/NO
           1/YES
       - id: macros_status_2
         -orig-id: MACROS_STATUS_2
         type: u2
-        doc: 'Macros Status'
-        doc: 'value = macros_status_2 [n]'
+        doc: |
+          Macros Status
+          value = macros_status_2 [n]
       - id: sd_minute_cur
         -orig-id: SD_MINUTE_CUR
         type: u4
-        doc: 'SD Card Current Minute Number'
-        doc: 'value = sd_minute_cur [n]'
+        doc: |
+          SD Card Current Minute Number
+          value = sd_minute_cur [n]
       - id: sd_percent_used_total
         -orig-id: SD_PERCENT_USED_TOTAL
         type: u1
-        doc: 'SD Card Used Space Percentage Total'
-        doc: 'value = sd_percent_used_total [%]'
+        doc: |
+          SD Card Used Space Percentage Total
+          value = sd_percent_used_total [%]
       - id: sd_percent_used_fsw
         -orig-id: SD_PERCENT_USED_FSW
         type: u1
-        doc: 'SD Card Used Space Percentage For Fsw Database'
-        doc: 'value = sd_percent_used_fsw [%]'
+        doc: |
+          SD Card Used Space Percentage For Fsw Database
+          value = sd_percent_used_fsw [%]
       - id: sd_percent_used_soh
         -orig-id: SD_PERCENT_USED_SOH
         type: u1
-        doc: 'SD Card Used Space Percentage For Soh Database'
-        doc: 'value = sd_percent_used_soh [%]'
+        doc: |
+          SD Card Used Space Percentage For Soh Database
+          value = sd_percent_used_soh [%]
       - id: sd_percent_used_line
         -orig-id: SD_PERCENT_USED_LINE
         type: u1
-        doc: 'SD Card Used Space Percentage For Line Database'
-        doc: 'value = sd_percent_used_line [%]'
+        doc: |
+          SD Card Used Space Percentage For Line Database
+          value = sd_percent_used_line [%]
       - id: sd_percent_used_tbl
         -orig-id: SD_PERCENT_USED_TBL
         type: u1
-        doc: 'SD Card Used Space Percentage For Tbl Database'
-        doc: 'value = sd_percent_used_tbl [%]'
+        doc: |
+          SD Card Used Space Percentage For Tbl Database
+          value = sd_percent_used_tbl [%]
       - id: sd_percent_used_pay
         -orig-id: SD_PERCENT_USED_PAY
         type: u1
-        doc: 'SD Card Used Space Percentage For pay Database'
-        doc: 'value = sd_percent_used_pay [%]'
+        doc: |
+          SD Card Used Space Percentage For pay Database
+          value = sd_percent_used_pay [%]
       - id: sdr_tx_frames
         -orig-id: SDR_TX_FRAMES
         type: u4
-        doc: 'BCT-SDR tx frame counter'
-        doc: 'value = sdr_tx_frames [n]'
+        doc: |
+          BCT-SDR tx frame counter
+          value = sdr_tx_frames [n]
       - id: sdr_rx_frames
         -orig-id: SDR_RX_FRAMES
         type: u4
-        doc: 'BCT-SDR rx valid frame counter'
-        doc: 'value = sdr_tx_frames [n]'
+        doc: |
+          BCT-SDR rx valid frame counter
+          value = sdr_tx_frames [n]
       - id: sdr_tx
         -orig-id: SDR_TX
         type: u1
-        doc: 'BCT-SDR tx state'
-        doc: 'value = sdr_tx [n]'
         doc: |
+          BCT-SDR tx state
+          value = sdr_tx [n]
           0/NO
           1/YES
       - id: sdr_tx_power
         -orig-id: SDR_TX_POWER
         type: s1
-        doc: 'BCT-SDR tx power'
-        doc: 'value = sdr_tx_power [dBm]'
+        doc: |
+          BCT-SDR tx power
+          value = sdr_tx_power [dBm]
       - id: sdr_rx_lock
         -orig-id: SDR_RX_LOCK
         type: u1
-        doc: 'BCT-SDR rx pll lock'
-        doc: 'value = sdr_rx_lock [n]'
         doc: |
+          BCT-SDR rx pll lock
+          value = sdr_rx_lock [n]
           0/NO
           1/YES
       - id: sdr_rx_power
         -orig-id: SDR_RX_POWER
         type: s1
-        doc: 'BCT-SDR rx power level'
-        doc: 'value = sdr_rx_power [dBm]'
+        doc: |
+          BCT-SDR rx power level
+          value = sdr_rx_power [dBm]
       - id: sdr_rx_freq_offset
         -orig-id: SDR_RX_FREQ_OFFSET
         type: s4
-        doc: 'BCT-SDR rx frequency offset'
-        doc: 'value = sdr_rx_freq_offset [Hz]'
+        doc: |
+          BCT-SDR rx frequency offset
+          value = sdr_rx_freq_offset [Hz]
       - id: sdr_temp
         -orig-id: SDR_TEMP
         type: s1
-        doc: 'BCT-SDR temperature'
-        doc: 'value = sdr_temp [degC]'
+        doc: |
+          BCT-SDR temperature
+          value = sdr_temp [degC]
       - id: sdr_comm_error
         -orig-id: SDR_comm_error
         type: u1
-        doc: 'BCT-SDR Comm Error'
-        doc: 'value = sdr_comm_error [n]'
         doc: |
+          BCT-SDR Comm Error
+          value = sdr_comm_error [n]
           0/NO
           1/YES
       - id: sq_channel
         -orig-id: SQ_CHANNEL
         type: s1
-        doc: 'SpaceQuest Current Channel Selection'
-        doc: 'value = sq_channel [n]'
+        doc: |
+          SpaceQuest Current Channel Selection
+          value = sq_channel [n]
       - id: sq_trap_count
         -orig-id: SQ_TRAP_COUNT
         type: u1
-        doc: 'SpaceQuest Trap-Error Cycle Count'
-        doc: 'value = sq_trap_count [n]'
+        doc: |
+          SpaceQuest Trap-Error Cycle Count
+          value = sq_trap_count [n]
       - id: sq_temp
         -orig-id: SQ_TEMP
         type: u1
-        doc: 'SpaceQuest Temperature'
-        doc: 'value = sq_temp [degC]'
+        doc: |
+          SpaceQuest Temperature
+          value = sq_temp [degC]
       - id: aid_status
         -orig-id: AID_STATUS
         type: u2
-        doc: 'Tracker Aiding Status'
-        doc: 'value = aid_status [n]'
+        doc: |
+          Tracker Aiding Status
+          value = aid_status [n]
       - id: star_id_status
         -orig-id: STAR_ID_STATUS
         type: u1
-        doc: 'Tracker Performing StarId'
-        doc: 'value = star_id_status [n]'
+        doc: |
+          Tracker Performing StarId
+          value = star_id_status [n]
       - id: power_status
         -orig-id: POWER_STATUS
         type: u4
-        doc: 'Power Status'
-        doc: 'value = power_status [n]'
+        doc: |
+          Power Status
+          value = power_status [n]

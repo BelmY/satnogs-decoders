@@ -1,3 +1,4 @@
+---
 meta:
   id: origamisat1
 doc-ref: |
@@ -82,7 +83,7 @@ doc: |
   :field bcr_2_voltage: ax25_frame.payload.ax25_info.hk_data.chunk.bcr_2_voltage
   :field bcr_3_voltage: ax25_frame.payload.ax25_info.hk_data.chunk.bcr_3_voltage
   :field pwr5g8hz_12v_voltage: ax25_frame.payload.ax25_info.hk_data.chunk.pwr5g8hz_12v_voltage
-  
+
   Attention: `rpt_callsign` cannot be accessed because `rpt_instance` is an
   array of unknown size at the beginning of the parsing process! Left an
   example in here.
@@ -95,19 +96,19 @@ seq:
 types:
   ax25_frame:
     seq:
-    - id: ax25_header
-      type: ax25_header
-    - id: payload
-      type:
-        switch-on: ax25_header.ctl & 0x13
-        cases:
-          0x03: ui_frame
-          0x13: ui_frame
-          0x00: i_frame
-          0x02: i_frame
-          0x10: i_frame
-          0x12: i_frame
-          #0x11: s_frame
+      - id: ax25_header
+        type: ax25_header
+      - id: payload
+        type:
+          switch-on: ax25_header.ctl & 0x13
+          cases:
+            0x03: ui_frame
+            0x13: ui_frame
+            0x00: i_frame
+            0x02: i_frame
+            0x10: i_frame
+            0x12: i_frame
+            # 0x11: s_frame
 
   ax25_header:
     seq:
@@ -315,7 +316,7 @@ types:
         -orig-id: SAP 1~4 current
         type: u1
         doc: 'byte #31 to #32'
-      # --- end of chunk 1 (32 bytes) ---
+  # --- end of chunk 1 (32 bytes) ---
   hk_data_chunk_2:
     meta:
       endian: be
@@ -412,7 +413,7 @@ types:
         -orig-id: Angular velocity Y
         type: u1
         doc: 'byte #63 to #64'
-      # --- end of chunk 2 (32 bytes) ---
+  # --- end of chunk 2 (32 bytes) ---
   hk_data_chunk_3:
     meta:
       endian: be
@@ -489,7 +490,7 @@ types:
         -orig-id: EPS switch 1-10 voltage, current
         type: u1
         doc: 'byte #95'
-      # ---end of chunk 3 (32 bytes) ---
+  # ---end of chunk 3 (32 bytes) ---
   hk_data_chunk_4:
     meta:
       endian: be
@@ -550,7 +551,7 @@ types:
         -orig-id: 5.8GHz 12 V voltage
         type: u1
         doc: 'byte #121'
-      # --- end of chunk 4 (26 bytes) ---
+  # --- end of chunk 4 (26 bytes) ---
   mission_data:
     seq:
       - id: unparsed

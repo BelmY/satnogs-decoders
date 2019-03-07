@@ -1,3 +1,4 @@
+---
 meta:
   id: qbee
   endian: le
@@ -24,17 +25,17 @@ doc: |
   :field service_running_ocobc: beacon_data.service_running.service_running_ocobc
 
 seq:
-  - id:   ax_header
+  - id: ax_header
     type: ax_header
 
-  - id:   csp_header
+  - id: csp_header
     size: 4
 
-  - id:   beacon_data
+  - id: beacon_data
     type: beacon_data
     doc-ref: https://github.com/opencosmos/qb01-beacon-decoder/blob/master/QB50%20SE01%20beacon%20description%20-%20Open%20Cosmos.pdf
 
-  - id:   rs_parity
+  - id: rs_parity
     size: 32
 
 types:
@@ -64,67 +65,67 @@ types:
 
   beacon_data:
     seq:
-      - id:   wod
+      - id: wod
         type: wod
 
-      - id:   power_info
+      - id: power_info
         type: power_info
 
-      - id:   service_enabled
+      - id: service_enabled
         type: service_enabled
 
-      - id:   service_running
+      - id: service_running
         type: service_running
 
-      - id:   reserved
+      - id: reserved
         size: 14
 
   wod:
-      seq:
-      - id:   wod_time
+    seq:
+      - id: wod_time
         type: u4
         doc-ref: https://www.qb50.eu/index.php/tech-docs/category/QB50%20Whole%20Orbit%20Data%20-%20Iss42aac.pdf?download=80:whole-orbital-data-issue-4
 
-      - id:   wod_mode
+      - id: wod_mode
         type: u1
 
-      - id:   wod_voltage_battery
+      - id: wod_voltage_battery
         type: u1
 
-      - id:   wod_current_battery
+      - id: wod_current_battery
         type: u1
 
-      - id:   wod_current_3v3
+      - id: wod_current_3v3
         type: u1
 
-      - id:   wod_current_5v
+      - id: wod_current_5v
         type: u1
 
-      - id:   wod_temperature_comms
+      - id: wod_temperature_comms
         type: u1
 
-      - id:   wod_temperature_eps
+      - id: wod_temperature_eps
         type: u1
 
-      - id:   wod_temperature_battery
+      - id: wod_temperature_battery
         type: u1
 
 
   power_info:
     seq:
-      - id:   pwr_info_adcs
+      - id: pwr_info_adcs
         type: b1
 
-      - id:   pwr_info_fipex
+      - id: pwr_info_fipex
         type: b1
 
-      - id:   pwr_info_gps
+      - id: pwr_info_gps
         type: b1
 
-      - id:   pwr_info_ocobc
+      - id: pwr_info_ocobc
         type: b1
 
-      - id:   pwr_info_reserved
+      - id: pwr_info_reserved
         type: b4
 
   service_enabled:

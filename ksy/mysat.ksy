@@ -1,3 +1,4 @@
+---
 meta:
   id: mysat
   title: MYSAT-1 decoder struct
@@ -48,19 +49,19 @@ seq:
 types:
   ax25_frame:
     seq:
-    - id: ax25_header
-      type: ax25_header
-    - id: payload
-      type:
-        switch-on: ax25_header.ctl & 0x13
-        cases:
-          0x03: ui_frame
-          0x13: ui_frame
-          0x00: i_frame
-          0x02: i_frame
-          0x10: i_frame
-          0x12: i_frame
-          #0x11: s_frame
+      - id: ax25_header
+        type: ax25_header
+      - id: payload
+        type:
+          switch-on: ax25_header.ctl & 0x13
+          cases:
+            0x03: ui_frame
+            0x13: ui_frame
+            0x00: i_frame
+            0x02: i_frame
+            0x10: i_frame
+            0x12: i_frame
+            # 0x11: s_frame
 
   ax25_header:
     seq:
@@ -149,8 +150,8 @@ types:
       - id: obc_mode
         -orig-id: OBC mode
         type: u1
-        doc: 'value = obc_mode [n]'
         doc: |
+          value = obc_mode [n]
           0: Initial Checkout Mode
           1: Normal Mode
           2: Safe Mode
@@ -165,8 +166,9 @@ types:
       - id: gyro_norm
         -orig-id: Gyro norm
         type: u1
-        doc: 'value = gyro_norm [sec]'
-        doc: 'Norm of angular rates for 3 axes'
+        doc: |
+          value = gyro_norm [sec]
+          Norm of angular rates for 3 axes
       - id: eps_reset_counter
         -orig-id: EPS Reset Counter
         type: u4
@@ -174,8 +176,8 @@ types:
       - id: eps_last_boot_cause
         -orig-id: EPS Last Boot Cause
         type: u1
-        doc: 'value = eps_last_boot_cause [n]'
         doc: |
+          value = eps_last_boot_cause [n]
           0: Unknown reset
           1: Dedicated WDT reset
           2: I2C WDT reset
@@ -188,8 +190,8 @@ types:
       - id: eps_battery_mode
         -orig-id: EPS Battery Mode
         type: u1
-        doc: 'value = eps_battery_mode [n]'
         doc: |
+          value = eps_battery_mode [n]
           0: initial
           1: undervoltage
           2: safemode
@@ -198,8 +200,9 @@ types:
       - id: timestamp
         -orig-id: Timestamp
         type: u4
-        doc: 'value = timestamp [sec]'
-        doc: 'OBC clock, Unix timestamp'
+        doc: |
+          value = timestamp [sec]
+          OBC clock, Unix timestamp
       - id: obc_temperature
         -orig-id: OBC Temperature
         type: u1
