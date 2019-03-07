@@ -22,7 +22,7 @@ static:
   before_script:
     - pip install tox
   script:
-    - tox -e flake8,yapf,pylint
+    - tox -e yamllint,flake8,yapf,pylint
 build:
   stage: build
   image: python:2.7
