@@ -11,50 +11,33 @@ doc: |
   :field ctl: ax25_frame.ax25_header.ctl
   :field pid: ax25_frame.payload.pid
   :field beacon_verf_code: ax25_frame.payload.ax25_info.data.beacon_verf_code
-  :field time_sync_label: ax25_frame.payload.ax25_info.data.time_sync_label
   :field time_sync: ax25_frame.payload.ax25_info.data.time_sync
-  :field timestamp_label: ax25_frame.payload.ax25_info.data.timestamp_label
   :field timestamp: ax25_frame.payload.ax25_info.data.timestamp
-  :field mission_files_label: ax25_frame.payload.ax25_info.data.mission_files_label
   :field mission_files: ax25_frame.payload.ax25_info.data.mission_files
-  :field buffers_free_label: ax25_frame.payload.ax25_info.data.buffers_free_label
   :field buffers_free: ax25_frame.payload.ax25_info.data.buffers_free
-  :field last_rssi_label: ax25_frame.payload.ax25_info.data.last_rssi_label
   :field last_rssi: ax25_frame.payload.ax25_info.data.last_rssi
-  :field obc_temperature_label: ax25_frame.payload.ax25_info.data.obc_temperature_label
-  :field obc_temp1: ax25_frame.payload.ax25_info.data.obc_temp1
-  :field obc_temp2: ax25_frame.payload.ax25_info.data.obc_temp2
-  :field com_temperature_label: ax25_frame.payload.ax25_info.data.com_temperature_label
+  :field obc_temp1: ax25_frame.payload.ax25_info.data.obc_temp1_flt
+  :field obc_temp2: ax25_frame.payload.ax25_info.data.obc_temp2_flt
   :field com_temp_pa: ax25_frame.payload.ax25_info.data.com_temp_pa
   :field com_temp_mcu: ax25_frame.payload.ax25_info.data.com_temp_mcu
-  :field eps_temp_label: ax25_frame.payload.ax25_info.data.eps_temp_label
   :field eps_temp_t4: ax25_frame.payload.ax25_info.data.eps_temp_t4
-  :field bat_voltage_label: ax25_frame.payload.ax25_info.data.bat_voltage_label
   :field bat_voltage: ax25_frame.payload.ax25_info.data.bat_voltage
-  :field cur_sun_label: ax25_frame.payload.ax25_info.data.cur_sun_label
   :field cur_sun: ax25_frame.payload.ax25_info.data.cur_sun
-  :field cur_sys_label: ax25_frame.payload.ax25_info.data.cur_sys_label
   :field cur_sys: ax25_frame.payload.ax25_info.data.cur_sys
-  :field batt_mode_label: ax25_frame.payload.ax25_info.data.batt_mode_label
   :field batt_mode: ax25_frame.payload.ax25_info.data.batt_mode
-  :field panels_voltage_label: ax25_frame.payload.ax25_info.data.panels_voltage_label
   :field panel1_voltage: ax25_frame.payload.ax25_info.data.panel1_voltage
   :field panel2_voltage: ax25_frame.payload.ax25_info.data.panel2_voltage
   :field panel3_voltage: ax25_frame.payload.ax25_info.data.panel3_voltage
-  :field panels_current_label: ax25_frame.payload.ax25_info.data.panels_current_label
   :field panel1_current: ax25_frame.payload.ax25_info.data.panel1_current
   :field panel2_current: ax25_frame.payload.ax25_info.data.panel2_current
   :field panel3_current: ax25_frame.payload.ax25_info.data.panel3_current
-  :field bat_bootcount_label: ax25_frame.payload.ax25_info.data.bat_bootcount_label
   :field bat_bootcount: ax25_frame.payload.ax25_info.data.bat_bootcount
-  :field gyro_label: ax25_frame.payload.ax25_info.data.gyro_label
-  :field gyro_x: ax25_frame.payload.ax25_info.data.gyro_x
-  :field gyro_y: ax25_frame.payload.ax25_info.data.gyro_y
-  :field gyro_z: ax25_frame.payload.ax25_info.data.gyro_z
-  :field magneto_label: ax25_frame.payload.ax25_info.data.magneto_label
-  :field magneto_x: ax25_frame.payload.ax25_info.data.magneto_x
-  :field magneto_y: ax25_frame.payload.ax25_info.data.magneto_y
-  :field magneto_z: ax25_frame.payload.ax25_info.data.magneto_z
+  :field gyro_x: ax25_frame.payload.ax25_info.data.gyro_x_flt
+  :field gyro_y: ax25_frame.payload.ax25_info.data.gyro_y_flt
+  :field gyro_z: ax25_frame.payload.ax25_info.data.gyro_z_flt
+  :field magneto_x: ax25_frame.payload.ax25_info.data.magneto_x_flt
+  :field magneto_y: ax25_frame.payload.ax25_info.data.magneto_y_flt
+  :field magneto_z: ax25_frame.payload.ax25_info.data.magneto_z_flt
 
   Attention: `rpt_callsign` cannot be accessed because `rpt_instance` is an
   array of unknown size at the beginning of the parsing process! Left an
@@ -253,14 +236,28 @@ types:
         encoding: utf-8
         doc: |
           OBC Temperature Sensor 1 and 2 Label
-      - id: obc_temp1
+      - id: obc_temp1_int
+        -orig-id: obc_temp1
+        type: str
+        terminator: 0x2e
+        encoding: utf-8
+        doc: |
+          OBC temp value from sensor 1 in ° C
+      - id: obc_temp1_frac
         -orig-id: obc_temp1
         type: str
         terminator: 0x2f
         encoding: utf-8
         doc: |
           OBC temp value from sensor 1 in ° C
-      - id: obc_temp2
+      - id: obc_temp2_int
+        -orig-id: obc_temp2
+        type: str
+        terminator: 0x2e
+        encoding: utf-8
+        doc: |
+          OBC temp value from sensor 2 in ° C
+      - id: obc_temp2_frac
         -orig-id: obc_temp2
         type: str
         terminator: 0x2c
@@ -429,21 +426,42 @@ types:
         encoding: utf-8
         doc: |
           Gyroscope  x,y,z rates Label
-      - id: gyro_x
+      - id: gyro_x_int
+        -orig-id: gyro_x
+        type: str
+        terminator: 0x2e
+        encoding: utf-8
+        doc: |
+          Gyro x rate as degrees/s
+      - id: gyro_x_frac
         -orig-id: gyro_x
         type: str
         terminator: 0x2f
         encoding: utf-8
         doc: |
           Gyro x rate as degrees/s
-      - id: gyro_y
+      - id: gyro_y_int
+        -orig-id: gyro_y
+        type: str
+        terminator: 0x2e
+        encoding: utf-8
+        doc: |
+          Gyro y rate as degrees/s
+      - id: gyro_y_frac
         -orig-id: gyro_y
         type: str
         terminator: 0x2f
         encoding: utf-8
         doc: |
           Gyro y rate as degrees/s
-      - id: gyro_z
+      - id: gyro_z_int
+        -orig-id: gyro_z
+        type: str
+        terminator: 0x2e
+        encoding: utf-8
+        doc: |
+          Gyro z rate as degrees/s
+      - id: gyro_z_frac
         -orig-id: gyro_z
         type: str
         terminator: 0x2c
@@ -457,21 +475,42 @@ types:
         encoding: utf-8
         doc: |
           Magnetometer x,y,z rates Label
-      - id: magneto_x
+      - id: magneto_x_int
+        -orig-id: magneto_x
+        type: str
+        terminator: 0x2e
+        encoding: utf-8
+        doc: |
+          Magneto x rate in milli Gauss
+      - id: magneto_x_frac
         -orig-id: magneto_x
         type: str
         terminator: 0x2f
         encoding: utf-8
         doc: |
           Magneto x rate in milli Gauss
-      - id: magneto_y
+      - id: magneto_y_int
+        -orig-id: magneto_y
+        type: str
+        terminator: 0x2e
+        encoding: utf-8
+        doc: |
+          Magneto y rate in milli Gauss
+      - id: magneto_y_frac
         -orig-id: magneto_y
         type: str
         terminator: 0x2f
         encoding: utf-8
         doc: |
           Magneto y rate in milli Gauss
-      - id: magneto_z
+      - id: magneto_z_int
+        -orig-id: magneto_z
+        type: str
+        terminator: 0x2e
+        encoding: utf-8
+        doc: |
+          Magneto z rate in milli Gauss
+      - id: magneto_z_frac
         -orig-id: magneto_z
         type: str
         terminator: 0
@@ -480,3 +519,82 @@ types:
           Magneto z rate in milli Gauss
       - id: suffix
         size: 5
+    instances:
+      time_sync_int:
+        value: time_sync.to_i
+        doc: 'A'
+      mission_files_int:
+        value: mission_files.to_i
+        doc: 'D'
+      buffers_free_int:
+        value: buffers_free.to_i
+        doc: 'E'
+      last_rssi_int:
+        value: last_rssi.to_i
+        doc: 'F'
+      obc_temp1_flt:
+        value: obc_temp1_int.to_i + (((obc_temp1_int.to_i < 0).to_i)*(-2)+1) * obc_temp1_frac.to_i / 100.0
+        doc: 'G[0]'
+      obc_temp2_flt:
+        value: obc_temp2_int.to_i + (((obc_temp2_int.to_i < 0).to_i)*(-2)+1) * obc_temp2_frac.to_i / 100.0
+        doc: 'G[1]'
+      com_temp_pa_int:
+        value: com_temp_pa.to_i
+        doc: 'H[0]'
+      com_temp_mcu_int:
+        value: com_temp_mcu.to_i
+        doc: 'H[1]'
+      eps_temp_t4_int:
+        value: eps_temp_t4.to_i
+        doc: 'I'
+      bat_voltage_int:
+        value: bat_voltage.to_i
+        doc: 'J'
+      cur_sun_int:
+        value: cur_sun.to_i
+        doc: 'K'
+      cur_sys_int:
+        value: cur_sys.to_i
+        doc: 'L'
+      batt_mode_int:
+        value: batt_mode.to_i
+        doc: 'M'
+      panel1_voltage_int:
+        value: panel1_voltage.to_i
+        doc: 'N[0]'
+      panel2_voltage_int:
+        value: panel2_voltage.to_i
+        doc: 'N[1]'
+      panel3_voltage_int:
+        value: panel3_voltage.to_i
+        doc: 'N[2]'
+      panel1_current_int:
+        value: panel1_current.to_i
+        doc: 'O[0]'
+      panel2_current_int:
+        value: panel2_current.to_i
+        doc: 'O[1]'
+      panel3_current_int:
+        value: panel3_current.to_i
+        doc: 'O[2]'
+      bat_bootcount_int:
+        value: bat_bootcount.to_i
+        doc: 'P'
+      gyro_x_flt:
+        value: gyro_x_int.to_i + (((gyro_x_int.to_i < 0).to_i)*(-2)+1) * gyro_x_frac.to_i / 1000000.0
+        doc: 'Q[0]'
+      gyro_y_flt:
+        value: gyro_y_int.to_i + (((gyro_y_int.to_i < 0).to_i)*(-2)+1) * gyro_y_frac.to_i / 1000000.0
+        doc: 'Q[1]'
+      gyro_z_flt:
+        value: gyro_z_int.to_i + (((gyro_z_int.to_i < 0).to_i)*(-2)+1) * gyro_z_frac.to_i / 1000000.0
+        doc: 'Q[2]'
+      magneto_x_flt:
+        value: magneto_x_int.to_i + (((magneto_x_int.to_i < 0).to_i)*(-2)+1) * magneto_x_frac.to_i / 1000.0
+        doc: 'R[0]'
+      magneto_y_flt:
+        value: magneto_y_int.to_i + (((magneto_y_int.to_i < 0).to_i)*(-2)+1) * magneto_y_frac.to_i / 1000.0
+        doc: 'R[1]'
+      magneto_z_flt:
+        value: magneto_z_int.to_i + (((magneto_z_int.to_i < 0).to_i)*(-2)+1) * magneto_z_frac.to_i / 1000.0
+        doc: 'R[2]'
