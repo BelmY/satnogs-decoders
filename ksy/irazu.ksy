@@ -11,27 +11,27 @@ doc: |
   :field ctl: ax25_frame.ax25_header.ctl
   :field pid: ax25_frame.payload.pid
   :field beacon_verf_code: ax25_frame.payload.ax25_info.data.beacon_verf_code
-  :field time_sync: ax25_frame.payload.ax25_info.data.time_sync
+  :field time_sync: ax25_frame.payload.ax25_info.data.time_sync_int
   :field timestamp: ax25_frame.payload.ax25_info.data.timestamp
-  :field mission_files: ax25_frame.payload.ax25_info.data.mission_files
-  :field buffers_free: ax25_frame.payload.ax25_info.data.buffers_free
-  :field last_rssi: ax25_frame.payload.ax25_info.data.last_rssi
+  :field mission_files: ax25_frame.payload.ax25_info.data.mission_files_int
+  :field buffers_free: ax25_frame.payload.ax25_info.data.buffers_free_int
+  :field last_rssi: ax25_frame.payload.ax25_info.data.last_rssi_int
   :field obc_temp1: ax25_frame.payload.ax25_info.data.obc_temp1_flt
   :field obc_temp2: ax25_frame.payload.ax25_info.data.obc_temp2_flt
-  :field com_temp_pa: ax25_frame.payload.ax25_info.data.com_temp_pa
-  :field com_temp_mcu: ax25_frame.payload.ax25_info.data.com_temp_mcu
-  :field eps_temp_t4: ax25_frame.payload.ax25_info.data.eps_temp_t4
-  :field bat_voltage: ax25_frame.payload.ax25_info.data.bat_voltage
-  :field cur_sun: ax25_frame.payload.ax25_info.data.cur_sun
-  :field cur_sys: ax25_frame.payload.ax25_info.data.cur_sys
-  :field batt_mode: ax25_frame.payload.ax25_info.data.batt_mode
-  :field panel1_voltage: ax25_frame.payload.ax25_info.data.panel1_voltage
-  :field panel2_voltage: ax25_frame.payload.ax25_info.data.panel2_voltage
-  :field panel3_voltage: ax25_frame.payload.ax25_info.data.panel3_voltage
-  :field panel1_current: ax25_frame.payload.ax25_info.data.panel1_current
-  :field panel2_current: ax25_frame.payload.ax25_info.data.panel2_current
-  :field panel3_current: ax25_frame.payload.ax25_info.data.panel3_current
-  :field bat_bootcount: ax25_frame.payload.ax25_info.data.bat_bootcount
+  :field com_temp_pa: ax25_frame.payload.ax25_info.data.com_temp_pa_int
+  :field com_temp_mcu: ax25_frame.payload.ax25_info.data.com_temp_mcu_int
+  :field eps_temp_t4: ax25_frame.payload.ax25_info.data.eps_temp_t4_int
+  :field bat_voltage: ax25_frame.payload.ax25_info.data.bat_voltage_int
+  :field cur_sun: ax25_frame.payload.ax25_info.data.cur_sun_int
+  :field cur_sys: ax25_frame.payload.ax25_info.data.cur_sys_int
+  :field batt_mode: ax25_frame.payload.ax25_info.data.batt_mode_int
+  :field panel1_voltage: ax25_frame.payload.ax25_info.data.panel1_voltage_int
+  :field panel2_voltage: ax25_frame.payload.ax25_info.data.panel2_voltage_int
+  :field panel3_voltage: ax25_frame.payload.ax25_info.data.panel3_voltage_int
+  :field panel1_current: ax25_frame.payload.ax25_info.data.panel1_current_int
+  :field panel2_current: ax25_frame.payload.ax25_info.data.panel2_current_int
+  :field panel3_current: ax25_frame.payload.ax25_info.data.panel3_current_int
+  :field bat_bootcount: ax25_frame.payload.ax25_info.data.bat_bootcount_int
   :field gyro_x: ax25_frame.payload.ax25_info.data.gyro_x_flt
   :field gyro_y: ax25_frame.payload.ax25_info.data.gyro_y_flt
   :field gyro_z: ax25_frame.payload.ax25_info.data.gyro_z_flt
