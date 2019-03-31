@@ -2,7 +2,7 @@
 #
 # SatNOGS decoders Kaitai Struct compiling script
 #
-# Copyright (C) 2018 Libre Space Foundation <https://libre.space/>
+# Copyright (C) 2018-2019 Libre Space Foundation <https://libre.space/>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -24,10 +24,15 @@ DEFAULT_TARGET="python"
 DEFAULT_OUTDIR="satnogsdecoders/decoder"
 DEFAULT_FILE="ksy/*.ksy"
 
-docker pull "$IMAGE"
+if ! docker pull "$IMAGE"; then
+	echo "WARNING: Docker image was not updated!" >&2
+fi
+
 # shellcheck disable=SC2068
-docker run \
+if docker run \
 	-u "$USER" \
 	-v "$VOLUME" \
 	"$IMAGE" \
-	${@:---target "$DEFAULT_TARGET" --outdir "$DEFAULT_OUTDIR" $DEFAULT_FILE}
+	${@:---target "$DEFAULT_TARGET" --outdir "$DEFAULT_OUTDIR" $DEFAULT_FILE}; then
+	echo "KSYs compiled successfully!"
+fi
