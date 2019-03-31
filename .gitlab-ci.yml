@@ -69,7 +69,7 @@ trigger:
     # XXX: Workaround for GitLab missing latest tag pipeline triggering feature
     - |
       SATNOGS_DB_LATEST="${SATNOGS_DB_GIT_URL:+$(git ls-remote -q --tags --refs --exit-code --sort="v:refname" "$SATNOGS_DB_GIT_URL" | awk 'BEGIN { FS="/" } END { print $3 }')}"
-      PIPELINE_TRIGGERS=$(echo "$PIPELINE_TRIGGERS" | sed 's/${SATNOGS_DB_LATEST}/'"$SATNOGS_DB_LATEST"'/g')
+      PIPELINE_TRIGGERS=$(echo "$PIPELINE_TRIGGERS" | sed 's/{{SATNOGS_DB_LATEST}}/'"$SATNOGS_DB_LATEST"'/g')
     - for trigger in $PIPELINE_TRIGGERS; do curl -X POST "$trigger"; done
   only:
     refs:
