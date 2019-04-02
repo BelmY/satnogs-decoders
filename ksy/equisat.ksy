@@ -24,7 +24,7 @@ doc: |
   :field lf2ref: equisat_frame.current_info.lf2ref.int16
   :field lf3ref: equisat_frame.current_info.lf3ref.int16
   :field lf4ref: equisat_frame.current_info.lf4ref.int16
-  :field idle_batch_0_event_history: idle_batch_0.event_history
+  :field idle_batch_0_event_history: equisat_frame.data_section.idle_batch_0.event_history
   :field idle_batch_0_l1_ref: equisat_frame.data_section.idle_batch_0.l1_ref.int16
   :field idle_batch_0_l2_ref: equisat_frame.data_section.idle_batch_0.l2_ref.int16
   :field idle_batch_0_l1_sns: equisat_frame.data_section.idle_batch_0.l1_sns.int16
@@ -594,7 +594,7 @@ doc: |
   :field flash_cmp_batch_5_magnetometer_y: equisat_frame.data_section.flash_cmp_batch_5.magnetometer_y.int16
   :field flash_cmp_batch_5_timestamp: equisat_frame.data_section.flash_cmp_batch_5.timestamp
   :field lowpower_batch_0_event_history: equisat_frame.data_section.lowpower_batch_0.event_history
-  :field lowpower_batch_0_l1_ref:  lowpower_batch_0.l1_ref.int16
+  :field lowpower_batch_0_l1_ref: equisat_frame.data_section.lowpower_batch_0.l1_ref.int16
   :field lowpower_batch_0_l2_ref: equisat_frame.data_section.lowpower_batch_0.l2_ref.int16
   :field lowpower_batch_0_l1_sns: equisat_frame.data_section.lowpower_batch_0.l1_sns.int16
   :field lowpower_batch_0_l2_sns: equisat_frame.data_section.lowpower_batch_0.l2_sns.int16
@@ -614,7 +614,7 @@ doc: |
   :field lowpower_batch_0_gyroscope_z: equisat_frame.data_section.lowpower_batch_0.gyroscope_z.int16
   :field lowpower_batch_0_gyroscope_y: equisat_frame.data_section.lowpower_batch_0.gyroscope_y.int16
   :field lowpower_batch_1_event_history: equisat_frame.data_section.lowpower_batch_1.event_history
-  :field lowpower_batch_1_l1_ref:  lowpower_batch_1.l1_ref.int16
+  :field lowpower_batch_1_l1_ref: equisat_frame.data_section.lowpower_batch_1.l1_ref.int16
   :field lowpower_batch_1_l2_ref: equisat_frame.data_section.lowpower_batch_1.l2_ref.int16
   :field lowpower_batch_1_l1_sns: equisat_frame.data_section.lowpower_batch_1.l1_sns.int16
   :field lowpower_batch_1_l2_sns: equisat_frame.data_section.lowpower_batch_1.l2_sns.int16
@@ -634,7 +634,7 @@ doc: |
   :field lowpower_batch_1_gyroscope_z: equisat_frame.data_section.lowpower_batch_1.gyroscope_z.int16
   :field lowpower_batch_1_gyroscope_y: equisat_frame.data_section.lowpower_batch_1.gyroscope_y.int16
   :field lowpower_batch_2_event_history: equisat_frame.data_section.lowpower_batch_2.event_history
-  :field lowpower_batch_2_l1_ref:  lowpower_batch_2.l1_ref.int16
+  :field lowpower_batch_2_l1_ref: equisat_frame.data_section.lowpower_batch_2.l1_ref.int16
   :field lowpower_batch_2_l2_ref: equisat_frame.data_section.lowpower_batch_2.l2_ref.int16
   :field lowpower_batch_2_l1_sns: equisat_frame.data_section.lowpower_batch_2.l1_sns.int16
   :field lowpower_batch_2_l2_sns: equisat_frame.data_section.lowpower_batch_2.l2_sns.int16
@@ -654,7 +654,7 @@ doc: |
   :field lowpower_batch_2_gyroscope_z: equisat_frame.data_section.lowpower_batch_2.gyroscope_z.int16
   :field lowpower_batch_2_gyroscope_y: equisat_frame.data_section.lowpower_batch_2.gyroscope_y.int16
   :field lowpower_batch_3_event_history: equisat_frame.data_section.lowpower_batch_3.event_history
-  :field lowpower_batch_3_l1_ref:  lowpower_batch_3.l1_ref.int16
+  :field lowpower_batch_3_l1_ref: equisat_frame.data_section.lowpower_batch_3.l1_ref.int16
   :field lowpower_batch_3_l2_ref: equisat_frame.data_section.lowpower_batch_3.l2_ref.int16
   :field lowpower_batch_3_l1_sns: equisat_frame.data_section.lowpower_batch_3.l1_sns.int16
   :field lowpower_batch_3_l2_sns: equisat_frame.data_section.lowpower_batch_3.l2_sns.int16
@@ -674,7 +674,7 @@ doc: |
   :field lowpower_batch_3_gyroscope_z: equisat_frame.data_section.lowpower_batch_3.gyroscope_z.int16
   :field lowpower_batch_3_gyroscope_y: equisat_frame.data_section.lowpower_batch_3.gyroscope_y.int16
   :field lowpower_batch_4_event_history: equisat_frame.data_section.lowpower_batch_4.event_history
-  :field lowpower_batch_4_l1_ref:  lowpower_batch_4.l1_ref.int16
+  :field lowpower_batch_4_l1_ref: equisat_frame.data_section.lowpower_batch_4.l1_ref.int16
   :field lowpower_batch_4_l2_ref: equisat_frame.data_section.lowpower_batch_4.l2_ref.int16
   :field lowpower_batch_4_l1_sns: equisat_frame.data_section.lowpower_batch_4.l1_sns.int16
   :field lowpower_batch_4_l2_sns: equisat_frame.data_section.lowpower_batch_4.l2_sns.int16
