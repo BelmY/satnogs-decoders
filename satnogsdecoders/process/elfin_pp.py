@@ -17,8 +17,6 @@ an ELFIN STAR telemetry frame
 #
 from __future__ import absolute_import, division, print_function
 
-import binascii
-
 
 class ElfinPp(object):  # pylint: disable=too-few-public-methods
     """
@@ -40,23 +38,8 @@ class ElfinPp(object):  # pylint: disable=too-few-public-methods
             char = bindata[i]
             if char == 0x27 and i + 1 < binlen:
                 next_char = bindata[i + 1]
-                if next_char in [0x27, 0x5e, 0x9e]:
+                if next_char in [0x27, 0x5e, 0x93]:
                     i += 1
             out.append(bindata[i])
             i += 1
         return out
-
-
-if __name__ == "__main__":
-
-    # some examples
-    DEC = ElfinPp()
-    print(binascii.hexlify(binascii.unhexlify('0011272722')))
-    print(binascii.hexlify(DEC.decode(binascii.unhexlify('0011272722'))))
-
-    print(binascii.hexlify(binascii.unhexlify('0011a2727220')))
-    print(binascii.hexlify(DEC.decode(binascii.unhexlify('0011a2727220'))))
-
-    print(binascii.hexlify(binascii.unhexlify('930027005e0027932727275e')))
-    print(binascii.hexlify(
-        DEC.decode(binascii.unhexlify('930027005e0027932727275e'))))
