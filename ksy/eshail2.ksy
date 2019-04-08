@@ -22,10 +22,8 @@ seq:
 types:
   ao40_frame:
     seq:
-      - id: ao40_beacon_type
-        type: u1
       - id: ao40_beacon_data
-        size: 511
+        size: 512
         type:
           switch-on: ao40_beacon_type
           cases:
@@ -40,12 +38,16 @@ types:
             _: ao40_command_response
       - id: crc
         type: u2
+    instances:
+      ao40_beacon_type:
+        pos: 0x0
+        type: u1
   ao40_message_k:
     seq:
       - id: ao40_message_line1
         type: str
         encoding: ASCII
-        size: 63
+        size: 64
       - id: ao40_message_line2
         type: str
         encoding: ASCII
@@ -79,7 +81,7 @@ types:
       - id: ao40_message_line1
         type: str
         encoding: ASCII
-        size: 63
+        size: 64
       - id: ao40_message_line2
         type: str
         encoding: ASCII
@@ -113,7 +115,7 @@ types:
       - id: ao40_message_line1
         type: str
         encoding: ASCII
-        size: 63
+        size: 64
       - id: ao40_message_line2
         type: str
         encoding: ASCII
@@ -147,7 +149,7 @@ types:
       - id: ao40_message_line1
         type: str
         encoding: ASCII
-        size: 63
+        size: 64
       - id: ao40_message_line2
         type: str
         encoding: ASCII
