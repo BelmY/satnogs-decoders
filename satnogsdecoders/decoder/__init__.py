@@ -4,6 +4,7 @@ SatNOGS Decoder subpackage initialization
 from __future__ import absolute_import, division, print_function
 
 __all__ = [
+    'Aausat4',
     'Ax25frames',
     'Ax25monitor',
     'Bisonsat',
@@ -33,6 +34,7 @@ __all__ = [
 import re
 import functools
 
+from .aausat4 import Aausat4
 from .ax25frames import Ax25frames
 from .ax25monitor import Ax25monitor
 from .bisonsat import Bisonsat
