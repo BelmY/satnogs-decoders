@@ -112,8 +112,13 @@ types:
   csp_data_t:
     seq:
       - id: csp_payload
-        type: aausat4_beacon_t
-
+        type:
+          switch-on: frame_length
+          cases:
+            88: aausat4_beacon_t
+    instances:
+      frame_length:
+        value: _io.size
 
   # The beacon format is as follows:
   #  [ 1 byte | 20 bytes  | 10 bytes | 7 bytes  | 6 bytes  | 20 bytes  | 20 bytes  ]
