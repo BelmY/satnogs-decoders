@@ -14,6 +14,20 @@ doc: |
   :field ao40_message_line6: ao40_frame.ao40_beacon_data.ao40_message_line6
   :field ao40_message_line7: ao40_frame.ao40_beacon_data.ao40_message_line7
   :field ao40_message_line8: ao40_frame.ao40_beacon_data.ao40_message_line8
+  :field uptime: ao40_frame.ao40_beacon_data.uptime
+  :field commands: ao40_frame.ao40_beacon_data.commands
+  :field leila_req: ao40_frame.ao40_beacon_data.leila_req
+  :field leila_act: ao40_frame.ao40_beacon_data.leila_act
+  :field temperature: ao40_frame.ao40_beacon_data.temperature
+  :field volt_1: ao40_frame.ao40_beacon_data.volt_1
+  :field volt_2: ao40_frame.ao40_beacon_data.volt_2
+  :field volt_3: ao40_frame.ao40_beacon_data.volt_3
+  :field volt_4: ao40_frame.ao40_beacon_data.volt_4
+  :field volt_5: ao40_frame.ao40_beacon_data.volt_5
+  :field volt_6: ao40_frame.ao40_beacon_data.volt_6
+  :field volt_7: ao40_frame.ao40_beacon_data.volt_7
+  :field volt_8: ao40_frame.ao40_beacon_data.volt_8
+  :field volt_9: ao40_frame.ao40_beacon_data.volt_9
 
 seq:
   - id: ao40_frame
