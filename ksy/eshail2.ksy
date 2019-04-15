@@ -76,6 +76,211 @@ types:
         type: str
         encoding: ASCII
         size: 64
+    instances:
+      uptime_dd_str:
+        type: u1
+        repeat: expr
+        repeat-expr: 2
+        pos: 71
+      uptime_hh_str:
+        type: u1
+        repeat: expr
+        repeat-expr: 2
+        pos: 75
+      uptime_mm_str:
+        type: u1
+        repeat: expr
+        repeat-expr: 2
+        pos: 79
+      commands_str:
+        type: u1
+        repeat: expr
+        repeat-expr: 4
+        pos: 90
+      leila_request_str:
+        type: u1
+        pos: 110
+      leila_active_str:
+        type: u1
+        pos: 127
+      temp_str:
+        type: u1
+        repeat: expr
+        repeat-expr: 2
+        pos: 134
+      volts_str_1:
+        type: u1
+        repeat: expr
+        repeat-expr: 3
+        pos: 150
+      volts_str_2:
+        type: u1
+        repeat: expr
+        repeat-expr: 3
+        pos: 154
+      volts_str_3:
+        type: u1
+        repeat: expr
+        repeat-expr: 3
+        pos: 158
+      volts_str_4:
+        type: u1
+        repeat: expr
+        repeat-expr: 3
+        pos: 162
+      volts_str_5:
+        type: u1
+        repeat: expr
+        repeat-expr: 3
+        pos: 166
+      volts_str_6:
+        type: u1
+        repeat: expr
+        repeat-expr: 3
+        pos: 170
+      volts_str_7:
+        type: u1
+        repeat: expr
+        repeat-expr: 3
+        pos: 174
+      volts_str_8:
+        type: u1
+        repeat: expr
+        repeat-expr: 3
+        pos: 178
+      volts_str_9:
+        type: u1
+        repeat: expr
+        repeat-expr: 3
+        pos: 182
+      tfl_str:
+        type: u1
+        pos: 201
+      tfe_str:
+        type: u1
+        pos: 212
+      tfh_str:
+        type: u1
+        pos: 222
+      hff_str:
+        type: u1
+        pos: 234
+      hth_str:
+        type: u1
+        pos: 245
+      hr_str:
+        type: u1
+        pos: 255
+      uptime:
+        value: >-
+          (
+            (
+              (uptime_dd_str[0] > 0x2f ? 1 : 0) * (uptime_dd_str[0] - 0x30) * 10 +
+              (uptime_dd_str[1] - 0x30)
+            ) * 24 * 60 * 60 +
+            (
+              (uptime_hh_str[0] > 0x2f ? 1 : 0) * (uptime_hh_str[0] - 0x30) * 10 +
+              (uptime_hh_str[1] - 0x30)
+            ) * 60 * 60 +
+            (
+              (uptime_mm_str[0] > 0x2f ? 1 : 0) * (uptime_mm_str[0] - 0x30) * 10 +
+              (uptime_mm_str[1] - 0x30)
+            ) * 60
+          )
+      commands:
+        value: >-
+          (
+            (
+              (commands_str[0] > 0x2f ? 1 : 0) * (commands_str[0] - 0x30) * 1000 +
+              (commands_str[1] > 0x2f ? 1 : 0) * (commands_str[1] - 0x30) * 100 +
+              (commands_str[2] > 0x2f ? 1 : 0) * (commands_str[2] - 0x30) * 10 +
+              (commands_str[3] - 0x30)
+            )
+          )
+      leila_req:
+        value: leila_request_str > 0x30
+      leila_act:
+        value: leila_active_str > 0x30
+      temperature:
+        value: >-
+          (
+            (
+              (temp_str[0] > 0x2f ? 1 : 0) * (temp_str[0] - 0x30) * 10 +
+              (temp_str[1] - 0x30)
+            )
+          )
+      volt_1:
+        value: >-
+          (
+            (
+              (volts_str_1[0] - 0x30) * 1.0 +
+              (volts_str_1[2] - 0x30) / 10.0
+            )
+          )
+      volt_2:
+        value: >-
+          (
+            (
+              (volts_str_2[0] - 0x30) * 1.0 +
+              (volts_str_2[2] - 0x30) / 10.0
+            )
+          )
+      volt_3:
+        value: >-
+          (
+            (
+              (volts_str_3[0] - 0x30) * 1.0 +
+              (volts_str_3[2] - 0x30) / 10.0
+            )
+          )
+      volt_4:
+        value: >-
+          (
+            (
+              (volts_str_4[0] - 0x30) * 1.0 +
+              (volts_str_4[2] - 0x30) / 10.0
+            )
+          )
+      volt_5:
+        value: >-
+          (
+            (
+              (volts_str_5[0] - 0x30) * 1.0 +
+              (volts_str_5[2] - 0x30) / 10.0
+            )
+          )
+      volt_6:
+        value: >-
+          (
+            (
+              (volts_str_6[0] - 0x30) * 1.0 +
+              (volts_str_6[2] - 0x30) / 10.0
+            )
+          )
+      volt_7:
+        value: >-
+          (
+            (
+              (volts_str_7[0] - 0x30) * 1.0 +
+              (volts_str_7[2] - 0x30) / 10.0
+            )
+          )
+      volt_8:
+        value: >-
+          (
+            (
+              (volts_str_8[0] - 0x30) * 1.0 +
+              (volts_str_8[2] - 0x30) / 10.0
+            )
+          )
+      volt_9:
+        value: >-
+          (
+            (
+              (volts_str_9[0] - 0x30) * 1.0 +
+              (volts_str_9[2] - 0x30) / 10.0
+            )
+          )
   ao40_message_l:
     seq:
       - id: ao40_message_line1
