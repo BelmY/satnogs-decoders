@@ -2,6 +2,7 @@ stages:
   - compile
   - static
   - build
+  - test
   - deploy
   - trigger
 compile:
@@ -16,13 +17,34 @@ compile:
     when: always
     paths:
       - satnogsdecoders/decoder
-static:
+static_python:
   stage: static
-  image: python:2.7
+  image: python:2
   before_script:
     - pip install tox~=3.8.0
   script:
-    - tox -e yamllint,flake8,yapf,pylint
+    - tox -e "yamllint,py2-{flake8,yapf,pylint}"
+static_python3:
+  stage: static
+  image: python:3
+  before_script:
+    - pip install tox~=3.8.0
+  script:
+    - tox -e "yamllint,py3-{flake8,yapf,pylint}"
+test:
+  stage: test
+  image: python:2
+  before_script:
+    - pip install tox~=3.8.0
+  script:
+    - tox -e "py2"
+test3:
+  stage: test
+  image: python:3
+  before_script:
+    - pip install tox~=3.8.0
+  script:
+    - tox -e "py3"
 build:
   stage: build
   image: python:2.7
