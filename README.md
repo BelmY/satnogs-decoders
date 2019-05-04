@@ -202,6 +202,7 @@ Fetched 45 frames.
 - CAS-4A & CAS-4B by cshields
 - CubeBel-1 by DL4PD
 - Elfin-A & -B by DL4PD
+- Entrysat by DL4PD
 - QBEE by Ansgar Schmidt
 - Siriussat-1 & -2 by kerel
 - skCUBE by borispilka & kerel

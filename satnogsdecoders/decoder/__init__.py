@@ -16,6 +16,7 @@ from .csim import Csim
 from .cubebel1 import Cubebel1
 from .cubesatsim import Cubesatsim
 from .elfin import Elfin
+from .entrysat import Entrysat
 from .equisat import Equisat
 from .eshail2 import Eshail2
 from .fox import Fox
@@ -43,6 +44,7 @@ __all__ = [
     'Cubesatsim',
     'Csim',
     'Elfin',
+    'Entrysat',
     'Eshail2',
     'Equisat',
     'Fox',
