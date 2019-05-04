@@ -5,6 +5,7 @@
 import json
 
 import satnogsdecoders.decoder as decoder
+from tests.shared_methods import check_type, load_objects
 
 
 def test_answer():  # pylint: disable=too-many-locals
@@ -214,13 +215,8 @@ def test_answer():  # pylint: disable=too-many-locals
     result = []
 
     for frame in packets:
-        result = decoder.get_fields(getattr(decoder, dut).from_bytes(frame))
-        result = json.dumps(result)
-        result = json.loads(result)
-        count = 0
-        for value in result:
-            count = count + 1
-            assert isinstance(result[value], (str, int, float))
+        result = load_objects(decoder, dut, frame)
+        count = check_type(result)
         if frame == attitude:
             assert count == attitude_keys
         if frame == idle:
