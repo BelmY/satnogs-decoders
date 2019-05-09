@@ -1,2 +1,6 @@
 satnogsdecoders/_version.py
 satnogsdecoders/decoder
+.tox
+build
+versioneer.py
+contrib
