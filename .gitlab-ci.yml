@@ -59,14 +59,14 @@ test:
   before_script:
     - pip install tox~=3.8.0
   script:
-    - tox -e "py2"
+    - tox -e "py2-pytest"
 test3:
   stage: test
   image: python:3
   before_script:
     - pip install tox~=3.8.0
   script:
-    - tox -e "py3"
+    - tox -e "py3-pytest"
 deploy:
   stage: deploy
   image: python:2
