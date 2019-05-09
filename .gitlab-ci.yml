@@ -34,9 +34,11 @@ static_python3:
 build:
   stage: build
   image: python:2
+  before_script:
+    - pip install tox~=3.8.0
   script:
     - rm -rf dist
-    - python setup.py sdist bdist_wheel
+    - tox -e "py2-build"
   artifacts:
     expire_in: 1 week
     when: always
@@ -45,9 +47,11 @@ build:
 build3:
   stage: build
   image: python:3
+  before_script:
+    - pip install tox~=3.8.0
   script:
     - rm -rf dist
-    - python setup.py sdist bdist_wheel
+    - tox -e "py3-build"
   artifacts:
     expire_in: 1 week
     when: always
