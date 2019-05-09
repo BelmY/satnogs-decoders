@@ -3,6 +3,7 @@
 """
 
 import json
+
 import satnogsdecoders.decoder as decoder
 
 

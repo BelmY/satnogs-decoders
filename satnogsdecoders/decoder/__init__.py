@@ -3,6 +3,35 @@ SatNOGS Decoder subpackage initialization
 """
 from __future__ import absolute_import, division, print_function
 
+import functools
+import re
+
+from .aausat4 import Aausat4
+from .ax25frames import Ax25frames
+from .ax25monitor import Ax25monitor
+from .bisonsat import Bisonsat
+from .bugsat1 import Bugsat1
+from .cas4 import Cas4
+from .csim import Csim
+from .cubebel1 import Cubebel1
+from .cubesatsim import Cubesatsim
+from .elfin import Elfin
+from .equisat import Equisat
+from .eshail2 import Eshail2
+from .fox import Fox
+from .irazu import Irazu
+from .irvine import Irvine
+from .minxss import Minxss
+from .mysat import Mysat
+from .origamisat1 import Origamisat1
+from .pwsat2 import Pwsat2
+from .qbee import Qbee
+from .siriussat import Siriussat
+from .skcube import Skcube
+from .strand import Strand
+from .us6 import Us6
+from .uwe4 import Uwe4
+
 __all__ = [
     'Aausat4',
     'Ax25frames',
@@ -30,35 +59,6 @@ __all__ = [
     'Us6',
     'Uwe4',
 ]
-
-import re
-import functools
-
-from .aausat4 import Aausat4
-from .ax25frames import Ax25frames
-from .ax25monitor import Ax25monitor
-from .bisonsat import Bisonsat
-from .bugsat1 import Bugsat1
-from .cas4 import Cas4
-from .cubebel1 import Cubebel1
-from .cubesatsim import Cubesatsim
-from .csim import Csim
-from .elfin import Elfin
-from .eshail2 import Eshail2
-from .equisat import Equisat
-from .fox import Fox
-from .irazu import Irazu
-from .irvine import Irvine
-from .minxss import Minxss
-from .mysat import Mysat
-from .origamisat1 import Origamisat1
-from .pwsat2 import Pwsat2
-from .qbee import Qbee
-from .siriussat import Siriussat
-from .skcube import Skcube
-from .strand import Strand
-from .us6 import Us6
-from .uwe4 import Uwe4
 
 FIELD_REGEX = re.compile(
     r':field (?P<field>[\*\w]+): (?P<attribute>.*?)'
