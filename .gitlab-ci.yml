@@ -23,14 +23,14 @@ static_python:
   before_script:
     - pip install tox~=3.8.0
   script:
-    - tox -e "yamllint,py2-{flake8,yapf,pylint}"
+    - tox -e "yamllint,py2-flake8,yapf,py2-pylint"
 static_python3:
   stage: static
   image: python:3
   before_script:
     - pip install tox~=3.8.0
   script:
-    - tox -e "yamllint,py3-{flake8,yapf,pylint}"
+    - tox -e "py3-flake8,py3-pylint"
 build:
   stage: build
   image: python:2
