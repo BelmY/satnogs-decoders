@@ -96,6 +96,7 @@ trigger:
     - |
       SATNOGS_DB_LATEST="${SATNOGS_DB_GIT_URL:+$(git ls-remote -q --tags --refs --exit-code --sort="v:refname" "$SATNOGS_DB_GIT_URL" | awk 'BEGIN { FS="/" } END { print $3 }')}"
       PIPELINE_TRIGGERS=$(echo "$PIPELINE_TRIGGERS" | sed 's/{{SATNOGS_DB_LATEST}}/'"$SATNOGS_DB_LATEST"'/g')
+      [ -z "$CI_COMMIT_TAG" ] || PIPELINE_TRIGGERS=$(echo "$PIPELINE_TRIGGERS" | sed -e 's/{{SATNOGS_DECODERS_VERSION}}/'"$CI_COMMIT_TAG"'/g')
     - for trigger in $PIPELINE_TRIGGERS; do curl -X POST "$trigger"; done
   only:
     refs:
