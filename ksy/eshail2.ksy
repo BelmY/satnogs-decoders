@@ -5,7 +5,7 @@ meta:
   endian: be
 doc-ref: 'https://amsat-dl.org/wp-content/uploads/2019/01/tlmspec.pdf'
 doc: |
-  :field ao40_beacon_type: ao40_frame.ao40_beacon_type
+  :field ao40_beacon_type: ao40_frame.ao40_coding.ao40_beacon_type
   :field ao40_message_line1: ao40_frame.ao40_coding.ao40_beacon_data.ao40_message_line1
   :field ao40_message_line2: ao40_frame.ao40_coding.ao40_beacon_data.ao40_message_line2
   :field ao40_message_line3: ao40_frame.ao40_coding.ao40_beacon_data.ao40_message_line3
