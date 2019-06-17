@@ -1,12 +1,8 @@
 #!/usr/bin/env python3
-#
-# Patrick Dohmen, DL4PD (dl4pd@darc.de)
-#
 
 import binascii
 import getopt
 import json
-import pprint
 import re
 import sys
 
@@ -20,7 +16,11 @@ def main(argv):
     binfile = ''
     verbose = 0
 
-    helpstring = 'decode_multiple.py [-b <binary file>|-f <hexframe>|-x <inputfile in hex>] -d <Decoder>'
+    helpstring = 'decode_multiple.py [-b <binary file>'
+    helpstring += '|-f <hexframe>'
+    helpstring += '|-x <inputfile in hex>]'
+    helpstring += '-d <Decoder>'
+
     try:
         opts, args = getopt.getopt(argv, "b:d:f:hvx:")
     except getopt.GetoptError:
@@ -53,9 +53,11 @@ def main(argv):
                 converted_line = binascii.unhexlify(each_line[20:])
                 if verbose == 1:
                     print("Decoding frame: \n" + each_line[20:])
-                pprint.pprint(
-                    decoder.get_fields(
-                        getattr(decoder, DECODER).from_bytes(converted_line)))
+                print(
+                    json.dumps(
+                        decoder.get_fields(
+                            getattr(decoder,
+                                    DECODER).from_bytes(converted_line))))
             except Exception as e:
                 if verbose == 1:
                     print("^~~~ Invalid frame!")
@@ -67,16 +69,18 @@ def main(argv):
 
         with open(binfile, 'rb') as file_t:
             blob_data = bytearray(file_t.read())
-            pprint.pprint(
-                decoder.get_fields(
-                    getattr(decoder, DECODER).from_bytes(blob_data)))
+            print(
+                json.dumps(
+                    decoder.get_fields(
+                        getattr(decoder, DECODER).from_bytes(blob_data))))
 
     if FRAME != '':
         FRAME = re.sub('["\r\n]', '', FRAME)
         converted_line = binascii.unhexlify(FRAME)
-        pprint.pprint(
-            decoder.get_fields(
-                getattr(decoder, DECODER).from_bytes(converted_line)))
+        print(
+            json.dumps(
+                decoder.get_fields(
+                    getattr(decoder, DECODER).from_bytes(converted_line))))
 
 
 if __name__ == "__main__":
