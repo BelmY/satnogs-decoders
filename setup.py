@@ -7,5 +7,5 @@ import versioneer
 setup(
     version=versioneer.get_version(),
     cmdclass=versioneer.get_cmdclass(),
-    scripts=['contrib/decode_multiple.py'],
+    scripts=['contrib/decode_multiple.py', 'contrib/manage/decode_frame.py'],
 )
