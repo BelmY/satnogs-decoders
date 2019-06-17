@@ -6,9 +6,10 @@
 import binascii
 import getopt
 import json
-import re
 import pprint
+import re
 import sys
+
 import satnogsdecoders.decoder as decoder
 
 
@@ -52,7 +53,9 @@ def main(argv):
                 converted_line = binascii.unhexlify(each_line[20:])
                 if verbose == 1:
                     print("Decoding frame: \n" + each_line[20:])
-                pprint.pprint(decoder.get_fields(getattr(decoder, DECODER).from_bytes(converted_line)))
+                pprint.pprint(
+                    decoder.get_fields(
+                        getattr(decoder, DECODER).from_bytes(converted_line)))
             except Exception as e:
                 if verbose == 1:
                     print("^~~~ Invalid frame!")
@@ -64,12 +67,16 @@ def main(argv):
 
         with open(binfile, 'rb') as file_t:
             blob_data = bytearray(file_t.read())
-            pprint.pprint(decoder.get_fields(getattr(decoder, DECODER).from_bytes(blob_data)))
+            pprint.pprint(
+                decoder.get_fields(
+                    getattr(decoder, DECODER).from_bytes(blob_data)))
 
     if FRAME != '':
         FRAME = re.sub('["\r\n]', '', FRAME)
         converted_line = binascii.unhexlify(FRAME)
-        pprint.pprint(decoder.get_fields(getattr(decoder, DECODER).from_bytes(converted_line)))
+        pprint.pprint(
+            decoder.get_fields(
+                getattr(decoder, DECODER).from_bytes(converted_line)))
 
 
 if __name__ == "__main__":
