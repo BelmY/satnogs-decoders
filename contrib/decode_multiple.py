@@ -6,6 +6,7 @@ import json
 import re
 import sys
 import decode_multiple
+import decode_frame
 
 import satnogsdecoders.decoder as decoder
 
@@ -18,9 +19,9 @@ if __name__ == '__main__':
     parser.add_argument('--filename', type=str, help='Filename containing the frame[s].')
     parser.add_argument('--hex_frame', type=str, help='Hexlified frame provided as argument - like "001122AABBCCDDEEFF".')
     parser.add_argument('--format', type=str, help='Input file format, \'bin\' or \'csv\'.')
-    parser.add_argument('-v', type=int, help='Verbose output mode - a value >0 enables verbose mode.')
+    parser.add_argument('-v', type=bool, help='Verbose output mode - a value >0 enables verbose mode.')
     args = parser.parse_args()
-    if args.v > 0:
+    if args.v:
         verbose = 1
     if ((args.format != 'bin') or (args.format != 'csv')) and (args.hex_frame == ''):
         print("Wrong input file format! Must be 'bin' or 'csv'!")
@@ -36,11 +37,8 @@ if __name__ == '__main__':
                     converted_line = binascii.unhexlify(each_line[20:])
                     if verbose == 1:
                         print("Decoding frame: \n" + each_line[20:])
-                    print(
-                        json.dumps(
-                            decoder.get_fields(
-                                getattr(decoder,
-                                        args.decoder_name).from_bytes(converted_line))))
+                    fields = decode_frame.decode_frame(args.decoder_name, converted_line)
+                    print(json.dumps(fields, indent=4, sort_keys=False))
                 except Exception as e:
                     if verbose == 1:
                         print("^~~~ Invalid frame!")
@@ -49,14 +47,10 @@ if __name__ == '__main__':
         if args.format == 'bin':
             with open(args.filename, 'rb') as file_t:
                 blob_data = bytearray(file_t.read())
-                print(
-                    json.dumps(
-                        decoder.get_fields(
-                            getattr(decoder, args.decoder_name).from_bytes(blob_data))))
+                fields = decode_frame.decode_frame(args.decoder_name, blob_data)
+                print(json.dumps(fields, indent=4, sort_keys=False))
     if args.hex_frame != '':
         FRAME = re.sub('["\r\n]', '', args.hex_frame)
         converted_line = binascii.unhexlify(args.hex_frame)
-        print(
-            json.dumps(
-                decoder.get_fields(
-                    getattr(decoder, args.decoder_name).from_bytes(converted_line))))
+        fields = decode_frame.decode_frame(args.decoder_name, converted_line)
+        print(json.dumps(fields, indent=4, sort_keys=False))
