@@ -41,13 +41,13 @@ def main():
         type=bool,
         help='Verbose output mode - a value >0 enables verbose mode.')
     args = parser.parse_args()
-    if args.v:
+    if args.v is not None:
         verbose = 1
     if args.format != 'bin' or args.format != 'csv':
-        if args.hex_frame == '':
+        if args.hex_frame is not None:
             print("Wrong input file format! Must be 'bin' or 'csv'!")
             sys.exit(2)
-    if args.filename != '':
+    if args.filename is not None:
         print('Input file is:', args.filename)
         if args.format == 'csv':
             lines = [line.rstrip('\n') for line in open(args.filename)]
@@ -71,7 +71,7 @@ def main():
                 fields = decode_frame.decode_frame(args.decoder_name,
                                                    blob_data)
                 print(json.dumps(fields, indent=4, sort_keys=False))
-    if args.hex_frame != '':
+    if args.hex_frame is not None:
         frame = re.sub('["\r\n]', '', args.hex_frame)
         converted_line = binascii.unhexlify(frame)
         fields = decode_frame.decode_frame(args.decoder_name, converted_line)
