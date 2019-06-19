@@ -45,10 +45,11 @@ def main():
         verbose = 1
     if args.format != 'bin' or args.format != 'csv':
         if args.hex_frame is not None:
-            print("Wrong input file format! Must be 'bin' or 'csv'!")
+            print("Wrong input file format! Must be 'bin' or 'csv'!",
+                  fufile=sys.stderr)
             sys.exit(2)
     if args.filename is not None:
-        print('Input file is:', args.filename)
+        print('Input file is:', args.filename, file=sys.stderr)
         if args.format == 'csv':
             lines = [line.rstrip('\n') for line in open(args.filename)]
             for each_line in lines:
@@ -57,14 +58,15 @@ def main():
                     each_line = re.sub('["\r\n]', '', each_line)
                     converted_line = binascii.unhexlify(each_line[20:])
                     if verbose == 1:
-                        print("Decoding frame: \n" + each_line[20:])
+                        print("Decoding frame: \n" + each_line[20:],
+                              file=sys.stderr)
                     fields = decode_frame.decode_frame(args.decoder_name,
                                                        converted_line)
                     print(json.dumps(fields, indent=4, sort_keys=False))
                 except Exception as error:  # pylint: disable=broad-except
                     if verbose == 1:
-                        print("^~~~ Invalid frame!")
-                        print(error)
+                        print("^~~~ Invalid frame!", file=sys.stderr)
+                        print(error, file=sys.stderr)
         if args.format == 'bin':
             with open(args.filename, 'rb') as file_t:
                 blob_data = bytearray(file_t.read())
