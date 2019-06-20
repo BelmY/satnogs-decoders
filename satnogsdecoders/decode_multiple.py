@@ -49,7 +49,8 @@ def main():
                   file=sys.stderr)
             sys.exit(2)
     if args.filename is not None:
-        print('Input file is:', args.filename, file=sys.stderr)
+        if verbose == 1:
+            print('Input file is:', args.filename, file=sys.stderr)
         if args.format == 'csv':
             lines = [line.rstrip('\n') for line in open(args.filename)]
             for each_line in lines:
