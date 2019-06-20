@@ -46,7 +46,7 @@ def main():
     if args.format != 'bin' or args.format != 'csv':
         if args.hex_frame is not None:
             print("Wrong input file format! Must be 'bin' or 'csv'!",
-                  fufile=sys.stderr)
+                  file=sys.stderr)
             sys.exit(2)
     if args.filename is not None:
         print('Input file is:', args.filename, file=sys.stderr)
