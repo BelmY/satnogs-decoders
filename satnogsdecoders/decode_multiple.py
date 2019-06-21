@@ -38,10 +38,10 @@ def main():
                         help='Input file format, \'bin\' or \'csv\'.')
     parser.add_argument(
         '-v',
-        type=bool,
-        help='Verbose output mode - a value >0 enables verbose mode.')
+        action="store_true",
+        help='Enables verbose output mode.')
     args = parser.parse_args()
-    if args.v is not None:
+    if args.v is True:
         verbose = 1
     if args.format != 'bin' or args.format != 'csv':
         if args.hex_frame is not None:
