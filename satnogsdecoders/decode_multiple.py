@@ -36,10 +36,9 @@ def main():
     parser.add_argument('--format',
                         type=str,
                         help='Input file format, \'bin\' or \'csv\'.')
-    parser.add_argument(
-        '-v',
-        action="store_true",
-        help='Enables verbose output mode.')
+    parser.add_argument('-v',
+                        action="store_true",
+                        help='Enables verbose output mode.')
     args = parser.parse_args()
     if args.v is True:
         verbose = 1
@@ -50,7 +49,7 @@ def main():
             sys.exit(2)
     if args.filename is not None:
         if verbose == 1:
-            print('Input file is:', args.filename, file=sys.stderr)
+            print('Input file is: {}'.format(args.filename), file=sys.stderr)
         if args.format == 'csv':
             lines = [line.rstrip('\n') for line in open(args.filename)]
             for each_line in lines:
@@ -59,7 +58,7 @@ def main():
                     each_line = re.sub('["\r\n]', '', each_line)
                     converted_line = binascii.unhexlify(each_line[20:])
                     if verbose == 1:
-                        print("Decoding frame: \n" + each_line[20:],
+                        print("Decoding frame: {}\n".format(each_line[20:]),
                               file=sys.stderr)
                     fields = decode_frame.decode_frame(args.decoder_name,
                                                        converted_line)
