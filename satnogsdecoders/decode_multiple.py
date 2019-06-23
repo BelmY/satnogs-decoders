@@ -19,7 +19,6 @@ def main():
     main entry point
     """
 
-    verbose = 0
     parser = argparse.ArgumentParser(
         description='Decode single or multiple frames using a Kaitai'
         'Struct decoder into JSON objects.')
@@ -40,18 +39,28 @@ def main():
                         action="store_true",
                         help='Enables verbose output mode.')
     args = parser.parse_args()
-    if args.v is True:
-        verbose = 1
-    if args.format != 'bin' or args.format != 'csv':
-        if args.hex_frame is not None:
+    decode_multiple(args.decoder_name, args.filename, args.hex_frame,
+                    args.format, args.v)
+
+
+def decode_multiple(dname,
+                    fname=None,
+                    hframe=None,
+                    fformat=None,
+                    verbose=False):
+    """
+    Functional code goes here:
+    """
+    if fformat != 'bin' or fformat != 'csv':
+        if hframe is not None:
             print("Wrong input file format! Must be 'bin' or 'csv'!",
                   file=sys.stderr)
             sys.exit(2)
-    if args.filename is not None:
-        if verbose == 1:
-            print('Input file is: {}'.format(args.filename), file=sys.stderr)
-        if args.format == 'csv':
-            lines = [line.rstrip('\n') for line in open(args.filename)]
+    if fname is not None:
+        if verbose is True:
+            print('Input file is: {}'.format(fname), file=sys.stderr)
+        if fformat == 'csv':
+            lines = [line.rstrip('\n') for line in open(fname)]
             for each_line in lines:
                 try:
                     # substitute newlines, " and carriage-return
@@ -60,21 +69,19 @@ def main():
                     if verbose == 1:
                         print("Decoding frame: {}\n".format(each_line[20:]),
                               file=sys.stderr)
-                    fields = decode_frame.decode_frame(args.decoder_name,
-                                                       converted_line)
+                    fields = decode_frame.decode_frame(dname, converted_line)
                     print(json.dumps(fields, indent=4, sort_keys=False))
                 except Exception as error:  # pylint: disable=broad-except
-                    if verbose == 1:
+                    if verbose is True:
                         print("^~~~ Invalid frame!", file=sys.stderr)
                         print(error, file=sys.stderr)
-        if args.format == 'bin':
-            with open(args.filename, 'rb') as file_t:
+        if fformat == 'bin':
+            with open(fname, 'rb') as file_t:
                 blob_data = bytearray(file_t.read())
-                fields = decode_frame.decode_frame(args.decoder_name,
-                                                   blob_data)
+                fields = decode_frame.decode_frame(dname, blob_data)
                 print(json.dumps(fields, indent=4, sort_keys=False))
-    if args.hex_frame is not None:
-        frame = re.sub('["\r\n]', '', args.hex_frame)
+    if hframe is not None:
+        frame = re.sub('["\r\n]', '', hframe)
         converted_line = binascii.unhexlify(frame)
-        fields = decode_frame.decode_frame(args.decoder_name, converted_line)
+        fields = decode_frame.decode_frame(dname, converted_line)
         print(json.dumps(fields, indent=4, sort_keys=False))
