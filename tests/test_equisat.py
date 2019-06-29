@@ -2,8 +2,6 @@
 `pytest` testing framework file for EQUiSat
 """
 
-import json
-
 import satnogsdecoders.decoder as decoder
 from tests.shared_methods import check_type, load_objects
 

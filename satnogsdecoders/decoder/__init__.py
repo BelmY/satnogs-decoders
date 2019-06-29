@@ -7,6 +7,7 @@ import functools
 import re
 
 from .aausat4 import Aausat4
+from .acrux1 import Acrux1
 from .ax25frames import Ax25frames
 from .ax25monitor import Ax25monitor
 from .bisonsat import Bisonsat
@@ -35,6 +36,7 @@ from .uwe4 import Uwe4
 
 __all__ = [
     'Aausat4',
+    'Acrux1',
     'Ax25frames',
     'Ax25monitor',
     'Bisonsat',
