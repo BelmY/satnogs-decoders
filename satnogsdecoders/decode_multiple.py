@@ -51,9 +51,10 @@ def decode_multiple(dname,
     """
     Functional code goes here:
     """
-    if fformat != 'bin' or fformat != 'csv':
+    if fformat not in ('bin', 'csv'):
         if hframe is None:
-            print("Wrong input file format! Must be 'bin' or 'csv'!",
+            print("Wrong input file format \'{}\'! Must be 'bin' or 'csv'!".
+                  format(fformat),
                   file=sys.stderr)
             sys.exit(2)
     if fname is not None:
