@@ -23,6 +23,7 @@ from .eshail2 import Eshail2
 from .fox import Fox
 from .irazu import Irazu
 from .irvine import Irvine
+from .lightsail2 import Lightsail2
 from .minxss import Minxss
 from .mysat import Mysat
 from .origamisat1 import Origamisat1
@@ -52,6 +53,7 @@ __all__ = [
     'Fox',
     'Irazu',
     'Irvine',
+    'Lightsail2',
     'Minxss',
     'Mysat',
     'Origamisat1',

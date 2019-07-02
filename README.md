@@ -204,6 +204,7 @@ Fetched 45 frames.
 - CubeBel-1 by DL4PD
 - Elfin-A & -B by DL4PD
 - Entrysat by DL4PD
+- Lightsail-2 by DL4PD
 - QBEE by Ansgar Schmidt
 - Siriussat-1 & -2 by kerel
 - skCUBE by borispilka & kerel
