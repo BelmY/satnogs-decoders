@@ -10,24 +10,23 @@ doc: |
   :field rpt_callsign: ax25_frame.ax25_header.repeater.rpt_instance[0].rpt_callsign_raw.callsign_ror.callsign
   :field ctl: ax25_frame.ax25_header.ctl
   :field pid: ax25_frame.payload.pid
-  :field monitor: ax25_frame.payload.ax25_info.data_monitor
-  :field packet_id: ax25_frame.payload.ax25_info.pus_packet.tm_packet.packet_id
-  :field packet_seq_ctl: ax25_frame.payload.ax25_info.pus_packet.tm_packet.packet_seq_ctl
-  :field packet_length: ax25_frame.payload.ax25_info.pus_packet.tm_packet.packet_length
-  :field service: ax25_frame.payload.ax25_info.pus_packet.tm_packet.service
-  :field subservice: ax25_frame.payload.ax25_info.pus_packet.tm_packet.subservice
-  :field sid: ax25_frame.payload.ax25_info.pus_packet.tm_packet.sid
-  :field mode: ax25_frame.payload.ax25_info.pus_packet.tm_packet.mode
-  :field eps_vbatt: ax25_frame.payload.ax25_info.pus_packet.tm_packet.eps_vbatt
-  :field eps_batt_vcurrent: ax25_frame.payload.ax25_info.pus_packet.tm_packet.eps_batt_vcurrent
-  :field eps_3v3_current: ax25_frame.payload.ax25_info.pus_packet.tm_packet.eps_3v3_current
-  :field eps_5v_current: ax25_frame.payload.ax25_info.pus_packet.tm_packet.eps_5v_current
-  :field trx_temp: ax25_frame.payload.ax25_info.pus_packet.tm_packet.trx_temp
-  :field eps_temp: ax25_frame.payload.ax25_info.pus_packet.tm_packet.eps_temp
-  :field batt_temp: ax25_frame.payload.ax25_info.pus_packet.tm_packet.batt_temp
-  :field frame_status: ax25_frame.payload.ax25_info.pus_packet.tm_packet.frame_status
-  :field timestamp: ax25_frame.payload.ax25_info.pus_packet.tm_packet.timestamp
-  :field clock: ax25_frame.payload.ax25_info.pus_packet.tm_packet.clock
+  :field packet_id: ax25_frame.payload.ax25_info.pus_packet.tm_packet_header.packet_id
+  :field packet_seq_ctl: ax25_frame.payload.ax25_info.pus_packet.tm_packet_header.packet_seq_ctl
+  :field packet_length: ax25_frame.payload.ax25_info.pus_packet.tm_packet_header.packet_length
+  :field service: ax25_frame.payload.ax25_info.pus_packet.tm_packet_header.service
+  :field subservice: ax25_frame.payload.ax25_info.pus_packet.tm_packet_header.subservice
+  :field clock: ax25_frame.payload.ax25_info.pus_packet.tm_packet_header.clock
+  :field sid: ax25_frame.payload.ax25_info.pus_packet.payload.sid
+  :field mode: ax25_frame.payload.ax25_info.pus_packet.payload.tm_payload.mode
+  :field eps_vbatt: ax25_frame.payload.ax25_info.pus_packet.payload.tm_payload.eps_vbatt
+  :field eps_batt_vcurrent: ax25_frame.payload.ax25_info.pus_packet.payload.tm_payload.eps_batt_vcurrent
+  :field eps_3v3_current: ax25_frame.payload.ax25_info.pus_packet.payload.tm_payload.eps_3v3_current
+  :field eps_5v_current: ax25_frame.payload.ax25_info.pus_packet.payload.tm_payload.eps_5v_current
+  :field trx_temp: ax25_frame.payload.ax25_info.pus_packet.payload.tm_payload.trx_temp
+  :field eps_temp: ax25_frame.payload.ax25_info.pus_packet.payload.tm_payload.eps_temp
+  :field batt_temp: ax25_frame.payload.ax25_info.pus_packet.payload.tm_payload.batt_temp
+  :field frame_status: ax25_frame.payload.ax25_info.pus_packet.payload.tm_payload.frame_status
+  :field timestamp: ax25_frame.payload.ax25_info.pus_packet.payload.tm_payload.timestamp
 
 
   Attention: `rpt_callsign` cannot be accessed because `rpt_instance` is an
@@ -134,9 +133,11 @@ types:
     seq:
       - id: timestamp_unused
         type: u4
-      - id: tm_packet
+      - id: tm_packet_header
+        type: tm_packet_header_t
+      - id: payload
         type: tm_packet_t
-  tm_packet_t:
+  tm_packet_header_t:
     seq:
       - id: packet_id
         type: u2
@@ -154,8 +155,27 @@ types:
         type: u1
         repeat: expr
         repeat-expr: 5
+    instances:
+      clock:
+        value: >-
+          (
+          (clock_array[0] * 256 * 256 * 256) +
+          (clock_array[1] * 256 * 256) +
+          (clock_array[2] * 256) +
+          (clock_array[3]) +
+          (clock_array[4] / 256.0)
+          )
+  tm_packet_t:
+    seq:
       - id: sid
         type: u1
+      - id: tm_payload
+        type:
+          switch-on: sid
+          cases:
+            0x06: eps_packet_t
+  eps_packet_t:
+    seq:
       - id: mode
         type: u1
       - id: eps_vbatt
@@ -178,13 +198,3 @@ types:
         type: u1
       - id: timestamp
         type: u4le
-    instances:
-      clock:
-        value: >-
-          (
-          (clock_array[0] * 256 * 256 * 256) +
-          (clock_array[1] * 256 * 256) +
-          (clock_array[2] * 256) +
-          (clock_array[3]) +
-          (clock_array[4] / 256.0)
-          )
