@@ -687,43 +687,43 @@ types:
       - id: sol_nxx
         doc: |
           network byte order, raw sensor units
-        type: u2
+        type: s2
       - id: sol_nxy
         doc: |
           network byte order, raw sensor units
-        type: u2
+        type: s2
       - id: sol_nyx
         doc: |
           network byte order, raw sensor units
-        type: u2
+        type: s2
       - id: sol_nyy
         doc: |
           network byte order, raw sensor units
-        type: u2
+        type: s2
       - id: sol_nzx
         doc: |
           network byte order, raw sensor units
-        type: u2
+        type: s2
       - id: sol_nzy
         doc: |
           network byte order, raw sensor units
-        type: u2
+        type: s2
       - id: sol_pxx
         doc: |
           network byte order, raw sensor units
-        type: u2
+        type: s2
       - id: sol_pxy
         doc: |
           network byte order, raw sensor units
-        type: u2
+        type: s2
       - id: sol_pyx
         doc: |
           network byte order, raw sensor units
-        type: u2
+        type: s2
       - id: sol_pyy
         doc: |
           network byte order, raw sensor units
-        type: u2
+        type: s2
       - id: mag_nxxy
         doc: |
           unpack 12 bit fields.  a == -x panel magnetometer x channel, b == -x panel magnetometer y channel. lsb is 100nt
