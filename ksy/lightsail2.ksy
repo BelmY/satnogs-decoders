@@ -85,6 +85,7 @@ doc: |
   :field gyro_piz_b_high: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.gyro_piz.b_high
   :field gyro_piz_ab_low: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.gyro_piz.ab_low
   :field gyro_piz: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.gyro_piz.val_a
+  :field gyro_pz: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.gyro_piz.val_b
   :field gyro_ixy_a_high: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.gyro_ixy.a_high
   :field gyro_ixy_b_high: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.gyro_ixy.b_high
   :field gyro_ixy_ab_low: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.gyro_ixy.ab_low
@@ -662,6 +663,10 @@ types:
            network byte order.  lsb is 1/128.
         type: s2
       - id: q2_act
+        doc: |
+           network byte order.  lsb is 1/128.
+        type: s2
+      - id: q3_act
         doc: |
            network byte order.  lsb is 1/128.
         type: s2
