@@ -79,12 +79,17 @@ doc: |
   :field gyro_pxy_a_high: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.gyro_pxy.a_high
   :field gyro_pxy_b_high: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.gyro_pxy.b_high
   :field gyro_pxy_ab_low: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.gyro_pxy.ab_low
+  :field gyro_px: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.gyro_pxy.val_a
+  :field gyro_py: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.gyro_pxy.val_b
   :field gyro_piz_a_high: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.gyro_piz.a_high
   :field gyro_piz_b_high: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.gyro_piz.b_high
   :field gyro_piz_ab_low: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.gyro_piz.ab_low
+  :field gyro_piz: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.gyro_piz.val_a
   :field gyro_ixy_a_high: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.gyro_ixy.a_high
   :field gyro_ixy_b_high: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.gyro_ixy.b_high
   :field gyro_ixy_ab_low: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.gyro_ixy.ab_low
+  :field gyro_ix: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.gyro_ixy.val_a
+  :field gyro_iy: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.gyro_ixy.val_b
   :field sol_nxx: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.sol_nxx
   :field sol_nxy: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.sol_nxy
   :field sol_nyx: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.sol_nyx
@@ -844,6 +849,11 @@ types:
         doc: |
           bits [0-3]: low 4 bits of value b.  bits [4-7]: low 4 bits of value a
         type: u1
+    instances:
+      val_a:
+        value: a_high << 4 | (ab_low & 0x0f)
+      val_b:
+        value: b_high << 4 | (ab_low & 0xf0 >> 4)
   packedunsigned2x12_t:
     seq:
       - id: a_high
@@ -858,6 +868,11 @@ types:
         doc: |
           bits [0-3]: low 4 bits of value b.  bits [4-7]: low 4 bits of value a
         type: u1
+    instances:
+      val_a:
+        value: a_high << 4 | (ab_low & 0x0f)
+      val_b:
+        value: b_high << 4 | (ab_low & 0xf0 >> 4)
   camerainfo_t:
     seq:
       - id: status
