@@ -198,6 +198,7 @@ Fetched 45 frames.
 ## Existing decoders
 - AAUSAT4 by OZ3RF & DL4PD
 - ACRUX-1 by DL4PD
+- ARMADILLO by DL4PD
 - AMSAT FOX DUV by DL4PD
 - AX.25 frame decoder by DL4PD
 - CAS-4A & CAS-4B by cshields
