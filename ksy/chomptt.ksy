@@ -60,7 +60,7 @@ doc: |
   :field ch2_current: ax25_frame.payload.ax25_info.optib85.ch2_current
   :field count: ax25_frame.payload.ax25_info.optib85.count
   :field overflow: ax25_frame.payload.ax25_info.optib85.overflow
- 
+
 seq:
   - id: ax25_frame
     type: ax25_frame
@@ -68,19 +68,19 @@ seq:
 types:
   ax25_frame:
     seq:
-    - id: ax25_header
-      type: ax25_header
-    - id: payload
-      type:
-        switch-on: ax25_header.ctl & 0x13
-        cases:
-          0x03: ui_frame
-          0x13: ui_frame
-          0x00: i_frame
-          0x02: i_frame
-          0x10: i_frame
-          0x12: i_frame
-          #0x11: s_frame
+      - id: ax25_header
+        type: ax25_header
+      - id: payload
+        type:
+          switch-on: ax25_header.ctl & 0x13
+          cases:
+            0x03: ui_frame
+            0x13: ui_frame
+            0x00: i_frame
+            0x02: i_frame
+            0x10: i_frame
+            0x12: i_frame
+            # 0x11: s_frame
   ax25_header:
     seq:
       - id: dest_callsign_raw
@@ -155,7 +155,7 @@ types:
       - id: sod
         size: 2
       - id: optib85
-        #process: b85decode
+        # process: b85decode
         process: satnogsdecoders.process.b85decode
         size: 38
         type: opti_t
@@ -170,7 +170,7 @@ types:
       - id: sod
         size: 2
       - id: chomptb85
-        #process: b85decode
+        # process: b85decode
         process: satnogsdecoders.process.b85decode
         size: 94
         type: chompt_t
