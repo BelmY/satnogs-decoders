@@ -202,6 +202,7 @@ Fetched 45 frames.
 - AMSAT FOX DUV by DL4PD
 - AX.25 frame decoder by DL4PD
 - CAS-4A & CAS-4B by cshields
+- CHOMPTT by DL4PD
 - CubeBel-1 by DL4PD
 - Elfin-A & -B by DL4PD
 - Entrysat by DL4PD

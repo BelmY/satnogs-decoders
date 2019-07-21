@@ -15,6 +15,7 @@ from .ax25monitor import Ax25monitor
 from .bisonsat import Bisonsat
 from .bugsat1 import Bugsat1
 from .cas4 import Cas4
+from .chomptt import Chomptt
 from .csim import Csim
 from .cubebel1 import Cubebel1
 from .cubesatsim import Cubesatsim
@@ -48,6 +49,7 @@ __all__ = [
     'Bisonsat',
     'Bugsat1',
     'Cas4',
+    'Chomptt',
     'Cubebel1',
     'Cubesatsim',
     'Csim',
