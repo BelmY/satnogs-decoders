@@ -9,6 +9,7 @@ import re
 from .aausat4 import Aausat4
 from .acrux1 import Acrux1
 from .armadillo import Armadillo
+from .ascii85test import Ascii85test
 from .ax25frames import Ax25frames
 from .ax25monitor import Ax25monitor
 from .bisonsat import Bisonsat
@@ -41,6 +42,7 @@ __all__ = [
     'Aausat4',
     'Acrux1',
     'Armadillo',
+    'Ascii85test',
     'Ax25frames',
     'Ax25monitor',
     'Bisonsat',
