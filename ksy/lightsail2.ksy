@@ -77,19 +77,10 @@ doc: |
   :field x_rate: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.x_rate
   :field y_rate: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.y_rate
   :field z_rate: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.z_rate
-  :field gyro_pxy_a_high: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.gyro_pxy.a_high
-  :field gyro_pxy_b_high: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.gyro_pxy.b_high
-  :field gyro_pxy_ab_low: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.gyro_pxy.ab_low
   :field gyro_px: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.gyro_pxy.val_a
   :field gyro_py: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.gyro_pxy.val_b
-  :field gyro_piz_a_high: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.gyro_piz.a_high
-  :field gyro_piz_b_high: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.gyro_piz.b_high
-  :field gyro_piz_ab_low: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.gyro_piz.ab_low
-  :field gyro_piz: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.gyro_piz.val_a
+  :field gyro_iz: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.gyro_piz.val_a
   :field gyro_pz: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.gyro_piz.val_b
-  :field gyro_ixy_a_high: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.gyro_ixy.a_high
-  :field gyro_ixy_b_high: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.gyro_ixy.b_high
-  :field gyro_ixy_ab_low: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.gyro_ixy.ab_low
   :field gyro_ix: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.gyro_ixy.val_a
   :field gyro_iy: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.gyro_ixy.val_b
   :field sol_nxx: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.sol_nxx
@@ -102,21 +93,16 @@ doc: |
   :field sol_pxy: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.sol_pxy
   :field sol_pyx: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.sol_pyx
   :field sol_pyy: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.sol_pyy
-  :field mag_nxxy_a_high: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.mag_nxxy_a_high
-  :field mag_nxxy_b_high: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.mag_nxxy_b_high
-  :field mag_nxxy_ab_low: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.mag_nxxy_ab_low
-  :field mag_npxz_a_high: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.mag_npxz_a_high
-  :field mag_npxz_b_high: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.mag_npxz_b_high
-  :field mag_npxz_ab_low: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.mag_npxz_ab_low
-  :field mag_pxxy_a_high: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.mag_pxxy_a_high
-  :field mag_pxxy_b_high: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.mag_pxxy_b_high
-  :field mag_pxxy_ab_low: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.mag_pxxy_ab_low
-  :field mag_npyz_a_high: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.mag_npyz_a_high
-  :field mag_npyz_b_high: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.mag_npyz_b_high
-  :field mag_npyz_ab_low: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.mag_npyz_ab_low
-  :field mag_pyxy_a_high: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.mag_pyxy_a_high
-  :field mag_pyxy_b_high: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.mag_pyxy_b_high
-  :field mag_pyxy_ab_low: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.mag_pyxy_ab_low
+  :field mag_nxx: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.mag_nxxy.val_a
+  :field mag_nxy: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.mag_nxxy.val_b
+  :field mag_nxz: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.mag_npxz.val_a
+  :field mag_pxz: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.mag_npxz.val_b
+  :field mag_pxx: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.mag_pxxy.val_a
+  :field mag_pxy: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.mag_pxxy.val_b
+  :field mag_nyz: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.mag_npyz.val_a
+  :field mag_pyz: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.mag_npyz.val_b
+  :field mag_pyx: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.mag_pyxy.val_a
+  :field mag_pyy: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.mag_pyxy.val_b
   :field wheel_rpm: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.wheel_rpm
   :field cam0_status: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.cam0.status
   :field cam0_temp: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.cam0.temp
@@ -137,10 +123,8 @@ doc: |
   :field motor_pwrcurr: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.motor_pwrcurr
   :field motor_pwrbusv: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.motor_pwrbusv
   :field pic_panel_flags: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.pic_panel_flags
-  :field motor_cnt_high: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.motor_cnt_high
-  :field motor_cnt_low: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.motor_cnt_low
-  :field motor_limit_high: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.motor_limit_high
-  :field motor_limit_low: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.motor_limit_low
+  :field motor_cnt: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.motor_cnt
+  :field motor_limit: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.motor_limit
   :field bat0_curr: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.bat0.curr
   :field bat0_volt: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.bat0.volt
   :field bat0_temp: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.bat0.temp
@@ -819,6 +803,11 @@ types:
         doc: |
           low 16 bits of motor position limit in network byte order
         type: u2
+    instances:
+      motor_cnt:
+        value: (motor_cnt_high << 16) | motor_cnt_low
+      motor_limit:
+        value: (motor_limit_high << 16) | motor_limit_low
   lsb_batterydata_t:
     seq:
       - id: curr
