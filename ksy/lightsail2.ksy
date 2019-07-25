@@ -73,6 +73,7 @@ doc: |
   :field q0_act: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.q0_act
   :field q1_act: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.q1_act
   :field q2_act: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.q2_act
+  :field q3_act: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.q3_act
   :field x_rate: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.x_rate
   :field y_rate: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.y_rate
   :field z_rate: ax25_frame.payload.ax25_info.body.body.lsb_beacondata.z_rate

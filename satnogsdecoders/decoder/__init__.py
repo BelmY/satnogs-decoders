@@ -33,6 +33,7 @@ from .qbee import Qbee
 from .siriussat import Siriussat
 from .skcube import Skcube
 from .strand import Strand
+from .tbex import Tbex
 from .us6 import Us6
 from .uwe4 import Uwe4
 
@@ -64,6 +65,7 @@ __all__ = [
     'Siriussat',
     'Skcube',
     'Strand',
+    'Tbex',
     'Us6',
     'Uwe4',
 ]

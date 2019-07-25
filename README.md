@@ -210,6 +210,7 @@ Fetched 45 frames.
 - Siriussat-1 & -2 by kerel
 - skCUBE by borispilka & kerel
 - Strand-1 by kerel
+- TBEX-A/-B by DL4PD
 - Unisat-6 by cshields
 
 ## License
