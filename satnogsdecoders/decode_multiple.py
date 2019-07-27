@@ -68,7 +68,7 @@ def create_point(fields, timestamp, decoder, version):
 
     :returns: a JSON formatted time series data point
     """
-    point = [{
+    point = {
         'time': timestamp,
         'measurement': '',
         'tags': {
@@ -80,7 +80,7 @@ def create_point(fields, timestamp, decoder, version):
             'version': version
         },
         'fields': fields
-    }]
+    }
 
     return point
 
