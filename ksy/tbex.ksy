@@ -13,8 +13,11 @@ doc: |
   :field dest_ssid: ax25_frame.ax25_header.dest_ssid_raw.ssid
   :field ctl: ax25_frame.ax25_header.ctl
   :field pid: ax25_frame.payload.pid
+  :field primary_id: ax25_frame.payload.ax25_info.header.primary_id
+  :field secondary_id: ax25_frame.payload.ax25_info.header.secondary_id
   :field flags: ax25_frame.payload.ax25_info.header.flags
-  :field spacecraft_identifier: ax25_frame.payload.ax25_info.header.spacecraft_identifier
+  :field packet_length: ax25_frame.payload.ax25_info.header.packet_length
+  :field header_checksum: ax25_frame.payload.ax25_info.header.header_checksum
   :field operation_mode: ax25_frame.payload.ax25_info.payload.beacon_type.operation_mode
   :field rtc_unix_time: ax25_frame.payload.ax25_info.payload.beacon_type.rtc_unix_time
   :field numresets: ax25_frame.payload.ax25_info.payload.beacon_type.numresets
@@ -319,7 +322,7 @@ types:
         size: 11
       - id: payload
         type:
-          switch-on: header.spacecraft_identifier
+          switch-on: header.secondary_id
           cases:
             0x52: tbex_beacon_t
             0x53: tbex_beacon_t
@@ -330,14 +333,24 @@ types:
         type: u4
   tbex_header_t:
     seq:
-      - id: flags
+      - id: sync
+        contents: [0xab, 0xcd]
+        doc: 'Sync characters; always 0xab, 0xcd'
+      - id: primary_id
         type: u2
-      - id: padding_1
-        size: 3
-      - id: spacecraft_identifier
+        doc: 'Primary Identifier'
+      - id: secondary_id
+        type: u2
+        doc: 'Secondary Identifier'
+      - id: flags
         type: u1
-      - id: padding_2
-        size: 5
+        doc: 'Flags'
+      - id: packet_length
+        type: u2
+        doc: 'Packetlength including header and checksums in footer'
+      - id: header_checksum
+        type: u2
+        doc: 'Header checksum'
   tbex_beacon_t:
     seq:
       - id: beacon_type
