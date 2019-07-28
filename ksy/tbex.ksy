@@ -332,6 +332,8 @@ types:
       - id: crc
         type: u4
   tbex_header_t:
+    meta:
+      endian: be
     seq:
       - id: sync
         contents: [0xab, 0xcd]
