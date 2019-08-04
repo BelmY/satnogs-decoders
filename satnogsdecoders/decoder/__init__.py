@@ -26,6 +26,7 @@ from .irazu import Irazu
 from .irvine import Irvine
 from .lightsail2 import Lightsail2
 from .minxss import Minxss
+from .mxl import Mxl
 from .mysat import Mysat
 from .origamisat1 import Origamisat1
 from .pwsat2 import Pwsat2
@@ -33,7 +34,6 @@ from .qbee import Qbee
 from .siriussat import Siriussat
 from .skcube import Skcube
 from .strand import Strand
-from .tbex import Tbex
 from .us6 import Us6
 from .uwe4 import Uwe4
 
@@ -58,6 +58,7 @@ __all__ = [
     'Irvine',
     'Lightsail2',
     'Minxss',
+    'Mxl',
     'Mysat',
     'Origamisat1',
     'Pwsat2',
@@ -65,7 +66,6 @@ __all__ = [
     'Siriussat',
     'Skcube',
     'Strand',
-    'Tbex',
     'Us6',
     'Uwe4',
 ]
