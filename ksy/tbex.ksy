@@ -314,7 +314,9 @@ types:
         type:
           switch-on: _parent.ax25_header.src_callsign_raw.callsign_ror.callsign
           cases:
-            '"KF6RFX"': mxl_packet_t
+            '"KF6RFX"': mxl_packet_t  # TBEX-A/-B
+            '"NOCALL"': mxl_packet_t  # MCUBED-2
+            '"CQ    "': mxl_packet_t  # GRIFEX
         size-eos: true
   mxl_packet_t:
     seq:
@@ -325,9 +327,13 @@ types:
         type:
           switch-on: header.secondary_id
           cases:
+            0x32: mcubed2_beacon_t
+            0x42: grifex_beacon_t
             0x52: tbex_beacon_t
             0x53: tbex_beacon_t
         doc: |
+          0x32: Spacecraft Identifier for MCUBED-2
+          0x42: Spacecraft Identifier for GRIFEX
           0x52: Spacecraft Identifier for TBEX-A
           0x53: Spacecraft Identifier for TBEX-B
       - id: crc
