@@ -1,7 +1,7 @@
 ---
 meta:
-  id: tbex
-  endian: le
+  id: mxl
+  endian: be
 doc-ref: |
   https://docs.google.com/spreadsheets/d/1mGekVQyf4Ozlf6UqojZk0ji02DwLLDFp3S1XTffvqGk/edit#gid=1694629037
   https://drive.google.com/file/d/1XduQg8NTiXD0MORRmrdjMPdAokTbSP_1/view
@@ -332,8 +332,6 @@ types:
       - id: crc
         type: u4
   mxl_header_t:
-    meta:
-      endian: be
     seq:
       - id: sync
         contents: [0xab, 0xcd]
@@ -354,6 +352,8 @@ types:
         type: u2
         doc: 'Header checksum'
   tbex_beacon_t:
+    meta:
+      endian: le
     seq:
       - id: beacon_type
         type:
@@ -362,6 +362,8 @@ types:
             219: beacon_2_t
             255: beacon_1_t
   beacon_1_t:
+    meta:
+      endian: le
     seq:
       - id: operation_mode
         type: u2
@@ -590,6 +592,8 @@ types:
       - id: pim_bus_3v3_voltag
         type: u2
   beacon_2_t:
+    meta:
+      endian: le
     seq:
       - id: rtc_unix_time_beacon_2
         type: u4
