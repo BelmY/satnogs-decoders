@@ -18,6 +18,7 @@ doc: |
   :field flags: ax25_frame.payload.ax25_info.header.flags
   :field packet_length: ax25_frame.payload.ax25_info.header.packet_length
   :field header_checksum: ax25_frame.payload.ax25_info.header.header_checksum
+  :field spacecraft: ax25_frame.payload.ax25_info.header.spacecraft
   :field operation_mode: ax25_frame.payload.ax25_info.payload.beacon_type.operation_mode
   :field rtc_unix_time: ax25_frame.payload.ax25_info.payload.beacon_type.rtc_unix_time
   :field numresets: ax25_frame.payload.ax25_info.payload.beacon_type.numresets
@@ -351,6 +352,13 @@ types:
       - id: header_checksum
         type: u2
         doc: 'Header checksum'
+    instances:
+      spacecraft:
+        value: >-
+          (secondary_id == 0x32 ? 'MCUBED-2' :
+          (secondary_id == 0x42 ? 'GRIFEX' :
+          (secondary_id == 0x52 ? 'TBEX-A' :
+          (secondary_id == 0x53 ? 'TBEX-B' : 'unknown'))))
   tbex_beacon_t:
     meta:
       endian: le
