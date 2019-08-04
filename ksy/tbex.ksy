@@ -313,12 +313,12 @@ types:
         type:
           switch-on: _parent.ax25_header.src_callsign_raw.callsign_ror.callsign
           cases:
-            '"KF6RFX"': tbex_packet_t
+            '"KF6RFX"': mxl_packet_t
         size-eos: true
-  tbex_packet_t:
+  mxl_packet_t:
     seq:
       - id: header
-        type: tbex_header_t
+        type: mxl_header_t
         size: 11
       - id: payload
         type:
@@ -331,7 +331,7 @@ types:
           0x53: Spacecraft Identifier for TBEX-B
       - id: crc
         type: u4
-  tbex_header_t:
+  mxl_header_t:
     meta:
       endian: be
     seq:
