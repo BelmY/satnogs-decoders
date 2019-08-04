@@ -359,6 +359,14 @@ types:
           (secondary_id == 0x42 ? 'GRIFEX' :
           (secondary_id == 0x52 ? 'TBEX-A' :
           (secondary_id == 0x53 ? 'TBEX-B' : 'unknown'))))
+  grifex_beacon_t:
+    seq:
+      - id: payload
+        size: _root.framelength - 4 - 11 - 16
+  mcubed2_beacon_t:
+    seq:
+      - id: payload
+        size: _root.framelength - 4 - 11 - 16
   tbex_beacon_t:
     meta:
       endian: le
