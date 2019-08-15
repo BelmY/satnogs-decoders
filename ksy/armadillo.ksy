@@ -9,7 +9,7 @@ doc: |
   :field dest_ssid: ax25_frame.ax25_header.dest_ssid_raw.ssid
   :field ctl: ax25_frame.ax25_header.ctl
   :field pid: ax25_frame.payload.pid
-  :field time : ax25_frame.payload.data_payload.time
+  :field time: ax25_frame.payload.data_payload.time
   :field uptime: ax25_frame.payload.data_payload.uptime
   :field avail_nvmem: ax25_frame.payload.data_payload.avail_nvmem
   :field pos_x: ax25_frame.payload.data_payload.pos_x
@@ -137,6 +137,8 @@ types:
             '"KE5DTW"': armadillo_payload  # ARMADILLO
   armadillo_payload:
     seq:
+      - id: pb_magic
+        size: 5
       - id: time
         type: u4
         doc: 'Spacecraft time of day'
@@ -288,7 +290,7 @@ types:
         type: u1
         doc: 'Sun sensor that last sensed the sun'
       - id: message
-        type: str
+        type: strz
         size: 110
         encoding: ASCII
 enums:
