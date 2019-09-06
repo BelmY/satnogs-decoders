@@ -82,7 +82,7 @@ deploy:
   stage: deploy
   image: ${GITLAB_CI_IMAGE_PYTHON2}
   before_script:
-    - pip install "$GITLAB_CI_PYPI_TOX"
+    - pip install "$GITLAB_CI_PYPI_TWINE"
   script:
     - rm -rf dist
     - python setup.py sdist bdist_wheel
@@ -97,7 +97,7 @@ deploy3:
   stage: deploy
   image: ${GITLAB_CI_IMAGE_PYTHON3}
   before_script:
-    - pip install "$GITLAB_CI_PYPI_TOX"
+    - pip install "$GITLAB_CI_PYPI_TWINE"
   script:
     - rm -rf dist
     - python setup.py bdist_wheel
