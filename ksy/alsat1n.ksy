@@ -287,7 +287,7 @@ types:
         -orig-id: block_id
       - id: bin_file_data
         process: satnogsdecoders.process.b85encode
-        size: 200
+        size-eos: true
         type: encoded_data_t
         -orig-id: file_data
   file_count:
