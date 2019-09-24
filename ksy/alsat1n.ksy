@@ -45,7 +45,7 @@ doc: |
   :field amrad: alsat1n_payload.ssc_channel.payload_type.msg_type.amrad
   :field current_packet: alsat1n_payload.ssc_channel.payload_type.msg_type.current_packet
   :field block_id: alsat1n_payload.ssc_channel.payload_type.msg_type.block_id
-  :field file_data: alsat1n_payload.ssc_channel.payload_type.msg_type.file_data
+  :field file_data: alsat1n_payload.ssc_channel.payload_type.msg_type.bin_file_data.file_data
   :field file_store: alsat1n_payload.ssc_channel.payload_type.msg_type.file_store
   :field file_type: alsat1n_payload.ssc_channel.payload_type.msg_type.file_type
   :field file_count: alsat1n_payload.ssc_channel.payload_type.msg_type.file_count
@@ -97,41 +97,41 @@ types:
         type:
           switch-on: _parent.ssc_header.payload_id
           cases:
-            0x2E: eps
-            0x05: obc
-            0x13: file
+            5: obc
+            19: file
+            46: eps
   file:
     seq:
       - id: msg_type
         type:
           switch-on: _parent._parent.ssc_header.msg_id
           cases:
-            0x15: download_data
-            0x1e: file_count
+            21: download_data
+            30: file_count
   eps:
     seq:
       - id: msg_type
         type:
           switch-on: _parent._parent.ssc_header.msg_id
           cases:
-            0xf0: eps_sys
-            0xf4: eps_platform
-            0xaf: pdm_payload
-            0x7a: pdm_platform
-            0x3f: eps_psu_current_5v
-            0x41: eps_psu_current_3v3
-            0xa6: p8_psu
-            0xa1: p7_psu
+            63: eps_psu_current_5v
+            65: eps_psu_current_3v3
+            122: pdm_platform
+            166: p8_psu
+            161: p7_psu
+            175: pdm_payload
+            240: eps_sys
+            244: eps_platform
   obc:
     seq:
       - id: msg_type
         type:
           switch-on: _parent._parent.ssc_header.msg_id
           cases:
-            0x01: obc_health
-            0x20: i2c_traffic
-            0x7f: watchdog_time_remaining
-            0xb0: amrad_msg
+            1: obc_health
+            32: i2c_traffic
+            127: watchdog_time_remaining
+            176: amrad_msg
   p8_psu:
     seq:
       - id: p8_state
@@ -285,11 +285,10 @@ types:
       - id: block_id
         type: u2
         -orig-id: block_id
-      - id: file_data
+      - id: bin_file_data
         process: satnogsdecoders.process.b85encode
-        type: str
-        encoding: ASCII
         size: 200
+        type: encoded_data_t
         -orig-id: file_data
   file_count:
     seq:
@@ -302,3 +301,9 @@ types:
       - id: file_count
         type: u2
         -orig-id: filecount
+  encoded_data_t:
+    seq:
+      - id: file_data
+        type: str
+        encoding: ASCII
+        size-eos: true
