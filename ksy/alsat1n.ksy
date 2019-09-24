@@ -286,6 +286,7 @@ types:
         type: u2
         -orig-id: block_id
       - id: file_data
+        process: satnogsdecoders.process.b85encode
         type: str
         encoding: ASCII
         size: 200
