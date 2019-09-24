@@ -1,3 +1,0 @@
-[MASTER]
-ignore=_version.py,decoder
-disable=useless-object-inheritance
