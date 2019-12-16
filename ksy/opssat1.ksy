@@ -21,7 +21,7 @@ doc: |
   :field csp_hmac: ax25_frame.payload.info.opssat_payload.header.hmac
   :field csp_xtea: ax25_frame.payload.info.opssat_payload.header.xtea
   :field csp_rdp: ax25_frame.payload.info.opssat_payload.header.rdp
-  :field csp_crc: ax25_frame.payload.info.opssat_payload..header.crc
+  :field csp_crc: ax25_frame.payload.info.opssat_payload.header.crc
   :field board_temperature: ax25_frame.payload.info.opssat_payload.beacon_data.board_temperature
   :field pa_temperature: ax25_frame.payload.info.opssat_payload.beacon_data.pa_temperature
   :field last_received_rssi: ax25_frame.payload.info.opssat_payload.beacon_data.last_received_rssi
