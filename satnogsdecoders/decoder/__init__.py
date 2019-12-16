@@ -31,6 +31,7 @@ from .lightsail2 import Lightsail2
 from .minxss import Minxss
 from .mxl import Mxl
 from .mysat import Mysat
+from .opssat1 import Opssat1
 from .origamisat1 import Origamisat1
 from .pwsat2 import Pwsat2
 from .qbee import Qbee
@@ -66,6 +67,7 @@ __all__ = [
     'Minxss',
     'Mxl',
     'Mysat',
+    'Opssat1',
     'Origamisat1',
     'Pwsat2',
     'Qbee',
