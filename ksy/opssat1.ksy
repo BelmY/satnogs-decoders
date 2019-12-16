@@ -11,7 +11,6 @@ doc: |
   :field rpt_callsign: ax25_frame.ax25_header.repeater.rpt_instance[0].rpt_callsign_raw.callsign_ror.callsign
   :field ctl: ax25_frame.ax25_header.ctl
   :field pid: ax25_frame.payload.pid
-  :field raw_csp_header: ax25_frame.payload.info.opssat_payload.header.raw_csp_header
   :field priority: ax25_frame.payload.info.opssat_payload.header.priority
   :field source: ax25_frame.payload.info.opssat_payload.header.source
   :field destination: ax25_frame.payload.info.opssat_payload.header.destination
@@ -40,8 +39,6 @@ doc: |
   :field total_rx_packets: ax25_frame.payload.info.opssat_payload.beacon_data.total_rx_packets
   :field total_tx_bytes: ax25_frame.payload.info.opssat_payload.beacon_data.total_tx_bytes
   :field total_rx_bytes: ax25_frame.payload.info.opssat_payload.beacon_data.total_rx_bytes
-  :field crc_32c: ax25_frame.payload.info.crc_32c
-  :field rs_block: ax25_frame.payload.info.rs_block
 
 seq:
   - id: ax25_frame
