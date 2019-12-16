@@ -22,24 +22,24 @@ doc: |
   :field csp_xtea: ax25_frame.payload.info.opssat_payload.header.xtea
   :field csp_rdp: ax25_frame.payload.info.opssat_payload.header.rdp
   :field csp_crc: ax25_frame.payload.info.opssat_payload..header.crc
-  :field board_temperature: ax25_frame.payload.info.opssat_payload.data.board_temperature
-  :field pa_temperature: ax25_frame.payload.info.opssat_payload.data.pa_temperature
-  :field last_received_rssi: ax25_frame.payload.info.opssat_payload.data.last_received_rssi
-  :field last_received_rf_error: ax25_frame.payload.info.opssat_payload.data.last_received_rf_error
-  :field number_of_tx_packets_since_reboot: ax25_frame.payload.info.opssat_payload.data.number_of_tx_packets_since_reboot
-  :field number_of_rx_packets_since_reboot: ax25_frame.payload.info.opssat_payload.data.number_of_rx_packets_since_reboot
-  :field number_of_tx_bytes_since_reboot: ax25_frame.payload.info.opssat_payload.data.number_of_tx_bytes_since_reboot
-  :field number_of_rx_bytes_since_reboot: ax25_frame.payload.info.opssat_payload.data.number_of_rx_bytes_since_reboot
-  :field active_system_configuration: ax25_frame.payload.info.opssat_payload.data.active_system_configuration
-  :field reboot_number: ax25_frame.payload.info.opssat_payload.data.reboot_number
-  :field reboot_cause: ax25_frame.payload.info.opssat_payload.data.reboot_cause
-  :field last_valid_packet_timestamp: ax25_frame.payload.info.opssat_payload.data.last_valid_packet_timestamp
-  :field background_rssi_level: ax25_frame.payload.info.opssat_payload.data.background_rssi_level
-  :field tx_duty_time_since_reboot: ax25_frame.payload.info.opssat_payload.data.tx_duty_time_since_reboot
-  :field total_tx_packets: ax25_frame.payload.info.opssat_payload.data.total_tx_packets
-  :field total_rx_packets: ax25_frame.payload.info.opssat_payload.data.total_rx_packets
-  :field total_tx_bytes: ax25_frame.payload.info.opssat_payload.data.total_tx_bytes
-  :field total_rx_bytes: ax25_frame.payload.info.opssat_payload.data.total_rx_bytes
+  :field board_temperature: ax25_frame.payload.info.opssat_payload.beacon_data.board_temperature
+  :field pa_temperature: ax25_frame.payload.info.opssat_payload.beacon_data.pa_temperature
+  :field last_received_rssi: ax25_frame.payload.info.opssat_payload.beacon_data.last_received_rssi
+  :field last_received_rf_error: ax25_frame.payload.info.opssat_payload.beacon_data.last_received_rf_error
+  :field number_of_tx_packets_since_reboot: ax25_frame.payload.info.opssat_payload.beacon_data.number_of_tx_packets_since_reboot
+  :field number_of_rx_packets_since_reboot: ax25_frame.payload.info.opssat_payload.beacon_data.number_of_rx_packets_since_reboot
+  :field number_of_tx_bytes_since_reboot: ax25_frame.payload.info.opssat_payload.beacon_data.number_of_tx_bytes_since_reboot
+  :field number_of_rx_bytes_since_reboot: ax25_frame.payload.info.opssat_payload.beacon_data.number_of_rx_bytes_since_reboot
+  :field active_system_configuration: ax25_frame.payload.info.opssat_payload.beacon_data.active_system_configuration
+  :field reboot_number: ax25_frame.payload.info.opssat_payload.beacon_data.reboot_number
+  :field reboot_cause: ax25_frame.payload.info.opssat_payload.beacon_data.reboot_cause
+  :field last_valid_packet_timestamp: ax25_frame.payload.info.opssat_payload.beacon_data.last_valid_packet_timestamp
+  :field background_rssi_level: ax25_frame.payload.info.opssat_payload.beacon_data.background_rssi_level
+  :field tx_duty_time_since_reboot: ax25_frame.payload.info.opssat_payload.beacon_data.tx_duty_time_since_reboot
+  :field total_tx_packets: ax25_frame.payload.info.opssat_payload.beacon_data.total_tx_packets
+  :field total_rx_packets: ax25_frame.payload.info.opssat_payload.beacon_data.total_rx_packets
+  :field total_tx_bytes: ax25_frame.payload.info.opssat_payload.beacon_data.total_tx_bytes
+  :field total_rx_bytes: ax25_frame.payload.info.opssat_payload.beacon_data.total_rx_bytes
   :field crc_32c: ax25_frame.payload.info.crc_32c
   :field rs_block: ax25_frame.payload.info.rs_block
 
@@ -150,7 +150,7 @@ types:
         value: '((raw_csp_header & 0x02) >> 1)'
       crc:
         value: '(raw_csp_header & 0x01)'
-  csp_data:
+  csp_beacon_data:
     seq:
       - id: board_temperature
         type: s2
@@ -192,5 +192,6 @@ types:
     seq:
       - id: header
         type: csp_header
-      - id: data
-        type: csp_data
+      - id: beacon_data
+        type: csp_beacon_data
+        if: '(header.destination == 10) and (header.priority == 3) and (header.source == 5) and (header.destination_port == 31)'
