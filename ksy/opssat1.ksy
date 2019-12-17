@@ -11,34 +11,34 @@ doc: |
   :field rpt_callsign: ax25_frame.ax25_header.repeater.rpt_instance[0].rpt_callsign_raw.callsign_ror.callsign
   :field ctl: ax25_frame.ax25_header.ctl
   :field pid: ax25_frame.payload.pid
-  :field priority: ax25_frame.payload.info.opssat_payload.header.priority
-  :field source: ax25_frame.payload.info.opssat_payload.header.source
-  :field destination: ax25_frame.payload.info.opssat_payload.header.destination
-  :field destination_port: ax25_frame.payload.info.opssat_payload.header.destination_port
-  :field source_port: ax25_frame.payload.info.opssat_payload.header.source_port
-  :field reserved: ax25_frame.payload.info.opssat_payload.header.reserved
-  :field csp_hmac: ax25_frame.payload.info.opssat_payload.header.hmac
-  :field csp_xtea: ax25_frame.payload.info.opssat_payload.header.xtea
-  :field csp_rdp: ax25_frame.payload.info.opssat_payload.header.rdp
-  :field csp_crc: ax25_frame.payload.info.opssat_payload.header.crc
-  :field board_temperature: ax25_frame.payload.info.opssat_payload.beacon_data.board_temperature
-  :field pa_temperature: ax25_frame.payload.info.opssat_payload.beacon_data.pa_temperature
-  :field last_received_rssi: ax25_frame.payload.info.opssat_payload.beacon_data.last_received_rssi
-  :field last_received_rf_error: ax25_frame.payload.info.opssat_payload.beacon_data.last_received_rf_error
-  :field number_of_tx_packets_since_reboot: ax25_frame.payload.info.opssat_payload.beacon_data.number_of_tx_packets_since_reboot
-  :field number_of_rx_packets_since_reboot: ax25_frame.payload.info.opssat_payload.beacon_data.number_of_rx_packets_since_reboot
-  :field number_of_tx_bytes_since_reboot: ax25_frame.payload.info.opssat_payload.beacon_data.number_of_tx_bytes_since_reboot
-  :field number_of_rx_bytes_since_reboot: ax25_frame.payload.info.opssat_payload.beacon_data.number_of_rx_bytes_since_reboot
-  :field active_system_configuration: ax25_frame.payload.info.opssat_payload.beacon_data.active_system_configuration
-  :field reboot_number: ax25_frame.payload.info.opssat_payload.beacon_data.reboot_number
-  :field reboot_cause: ax25_frame.payload.info.opssat_payload.beacon_data.reboot_cause
-  :field last_valid_packet_timestamp: ax25_frame.payload.info.opssat_payload.beacon_data.last_valid_packet_timestamp
-  :field background_rssi_level: ax25_frame.payload.info.opssat_payload.beacon_data.background_rssi_level
-  :field tx_duty_time_since_reboot: ax25_frame.payload.info.opssat_payload.beacon_data.tx_duty_time_since_reboot
-  :field total_tx_packets: ax25_frame.payload.info.opssat_payload.beacon_data.total_tx_packets
-  :field total_rx_packets: ax25_frame.payload.info.opssat_payload.beacon_data.total_rx_packets
-  :field total_tx_bytes: ax25_frame.payload.info.opssat_payload.beacon_data.total_tx_bytes
-  :field total_rx_bytes: ax25_frame.payload.info.opssat_payload.beacon_data.total_rx_bytes
+  :field priority: ax25_frame.payload.info.payload_dscrm.opssat_payload.header.priority
+  :field source: ax25_frame.payload.info.payload_dscrm.opssat_payload.header.source
+  :field destination: ax25_frame.payload.info.payload_dscrm.opssat_payload.header.destination
+  :field destination_port: ax25_frame.payload.info.payload_dscrm.opssat_payload.header.destination_port
+  :field source_port: ax25_frame.payload.info.payload_dscrm.opssat_payload.header.source_port
+  :field reserved: ax25_frame.payload.info.payload_dscrm.opssat_payload.header.reserved
+  :field csp_hmac: ax25_frame.payload.info.payload_dscrm.opssat_payload.header.hmac
+  :field csp_xtea: ax25_frame.payload.info.payload_dscrm.opssat_payload.header.xtea
+  :field csp_rdp: ax25_frame.payload.info.payload_dscrm.opssat_payload.header.rdp
+  :field csp_crc: ax25_frame.payload.info.payload_dscrm.opssat_payload.header.crc
+  :field board_temperature: ax25_frame.payload.info.payload_dscrm.opssat_payload.beacon_data.board_temperature
+  :field pa_temperature: ax25_frame.payload.info.payload_dscrm.opssat_payload.beacon_data.pa_temperature
+  :field last_received_rssi: ax25_frame.payload.info.payload_dscrm.opssat_payload.beacon_data.last_received_rssi
+  :field last_received_rf_error: ax25_frame.payload.info.payload_dscrm.opssat_payload.beacon_data.last_received_rf_error
+  :field number_of_tx_packets_since_reboot: ax25_frame.payload.info.payload_dscrm.opssat_payload.beacon_data.number_of_tx_packets_since_reboot
+  :field number_of_rx_packets_since_reboot: ax25_frame.payload.info.payload_dscrm.opssat_payload.beacon_data.number_of_rx_packets_since_reboot
+  :field number_of_tx_bytes_since_reboot: ax25_frame.payload.info.payload_dscrm.opssat_payload.beacon_data.number_of_tx_bytes_since_reboot
+  :field number_of_rx_bytes_since_reboot: ax25_frame.payload.info.payload_dscrm.opssat_payload.beacon_data.number_of_rx_bytes_since_reboot
+  :field active_system_configuration: ax25_frame.payload.info.payload_dscrm.opssat_payload.beacon_data.active_system_configuration
+  :field reboot_number: ax25_frame.payload.info.payload_dscrm.opssat_payload.beacon_data.reboot_number
+  :field reboot_cause: ax25_frame.payload.info.payload_dscrm.opssat_payload.beacon_data.reboot_cause
+  :field last_valid_packet_timestamp: ax25_frame.payload.info.payload_dscrm.opssat_payload.beacon_data.last_valid_packet_timestamp
+  :field background_rssi_level: ax25_frame.payload.info.payload_dscrm.opssat_payload.beacon_data.background_rssi_level
+  :field tx_duty_time_since_reboot: ax25_frame.payload.info.payload_dscrm.opssat_payload.beacon_data.tx_duty_time_since_reboot
+  :field total_tx_packets: ax25_frame.payload.info.payload_dscrm.opssat_payload.beacon_data.total_tx_packets
+  :field total_rx_packets: ax25_frame.payload.info.payload_dscrm.opssat_payload.beacon_data.total_rx_packets
+  :field total_tx_bytes: ax25_frame.payload.info.payload_dscrm.opssat_payload.beacon_data.total_tx_bytes
+  :field total_rx_bytes: ax25_frame.payload.info.payload_dscrm.opssat_payload.beacon_data.total_rx_bytes
 
 seq:
   - id: ax25_frame
@@ -111,7 +111,21 @@ types:
         type:
           switch-on: '_parent.ax25_header.src_callsign_raw.callsign_ror.callsign'
           cases:
-            '"DP0OPS"': opssat_payload
+            '"DP0OPS"': opssat_payload_dscrm
+  opssat_payload_dscrm:
+    seq:
+      - id: payload_dscrm
+        doc: |
+          h(x) = 1 + x^3 + x^5 + x^7 + x^8
+          x8 + x7 + x5 + x3 + 1
+          10^8 + 10^7 + 10^5 + 10^3 + 1 = 1 1010 1001
+          mask = 0x1A9 & 0xFF = 0xA9
+          seed = 0xFF
+          length = 8 - 1 = 7, (1 << 7) == 128!
+          scrambler(mask, seed, length)
+        process: satnogsdecoders.process.scrambler(0xa9, 0xff, 7)
+        size-eos: true
+        type: opssat_payload
   opssat_payload:
     seq:
       - id: opssat_payload
