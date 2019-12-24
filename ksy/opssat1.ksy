@@ -11,39 +11,43 @@ doc: |
   :field rpt_callsign: ax25_frame.ax25_header.repeater.rpt_instance[0].rpt_callsign_raw.callsign_ror.callsign
   :field ctl: ax25_frame.ax25_header.ctl
   :field pid: ax25_frame.payload.pid
-  :field priority: ax25_frame.payload.info.payload_dscrm.opssat_payload.header.priority
-  :field source: ax25_frame.payload.info.payload_dscrm.opssat_payload.header.source
-  :field destination: ax25_frame.payload.info.payload_dscrm.opssat_payload.header.destination
-  :field destination_port: ax25_frame.payload.info.payload_dscrm.opssat_payload.header.destination_port
-  :field source_port: ax25_frame.payload.info.payload_dscrm.opssat_payload.header.source_port
-  :field reserved: ax25_frame.payload.info.payload_dscrm.opssat_payload.header.reserved
-  :field csp_hmac: ax25_frame.payload.info.payload_dscrm.opssat_payload.header.hmac
-  :field csp_xtea: ax25_frame.payload.info.payload_dscrm.opssat_payload.header.xtea
-  :field csp_rdp: ax25_frame.payload.info.payload_dscrm.opssat_payload.header.rdp
-  :field csp_crc: ax25_frame.payload.info.payload_dscrm.opssat_payload.header.crc
-  :field board_temperature: ax25_frame.payload.info.payload_dscrm.opssat_payload.beacon_data.board_temperature
-  :field pa_temperature: ax25_frame.payload.info.payload_dscrm.opssat_payload.beacon_data.pa_temperature
-  :field last_received_rssi: ax25_frame.payload.info.payload_dscrm.opssat_payload.beacon_data.last_received_rssi
-  :field last_received_rf_error: ax25_frame.payload.info.payload_dscrm.opssat_payload.beacon_data.last_received_rf_error
-  :field number_of_tx_packets_since_reboot: ax25_frame.payload.info.payload_dscrm.opssat_payload.beacon_data.number_of_tx_packets_since_reboot
-  :field number_of_rx_packets_since_reboot: ax25_frame.payload.info.payload_dscrm.opssat_payload.beacon_data.number_of_rx_packets_since_reboot
-  :field number_of_tx_bytes_since_reboot: ax25_frame.payload.info.payload_dscrm.opssat_payload.beacon_data.number_of_tx_bytes_since_reboot
-  :field number_of_rx_bytes_since_reboot: ax25_frame.payload.info.payload_dscrm.opssat_payload.beacon_data.number_of_rx_bytes_since_reboot
-  :field active_system_configuration: ax25_frame.payload.info.payload_dscrm.opssat_payload.beacon_data.active_system_configuration
-  :field reboot_number: ax25_frame.payload.info.payload_dscrm.opssat_payload.beacon_data.reboot_number
-  :field reboot_cause: ax25_frame.payload.info.payload_dscrm.opssat_payload.beacon_data.reboot_cause
-  :field last_valid_packet_timestamp: ax25_frame.payload.info.payload_dscrm.opssat_payload.beacon_data.last_valid_packet_timestamp
-  :field background_rssi_level: ax25_frame.payload.info.payload_dscrm.opssat_payload.beacon_data.background_rssi_level
-  :field tx_duty_time_since_reboot: ax25_frame.payload.info.payload_dscrm.opssat_payload.beacon_data.tx_duty_time_since_reboot
-  :field total_tx_packets: ax25_frame.payload.info.payload_dscrm.opssat_payload.beacon_data.total_tx_packets
-  :field total_rx_packets: ax25_frame.payload.info.payload_dscrm.opssat_payload.beacon_data.total_rx_packets
-  :field total_tx_bytes: ax25_frame.payload.info.payload_dscrm.opssat_payload.beacon_data.total_tx_bytes
-  :field total_rx_bytes: ax25_frame.payload.info.payload_dscrm.opssat_payload.beacon_data.total_rx_bytes
+  :field priority: ax25_frame.payload.info.pld_id.payload_dscrm.opssat_payload.header.priority
+  :field source: ax25_frame.payload.info.pld_id.payload_dscrm.opssat_payload.header.source
+  :field destination: ax25_frame.payload.info.pld_id.payload_dscrm.opssat_payload.header.destination
+  :field destination_port: ax25_frame.payload.info.pld_id.payload_dscrm.opssat_payload.header.destination_port
+  :field source_port: ax25_frame.payload.info.pld_id.payload_dscrm.opssat_payload.header.source_port
+  :field reserved: ax25_frame.payload.info.pld_id.payload_dscrm.opssat_payload.header.reserved
+  :field csp_hmac: ax25_frame.payload.info.pld_id.payload_dscrm.opssat_payload.header.hmac
+  :field csp_xtea: ax25_frame.payload.info.pld_id.payload_dscrm.opssat_payload.header.xtea
+  :field csp_rdp: ax25_frame.payload.info.pld_id.payload_dscrm.opssat_payload.header.rdp
+  :field csp_crc: ax25_frame.payload.info.pld_id.payload_dscrm.opssat_payload.header.crc
+  :field board_temperature: ax25_frame.payload.info.pld_id.payload_dscrm.opssat_payload.beacon_data.board_temperature
+  :field pa_temperature: ax25_frame.payload.info.pld_id.payload_dscrm.opssat_payload.beacon_data.pa_temperature
+  :field last_received_rssi: ax25_frame.payload.info.pld_id.payload_dscrm.opssat_payload.beacon_data.last_received_rssi
+  :field last_received_rf_error: ax25_frame.payload.info.pld_id.payload_dscrm.opssat_payload.beacon_data.last_received_rf_error
+  :field number_of_tx_packets_since_reboot: ax25_frame.payload.info.pld_id.payload_dscrm.opssat_payload.beacon_data.number_of_tx_packets_since_reboot
+  :field number_of_rx_packets_since_reboot: ax25_frame.payload.info.pld_id.payload_dscrm.opssat_payload.beacon_data.number_of_rx_packets_since_reboot
+  :field number_of_tx_bytes_since_reboot: ax25_frame.payload.info.pld_id.payload_dscrm.opssat_payload.beacon_data.number_of_tx_bytes_since_reboot
+  :field number_of_rx_bytes_since_reboot: ax25_frame.payload.info.pld_id.payload_dscrm.opssat_payload.beacon_data.number_of_rx_bytes_since_reboot
+  :field active_system_configuration: ax25_frame.payload.info.pld_id.payload_dscrm.opssat_payload.beacon_data.active_system_configuration
+  :field reboot_number: ax25_frame.payload.info.pld_id.payload_dscrm.opssat_payload.beacon_data.reboot_number
+  :field reboot_cause: ax25_frame.payload.info.pld_id.payload_dscrm.opssat_payload.beacon_data.reboot_cause
+  :field last_valid_packet_timestamp: ax25_frame.payload.info.pld_id.payload_dscrm.opssat_payload.beacon_data.last_valid_packet_timestamp
+  :field background_rssi_level: ax25_frame.payload.info.pld_id.payload_dscrm.opssat_payload.beacon_data.background_rssi_level
+  :field tx_duty_time_since_reboot: ax25_frame.payload.info.pld_id.payload_dscrm.opssat_payload.beacon_data.tx_duty_time_since_reboot
+  :field total_tx_packets: ax25_frame.payload.info.pld_id.payload_dscrm.opssat_payload.beacon_data.total_tx_packets
+  :field total_rx_packets: ax25_frame.payload.info.pld_id.payload_dscrm.opssat_payload.beacon_data.total_rx_packets
+  :field total_tx_bytes: ax25_frame.payload.info.pld_id.payload_dscrm.opssat_payload.beacon_data.total_tx_bytes
+  :field total_rx_bytes: ax25_frame.payload.info.pld_id.payload_dscrm.opssat_payload.beacon_data.total_rx_bytes
 
 seq:
   - id: ax25_frame
     type: ax25_frame
     doc-ref: 'https://www.tapr.org/pub_ax25.html'
+instances:
+  id_magic:
+    pos: 0x10
+    type: u4
 types:
   ax25_frame:
     seq:
@@ -111,7 +115,26 @@ types:
         type:
           switch-on: '_parent.ax25_header.src_callsign_raw.callsign_ror.callsign'
           cases:
-            '"DP0OPS"': opssat_payload_dscrm
+            '"DP0OPS"': opssat_payload_identify
+  opssat_payload_identify:
+    seq:
+      - id: pld_id
+        type:
+          switch-on: _root.id_magic
+          cases:
+            0x35EFCEC0: opssat_payload_dscrm  # gr-satnogs, gr-opssat, gr-satellites
+            0x00C0A7CA: opssat_payload_preprocessed  # High-Speed Soundmodem by UZ7HO - Ver 0.03
+            0xCAA7C000: opssat_payload_preprocessed  # High-Speed Soundmodem by UZ7HO - Ver >0.03
+  opssat_payload_preprocessed:
+    seq:
+      - id: payload_dscrm
+        doc: |
+          Compatibility for `field:` path
+        size-eos: true
+        type: opssat_payload
+    instances:
+      payload_size:
+        value: '_io.size'
   opssat_payload_dscrm:
     seq:
       - id: payload_dscrm
@@ -126,20 +149,21 @@ types:
         process: satnogsdecoders.process.scrambler(0xa9, 0xff, 7)
         size-eos: true
         type: opssat_payload
+    instances:
+      payload_size:
+        value: '_io.size'
   opssat_payload:
     seq:
       - id: opssat_payload
         type: cube_sat_protocol
-      - id: crc_32c
-        type: u4
-      - id: rs_block
-        type: u1
-        repeat: expr
-        repeat-expr: 32
   csp_header:
     seq:
       - id: raw_csp_header
-        type: u4
+        type:
+          switch-on: _root.id_magic
+          cases:
+            0x00C0A7CA: u4le  # High-Speed Soundmodem by UZ7HO - Ver 0.03
+            _: u4be  # gr-satnogs, gr-opssat, gr-satellites
     instances:
       priority:
         value: '(raw_csp_header >> 30)'
