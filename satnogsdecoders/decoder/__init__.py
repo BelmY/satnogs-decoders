@@ -33,6 +33,7 @@ from .mxl import Mxl
 from .mysat import Mysat
 from .opssat1 import Opssat1
 from .origamisat1 import Origamisat1
+from .painani import Painani
 from .pwsat2 import Pwsat2
 from .qbee import Qbee
 from .siriussat import Siriussat
@@ -69,6 +70,7 @@ __all__ = [
     'Mysat',
     'Opssat1',
     'Origamisat1',
+    'Painani',
     'Pwsat2',
     'Qbee',
     'Siriussat',
