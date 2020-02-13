@@ -137,8 +137,11 @@ types:
       - id: time_unix
         type: u4
       - id: data
-        type: duchifat3_data
-  duchifat3_data:
+        type:
+          switch-on: type
+          cases:
+            0x03: duchifat3_beacon_data
+  duchifat3_beacon_data:
     seq:
       - id: vbatt
         type: u2
