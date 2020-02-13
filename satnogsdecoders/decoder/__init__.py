@@ -20,6 +20,7 @@ from .chomptt import Chomptt
 from .csim import Csim
 from .cubebel1 import Cubebel1
 from .cubesatsim import Cubesatsim
+from .duchifat3 import Duchifat3
 from .elfin import Elfin
 from .entrysat import Entrysat
 from .equisat import Equisat
@@ -57,6 +58,7 @@ __all__ = [
     'Cubebel1',
     'Cubesatsim',
     'Csim',
+    'Duchifat3',
     'Elfin',
     'Entrysat',
     'Eshail2',
