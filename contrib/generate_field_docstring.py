@@ -109,4 +109,4 @@ if __name__ == '__main__':
     generate_field_docstring(ksy)
 
     for key in fields_found:
-        print('\t:field ' + ksy['meta']['id'] + '_' + key + ': ' + '.'.join(fields_found[key]))
+        print('\t:field ' + key + ': ' + '.'.join(fields_found[key]))
