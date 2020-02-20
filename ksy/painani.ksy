@@ -160,8 +160,8 @@ types:
         value: 'short_voltage_5v * 4 * 0.001'
   painani_beacon_long:
     seq:
-      - id: id
-        type: u2
+      - id: id_magic
+        contents: [0x3c, 0xc3]
         doc: 'fixed code: 0x3cc3'
       - id: length
         type: u1
