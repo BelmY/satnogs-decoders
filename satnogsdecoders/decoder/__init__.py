@@ -36,6 +36,7 @@ from .opssat1 import Opssat1
 from .origamisat1 import Origamisat1
 from .painani import Painani
 from .pwsat2 import Pwsat2
+from .qarman import Qarman
 from .qbee import Qbee
 from .siriussat import Siriussat
 from .skcube import Skcube
@@ -74,6 +75,7 @@ __all__ = [
     'Origamisat1',
     'Painani',
     'Pwsat2',
+    'Qarman',
     'Qbee',
     'Siriussat',
     'Skcube',
