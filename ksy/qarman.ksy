@@ -3,12 +3,12 @@ meta:
   id: qarman
   endian: be
 doc: |
-  :field callsign: ax25_frame.ax25_header.dest_callsign_raw.callsign_ror.callsign
+  :field dest_callsign: ax25_frame.ax25_header.dest_callsign_raw.callsign_ror.callsign
   :field ssid_mask: ax25_frame.ax25_header.dest_ssid_raw.ssid_mask
-  :field ssid: ax25_frame.ax25_header.dest_ssid_raw.ssid
-  :field callsign: ax25_frame.ax25_header.src_callsign_raw.callsign_ror.callsign
+  :field dest_ssid: ax25_frame.ax25_header.dest_ssid_raw.ssid
+  :field src_callsign: ax25_frame.ax25_header.src_callsign_raw.callsign_ror.callsign
   :field ssid_mask: ax25_frame.ax25_header.src_ssid_raw.ssid_mask
-  :field ssid: ax25_frame.ax25_header.src_ssid_raw.ssid
+  :field src_ssid: ax25_frame.ax25_header.src_ssid_raw.ssid
   :field ctl: ax25_frame.ax25_header.ctl
   :field pid: ax25_frame.payload.pid
   :field battery_voltage: ax25_frame.payload.data_payload.mode.eps_payload.battery_voltage
