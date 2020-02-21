@@ -57,7 +57,7 @@ def gen_fields_from_seq(ksy, seq, prefix):
         if not 'type' in field.keys():
             # Field is a raw byte array
             add_docs_field(field['id'],
-                           prefix + [field['id']], path_depth)
+                           prefix + [field['id']])
             continue
 
         if type(field['type']) is dict:
@@ -109,4 +109,4 @@ if __name__ == '__main__':
     generate_field_docstring(ksy)
 
     for key in fields_found:
-        print('\t:field ' + key + ': ' + '.'.join(fields_found[key]))
+        print('  :field ' + key + ': ' + '.'.join(fields_found[key]))
