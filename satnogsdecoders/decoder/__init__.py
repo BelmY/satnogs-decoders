@@ -11,6 +11,7 @@ from .acrux1 import Acrux1
 from .alsat1n import Alsat1n
 from .armadillo import Armadillo
 from .ascii85test import Ascii85test
+from .asuphoenix import Asuphoenix
 from .ax25frames import Ax25frames
 from .ax25monitor import Ax25monitor
 from .bisonsat import Bisonsat
@@ -50,6 +51,7 @@ __all__ = [
     'Alsat1n',
     'Armadillo',
     'Ascii85test',
+    'Asuphoenix',
     'Ax25frames',
     'Ax25monitor',
     'Bisonsat',

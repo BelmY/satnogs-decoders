@@ -201,6 +201,7 @@ Fetched 45 frames.
 - AAUSAT4 by OZ3RF & DL4PD
 - ACRUX-1 by DL4PD
 - ARMADILLO by DL4PD
+- ASU PHOENIX by DL4PD & deckbsd
 - AMSAT FOX DUV by DL4PD
 - AX.25 frame decoder by DL4PD
 - CAS-4A & CAS-4B by cshields
