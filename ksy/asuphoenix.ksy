@@ -3,35 +3,32 @@ meta:
   id: asuphoenix
   endian: be
 doc: |
-  :field src_ssid_raw_ssid_mask: ax25_frame.ax25_header.src_ssid_raw.ssid_mask
-  :field pid: ax25_frame.payload.pid
-  :field obc_disk_space_used_mb: ax25_frame.payload.ax25_info.healthbeacon_ascii.obc_disk_space_used_mb
-  :field ants_deployed: ax25_frame.payload.ax25_info.healthbeacon_ascii.ants_deployed
   :field callsign: ax25_frame.ax25_header.dest_callsign_raw.callsign_ror.callsign
-  :field current_5v_flt: ax25_frame.payload.ax25_info.healthbeacon_ascii.current_5v_flt
-  :field total_obc_resets: ax25_frame.payload.ax25_info.healthbeacon_ascii.total_obc_resets
-  :field brownouts: ax25_frame.payload.ax25_info.healthbeacon_ascii.brownouts
-  :field current_bat_volt_flt: ax25_frame.payload.ax25_info.healthbeacon_ascii.current_bat_volt_flt
+  :field ssid_mask: ax25_frame.ax25_header.dest_ssid_raw.ssid_mask
+  :field ssid: ax25_frame.ax25_header.dest_ssid_raw.ssid
+  :field src_callsign_raw_callsign: ax25_frame.ax25_header.src_callsign_raw.callsign_ror.callsign
+  :field src_ssid_raw_ssid_mask: ax25_frame.ax25_header.src_ssid_raw.ssid_mask
   :field src_ssid_raw_ssid: ax25_frame.ax25_header.src_ssid_raw.ssid
+  :field ctl: ax25_frame.ax25_header.ctl
+  :field pid: ax25_frame.payload.pid
+  :field comms_idx_int: ax25_frame.payload.ax25_info.healthbeacon_ascii.comms_idx_int
+  :field total_obc_resets: ax25_frame.payload.ax25_info.healthbeacon_ascii.total_obc_resets
+  :field current_bat_volt_flt: ax25_frame.payload.ax25_info.healthbeacon_ascii.current_bat_volt_flt
+  :field obc_disk_space_used_mb: ax25_frame.payload.ax25_info.healthbeacon_ascii.obc_disk_space_used_mb
+  :field obc_clock: ax25_frame.payload.ax25_info.healthbeacon_ascii.obc_clock
+  :field current_3v3_flt: ax25_frame.payload.ax25_info.healthbeacon_ascii.current_3v3_flt
+  :field current_5v_flt: ax25_frame.payload.ax25_info.healthbeacon_ascii.current_5v_flt
+  :field current_adcs_flt: ax25_frame.payload.ax25_info.healthbeacon_ascii.current_adcs_flt
+  :field eps_charge_volt_bat_flt: ax25_frame.payload.ax25_info.healthbeacon_ascii.eps_charge_volt_bat_flt
+  :field eps_charge_current_bat: ax25_frame.payload.ax25_info.healthbeacon_ascii.eps_charge_current_bat
   :field eps_temp: ax25_frame.payload.ax25_info.healthbeacon_ascii.eps_temp
   :field bat_temp: ax25_frame.payload.ax25_info.healthbeacon_ascii.bat_temp
-  :field comms_idx_int: ax25_frame.payload.ax25_info.healthbeacon_ascii.comms_idx_int
-  :field eps_charge_volt_bat_flt: ax25_frame.payload.ax25_info.healthbeacon_ascii.eps_charge_volt_bat_flt
+  :field brownouts: ax25_frame.payload.ax25_info.healthbeacon_ascii.brownouts
   :field ax100_rssi: ax25_frame.payload.ax25_info.healthbeacon_ascii.ax100_rssi
-  :field obc_clock: ax25_frame.payload.ax25_info.healthbeacon_ascii.obc_clock
-  :field gpio_state: ax25_frame.payload.ax25_info.healthbeacon_ascii.gpio_state
-  :field ssid_mask: ax25_frame.ax25_header.dest_ssid_raw.ssid_mask
   :field ax100_board_temp: ax25_frame.payload.ax25_info.healthbeacon_ascii.ax100_board_temp
-  :field ctl: ax25_frame.ax25_header.ctl
-  :field eps_charge_current_bat: ax25_frame.payload.ax25_info.healthbeacon_ascii.eps_charge_current_bat
-  :field ssid: ax25_frame.ax25_header.dest_ssid_raw.ssid
-  :field current_3v3_flt: ax25_frame.payload.ax25_info.healthbeacon_ascii.current_3v3_flt
-  :field magic: ax25_frame.payload.ax25_info.magic
   :field gps_sats_used: ax25_frame.payload.ax25_info.healthbeacon_ascii.gps_sats_used
-  :field current_adcs_flt: ax25_frame.payload.ax25_info.healthbeacon_ascii.current_adcs_flt
-  :field beacon_type_magic: ax25_frame.payload.ax25_info.healthbeacon_ascii.beacon_type_magic
-  :field src_callsign_raw_callsign: ax25_frame.ax25_header.src_callsign_raw.callsign_ror.callsign
-
+  :field ants_deployed: ax25_frame.payload.ax25_info.healthbeacon_ascii.ants_deployed
+  :field gpio_state: ax25_frame.payload.ax25_info.healthbeacon_ascii.gpio_state
 
   Attention: `rpt_callsign` cannot be accessed because `rpt_instance` is an
   array of unknown size at the beginning of the parsing process! Left an
@@ -56,7 +53,6 @@ types:
             0x02: i_frame
             0x10: i_frame
             0x12: i_frame
-            # 0x11: s_frame
   ax25_header:
     seq:
       - id: dest_callsign_raw
@@ -128,7 +124,7 @@ types:
       - id: healthbeacon_ascii
         type: health_beacon_t
   health_beacon_t:
-    doc: http://phxcubesat.asu.edu/content/amateur-operations
+    doc-ref: http://phxcubesat.asu.edu/content/amateur-operations
     seq:
       - id: beacon_type_magic
         contents: [0x68, 0x6b, 0x3a]
