@@ -11,15 +11,15 @@ doc: |
   :field src_ssid_raw_ssid: ax25_frame.ax25_header.src_ssid_raw.ssid
   :field ctl: ax25_frame.ax25_header.ctl
   :field pid: ax25_frame.payload.pid
-  :field comms_idx_int: ax25_frame.payload.ax25_info.healthbeacon_ascii.comms_idx_int
+  :field comms_idx: ax25_frame.payload.ax25_info.healthbeacon_ascii.comms_idx_int
   :field total_obc_resets: ax25_frame.payload.ax25_info.healthbeacon_ascii.total_obc_resets
-  :field current_bat_volt_flt: ax25_frame.payload.ax25_info.healthbeacon_ascii.current_bat_volt_flt
+  :field current_bat_volt: ax25_frame.payload.ax25_info.healthbeacon_ascii.current_bat_volt_flt
   :field obc_disk_space_used_mb: ax25_frame.payload.ax25_info.healthbeacon_ascii.obc_disk_space_used_mb
   :field obc_clock: ax25_frame.payload.ax25_info.healthbeacon_ascii.obc_clock
-  :field current_3v3_flt: ax25_frame.payload.ax25_info.healthbeacon_ascii.current_3v3_flt
-  :field current_5v_flt: ax25_frame.payload.ax25_info.healthbeacon_ascii.current_5v_flt
-  :field current_adcs_flt: ax25_frame.payload.ax25_info.healthbeacon_ascii.current_adcs_flt
-  :field eps_charge_volt_bat_flt: ax25_frame.payload.ax25_info.healthbeacon_ascii.eps_charge_volt_bat_flt
+  :field current_3v3: ax25_frame.payload.ax25_info.healthbeacon_ascii.current_3v3_flt
+  :field current_5v: ax25_frame.payload.ax25_info.healthbeacon_ascii.current_5v_flt
+  :field current_adcs: ax25_frame.payload.ax25_info.healthbeacon_ascii.current_adcs_flt
+  :field eps_charge_volt_bat: ax25_frame.payload.ax25_info.healthbeacon_ascii.eps_charge_volt_bat_flt
   :field eps_charge_current_bat: ax25_frame.payload.ax25_info.healthbeacon_ascii.eps_charge_current_bat
   :field eps_temp: ax25_frame.payload.ax25_info.healthbeacon_ascii.eps_temp
   :field bat_temp: ax25_frame.payload.ax25_info.healthbeacon_ascii.bat_temp
