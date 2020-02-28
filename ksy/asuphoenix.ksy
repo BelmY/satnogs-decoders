@@ -12,7 +12,7 @@ doc: |
   :field comms_idx: ax25_frame.payload.ax25_info.healthbeacon_ascii.comms_idx_int
   :field total_obc_resets: ax25_frame.payload.ax25_info.healthbeacon_ascii.total_obc_resets
   :field current_bat_volt: ax25_frame.payload.ax25_info.healthbeacon_ascii.current_bat_volt_flt
-  :field obc_disk_space_used_mb: ax25_frame.payload.ax25_info.healthbeacon_ascii.obc_disk_space_used_mb
+  :field obc_disk_space_used_mb: ax25_frame.payload.ax25_info.healthbeacon_ascii.obc_disk_space_used_str
   :field obc_clock: ax25_frame.payload.ax25_info.healthbeacon_ascii.obc_clock
   :field current_3v3: ax25_frame.payload.ax25_info.healthbeacon_ascii.current_3v3_flt
   :field current_5v: ax25_frame.payload.ax25_info.healthbeacon_ascii.current_5v_flt
@@ -152,13 +152,7 @@ types:
         encoding: utf-8
         doc: |
           Current Battery Voltage
-      - id: obc_disk_space_used_int_str
-        type: str
-        terminator: 0x2e
-        encoding: utf-8
-        doc: |
-          Amount of disk space currently used on the OBC
-      - id: obc_disk_space_used_frac_str
+      - id: obc_disk_space_used_str
         type: str
         terminator: 0x2c
         encoding: utf-8
@@ -288,8 +282,6 @@ types:
         value: total_obc_resets_str.to_i
       current_bat_volt_flt:
         value: current_bat_volt_int_str.to_i + (((current_bat_volt_int_str.to_i < 0).to_i)*(-2)+1) * current_bat_volt_frac_str.to_i / 100.0
-      obc_disk_space_used_mb:
-        value: obc_disk_space_used_int_str.to_i + (((obc_disk_space_used_int_str.to_i < 0).to_i)*(-2)+1) * obc_disk_space_used_frac_str.to_i / 10.0
       obc_clock:
         value: obc_clock_str.to_i
       current_3v3_flt:
