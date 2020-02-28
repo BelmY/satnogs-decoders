@@ -9,6 +9,16 @@ doc: |
   :field src_ssid: ax25_frame.ax25_header.src_ssid_raw.ssid
   :field ctl: ax25_frame.ax25_header.ctl
   :field pid: ax25_frame.payload.pid
+  :field priority: ax25_frame.payload.ax25_info.header.priority
+  :field source: ax25_frame.payload.ax25_info.header.source
+  :field destination: ax25_frame.payload.ax25_info.header.destination
+  :field destination_port: ax25_frame.payload.ax25_info.header.destination_port
+  :field source_port: ax25_frame.payload.ax25_info.header.source_port
+  :field reserved: ax25_frame.payload.ax25_info.header.reserved
+  :field hmac: ax25_frame.payload.ax25_info.header.hmac
+  :field xtea: ax25_frame.payload.ax25_info.header.xtea
+  :field rdp: ax25_frame.payload.ax25_info.header.rdp
+  :field crc: ax25_frame.payload.ax25_info.header.crc
   :field comms_idx: ax25_frame.payload.ax25_info.healthbeacon_ascii.comms_idx_int
   :field total_obc_resets: ax25_frame.payload.ax25_info.healthbeacon_ascii.total_obc_resets
   :field current_bat_volt: ax25_frame.payload.ax25_info.healthbeacon_ascii.current_bat_volt_flt
@@ -117,10 +127,35 @@ types:
         size-eos: true
   ax25_info_data:
     seq:
-      - id: magic
-        size: 4
+      - id: header
+        type: csp_header
       - id: healthbeacon_ascii
         type: health_beacon_t
+  csp_header:
+    seq:
+      - id: raw_csp_header
+        type: u4be
+    instances:
+      priority:
+        value: '(raw_csp_header >> 30)'
+      source:
+        value: '((raw_csp_header >> 25) & 0x1F)'
+      destination:
+        value: '((raw_csp_header >> 20) & 0x1F)'
+      destination_port:
+        value: '((raw_csp_header >> 14) & 0x3F)'
+      source_port:
+        value: '((raw_csp_header >> 8) & 0x3F)'
+      reserved:
+        value: '((raw_csp_header >> 4) & 0x0F)'
+      hmac:
+        value: '((raw_csp_header & 0x08) >> 3)'
+      xtea:
+        value: '((raw_csp_header & 0x04) >> 2)'
+      rdp:
+        value: '((raw_csp_header & 0x02) >> 1)'
+      crc:
+        value: '(raw_csp_header & 0x01)'
   health_beacon_t:
     doc-ref: http://phxcubesat.asu.edu/content/amateur-operations
     seq:
