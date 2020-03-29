@@ -20,7 +20,6 @@ class CliParameters(object):  # pylint: disable=R0903
     """
     Commandline parameters
     """
-
     def __init__(self, fname=None, hframe=None, fformat=None, tmstamp=None):
         self.fname = fname
         self.hframe = hframe

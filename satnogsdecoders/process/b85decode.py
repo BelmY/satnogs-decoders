@@ -9,7 +9,6 @@ class B85decode(object):  # pylint: disable=too-few-public-methods
     """
     b85decode preprocessor class
     """
-
     def __init__(self):
         pass
 

@@ -71,12 +71,12 @@ types:
         type: callsign_raw
       - id: src_ssid_raw
         type: ssid_mask
-# ASU Phoenix does not follow the AX.25 specs and produces corrupted headers.
-# Thus the following unroll mechanism does not work!
-#     - id: repeater
-#       type: repeater
-#       if: (src_ssid_raw.ssid_mask & 0x01) == 0
-#       doc: 'Repeater flag is set!'
+      # ASU Phoenix does not follow the AX.25 specs and produces corrupted headers.
+      # Thus the following unroll mechanism does not work!
+      # - id: repeater
+      #   type: repeater
+      #   if: (src_ssid_raw.ssid_mask & 0x01) == 0
+      #   doc: 'Repeater flag is set!'
       - id: ctl
         type: u1
   repeater:

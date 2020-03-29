@@ -22,7 +22,6 @@ class ElfinPp(object):  # pylint: disable=too-few-public-methods
     """
     ELFIN preprocessor class
     """
-
     def __init__(self):
         pass
 

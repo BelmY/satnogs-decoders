@@ -64,7 +64,6 @@ class LFSR:
     """
     Linear feedback shift register
     """
-
     def __init__(self, mask, seed, length):
         """
         Initialisation of the LFSR
@@ -101,7 +100,6 @@ class Scrambler(object):  # pylint: disable=too-few-public-methods
     """
     Scrambler preprocessor class
     """
-
     def __init__(self, poly, seed, length):
         """
         Inititalize the scrambler
