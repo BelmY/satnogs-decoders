@@ -9,34 +9,51 @@ doc: |
   :field src_ssid: ax25_frame.ax25_header.src_ssid_raw.ssid
   :field ctl: ax25_frame.ax25_header.ctl
   :field pid: ax25_frame.payload.pid
-  :field priority: ax25_frame.payload.ax25_info.header.priority
-  :field source: ax25_frame.payload.ax25_info.header.source
-  :field destination: ax25_frame.payload.ax25_info.header.destination
-  :field destination_port: ax25_frame.payload.ax25_info.header.destination_port
-  :field source_port: ax25_frame.payload.ax25_info.header.source_port
-  :field reserved: ax25_frame.payload.ax25_info.header.reserved
-  :field hmac: ax25_frame.payload.ax25_info.header.hmac
-  :field xtea: ax25_frame.payload.ax25_info.header.xtea
-  :field rdp: ax25_frame.payload.ax25_info.header.rdp
-  :field crc: ax25_frame.payload.ax25_info.header.crc
-  :field comms_idx: ax25_frame.payload.ax25_info.healthbeacon_ascii.comms_idx_int
-  :field total_obc_resets: ax25_frame.payload.ax25_info.healthbeacon_ascii.total_obc_resets
-  :field current_bat_volt: ax25_frame.payload.ax25_info.healthbeacon_ascii.current_bat_volt_flt
-  :field obc_disk_space_used_mb: ax25_frame.payload.ax25_info.healthbeacon_ascii.obc_disk_space_used_str
-  :field obc_clock: ax25_frame.payload.ax25_info.healthbeacon_ascii.obc_clock
-  :field current_3v3: ax25_frame.payload.ax25_info.healthbeacon_ascii.current_3v3_flt
-  :field current_5v: ax25_frame.payload.ax25_info.healthbeacon_ascii.current_5v_flt
-  :field current_adcs: ax25_frame.payload.ax25_info.healthbeacon_ascii.current_adcs_flt
-  :field eps_charge_volt_bat: ax25_frame.payload.ax25_info.healthbeacon_ascii.eps_charge_volt_bat_flt
-  :field eps_charge_current_bat: ax25_frame.payload.ax25_info.healthbeacon_ascii.eps_charge_current_bat
-  :field eps_temp: ax25_frame.payload.ax25_info.healthbeacon_ascii.eps_temp
-  :field bat_temp: ax25_frame.payload.ax25_info.healthbeacon_ascii.bat_temp
-  :field brownouts: ax25_frame.payload.ax25_info.healthbeacon_ascii.brownouts
-  :field ax100_rssi: ax25_frame.payload.ax25_info.healthbeacon_ascii.ax100_rssi
-  :field ax100_board_temp: ax25_frame.payload.ax25_info.healthbeacon_ascii.ax100_board_temp
-  :field gps_sats_used: ax25_frame.payload.ax25_info.healthbeacon_ascii.gps_sats_used
-  :field ants_deployed: ax25_frame.payload.ax25_info.healthbeacon_ascii.ants_deployed
-  :field gpio_state: ax25_frame.payload.ax25_info.healthbeacon_ascii.gpio_state
+  :field priority: ax25_frame.payload.ax25_info.csp_header.priority
+  :field source: ax25_frame.payload.ax25_info.csp_header.source
+  :field destination: ax25_frame.payload.ax25_info.csp_header.destination
+  :field destination_port: ax25_frame.payload.ax25_info.csp_header.destination_port
+  :field source_port: ax25_frame.payload.ax25_info.csp_header.source_port
+  :field reserved: ax25_frame.payload.ax25_info.csp_header.reserved
+  :field hmac: ax25_frame.payload.ax25_info.csp_header.hmac
+  :field xtea: ax25_frame.payload.ax25_info.csp_header.xtea
+  :field rdp: ax25_frame.payload.ax25_info.csp_header.rdp
+  :field crc: ax25_frame.payload.ax25_info.csp_header.crc
+  :field comms_idx_int: ax25_frame.payload.ax25_info.csp_node.csp_node_port.comms_idx_int
+  :field total_obc_resets: ax25_frame.payload.ax25_info.csp_node.csp_node_port.total_obc_resets
+  :field current_bat_volt_flt: ax25_frame.payload.ax25_info.csp_node.csp_node_port.current_bat_volt_flt
+  :field obc_clock: ax25_frame.payload.ax25_info.csp_node.csp_node_port.obc_clock
+  :field current_3v3_flt: ax25_frame.payload.ax25_info.csp_node.csp_node_port.current_3v3_flt
+  :field current_5v_flt: ax25_frame.payload.ax25_info.csp_node.csp_node_port.current_5v_flt
+  :field current_adcs_flt: ax25_frame.payload.ax25_info.csp_node.csp_node_port.current_adcs_flt
+  :field eps_charge_volt_bat_flt: ax25_frame.payload.ax25_info.csp_node.csp_node_port.eps_charge_volt_bat_flt
+  :field eps_charge_current_bat: ax25_frame.payload.ax25_info.csp_node.csp_node_port.eps_charge_current_bat
+  :field eps_temp: ax25_frame.payload.ax25_info.csp_node.csp_node_port.eps_temp
+  :field bat_temp: ax25_frame.payload.ax25_info.csp_node.csp_node_port.bat_temp
+  :field brownouts: ax25_frame.payload.ax25_info.csp_node.csp_node_port.brownouts
+  :field ax100_rssi: ax25_frame.payload.ax25_info.csp_node.csp_node_port.ax100_rssi
+  :field ax100_board_temp: ax25_frame.payload.ax25_info.csp_node.csp_node_port.ax100_board_temp
+  :field gps_sats_used: ax25_frame.payload.ax25_info.csp_node.csp_node_port.gps_sats_used
+  :field ants_deployed: ax25_frame.payload.ax25_info.csp_node.csp_node_port.ants_deployed
+  :field gpio_state: ax25_frame.payload.ax25_info.csp_node.csp_node_port.gpio_state
+  :field temp_brd: ax25_frame.payload.ax25_info.csp_node.csp_node_port.temp_brd
+  :field temp_pa: ax25_frame.payload.ax25_info.csp_node.csp_node_port.temp_pa
+  :field last_rssi: ax25_frame.payload.ax25_info.csp_node.csp_node_port.last_rssi
+  :field last_rferr: ax25_frame.payload.ax25_info.csp_node.csp_node_port.last_rferr
+  :field tx_count: ax25_frame.payload.ax25_info.csp_node.csp_node_port.tx_count
+  :field rx_count: ax25_frame.payload.ax25_info.csp_node.csp_node_port.rx_count
+  :field tx_bytes: ax25_frame.payload.ax25_info.csp_node.csp_node_port.tx_bytes
+  :field rx_bytes: ax25_frame.payload.ax25_info.csp_node.csp_node_port.rx_bytes
+  :field active_conf: ax25_frame.payload.ax25_info.csp_node.csp_node_port.active_conf
+  :field boot_count: ax25_frame.payload.ax25_info.csp_node.csp_node_port.boot_count
+  :field boot_cause: ax25_frame.payload.ax25_info.csp_node.csp_node_port.boot_cause
+  :field last_contact: ax25_frame.payload.ax25_info.csp_node.csp_node_port.last_contact
+  :field bgnd_rssi: ax25_frame.payload.ax25_info.csp_node.csp_node_port.bgnd_rssi
+  :field tx_duty: ax25_frame.payload.ax25_info.csp_node.csp_node_port.tx_duty
+  :field tot_tx_count: ax25_frame.payload.ax25_info.csp_node.csp_node_port.tot_tx_count
+  :field tot_rx_count: ax25_frame.payload.ax25_info.csp_node.csp_node_port.tot_rx_count
+  :field tot_tx_bytes: ax25_frame.payload.ax25_info.csp_node.csp_node_port.tot_tx_bytes
+  :field tot_rx_bytes: ax25_frame.payload.ax25_info.csp_node.csp_node_port.tot_rx_bytes
 
 seq:
   - id: ax25_frame
@@ -123,11 +140,15 @@ types:
         size-eos: true
   ax25_info_data:
     seq:
-      - id: header
-        type: csp_header
-      - id: healthbeacon_ascii
-        type: health_beacon_t
-  csp_header:
+      - id: csp_header
+        type: csp_header_t
+      - id: csp_node
+        type:
+          switch-on: csp_header.source
+          cases:
+            2: obc_t
+            5: ax100_t
+  csp_header_t:
     seq:
       - id: raw_csp_header
         type: u4be
@@ -152,8 +173,60 @@ types:
         value: '((raw_csp_header & 0x02) >> 1)'
       crc:
         value: '(raw_csp_header & 0x01)'
-  health_beacon_t:
-    doc-ref: http://phxcubesat.asu.edu/content/amateur-operations
+  ax100_t:
+    seq:
+      - id: csp_node_port
+        type:
+          switch-on: _parent.csp_header.source_port
+          cases:
+            0: ax100_control_port_t
+  obc_t:
+    seq:
+      - id: csp_node_port
+        type:
+          switch-on: _parent.csp_header.source_port
+          cases:
+            27: obc_hk_t
+  ax100_control_port_t:
+    seq:
+      - id: temp_brd
+        type: s2
+      - id: temp_pa
+        type: s2
+      - id: last_rssi
+        type: s2
+      - id: last_rferr
+        type: s2
+      - id: tx_count
+        type: u4
+      - id: rx_count
+        type: u4
+      - id: tx_bytes
+        type: u4
+      - id: rx_bytes
+        type: u4
+      - id: active_conf
+        type: u1
+      - id: boot_count
+        type: u2
+      - id: boot_cause
+        type: u4
+      - id: last_contact
+        type: u4
+      - id: bgnd_rssi
+        type: s2
+      - id: tx_duty
+        type: u1
+      - id: tot_tx_count
+        type: u4
+      - id: tot_rx_count
+        type: u4
+      - id: tot_tx_bytes
+        type: u4
+      - id: tot_rx_bytes
+        type: u4
+  obc_hk_t:
+    doc-ref: 'http://phxcubesat.asu.edu/content/amateur-operations'
     seq:
       - id: beacon_type_magic
         contents: [0x68, 0x6b, 0x3a]
