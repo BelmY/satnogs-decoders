@@ -38,10 +38,6 @@ doc: |
   :field ants_deployed: ax25_frame.payload.ax25_info.healthbeacon_ascii.ants_deployed
   :field gpio_state: ax25_frame.payload.ax25_info.healthbeacon_ascii.gpio_state
 
-  Attention: `rpt_callsign` cannot be accessed because `rpt_instance` is an
-  array of unknown size at the beginning of the parsing process! Left an
-  example in here.
-
 seq:
   - id: ax25_frame
     type: ax25_frame
