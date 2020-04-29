@@ -39,6 +39,7 @@ from .painani import Painani
 from .pwsat2 import Pwsat2
 from .qarman import Qarman
 from .qbee import Qbee
+from .quetzal1 import Quetzal1
 from .siriussat import Siriussat
 from .skcube import Skcube
 from .strand import Strand
@@ -79,6 +80,7 @@ __all__ = [
     'Pwsat2',
     'Qarman',
     'Qbee',
+    'Quetzal1',
     'Siriussat',
     'Skcube',
     'Strand',
