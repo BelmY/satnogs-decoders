@@ -200,6 +200,7 @@ Fetched 45 frames.
 ## Existing decoders
 - AAUSAT4 by OZ3RF & DL4PD
 - ACRUX-1 by DL4PD
+- AMICALSAT by deckbsd
 - ARMADILLO by DL4PD
 - ASU PHOENIX by DL4PD & deckbsd
 - AMSAT FOX DUV by DL4PD
