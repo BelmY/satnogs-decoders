@@ -1,25 +1,14 @@
-# Kaitai file for AMICALSAT satellite
-#
-# based on  AmicalSat downlinks technicals informations document
-#
-# Author  : C. Mercier for AMSAT-Francophone
-#
-# Telemetry based on APRS
-#
-# Version : 0.2
-#
-# Adapted for Satnogs and modified by deckbsd
-
 ---
 meta:
   id: amicalsat
   title: AMICALSAT TLM Frame
-  file-extension: .data
   license: LGPL V2
-  ks-version: 0.8
   endian: be
 doc-ref: 'https://gitlab.com/librespacefoundation/satnogs-ops/uploads/f6fde8b864f8cdf37d65433bd958e138/AmicalSat_downlinks_v0.3.pdf'
 doc: |
+  Author  : C. Mercier for AMSAT-Francophone
+  Adapted for SatNOGS and modified by deckbsd
+
   :field dst_callsign: ax25_frame.ax25_header.dest_callsign_raw.callsign_ror.callsign
   :field src_callsign: ax25_frame.ax25_header.src_callsign_raw.callsign_ror.callsign
   :field ctl: ax25_frame.ax25_header.ctl
