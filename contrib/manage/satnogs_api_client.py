@@ -125,7 +125,6 @@ def fetch_telemetry(norad_id, max_frames, url):
 
     if r.status_code != requests.codes.ok:
         print("No telemetry found for {}.".format(norad_id))
-        raise
 
     telemetry = r.json()
 
