@@ -39,6 +39,7 @@ from .mysat import Mysat
 from .opssat1 import Opssat1
 from .origamisat1 import Origamisat1
 from .painani import Painani
+from .polyitan1 import Polyitan1
 from .pwsat2 import Pwsat2
 from .qarman import Qarman
 from .qbee import Qbee
@@ -83,6 +84,7 @@ __all__ = [
     'Opssat1',
     'Origamisat1',
     'Painani',
+    'Polyitan1',
     'Pwsat2',
     'Qarman',
     'Qbee',

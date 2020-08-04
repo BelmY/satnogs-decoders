@@ -213,6 +213,7 @@ Fetched 45 frames.
 - Lightsail-2 by DL4PD
 - Ops-sat by deckbsd
 - Painani by DL4PD
+- Polyitan-1 by deckbsd
 - QBEE by Ansgar Schmidt
 - Siriussat-1 & -2 by kerel
 - skCUBE by borispilka & kerel
