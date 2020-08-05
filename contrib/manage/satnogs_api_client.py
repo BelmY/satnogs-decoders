@@ -113,7 +113,7 @@ def fetch_tle_of_observation(observation_id, prod=True):
     return [obs_tle_2, obs_tle_3]
 
 
-def fetch_telemetry(norad_id, max_frames, url):
+def fetch_telemetry(norad_id, max_frames, url, api_key):
     # http://db-dev.satnogs.org/api/telemetry/?satellite=43595
 
     query_str = '{}/api/telemetry/?satellite={}'
@@ -121,7 +121,7 @@ def fetch_telemetry(norad_id, max_frames, url):
     url = query_str.format(url, norad_id)
 
     print(url)
-    r = requests.get(url=url)
+    r = requests.get(url=url, headers={'Authorization': 'Token ' + api_key})
 
     if r.status_code != requests.codes.ok:
         print("No telemetry found for {}.".format(norad_id))

@@ -19,6 +19,7 @@ norad_id_siriussat2_old = 99971
 norad_id_siriussat3_old = 99972
 norad_id_skcube = 42789
 DB_SPUTNIX_BASE_URL = 'http://db.satnogs.sputnix.ru'
+DB_API_KEY = 'YOUR API KEY'
 
 
 def fetch_and_store_telemetry(norad_id, max_frames, source, telemetry_dir):
@@ -29,7 +30,7 @@ def fetch_and_store_telemetry(norad_id, max_frames, source, telemetry_dir):
     elif source == 'sputnix':
         url = DB_SPUTNIX_BASE_URL
 
-    telemetry = fetch_telemetry(norad_id, max_frames, url)
+    telemetry = fetch_telemetry(norad_id, max_frames, url, DB_API_KEY)
     print("Fetched {} frames.".format(len(telemetry)))
 
     directory = os.path.join(telemetry_dir, source, str(norad_id))

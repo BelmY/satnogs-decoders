@@ -64,6 +64,15 @@ Some helper commands will only be available after installing the package.
 
 ### Fetch telemetry
 
+To fetch telemetry you will need an API key. you will have to register yourself on [https://db.satnogs.org](https://db.satnogs.org) in order to get it.
+
+Once you have your key, you have to setup the `DB_API_KEY` variable in the `fetch_telemetry.py` file :
+
+```
+DB_API_KEY = '1234567890asdfghjkl'
+```
+
+
 ```
 $ ./contrib/manage/fetch_telemetry.py --help
 usage: fetch_telemetry.py [-h] [--source SOURCE] [--base_dir BASE_DIR]
