@@ -16,6 +16,7 @@ from .asuphoenix import Asuphoenix
 from .ax25frames import Ax25frames
 from .ax25monitor import Ax25monitor
 from .bisonsat import Bisonsat
+from .bobcat1 import Bobcat1
 from .bugsat1 import Bugsat1
 from .cas4 import Cas4
 from .chomptt import Chomptt
@@ -58,6 +59,7 @@ __all__ = [
     'Ax25frames',
     'Ax25monitor',
     'Bisonsat',
+    'Bobcat1',
     'Bugsat1',
     'Cas4',
     'Chomptt',
