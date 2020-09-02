@@ -124,6 +124,7 @@ doc: |
   :field sd_erase_ok: ax25_frame.payload.ax25_info.tlm_area_switch.tlmsw.sd_erase_ok
   :field sd_full: ax25_frame.payload.ax25_info.tlm_area_switch.tlmsw.sd_full
   :field adc_ready: ax25_frame.payload.ax25_info.tlm_area_switch.tlmsw.adc_ready
+  :field aprs_message: ax25_frame.payload.ax25_info.aprs_message
 
 seq:
   - id: ax25_frame
@@ -241,6 +242,12 @@ types:
             '"U2"': u2_type
             '"CU_R"': cu_type
             '"CU_L"': cu_type
+    instances:
+      aprs_message:
+        pos: 0x0
+        type: str
+        encoding: utf-8
+        size-eos: true
 
   m1_type:
     seq:
