@@ -53,6 +53,8 @@ doc: |
   :field survival_start: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.survival_start
   :field survival_end: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.survival_end
   :field timestamp_int: ax25_frame.payload.ax25_info.tlm_area_switch.timestamp_int
+  :field timestamp_int: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.timestamp_int
+  :field timestamp_int: ax25_frame.payload.ax25_info.tlm_area_switch.tlmsw.timestamp_int
   :field detumbling: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.detumbling
   :field adcs_on_off: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.adcs_on_off
   :field detumbling_status: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.detumbling_status
@@ -68,7 +70,6 @@ doc: |
   :field l1_fault: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.l1_fault
   :field l2_fault: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.l2_fault
   :field l3_fault: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.l3_fault
-  :field tlm_sw_timestamp_int: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.timestamp_int
   :field mag_x_int: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.mag_x_int
   :field mag_y_int: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.mag_y_int
   :field mag_z_int: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.mag_z_int
@@ -101,7 +102,6 @@ doc: |
   :field xor: ax25_frame.payload.ax25_info.tlm_area_switch.tlmsw.xor
   :field aes_128: ax25_frame.payload.ax25_info.tlm_area_switch.tlmsw.aes_128
   :field amp_ovt: ax25_frame.payload.ax25_info.tlm_area_switch.tlmsw.amp_ovt
-  :field tlmsw_timestamp_int: ax25_frame.payload.ax25_info.tlm_area_switch.tlmsw.timestamp_int
   :field current_rssi: ax25_frame.payload.ax25_info.tlm_area_switch.tlmsw.current_rssi
   :field latch_rssi: ax25_frame.payload.ax25_info.tlm_area_switch.tlmsw.latch_rssi
   :field a_f_c_offset: ax25_frame.payload.ax25_info.tlm_area_switch.tlmsw.a_f_c_offset
