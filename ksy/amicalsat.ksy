@@ -6,131 +6,178 @@ meta:
   endian: be
 doc-ref: 'https://gitlab.com/librespacefoundation/satnogs-ops/uploads/f6fde8b864f8cdf37d65433bd958e138/AmicalSat_downlinks_v0.3.pdf'
 doc: |
-  Author  : C. Mercier for AMSAT-Francophone
-  Adapted for SatNOGS and modified by deckbsd
-
-  :field dst_callsign: ax25_frame.ax25_header.dest_callsign_raw.callsign_ror.callsign
+  :field dest_callsign: ax25_frame.ax25_header.dest_callsign_raw.callsign_ror.callsign
+  :field dest_ssid: ax25_frame.ax25_header.dest_ssid_raw.ssid
   :field src_callsign: ax25_frame.ax25_header.src_callsign_raw.callsign_ror.callsign
+  :field src_ssid: ax25_frame.ax25_header.src_ssid_raw.ssid
   :field ctl: ax25_frame.ax25_header.ctl
   :field pid: ax25_frame.payload.pid
+  :field start: ax25_frame.payload.ax25_info.start
   :field tlm_area: ax25_frame.payload.ax25_info.tlm_area
-  :field tlm_type: ax25_frame.payload.ax25_info.tlm_type
-  :field cpu_voltage_volt: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.cpu_voltage_volt
-  :field boot_number_int: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.boot_number_int
-  :field cpu_temperature_degree: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.cpu_temperature_degree
-  :field up_time_int: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.up_time_int
-  :field imc_aocs_ok: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.imc_aocs_ok
-  :field imc_cu_l_ok: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.imc_cu_l_ok
-  :field imc_cu_r_ok: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.imc_cu_r_ok
-  :field imc_vhf1_ok: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.imc_vhf1_ok
-  :field imc_uhf2_ok: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.imc_uhf2_ok
-  :field vhf1_downlink: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.vhf1_downlink
-  :field uhf2_downlink: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.uhf2_downlink
-  :field imc_check: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.imc_check
-  :field beacon_mode: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.beacon_mode
-  :field cyclic_reset_on: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.cyclic_reset_on
-  :field survival_mode: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.survival_mode
-  :field payload_off: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.payload_off
-  :field cu_auto_off: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.cu_auto_off
-  :field tm_log: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.tm_log
-  :field cul_on: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.cul_on
-  :field cul_faut: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.cul_faut
-  :field cur_on: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.cur_on
-  :field cur_fault: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.cur_fault
-  :field cu_on: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.cu_on
-  :field cul_dead: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.cul_dead
-  :field cur_dead: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.cur_dead
-  :field fault_3v_r: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.fault_3v_r
-  :field fault_3v_m: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.fault_3v_m
-  :field charge_r: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.charge_r
-  :field charge_m: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.charge_m
-  :field long_log: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.long_log
-  :field log_to_flash: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.log_to_flash
-  :field plan: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.plan
-  :field stream: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.stream
-  :field vhf1_packet_ready: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.vhf1_packet_ready
-  :field uhf2_packet_ready: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.uhf2_packet_ready
-  :field survival_start: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.survival_start
-  :field survival_end: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.survival_end
-  :field timestamp_int: ax25_frame.payload.ax25_info.tlm_area_switch.timestamp_int
-  :field timestamp_int: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.timestamp_int
-  :field timestamp_int: ax25_frame.payload.ax25_info.tlm_area_switch.tlmsw.timestamp_int
-  :field detumbling: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.detumbling
-  :field adcs_on_off: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.adcs_on_off
-  :field detumbling_status: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.detumbling_status
-  :field manual: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.manual
-  :field act_on_off: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.act_on_off
-  :field sun_contr: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.sun_contr
-  :field sens_on_off: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.sens_on_off
-  :field act_man_contr: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.act_man_contr
-  :field act_limited_contr: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.act_limited_contr
-  :field gyro_acc_fault: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.gyro_acc_fault
-  :field mag_fault: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.mag_fault
-  :field sun_fault: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.sun_fault
-  :field l1_fault: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.l1_fault
-  :field l2_fault: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.l2_fault
-  :field l3_fault: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.l3_fault
-  :field mag_x_int: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.mag_x_int
-  :field mag_y_int: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.mag_y_int
-  :field mag_z_int: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.mag_z_int
-  :field gyro_x_int: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.gyro_x_int
-  :field gyro_y_int: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.gyro_y_int
-  :field gyro_z_int: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.gyro_z_int
-  :field latitude_int: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.latitude_int
-  :field longitude_int: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_sw.longitude_int
-  :field tlmsw_boot_number_int: ax25_frame.payload.ax25_info.tlm_area_switch.tlmsw.boot_number_int
-  :field input_voltage_volt: ax25_frame.payload.ax25_info.tlm_area_switch.tlmsw.input_voltage_volt
-  :field input_current_ma: ax25_frame.payload.ax25_info.tlm_area_switch.tlmsw.input_current_ma
-  :field input_power_mw: ax25_frame.payload.ax25_info.tlm_area_switch.tlmsw.input_power_mw
-  :field peak_power_mw: ax25_frame.payload.ax25_info.tlm_area_switch.tlmsw.peak_power_mw
-  :field solar_panel_voltage_volt: ax25_frame.payload.ax25_info.tlm_area_switch.tlmsw.solar_panel_voltage_volt
-  :field v_in_volt: ax25_frame.payload.ax25_info.tlm_area_switch.tlmsw.v_in_volt
-  :field v_solar_volt: ax25_frame.payload.ax25_info.tlm_area_switch.tlmsw.v_solar_volt
-  :field i_in_ma: ax25_frame.payload.ax25_info.tlm_area_switch.tlmsw.i_in_ma
-  :field p_in_mw: ax25_frame.payload.ax25_info.tlm_area_switch.tlmsw.p_in_mw
-  :field p_peak_mw: ax25_frame.payload.ax25_info.tlm_area_switch.tlmsw.p_peak_mw
-  :field t_cpu_degree: ax25_frame.payload.ax25_info.tlm_area_switch.tlmsw.t_cpu_degree
-  :field v_cpu_volt: ax25_frame.payload.ax25_info.tlm_area_switch.tlmsw.v_cpu_volt
-  :field battery_voltage: ax25_frame.payload.ax25_info.tlm_area_switch.tlmsw.battery_voltage
-  :field tlmsw_cpu_voltage_volt: ax25_frame.payload.ax25_info.tlm_area_switch.tlmsw.cpu_voltage_volt
-  :field battery_voltage_volt: ax25_frame.payload.ax25_info.tlm_area_switch.tlmsw.battery_voltage_volt
-  :field tlmsw_cpu_temperature_degree: ax25_frame.payload.ax25_info.tlm_area_switch.tlmsw.cpu_temperature_degree
-  :field amplifier_temperature_degree: ax25_frame.payload.ax25_info.tlm_area_switch.tlmsw.amplifier_temperature_degree
-  :field fec: ax25_frame.payload.ax25_info.tlm_area_switch.tlmsw.fec
-  :field downlink: ax25_frame.payload.ax25_info.tlm_area_switch.tlmsw.downlink
-  :field band_lock: ax25_frame.payload.ax25_info.tlm_area_switch.tlmsw.band_lock
-  :field xor: ax25_frame.payload.ax25_info.tlm_area_switch.tlmsw.xor
-  :field aes_128: ax25_frame.payload.ax25_info.tlm_area_switch.tlmsw.aes_128
-  :field amp_ovt: ax25_frame.payload.ax25_info.tlm_area_switch.tlmsw.amp_ovt
-  :field current_rssi: ax25_frame.payload.ax25_info.tlm_area_switch.tlmsw.current_rssi
-  :field latch_rssi: ax25_frame.payload.ax25_info.tlm_area_switch.tlmsw.latch_rssi
-  :field a_f_c_offset: ax25_frame.payload.ax25_info.tlm_area_switch.tlmsw.a_f_c_offset
-  :field current_rssi_int: ax25_frame.payload.ax25_info.tlm_area_switch.tlmsw.current_rssi_int
-  :field latch_rssi_int: ax25_frame.payload.ax25_info.tlm_area_switch.tlmsw.latch_rssi_int
-  :field a_f_c_offset_int: ax25_frame.payload.ax25_info.tlm_area_switch.tlmsw.a_f_c_offset_int
-  :field return_value_int: ax25_frame.payload.ax25_info.tlm_area_switch.tlmsw.return_value_int
-  :field onyx_on: ax25_frame.payload.ax25_info.tlm_area_switch.tlmsw.onyx_on
-  :field llc_onyx_fault: ax25_frame.payload.ax25_info.tlm_area_switch.tlmsw.llc_onyx_fault
-  :field llc_sram_fault: ax25_frame.payload.ax25_info.tlm_area_switch.tlmsw.llc_sram_fault
-  :field fault_1v8_r: ax25_frame.payload.ax25_info.tlm_area_switch.tlmsw.fault_1v8_r
-  :field fault_1v8_m: ax25_frame.payload.ax25_info.tlm_area_switch.tlmsw.fault_1v8_m
-  :field fault_3v3_12v: ax25_frame.payload.ax25_info.tlm_area_switch.tlmsw.fault_3v3_12v
-  :field pic_ready_conv: ax25_frame.payload.ax25_info.tlm_area_switch.tlmsw.pic_ready_conv
-  :field pic_ready_compressed: ax25_frame.payload.ax25_info.tlm_area_switch.tlmsw.pic_ready_compressed
-  :field pic_ready_compressed_8: ax25_frame.payload.ax25_info.tlm_area_switch.tlmsw.pic_ready_compressed_8
-  :field sd_pic_write_ok: ax25_frame.payload.ax25_info.tlm_area_switch.tlmsw.sd_pic_write_ok
-  :field sd_pic_read_ok: ax25_frame.payload.ax25_info.tlm_area_switch.tlmsw.sd_pic_read_ok
-  :field sd_get_info_ok: ax25_frame.payload.ax25_info.tlm_area_switch.tlmsw.sd_get_info_ok
-  :field sd_erase_ok: ax25_frame.payload.ax25_info.tlm_area_switch.tlmsw.sd_erase_ok
-  :field sd_full: ax25_frame.payload.ax25_info.tlm_area_switch.tlmsw.sd_full
-  :field adc_ready: ax25_frame.payload.ax25_info.tlm_area_switch.tlmsw.adc_ready
+  :field tlm_type: ax25_frame.payload.ax25_info.tlm_area_switch.tlm_type
+  :field m1_cpu_voltage_volt: ax25_frame.payload.ax25_info.tlm_area_switch.m1.cpu_voltage_volt
+  :field m1_boot_number_int: ax25_frame.payload.ax25_info.tlm_area_switch.m1.boot_number_int
+  :field m1_cpu_temperature_degree: ax25_frame.payload.ax25_info.tlm_area_switch.m1.cpu_temperature_degree
+  :field m1_up_time_int: ax25_frame.payload.ax25_info.tlm_area_switch.m1.up_time_int
+  :field timestamp_int: ax25_frame.payload.ax25_info.tlm_area_switch.m1.timestamp_int
+  :field m1_imc_aocs_ok: ax25_frame.payload.ax25_info.tlm_area_switch.m1.imc_aocs_ok
+  :field m1_imc_cu_l_ok: ax25_frame.payload.ax25_info.tlm_area_switch.m1.imc_cu_l_ok
+  :field m1_imc_cu_r_ok: ax25_frame.payload.ax25_info.tlm_area_switch.m1.imc_cu_r_ok
+  :field m1_imc_vhf1_ok: ax25_frame.payload.ax25_info.tlm_area_switch.m1.imc_vhf1_ok
+  :field m1_imc_uhf2_ok: ax25_frame.payload.ax25_info.tlm_area_switch.m1.imc_uhf2_ok
+  :field m1_vhf1_downlink: ax25_frame.payload.ax25_info.tlm_area_switch.m1.vhf1_downlink
+  :field m1_uhf2_downlink: ax25_frame.payload.ax25_info.tlm_area_switch.m1.uhf2_downlink
+  :field m1_imc_check: ax25_frame.payload.ax25_info.tlm_area_switch.m1.imc_check
+  :field m1_beacon_mode: ax25_frame.payload.ax25_info.tlm_area_switch.m1.beacon_mode
+  :field m1_cyclic_reset_on: ax25_frame.payload.ax25_info.tlm_area_switch.m1.cyclic_reset_on
+  :field m1_survival_mode: ax25_frame.payload.ax25_info.tlm_area_switch.m1.survival_mode
+  :field m1_payload_off: ax25_frame.payload.ax25_info.tlm_area_switch.m1.payload_off
+  :field m1_cu_auto_off: ax25_frame.payload.ax25_info.tlm_area_switch.m1.cu_auto_off
+  :field m1_tm_log: ax25_frame.payload.ax25_info.tlm_area_switch.m1.tm_log
+  :field m1_cul_on: ax25_frame.payload.ax25_info.tlm_area_switch.m1.cul_on
+  :field m1_cul_faut: ax25_frame.payload.ax25_info.tlm_area_switch.m1.cul_faut
+  :field m1_cur_on: ax25_frame.payload.ax25_info.tlm_area_switch.m1.cur_on
+  :field m1_cur_fault: ax25_frame.payload.ax25_info.tlm_area_switch.m1.cur_fault
+  :field m1_cu_on: ax25_frame.payload.ax25_info.tlm_area_switch.m1.cu_on
+  :field m1_cul_dead: ax25_frame.payload.ax25_info.tlm_area_switch.m1.cul_dead
+  :field m1_cur_dead: ax25_frame.payload.ax25_info.tlm_area_switch.m1.cur_dead
+  :field m1_fault_3v_r: ax25_frame.payload.ax25_info.tlm_area_switch.m1.fault_3v_r
+  :field m1_fault_3v_m: ax25_frame.payload.ax25_info.tlm_area_switch.m1.fault_3v_m
+  :field m1_charge_r: ax25_frame.payload.ax25_info.tlm_area_switch.m1.charge_r
+  :field m1_charge_m: ax25_frame.payload.ax25_info.tlm_area_switch.m1.charge_m
+  :field m1_long_log: ax25_frame.payload.ax25_info.tlm_area_switch.m1.long_log
+  :field m1_log_to_flash: ax25_frame.payload.ax25_info.tlm_area_switch.m1.log_to_flash
+  :field m1_plan: ax25_frame.payload.ax25_info.tlm_area_switch.m1.plan
+  :field m1_stream: ax25_frame.payload.ax25_info.tlm_area_switch.m1.stream
+  :field m1_vhf1_packet_ready: ax25_frame.payload.ax25_info.tlm_area_switch.m1.vhf1_packet_ready
+  :field m1_uhf2_packet_ready: ax25_frame.payload.ax25_info.tlm_area_switch.m1.uhf2_packet_ready
+  :field m1_survival_start: ax25_frame.payload.ax25_info.tlm_area_switch.m1.survival_start
+  :field m1_survival_end: ax25_frame.payload.ax25_info.tlm_area_switch.m1.survival_end
+  :field a1_adcs_mode: ax25_frame.payload.ax25_info.tlm_area_switch.a1.adcs_mode
+  :field a1_faults: ax25_frame.payload.ax25_info.tlm_area_switch.a1.faults
+  :field a1_detumbling: ax25_frame.payload.ax25_info.tlm_area_switch.a1.detumbling
+  :field a1_adcs_on_off: ax25_frame.payload.ax25_info.tlm_area_switch.a1.adcs_on_off
+  :field a1_detumbling_status: ax25_frame.payload.ax25_info.tlm_area_switch.a1.detumbling_status
+  :field a1_manual: ax25_frame.payload.ax25_info.tlm_area_switch.a1.manual
+  :field a1_act_on_off: ax25_frame.payload.ax25_info.tlm_area_switch.a1.act_on_off
+  :field a1_sun_contr: ax25_frame.payload.ax25_info.tlm_area_switch.a1.sun_contr
+  :field a1_sens_on_off: ax25_frame.payload.ax25_info.tlm_area_switch.a1.sens_on_off
+  :field a1_act_man_contr: ax25_frame.payload.ax25_info.tlm_area_switch.a1.act_man_contr
+  :field a1_act_limited_contr: ax25_frame.payload.ax25_info.tlm_area_switch.a1.act_limited_contr
+  :field a1_gyro_acc_fault: ax25_frame.payload.ax25_info.tlm_area_switch.a1.gyro_acc_fault
+  :field a1_mag_fault: ax25_frame.payload.ax25_info.tlm_area_switch.a1.mag_fault
+  :field a1_sun_fault: ax25_frame.payload.ax25_info.tlm_area_switch.a1.sun_fault
+  :field a1_l1_fault: ax25_frame.payload.ax25_info.tlm_area_switch.a1.l1_fault
+  :field a1_l2_fault: ax25_frame.payload.ax25_info.tlm_area_switch.a1.l2_fault
+  :field a1_l3_fault: ax25_frame.payload.ax25_info.tlm_area_switch.a1.l3_fault
+  :field timestamp_int: ax25_frame.payload.ax25_info.tlm_area_switch.a1.timestamp_int
+  :field a1_mag_x: ax25_frame.payload.ax25_info.tlm_area_switch.a1.mag_x
+  :field a1_mag_y: ax25_frame.payload.ax25_info.tlm_area_switch.a1.mag_y
+  :field a1_mag_z: ax25_frame.payload.ax25_info.tlm_area_switch.a1.mag_z
+  :field a1_mag_x_int: ax25_frame.payload.ax25_info.tlm_area_switch.a1.mag_x_int
+  :field a1_mag_y_int: ax25_frame.payload.ax25_info.tlm_area_switch.a1.mag_y_int
+  :field a1_mag_z_int: ax25_frame.payload.ax25_info.tlm_area_switch.a1.mag_z_int
+  :field a1_gyro_x_int: ax25_frame.payload.ax25_info.tlm_area_switch.a1.gyro_x_int
+  :field a1_gyro_y_int: ax25_frame.payload.ax25_info.tlm_area_switch.a1.gyro_y_int
+  :field a1_gyro_z_int: ax25_frame.payload.ax25_info.tlm_area_switch.a1.gyro_z_int
+  :field a1_latitude_int: ax25_frame.payload.ax25_info.tlm_area_switch.a1.latitude_int
+  :field a1_longitude_int: ax25_frame.payload.ax25_info.tlm_area_switch.a1.longitude_int
+  :field em_boot_number_int: ax25_frame.payload.ax25_info.tlm_area_switch.em.boot_number_int
+  :field em_input_voltage_volt: ax25_frame.payload.ax25_info.tlm_area_switch.em.input_voltage_volt
+  :field em_input_current_ma: ax25_frame.payload.ax25_info.tlm_area_switch.em.input_current_ma
+  :field em_input_power_mw: ax25_frame.payload.ax25_info.tlm_area_switch.em.input_power_mw
+  :field em_peak_power_mw: ax25_frame.payload.ax25_info.tlm_area_switch.em.peak_power_mw
+  :field em_solar_panel_voltage_volt: ax25_frame.payload.ax25_info.tlm_area_switch.em.solar_panel_voltage_volt
+  :field timestamp_int: ax25_frame.payload.ax25_info.tlm_area_switch.em.timestamp_int
+  :field em_v_in_volt: ax25_frame.payload.ax25_info.tlm_area_switch.em.v_in_volt
+  :field em_v_solar_volt: ax25_frame.payload.ax25_info.tlm_area_switch.em.v_solar_volt
+  :field em_i_in_ma: ax25_frame.payload.ax25_info.tlm_area_switch.em.i_in_ma
+  :field em_p_in_mw: ax25_frame.payload.ax25_info.tlm_area_switch.em.p_in_mw
+  :field em_p_peak_mw: ax25_frame.payload.ax25_info.tlm_area_switch.em.p_peak_mw
+  :field em_t_cpu_degree: ax25_frame.payload.ax25_info.tlm_area_switch.em.t_cpu_degree
+  :field em_v_cpu_volt: ax25_frame.payload.ax25_info.tlm_area_switch.em.v_cpu_volt
+  :field timestamp: ax25_frame.payload.ax25_info.tlm_area_switch.er.timestamp
+  :field boot_number: ax25_frame.payload.ax25_info.tlm_area_switch.er.boot_number
+  :field er_input_voltage_volt: ax25_frame.payload.ax25_info.tlm_area_switch.er.input_voltage_volt
+  :field er_input_current_ma: ax25_frame.payload.ax25_info.tlm_area_switch.er.input_current_ma
+  :field er_input_power_mw: ax25_frame.payload.ax25_info.tlm_area_switch.er.input_power_mw
+  :field er_peak_power_mw: ax25_frame.payload.ax25_info.tlm_area_switch.er.peak_power_mw
+  :field er_solar_panel_voltage_volt: ax25_frame.payload.ax25_info.tlm_area_switch.er.solar_panel_voltage_volt
+  :field timestamp_int: ax25_frame.payload.ax25_info.tlm_area_switch.er.timestamp_int
+  :field er_v_in_volt: ax25_frame.payload.ax25_info.tlm_area_switch.er.v_in_volt
+  :field er_v_solar_volt: ax25_frame.payload.ax25_info.tlm_area_switch.er.v_solar_volt
+  :field er_i_in_ma: ax25_frame.payload.ax25_info.tlm_area_switch.er.i_in_ma
+  :field er_p_in_mw: ax25_frame.payload.ax25_info.tlm_area_switch.er.p_in_mw
+  :field er_p_peak_mw: ax25_frame.payload.ax25_info.tlm_area_switch.er.p_peak_mw
+  :field er_t_cpu_degree: ax25_frame.payload.ax25_info.tlm_area_switch.er.t_cpu_degree
+  :field er_v_cpu_volt: ax25_frame.payload.ax25_info.tlm_area_switch.er.v_cpu_volt
+  :field timestamp: ax25_frame.payload.ax25_info.tlm_area_switch.v1.timestamp
+  :field v1_cpu_voltage_volt: ax25_frame.payload.ax25_info.tlm_area_switch.v1.cpu_voltage_volt
+  :field v1_battery_voltage_volt: ax25_frame.payload.ax25_info.tlm_area_switch.v1.battery_voltage_volt
+  :field v1_cpu_temperature_degree: ax25_frame.payload.ax25_info.tlm_area_switch.v1.cpu_temperature_degree
+  :field v1_amplifier_temperature_degree: ax25_frame.payload.ax25_info.tlm_area_switch.v1.amplifier_temperature_degree
+  :field v1_fec: ax25_frame.payload.ax25_info.tlm_area_switch.v1.fec
+  :field v1_downlink: ax25_frame.payload.ax25_info.tlm_area_switch.v1.downlink
+  :field v1_band_lock: ax25_frame.payload.ax25_info.tlm_area_switch.v1.band_lock
+  :field v1_xor: ax25_frame.payload.ax25_info.tlm_area_switch.v1.xor
+  :field v1_aes_128: ax25_frame.payload.ax25_info.tlm_area_switch.v1.aes_128
+  :field v1_amp_ovt: ax25_frame.payload.ax25_info.tlm_area_switch.v1.amp_ovt
+  :field timestamp_int: ax25_frame.payload.ax25_info.tlm_area_switch.v1.timestamp_int
+  :field v1_current_rssi_int: ax25_frame.payload.ax25_info.tlm_area_switch.v1.current_rssi_int
+  :field v1_latch_rssi_int: ax25_frame.payload.ax25_info.tlm_area_switch.v1.latch_rssi_int
+  :field v1_a_f_c_offset_int: ax25_frame.payload.ax25_info.tlm_area_switch.v1.a_f_c_offset_int
+  :field timestamp_int: ax25_frame.payload.ax25_info.tlm_area_switch.u2.timestamp_int
+  :field u2_current_rssi: ax25_frame.payload.ax25_info.tlm_area_switch.u2.current_rssi
+  :field u2_latch_rssi: ax25_frame.payload.ax25_info.tlm_area_switch.u2.latch_rssi
+  :field u2_a_f_c_offset: ax25_frame.payload.ax25_info.tlm_area_switch.u2.a_f_c_offset
+  :field u2_current_rssi_int: ax25_frame.payload.ax25_info.tlm_area_switch.u2.current_rssi_int
+  :field u2_latch_rssi_int: ax25_frame.payload.ax25_info.tlm_area_switch.u2.latch_rssi_int
+  :field u2_a_f_c_offset_int: ax25_frame.payload.ax25_info.tlm_area_switch.u2.a_f_c_offset_int
+  :field cu_r_return_value_int: ax25_frame.payload.ax25_info.tlm_area_switch.cu_r.return_value_int
+  :field timestamp_int: ax25_frame.payload.ax25_info.tlm_area_switch.cu_r.timestamp_int
+  :field cu_r_cpu_voltage_volt: ax25_frame.payload.ax25_info.tlm_area_switch.cu_r.cpu_voltage_volt
+  :field cu_r_cpu_temperature_degree: ax25_frame.payload.ax25_info.tlm_area_switch.cu_r.cpu_temperature_degree
+  :field cu_r_onyx_on: ax25_frame.payload.ax25_info.tlm_area_switch.cu_r.onyx_on
+  :field cu_r_llc_onyx_fault: ax25_frame.payload.ax25_info.tlm_area_switch.cu_r.llc_onyx_fault
+  :field cu_r_llc_sram_fault: ax25_frame.payload.ax25_info.tlm_area_switch.cu_r.llc_sram_fault
+  :field cu_r_fault_1v8_r: ax25_frame.payload.ax25_info.tlm_area_switch.cu_r.fault_1v8_r
+  :field cu_r_fault_1v8_m: ax25_frame.payload.ax25_info.tlm_area_switch.cu_r.fault_1v8_m
+  :field cu_r_fault_3v3_12v: ax25_frame.payload.ax25_info.tlm_area_switch.cu_r.fault_3v3_12v
+  :field cu_r_pic_ready_raw: ax25_frame.payload.ax25_info.tlm_area_switch.cu_r.pic_ready_raw
+  :field cu_r_pic_ready_conv: ax25_frame.payload.ax25_info.tlm_area_switch.cu_r.pic_ready_conv
+  :field cu_r_pic_ready_compressed: ax25_frame.payload.ax25_info.tlm_area_switch.cu_r.pic_ready_compressed
+  :field cu_r_pic_ready_compressed_8: ax25_frame.payload.ax25_info.tlm_area_switch.cu_r.pic_ready_compressed_8
+  :field cu_r_sd_pic_write_ok: ax25_frame.payload.ax25_info.tlm_area_switch.cu_r.sd_pic_write_ok
+  :field cu_r_sd_pic_read_ok: ax25_frame.payload.ax25_info.tlm_area_switch.cu_r.sd_pic_read_ok
+  :field cu_r_sd_get_info_ok: ax25_frame.payload.ax25_info.tlm_area_switch.cu_r.sd_get_info_ok
+  :field cu_r_sd_erase_ok: ax25_frame.payload.ax25_info.tlm_area_switch.cu_r.sd_erase_ok
+  :field cu_r_sd_full: ax25_frame.payload.ax25_info.tlm_area_switch.cu_r.sd_full
+  :field cu_r_adc_ready: ax25_frame.payload.ax25_info.tlm_area_switch.cu_r.adc_ready
+  :field timestamp_int: ax25_frame.payload.ax25_info.tlm_area_switch.cu_l.timestamp_int
+  :field cu_l_cpu_voltage_volt: ax25_frame.payload.ax25_info.tlm_area_switch.cu_l.cpu_voltage_volt
+  :field cu_l_cpu_temperature_degree: ax25_frame.payload.ax25_info.tlm_area_switch.cu_l.cpu_temperature_degree
+  :field cu_l_onyx_on: ax25_frame.payload.ax25_info.tlm_area_switch.cu_l.onyx_on
+  :field cu_l_llc_onyx_fault: ax25_frame.payload.ax25_info.tlm_area_switch.cu_l.llc_onyx_fault
+  :field cu_l_llc_sram_fault: ax25_frame.payload.ax25_info.tlm_area_switch.cu_l.llc_sram_fault
+  :field cu_l_fault_1v8_r: ax25_frame.payload.ax25_info.tlm_area_switch.cu_l.fault_1v8_r
+  :field cu_l_fault_1v8_m: ax25_frame.payload.ax25_info.tlm_area_switch.cu_l.fault_1v8_m
+  :field cu_l_fault_3v3_12v: ax25_frame.payload.ax25_info.tlm_area_switch.cu_l.fault_3v3_12v
+  :field cu_l_pic_ready_raw: ax25_frame.payload.ax25_info.tlm_area_switch.cu_l.pic_ready_raw
+  :field cu_l_pic_ready_conv: ax25_frame.payload.ax25_info.tlm_area_switch.cu_l.pic_ready_conv
+  :field cu_l_pic_ready_compressed: ax25_frame.payload.ax25_info.tlm_area_switch.cu_l.pic_ready_compressed
+  :field cu_l_pic_ready_compressed_8: ax25_frame.payload.ax25_info.tlm_area_switch.cu_l.pic_ready_compressed_8
+  :field cu_l_sd_pic_write_ok: ax25_frame.payload.ax25_info.tlm_area_switch.cu_l.sd_pic_write_ok
+  :field cu_l_sd_pic_read_ok: ax25_frame.payload.ax25_info.tlm_area_switch.cu_l.sd_pic_read_ok
+  :field cu_l_sd_get_info_ok: ax25_frame.payload.ax25_info.tlm_area_switch.cu_l.sd_get_info_ok
+  :field cu_l_sd_erase_ok: ax25_frame.payload.ax25_info.tlm_area_switch.cu_l.sd_erase_ok
+  :field cu_l_sd_full: ax25_frame.payload.ax25_info.tlm_area_switch.cu_l.sd_full
+  :field cu_l_adc_ready: ax25_frame.payload.ax25_info.tlm_area_switch.cu_l.adc_ready
   :field aprs_message: ax25_frame.payload.ax25_info.aprs_message
 
 seq:
   - id: ax25_frame
     type: ax25_frame
     doc-ref: 'https://www.tapr.org/pub_ax25.html'
-
 types:
   ax25_frame:
     seq:
@@ -147,7 +194,6 @@ types:
             0x10: i_frame
             0x12: i_frame
             # 0x11: s_frame
-
   ax25_header:
     seq:
       - id: dest_callsign_raw
@@ -164,7 +210,6 @@ types:
         doc: 'Repeater flag is set!'
       - id: ctl
         type: u1
-
   repeater:
     seq:
       - id: rpt_instance
@@ -172,28 +217,24 @@ types:
         repeat: until
         repeat-until: ((_.rpt_ssid_raw.ssid_mask & 0x1) == 0x1)
         doc: 'Repeat until no repeater flag is set!'
-
   repeaters:
     seq:
       - id: rpt_callsign_raw
         type: callsign_raw
       - id: rpt_ssid_raw
         type: ssid_mask
-
   callsign_raw:
     seq:
       - id: callsign_ror
         process: ror(1)
         size: 6
         type: callsign
-
   callsign:
     seq:
       - id: callsign
         type: str
         encoding: ASCII
         size: 6
-
   ssid_mask:
     seq:
       - id: ssid_mask
@@ -201,7 +242,6 @@ types:
     instances:
       ssid:
         value: (ssid_mask & 0x0f) >> 1
-
   i_frame:
     seq:
       - id: pid
@@ -209,7 +249,6 @@ types:
       - id: ax25_info
         type: ax25_info_data
         size-eos: true
-
   ui_frame:
     seq:
       - id: pid
@@ -217,16 +256,11 @@ types:
       - id: ax25_info
         type: ax25_info_data
         size-eos: true
-
   ax25_info_data:
     seq:
       - id: start
         type: u1
       - id: tlm_area
-        type: str
-        encoding: ASCII
-        terminator: 0x3B
-      - id: tlm_type
         type: str
         encoding: ASCII
         terminator: 0x3B
@@ -236,98 +270,124 @@ types:
           cases:
             '"M1"': m1_type
             '"A1"': a1_type
-            '"EM"': emer_type
-            '"ER"': emer_type
+            '"EM"': em_type
+            '"ER"': er_type
             '"V1"': v1_type
             '"U2"': u2_type
-            '"CU_R"': cu_type
-            '"CU_L"': cu_type
+            '"CU_R"': cu_r_type
+            '"CU_L"': cu_l_type
     instances:
       aprs_message:
         pos: 0x0
         type: str
         encoding: utf-8
         size-eos: true
-
   m1_type:
     seq:
-      - id: timestamp
+      - id: tlm_type
         type: str
         encoding: ASCII
         terminator: 0x3B
-      - id: tlm_sw
+      - id: m1
         type:
-          switch-on: _parent.tlm_type
+          switch-on: tlm_type
           cases:
-            '"LOG"': log_type
-            '"FLAGS"': flags_type
-    instances:
-      timestamp_int:
-        value: '(timestamp.to_i)'
-
+            '"LOG"': m1_log_type
+            '"FLAGS"': m1_flags_type
   a1_type:
     seq:
-      - id: tlm_sw
+      - id: tlm_type
+        type: str
+        encoding: ASCII
+        terminator: 0x3B
+      - id: a1
         type:
-          switch-on: _parent.tlm_type
+          switch-on: tlm_type
           cases:
-            '"FLAGS"': a1_flag_type
+            '"FLAGS"': a1_flags_type
             '"MAG"': a1_mag_type
             '"GYRO"': a1_gyro_type
             '"POSITION"': a1_position_type
-
-  emer_type:
+  em_type:
     seq:
-      - id: timestamp
+      - id: tlm_type
         type: str
         encoding: ASCII
         terminator: 0x3B
-      - id: tlmsw
+      - id: em
         type:
-          switch-on: _parent.tlm_type
+          switch-on: tlm_type
           cases:
             '"LOG"': em_log_type
-            '"MN"': emmn_type
-    instances:
-      timestamp_int:
-        value: '(timestamp.to_i)'
-
-  v1_type:
+            '"MN"': em_mn_type
+  er_type:
     seq:
-      - id: tlmsw
-        type:
-          switch-on: _parent.tlm_type
-          cases:
-            '"RL"': v1_rl_type
-            '"MS"': ms_type
-  u2_type:
-    seq:
-      - id: tlmsw
-        type:
-          switch-on: _parent.tlm_type
-          cases:
-            '"RL"': u2_rl_type
-            '"MS"': ms_type
-  cu_type:
-    seq:
-      - id: timestamp
+      - id: tlm_type
         type: str
         encoding: ASCII
         terminator: 0x3B
-      - id: tlmsw
+      - id: er
         type:
-          switch-on: _parent.tlm_type
+          switch-on: tlm_type
           cases:
-            '"ONYX SENSOR T"': onyx_type
-            '"LOG"': cu_log_type
-    instances:
-      timestamp_int:
-        value: '(timestamp.to_i)'
-
-  log_type:
+            '"LOG"': er_log_type
+            '"MN"': er_mn_type
+  v1_type:
+    seq:
+      - id: tlm_type
+        type: str
+        encoding: ASCII
+        terminator: 0x3B
+      - id: v1
+        type:
+          switch-on: tlm_type
+          cases:
+            '"RL"': v1_rl_type
+            '"MS"': v1_ms_type
+  u2_type:
+    seq:
+      - id: tlm_type
+        type: str
+        encoding: ASCII
+        terminator: 0x3B
+      - id: u2
+        type:
+          switch-on: tlm_type
+          cases:
+            '"RL"': u2_rl_type
+            '"MS"': u2_ms_type
+  cu_l_type:
+    seq:
+      - id: tlm_type
+        type: str
+        encoding: ASCII
+        terminator: 0x3B
+      - id: cu_l
+        type:
+          switch-on: tlm_type
+          cases:
+            '"ONYX SENSOR T"': cu_l_onyx_type
+            '"LOG"': cu_l_log_type
+  cu_r_type:
+    seq:
+      - id: tlm_type
+        type: str
+        encoding: ASCII
+        terminator: 0x3B
+      - id: cu_r
+        type:
+          switch-on: tlm_type
+          cases:
+            '"ONYX SENSOR T"': cu_r_onyx_type
+            '"LOG"': cu_r_log_type
+  m1_log_type:
     doc: |
       M1;LOG;[Timestamp];[Boot number];[Up time];[CPU voltage];[CPU temperature]
     seq:
+      - id: timestamp
+        type: str
+        encoding: ASCII
+        terminator: 0x3B
       - id: boot_number
         type: str
         encoding: ASCII
@@ -353,11 +413,16 @@ types:
         value: '(cpu_temperature.to_i)'
       up_time_int:
         value: '(up_time.to_i)'
-
-  flags_type:
+      timestamp_int:
+        value: '(timestamp.to_i)'
+  m1_flags_type:
     doc: |
       M1;FLAGS;[Timestamp];[Hex flags];
     seq:
+      - id: timestamp
+        type: str
+        encoding: ASCII
+        terminator: 0x3B
       - id: hex_part
         type: str
         encoding: ASCII
@@ -433,10 +498,11 @@ types:
         value: '((flags.to_i(16) & 0x8000000000000) >> 51)'
       survival_end:
         value: '((flags.to_i(16) & 0x10000000000000) >> 52)'
-
-  a1_flag_type:
+      timestamp_int:
+        value: '(timestamp.to_i)'
+  a1_flags_type:
     doc: |
-      A1;FLAGS;[mode];[flags];[faults]
+      A1;FLAGS;[timestamp];[mode];[flags];[faults]
     seq:
       - id: timestamp
         type: str
@@ -487,7 +553,6 @@ types:
         value: '((faults.to_i(16) & 0x20) >> 5)'
       timestamp_int:
         value: '(timestamp.to_i)'
-
   a1_mag_type:
     doc: |
       A1;MAG;[Current timestamp];[MagX];[MagY];[MagZ]
@@ -517,7 +582,6 @@ types:
         value: '(mag_z.to_i)'
       timestamp_int:
         value: '(timestamp.to_i)'
-
   a1_gyro_type:
     doc: |
       A1;GYRO;[Current timestamp];[GyroX];[GyroY];[GyroZ]
@@ -547,7 +611,6 @@ types:
         value: '(giro_z.to_i)'
       timestamp_int:
         value: '(timestamp.to_i)'
-
   a1_position_type:
     doc: |
       A1;POSITION;[Current timestamp];[Latitude];[Longitude]
@@ -571,11 +634,14 @@ types:
         value: '(longitude.to_i)'
       timestamp_int:
         value: '(timestamp.to_i)'
-
-  emmn_type:
+  em_mn_type:
     doc: |
-      [EM/ER];MN;[Timestamp];[V in];[V solar];[I in];[P in];[P peak];[T cpu];[V cpu]
+      EM;MN;[Timestamp];[V in];[V solar];[I in];[P in];[P peak];[T cpu];[V cpu]
     seq:
+      - id: timestamp
+        type: str
+        encoding: ASCII
+        terminator: 0x3B
       - id: v_in
         type: str
         encoding: ASCII
@@ -619,11 +685,69 @@ types:
         value: '(t_cpu.to_i)'
       v_cpu_volt:
         value: '(v_cpu.to_i) / 1000.0'
-
+      timestamp_int:
+        value: '(timestamp.to_i)'
+  er_mn_type:
+    doc: |
+      ER;MN;[Timestamp];[V in];[V solar];[I in];[P in];[P peak];[T cpu];[V cpu]
+    seq:
+      - id: timestamp
+        type: str
+        encoding: ASCII
+        terminator: 0x3B
+      - id: v_in
+        type: str
+        encoding: ASCII
+        terminator: 0x3B
+      - id: v_solar
+        type: str
+        encoding: ASCII
+        terminator: 0x3B
+      - id: i_in
+        type: str
+        encoding: ASCII
+        terminator: 0x3B
+      - id: p_in
+        type: str
+        encoding: ASCII
+        terminator: 0x3B
+      - id: p_peak
+        type: str
+        encoding: ASCII
+        terminator: 0x3B
+      - id: t_cpu
+        type: str
+        encoding: ASCII
+        terminator: 0x3B
+      - id: v_cpu
+        type: str
+        encoding: ASCII
+        size-eos: true
+    instances:
+      v_in_volt:
+        value: '(v_in.to_i) / 1000.0'
+      v_solar_volt:
+        value: '(v_solar.to_i) / 1000.0'
+      i_in_ma:
+        value: '(i_in.to_i)'
+      p_in_mw:
+        value: '(p_in.to_i)'
+      p_peak_mw:
+        value: '(p_peak.to_i)'
+      t_cpu_degree:
+        value: '(t_cpu.to_i)'
+      v_cpu_volt:
+        value: '(v_cpu.to_i) / 1000.0'
+      timestamp_int:
+        value: '(timestamp.to_i)'
   em_log_type:
     doc: |
       EM;LOG;[Timestamp];[Boot number];[Input voltage];[Input current];[Input power];[Peak Power];[Solar panel voltage]
     seq:
+      - id: timestamp
+        type: str
+        encoding: ASCII
+        terminator: 0x3B
       - id: boot_number
         type: str
         encoding: ASCII
@@ -661,10 +785,58 @@ types:
         value: '(peak_power.to_i)'
       solar_panel_voltage_volt:
         value: '(solar_panel_voltage.to_i) / 1000.0'
-
+      timestamp_int:
+        value: '(timestamp.to_i)'
+  er_log_type:
+    doc: |
+      ER;LOG;[Timestamp];[Boot number];[Input voltage];[Input current];[Input power];[Peak Power];[Solar panel voltage]
+    seq:
+      - id: timestamp
+        type: str
+        encoding: ASCII
+        terminator: 0x3B
+      - id: boot_number
+        type: str
+        encoding: ASCII
+        terminator: 0x3B
+      - id: input_voltage
+        type: str
+        encoding: ASCII
+        terminator: 0x3B
+      - id: input_current
+        type: str
+        encoding: ASCII
+        terminator: 0x3B
+      - id: input_power
+        type: str
+        encoding: ASCII
+        terminator: 0x3B
+      - id: peak_power
+        type: str
+        encoding: ASCII
+        terminator: 0x3B
+      - id: solar_panel_voltage
+        type: str
+        encoding: ASCII
+        size-eos: true
+    instances:
+      boot_number_int:
+        value: '(boot_number.to_i)'
+      input_voltage_volt:
+        value: '(input_voltage.to_i) / 1000.0'
+      input_current_ma:
+        value: '(input_current.to_i)'
+      input_power_mw:
+        value: '(input_power.to_i)'
+      peak_power_mw:
+        value: '(peak_power.to_i)'
+      solar_panel_voltage_volt:
+        value: '(solar_panel_voltage.to_i) / 1000.0'
+      timestamp_int:
+        value: '(timestamp.to_i)'
   v1_rl_type:
     doc: |
-      [V1];RL;[Timestamp],[CPU voltage];[Battery voltage];[CPU temperature];[Amplifier temperature];[Flags]
+      V1;RL;[Timestamp],[CPU voltage];[Battery voltage];[CPU temperature];[Amplifier temperature];[Flags]
     seq:
       - id: timestamp
         type: str
@@ -715,10 +887,9 @@ types:
         value: '((flags.to_i(16) & 0x20) >> 5)'
       timestamp_int:
         value: '(timestamp.to_i)'
-
   u2_rl_type:
     doc: |
-      [U2];RL;[Timestamp],[CPU voltage];[Battery voltage];[CPU temperature];[Amplifier temperature];[Flags]
+      U2;RL;[Timestamp],[CPU voltage];[Battery voltage];[CPU temperature];[Amplifier temperature];[Flags]
     seq:
       - id: timestamp
         type: str
@@ -769,10 +940,9 @@ types:
         value: '((flags.to_i(16) & 0x20) >> 5)'
       timestamp_int:
         value: '(timestamp.to_i)'
-
-  ms_type:
+  v1_ms_type:
     doc: |
-      [V1/U2];MS;[Timestamp];[Current rssi];[Latch rssi];[AFC offset]
+      V1;MS;[Timestamp];[Current rssi];[Latch rssi];[AFC offset]
     seq:
       - id: timestamp
         type: str
@@ -799,11 +969,43 @@ types:
         value: '(a_f_c_offset.to_i)'
       timestamp_int:
         value: '(timestamp.to_i)'
-
-  cu_log_type:
+  u2_ms_type:
     doc: |
-      [CU_R/CU_L];LOG;[Timestamp];[CPU voltage];[CPU temperature];[flags]
+      U2;MS;[Timestamp];[Current rssi];[Latch rssi];[AFC offset]
     seq:
+      - id: timestamp
+        type: str
+        encoding: ASCII
+        terminator: 0x3B
+      - id: current_rssi
+        type: str
+        encoding: ASCII
+        terminator: 0x3B
+      - id: latch_rssi
+        type: str
+        encoding: ASCII
+        terminator: 0x3B
+      - id: a_f_c_offset
+        type: str
+        encoding: ASCII
+        size-eos: true
+    instances:
+      current_rssi_int:
+        value: '(current_rssi.to_i)'
+      latch_rssi_int:
+        value: '(latch_rssi.to_i)'
+      a_f_c_offset_int:
+        value: '(a_f_c_offset.to_i)'
+      timestamp_int:
+        value: '(timestamp.to_i)'
+  cu_l_log_type:
+    doc: |
+      CU_L;LOG;[Timestamp];[CPU voltage];[CPU temperature];[flags]
+    seq:
+      - id: timestamp
+        type: str
+        encoding: ASCII
+        terminator: 0x3B
       - id: cpu_voltage
         type: str
         encoding: ASCII
@@ -855,10 +1057,89 @@ types:
         value: '((cu_flags.to_i(16) & 0x4000) >> 14)'
       adc_ready:
         value: '((cu_flags.to_i(16) & 0x8000) >> 15)'
-
-  onyx_type:
+      timestamp_int:
+        value: '(timestamp.to_i)'
+  cu_r_log_type:
     doc: |
-      [CU_R/CU_L];ONYX SENSOR T;[Timestamp];[Return value]
+      CU_R;LOG;[Timestamp];[CPU voltage];[CPU temperature];[flags]
+    seq:
+      - id: timestamp
+        type: str
+        encoding: ASCII
+        terminator: 0x3B
+      - id: cpu_voltage
+        type: str
+        encoding: ASCII
+        terminator: 0x3B
+      - id: cpu_temperature
+        type: str
+        encoding: ASCII
+        terminator: 0x3B
+      - id: flagsmagic
+        contents: [0x30, 0x78]
+      - id: cu_flags
+        type: str
+        encoding: ASCII
+        size-eos: true
+    instances:
+      cpu_voltage_volt:
+        value: '(cpu_voltage.to_i) / 1000.0'
+      cpu_temperature_degree:
+        value: '(cpu_temperature.to_i)'
+      onyx_on:
+        value: '(cu_flags.to_i(16) & 0x1)'
+      llc_onyx_fault:
+        value: '((cu_flags.to_i(16) & 0x2) >> 1)'
+      llc_sram_fault:
+        value: '((cu_flags.to_i(16) & 0x4) >> 2)'
+      fault_1v8_r:
+        value: '((cu_flags.to_i(16) & 0x8) >> 3)'
+      fault_1v8_m:
+        value: '((cu_flags.to_i(16) & 0x10) >> 4)'
+      fault_3v3_12v:
+        value: '((cu_flags.to_i(16) & 0x20) >> 5)'
+      pic_ready_raw:
+        value: '((cu_flags.to_i(16) & 0x40) >> 6)'
+      pic_ready_conv:
+        value: '((cu_flags.to_i(16) & 0x80) >> 7)'
+      pic_ready_compressed:
+        value: '((cu_flags.to_i(16) & 0x100) >> 8)'
+      pic_ready_compressed_8:
+        value: '((cu_flags.to_i(16) & 0x200) >> 9)'
+      sd_pic_write_ok:
+        value: '((cu_flags.to_i(16) & 0x400) >> 10)'
+      sd_pic_read_ok:
+        value: '((cu_flags.to_i(16) & 0x800) >> 11)'
+      sd_get_info_ok:
+        value: '((cu_flags.to_i(16) & 0x1000) >> 12)'
+      sd_erase_ok:
+        value: '((cu_flags.to_i(16) & 0x2000) >> 13)'
+      sd_full:
+        value: '((cu_flags.to_i(16) & 0x4000) >> 14)'
+      adc_ready:
+        value: '((cu_flags.to_i(16) & 0x8000) >> 15)'
+      timestamp_int:
+        value: '(timestamp.to_i)'
+  cu_l_onyx_type:
+    doc: |
+      CU_L;ONYX SENSOR T;[Timestamp];[Return value]
+    seq:
+      - id: timestamp
+        type: str
+        encoding: ASCII
+        terminator: 0x3B
+      - id: return_value
+        type: str
+        encoding: ASCII
+        size-eos: true
+    instances:
+      return_value_int:
+        value: '(return_value.to_i)'
+      timestamp_int:
+        value: '(timestamp.to_i)'
+  cu_r_onyx_type:
+    doc: |
+      CU_R;ONYX SENSOR T;[Timestamp];[Return value]
     seq:
       - id: timestamp
         type: str
