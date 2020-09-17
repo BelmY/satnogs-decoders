@@ -32,6 +32,7 @@ from .eshail2 import Eshail2
 from .fox import Fox
 from .irazu import Irazu
 from .irvine import Irvine
+from .iss import Iss
 from .lightsail2 import Lightsail2
 from .minxss import Minxss
 from .mxl import Mxl
@@ -77,6 +78,7 @@ __all__ = [
     'Fox',
     'Irazu',
     'Irvine',
+    'Iss',
     'Lightsail2',
     'Minxss',
     'Mxl',
