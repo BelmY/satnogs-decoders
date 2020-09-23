@@ -127,9 +127,17 @@ doc: |
   :field v1_latch_rssi_int: ax25_frame.payload.ax25_info.tlm_area_switch.v1.latch_rssi_int
   :field v1_a_f_c_offset_int: ax25_frame.payload.ax25_info.tlm_area_switch.v1.a_f_c_offset_int
   :field timestamp_int: ax25_frame.payload.ax25_info.tlm_area_switch.u2.timestamp_int
-  :field u2_current_rssi: ax25_frame.payload.ax25_info.tlm_area_switch.u2.current_rssi
-  :field u2_latch_rssi: ax25_frame.payload.ax25_info.tlm_area_switch.u2.latch_rssi
-  :field u2_a_f_c_offset: ax25_frame.payload.ax25_info.tlm_area_switch.u2.a_f_c_offset
+  :field u2_cpu_voltage_volt: ax25_frame.payload.ax25_info.tlm_area_switch.u2.cpu_voltage_volt
+  :field u2_battery_voltage_volt: ax25_frame.payload.ax25_info.tlm_area_switch.u2.battery_voltage_volt
+  :field u2_cpu_temperature_degree: ax25_frame.payload.ax25_info.tlm_area_switch.u2.cpu_temperature_degree
+  :field u2_amplifier_temperature_degree: ax25_frame.payload.ax25_info.tlm_area_switch.u2.amplifier_temperature_degree
+  :field u2_fec: ax25_frame.payload.ax25_info.tlm_area_switch.u2.fec
+  :field u2_downlink: ax25_frame.payload.ax25_info.tlm_area_switch.u2.downlink
+  :field u2_band_lock: ax25_frame.payload.ax25_info.tlm_area_switch.u2.band_lock
+  :field u2_xor: ax25_frame.payload.ax25_info.tlm_area_switch.u2.xor
+  :field u2_aes_128: ax25_frame.payload.ax25_info.tlm_area_switch.u2.aes_128
+  :field u2_amp_ovt: ax25_frame.payload.ax25_info.tlm_area_switch.u2.amp_ovt
+  :field timestamp_int: ax25_frame.payload.ax25_info.tlm_area_switch.u2.timestamp_int
   :field u2_current_rssi_int: ax25_frame.payload.ax25_info.tlm_area_switch.u2.current_rssi_int
   :field u2_latch_rssi_int: ax25_frame.payload.ax25_info.tlm_area_switch.u2.latch_rssi_int
   :field u2_a_f_c_offset_int: ax25_frame.payload.ax25_info.tlm_area_switch.u2.a_f_c_offset_int
