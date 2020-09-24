@@ -46,6 +46,7 @@ from .polyitan1 import Polyitan1
 from .pwsat2 import Pwsat2
 from .qarman import Qarman
 from .qbee import Qbee
+from .qubik import Qubik
 from .quetzal1 import Quetzal1
 from .siriussat import Siriussat
 from .skcube import Skcube
@@ -94,6 +95,7 @@ __all__ = [
     'Pwsat2',
     'Qarman',
     'Qbee',
+    'Qubik',
     'Quetzal1',
     'Siriussat',
     'Skcube',
