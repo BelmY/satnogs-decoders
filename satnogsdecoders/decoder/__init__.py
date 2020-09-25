@@ -37,6 +37,7 @@ from .lightsail2 import Lightsail2
 from .minxss import Minxss
 from .mxl import Mxl
 from .mysat import Mysat
+from .neutron1 import Neutron1
 from .opssat1 import Opssat1
 from .origamisat1 import Origamisat1
 from .painani import Painani
@@ -83,6 +84,7 @@ __all__ = [
     'Minxss',
     'Mxl',
     'Mysat',
+    'Neutron1',
     'Opssat1',
     'Origamisat1',
     'Painani',
