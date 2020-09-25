@@ -12,6 +12,7 @@ stages:
   - trigger
 compile:
   stage: compile
+  needs: []
   image:
     name: ${GITLAB_CI_IMAGE_KAITAI}
     entrypoint: [""]
@@ -24,6 +25,9 @@ compile:
       - satnogsdecoders/decoder
 static:
   stage: static
+  needs:
+    - job: compile
+      artifacts: true
   image: ${GITLAB_CI_IMAGE_PYTHON}
   before_script:
     - pip install "$GITLAB_CI_PYPI_TOX"
@@ -31,6 +35,9 @@ static:
     - tox -e "yamllint,flake8,isort,yapf,pylint"
 build:
   stage: build
+  needs:
+    - job: compile
+      artifacts: true
   image: ${GITLAB_CI_IMAGE_PYTHON}
   before_script:
     - pip install "$GITLAB_CI_PYPI_TOX"
@@ -44,6 +51,9 @@ build:
       - dist
 test:
   stage: test
+  needs:
+    - job: compile
+      artifacts: true
   image: ${GITLAB_CI_IMAGE_PYTHON}
   before_script:
     - pip install "$GITLAB_CI_PYPI_TOX"
