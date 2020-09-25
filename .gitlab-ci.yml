@@ -10,6 +10,9 @@ stages:
   - test
   - deploy
   - trigger
+  - security
+
+# 'compile' stage
 compile:
   stage: compile
   needs: []
@@ -23,6 +26,8 @@ compile:
     when: always
     paths:
       - satnogsdecoders/decoder
+
+# 'static' stage
 static:
   stage: static
   needs:
@@ -33,6 +38,8 @@ static:
     - pip install "$GITLAB_CI_PYPI_TOX"
   script:
     - tox -e "yamllint,flake8,isort,yapf,pylint"
+
+# 'build' stage
 build:
   stage: build
   needs:
@@ -49,6 +56,8 @@ build:
     when: always
     paths:
       - dist
+
+# 'test' stage
 test:
   stage: test
   needs:
@@ -59,6 +68,8 @@ test:
     - pip install "$GITLAB_CI_PYPI_TOX"
   script:
     - tox -e "pytest"
+
+# 'deploy' stage
 deploy:
   stage: deploy
   image: ${GITLAB_CI_IMAGE_PYTHON}
@@ -73,6 +84,8 @@ deploy:
     variables:
       - $PYPI_USERNAME
       - $PYPI_PASSWORD
+
+# 'trigger' stage
 trigger:
   stage: trigger
   image: ${GITLAB_CI_IMAGE_ALPINE}
@@ -90,3 +103,37 @@ trigger:
       - tags
     variables:
       - $PIPELINE_TRIGGERS
+
+# 'security' stage
+include:
+  - template: Security/Dependency-Scanning.gitlab-ci.yml
+  - template: Security/SAST.gitlab-ci.yml
+  - template: Security/Secret-Detection.gitlab-ci.yml
+  - template: Security/License-Scanning.gitlab-ci.yml
+dependency_scanning:
+  stage: security
+  needs:
+    - job: compile
+      artifacts: true
+  variables:
+    DS_DEFAULT_ANALYZERS: 'gemnasium,gemnasium-python'
+sast:
+  stage: security
+  needs:
+    - job: compile
+      artifacts: true
+secret_detection:
+  stage: security
+  needs:
+    - job: compile
+      artifacts: true
+secret_detection_default_branch:
+  stage: security
+  needs:
+    - job: compile
+      artifacts: true
+license_scanning:
+  stage: security
+  needs:
+    - job: compile
+      artifacts: true
