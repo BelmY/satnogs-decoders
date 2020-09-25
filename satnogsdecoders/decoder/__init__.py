@@ -106,9 +106,9 @@ FIELD_REGEX = re.compile(
 
 
 def get_fields(struct, empty=False):
-    '''
+    """
     Get fields defined in docstring
-    '''
+    """
     fields = {}
 
     try:

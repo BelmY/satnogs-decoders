@@ -47,13 +47,13 @@ def main():
                         '"001122AABBCCDDEEFF".')
     parser.add_argument('--format',
                         type=str,
-                        help='Input file format, \'bin\' or \'csv\'.')
+                        help="Input file format, 'bin' or 'csv'.")
     parser.add_argument(
         '--tmstamp',
         type=str,
         help='For single hex or bin frame: timestamp of the current frame.')
     parser.add_argument('-v',
-                        action="store_true",
+                        action='store_true',
                         help='Enables verbose output mode.')
     args = parser.parse_args()
     parms = CliParameters(args.filename, args.hex_frame, args.format,
@@ -110,7 +110,7 @@ def parse_csv_file(dname, params, json_obj, verbose):
                 each_line = re.sub('["\r\n]', '', each_line)
                 bindata = binascii.unhexlify(each_line[20:])
                 if verbose == 1:
-                    print("Decoding frame (l={}): {}\n".format(
+                    print('Decoding frame (l={}): {}\n'.format(
                         len(bindata), each_line[20:]),
                           file=sys.stderr)
                 timestamp = each_line[:19]
@@ -119,7 +119,7 @@ def parse_csv_file(dname, params, json_obj, verbose):
                                  timestamp, dname, decoders_version))
             except Exception as error:  # pylint: disable=broad-except
                 if verbose is True:
-                    print("^~~~ Invalid frame!", file=sys.stderr)
+                    print('^~~~ Invalid frame!', file=sys.stderr)
                     print(error, file=sys.stderr)
     return json_obj
 
@@ -135,7 +135,7 @@ def parse_bin_file(dname, params, json_obj):
                 timestamp = params.tmstamp
             else:
                 timestamp = datetime.strftime(datetime.now(),
-                                              "%Y-%m-%d %H:%M:%S")
+                                              '%Y-%m-%d %H:%M:%S')
                 json_obj.append(
                     create_point(decode_frame.decode_frame(dname, bindata),
                                  timestamp, dname, decoders_version))
@@ -152,7 +152,7 @@ def parse_hex_frame(dname, params, json_obj):
         if params.tmstamp is not None:
             timestamp = params.tmstamp
         else:
-            timestamp = datetime.strftime(datetime.now(), "%Y-%m-%d %H:%M:%S")
+            timestamp = datetime.strftime(datetime.now(), '%Y-%m-%d %H:%M:%S')
         json_obj.append(
             create_point(decode_frame.decode_frame(dname, bindata), timestamp,
                          dname, decoders_version))

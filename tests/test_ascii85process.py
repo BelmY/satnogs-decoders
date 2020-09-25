@@ -26,5 +26,5 @@ def test_answer():  # pylint: disable=too-many-locals
         count = check_type(result)
         if frame == testdata:
             assert count == testdata_keys
-            assert bytearray(result['decoded'], "ASCII") == testdata[0:15]
-            assert bytearray(result['encoded'], "ASCII") == testdata[16:35]
+            assert bytearray(result['decoded'], 'ASCII') == testdata[0:15]
+            assert bytearray(result['encoded'], 'ASCII') == testdata[16:35]
