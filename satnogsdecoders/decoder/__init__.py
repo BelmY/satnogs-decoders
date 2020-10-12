@@ -34,6 +34,7 @@ from .irazu import Irazu
 from .irvine import Irvine
 from .iss import Iss
 from .lightsail2 import Lightsail2
+from .meznsat import Meznsat
 from .minxss import Minxss
 from .mxl import Mxl
 from .mysat import Mysat
@@ -81,6 +82,7 @@ __all__ = [
     'Irvine',
     'Iss',
     'Lightsail2',
+    'Meznsat',
     'Minxss',
     'Mxl',
     'Mysat',
