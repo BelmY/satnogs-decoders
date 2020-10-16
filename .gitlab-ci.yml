@@ -1,7 +1,7 @@
 variables:
   GITLAB_CI_IMAGE_ALPINE: 'alpine:3.9'
   GITLAB_CI_IMAGE_PYTHON: 'python:3.8.6'
-  GITLAB_CI_IMAGE_KAITAI: 'librespace/kaitai:0.8'
+  GITLAB_CI_IMAGE_KAITAI: 'librespace/kaitai:0.9'
   GITLAB_CI_PYPI_TOX: 'tox~=3.8.0'
 stages:
   - compile
