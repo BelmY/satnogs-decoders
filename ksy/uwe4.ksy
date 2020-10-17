@@ -76,10 +76,6 @@ types:
         type: ssid_mask
       - id: src_callsign_raw
         type: callsign_raw
-        contents: [0x88, 0xa0, 0x60, 0xaa, 0xae, 0x90]
-        doc: |
-          `contents:` does not work here; no exception possible!
-
       - id: src_ssid_raw
         type: ssid_mask
       - id: ctl
