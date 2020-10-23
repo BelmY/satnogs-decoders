@@ -56,6 +56,76 @@ doc: |
   :field rorc_brownout: osdlp_tm_frame.tm_tf_data_field.payload.rorc_brownout
   :field power_save: osdlp_tm_frame.tm_tf_data_field.payload.power_save
   :field power_monitor_fail: osdlp_tm_frame.tm_tf_data_field.payload.power_monitor_fail
+  :field clcw_0_cw_type: osdlp_tm_frame.tm_tf_data_field.payload.clcw_0.cw_type
+  :field clcw_0_clcw_ver: osdlp_tm_frame.tm_tf_data_field.payload.clcw_0.clcw_ver
+  :field clcw_0_status_field: osdlp_tm_frame.tm_tf_data_field.payload.clcw_0.status_field
+  :field clcw_0_cop: osdlp_tm_frame.tm_tf_data_field.payload.clcw_0.cop
+  :field clcw_0_vcid: osdlp_tm_frame.tm_tf_data_field.payload.clcw_0.vcid
+  :field clcw_0_rsvd_a: osdlp_tm_frame.tm_tf_data_field.payload.clcw_0.rsvd_a
+  :field clcw_0_flag_norf: osdlp_tm_frame.tm_tf_data_field.payload.clcw_0.flag_norf
+  :field clcw_0_flag_nobitlock: osdlp_tm_frame.tm_tf_data_field.payload.clcw_0.flag_nobitlock
+  :field clcw_0_flag_lockout: osdlp_tm_frame.tm_tf_data_field.payload.clcw_0.flag_lockout
+  :field clcw_0_flag_wait: osdlp_tm_frame.tm_tf_data_field.payload.clcw_0.flag_wait
+  :field clcw_0_flag_retransmit: osdlp_tm_frame.tm_tf_data_field.payload.clcw_0.flag_retransmit
+  :field clcw_0_farm_b_counter: osdlp_tm_frame.tm_tf_data_field.payload.clcw_0.farm_b_counter
+  :field clcw_0_rsvd_b: osdlp_tm_frame.tm_tf_data_field.payload.clcw_0.rsvd_b
+  :field clcw_0_report_value: osdlp_tm_frame.tm_tf_data_field.payload.clcw_0.report_value
+  :field clcw_1_cw_type: osdlp_tm_frame.tm_tf_data_field.payload.clcw_1.cw_type
+  :field clcw_1_clcw_ver: osdlp_tm_frame.tm_tf_data_field.payload.clcw_1.clcw_ver
+  :field clcw_1_status_field: osdlp_tm_frame.tm_tf_data_field.payload.clcw_1.status_field
+  :field clcw_1_cop: osdlp_tm_frame.tm_tf_data_field.payload.clcw_1.cop
+  :field clcw_1_vcid: osdlp_tm_frame.tm_tf_data_field.payload.clcw_1.vcid
+  :field clcw_1_rsvd_a: osdlp_tm_frame.tm_tf_data_field.payload.clcw_1.rsvd_a
+  :field clcw_1_flag_norf: osdlp_tm_frame.tm_tf_data_field.payload.clcw_1.flag_norf
+  :field clcw_1_flag_nobitlock: osdlp_tm_frame.tm_tf_data_field.payload.clcw_1.flag_nobitlock
+  :field clcw_1_flag_lockout: osdlp_tm_frame.tm_tf_data_field.payload.clcw_1.flag_lockout
+  :field clcw_1_flag_wait: osdlp_tm_frame.tm_tf_data_field.payload.clcw_1.flag_wait
+  :field clcw_1_flag_retransmit: osdlp_tm_frame.tm_tf_data_field.payload.clcw_1.flag_retransmit
+  :field clcw_1_farm_b_counter: osdlp_tm_frame.tm_tf_data_field.payload.clcw_1.farm_b_counter
+  :field clcw_1_rsvd_b: osdlp_tm_frame.tm_tf_data_field.payload.clcw_1.rsvd_b
+  :field clcw_1_report_value: osdlp_tm_frame.tm_tf_data_field.payload.clcw_1.report_value
+  :field clcw_2_cw_type: osdlp_tm_frame.tm_tf_data_field.payload.clcw_2.cw_type
+  :field clcw_2_clcw_ver: osdlp_tm_frame.tm_tf_data_field.payload.clcw_2.clcw_ver
+  :field clcw_2_status_field: osdlp_tm_frame.tm_tf_data_field.payload.clcw_2.status_field
+  :field clcw_2_cop: osdlp_tm_frame.tm_tf_data_field.payload.clcw_2.cop
+  :field clcw_2_vcid: osdlp_tm_frame.tm_tf_data_field.payload.clcw_2.vcid
+  :field clcw_2_rsvd_a: osdlp_tm_frame.tm_tf_data_field.payload.clcw_2.rsvd_a
+  :field clcw_2_flag_norf: osdlp_tm_frame.tm_tf_data_field.payload.clcw_2.flag_norf
+  :field clcw_2_flag_nobitlock: osdlp_tm_frame.tm_tf_data_field.payload.clcw_2.flag_nobitlock
+  :field clcw_2_flag_lockout: osdlp_tm_frame.tm_tf_data_field.payload.clcw_2.flag_lockout
+  :field clcw_2_flag_wait: osdlp_tm_frame.tm_tf_data_field.payload.clcw_2.flag_wait
+  :field clcw_2_flag_retransmit: osdlp_tm_frame.tm_tf_data_field.payload.clcw_2.flag_retransmit
+  :field clcw_2_farm_b_counter: osdlp_tm_frame.tm_tf_data_field.payload.clcw_2.farm_b_counter
+  :field clcw_2_rsvd_b: osdlp_tm_frame.tm_tf_data_field.payload.clcw_2.rsvd_b
+  :field clcw_2_report_value: osdlp_tm_frame.tm_tf_data_field.payload.clcw_2.report_value
+  :field clcw_3_cw_type: osdlp_tm_frame.tm_tf_data_field.payload.clcw_3.cw_type
+  :field clcw_3_clcw_ver: osdlp_tm_frame.tm_tf_data_field.payload.clcw_3.clcw_ver
+  :field clcw_3_status_field: osdlp_tm_frame.tm_tf_data_field.payload.clcw_3.status_field
+  :field clcw_3_cop: osdlp_tm_frame.tm_tf_data_field.payload.clcw_3.cop
+  :field clcw_3_vcid: osdlp_tm_frame.tm_tf_data_field.payload.clcw_3.vcid
+  :field clcw_3_rsvd_a: osdlp_tm_frame.tm_tf_data_field.payload.clcw_3.rsvd_a
+  :field clcw_3_flag_norf: osdlp_tm_frame.tm_tf_data_field.payload.clcw_3.flag_norf
+  :field clcw_3_flag_nobitlock: osdlp_tm_frame.tm_tf_data_field.payload.clcw_3.flag_nobitlock
+  :field clcw_3_flag_lockout: osdlp_tm_frame.tm_tf_data_field.payload.clcw_3.flag_lockout
+  :field clcw_3_flag_wait: osdlp_tm_frame.tm_tf_data_field.payload.clcw_3.flag_wait
+  :field clcw_3_flag_retransmit: osdlp_tm_frame.tm_tf_data_field.payload.clcw_3.flag_retransmit
+  :field clcw_3_farm_b_counter: osdlp_tm_frame.tm_tf_data_field.payload.clcw_3.farm_b_counter
+  :field clcw_3_rsvd_b: osdlp_tm_frame.tm_tf_data_field.payload.clcw_3.rsvd_b
+  :field clcw_3_report_value: osdlp_tm_frame.tm_tf_data_field.payload.clcw_3.report_value
+  :field clcw_4_cw_type: osdlp_tm_frame.tm_tf_data_field.payload.clcw_4.cw_type
+  :field clcw_4_clcw_ver: osdlp_tm_frame.tm_tf_data_field.payload.clcw_4.clcw_ver
+  :field clcw_4_status_field: osdlp_tm_frame.tm_tf_data_field.payload.clcw_4.status_field
+  :field clcw_4_cop: osdlp_tm_frame.tm_tf_data_field.payload.clcw_4.cop
+  :field clcw_4_vcid: osdlp_tm_frame.tm_tf_data_field.payload.clcw_4.vcid
+  :field clcw_4_rsvd_a: osdlp_tm_frame.tm_tf_data_field.payload.clcw_4.rsvd_a
+  :field clcw_4_flag_norf: osdlp_tm_frame.tm_tf_data_field.payload.clcw_4.flag_norf
+  :field clcw_4_flag_nobitlock: osdlp_tm_frame.tm_tf_data_field.payload.clcw_4.flag_nobitlock
+  :field clcw_4_flag_lockout: osdlp_tm_frame.tm_tf_data_field.payload.clcw_4.flag_lockout
+  :field clcw_4_flag_wait: osdlp_tm_frame.tm_tf_data_field.payload.clcw_4.flag_wait
+  :field clcw_4_flag_retransmit: osdlp_tm_frame.tm_tf_data_field.payload.clcw_4.flag_retransmit
+  :field clcw_4_farm_b_counter: osdlp_tm_frame.tm_tf_data_field.payload.clcw_4.farm_b_counter
+  :field clcw_4_rsvd_b: osdlp_tm_frame.tm_tf_data_field.payload.clcw_4.rsvd_b
+  :field clcw_4_report_value: osdlp_tm_frame.tm_tf_data_field.payload.clcw_4.report_value
   :field tx_frames: osdlp_tm_frame.tm_tf_data_field.payload.tx_frames
   :field rx_frames: osdlp_tm_frame.tm_tf_data_field.payload.rx_frames
   :field rx_corrected_bits: osdlp_tm_frame.tm_tf_data_field.payload.rx_corrected_bits
@@ -227,8 +297,16 @@ types:
         type: u1
       - id: power_monitor_fail
         type: u1
-      - id: clcw
-        size: 20
+      - id: clcw_0
+        type: clcw
+      - id: clcw_1
+        type: clcw
+      - id: clcw_2
+        type: clcw
+      - id: clcw_3
+        type: clcw
+      - id: clcw_4
+        type: clcw
       - id: tx_frames
         type: u2
       - id: rx_frames
@@ -259,3 +337,33 @@ types:
     seq:
       - id: unparsed
         size-eos: true
+  clcw:
+    seq:
+      - id: cw_type
+        type: b1
+      - id: clcw_ver
+        type: b2
+      - id: status_field
+        type: b3
+      - id: cop
+        type: b2
+      - id: vcid
+        type: b6
+      - id: rsvd_a
+        type: b2
+      - id: flag_norf
+        type: b1
+      - id: flag_nobitlock
+        type: b1
+      - id: flag_lockout
+        type: b1
+      - id: flag_wait
+        type: b1
+      - id: flag_retransmit
+        type: b1
+      - id: farm_b_counter
+        type: b2
+      - id: rsvd_b
+        type: b1
+      - id: report_value
+        type: b8
