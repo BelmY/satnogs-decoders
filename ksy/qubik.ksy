@@ -48,7 +48,14 @@ doc: |
   :field rtc_bat_volt: osdlp_tm_frame.tm_tf_data_field.payload.rtc_bat_volt
   :field deploy_first: osdlp_tm_frame.tm_tf_data_field.payload.deploy_first
   :field deploy_first_ant: osdlp_tm_frame.tm_tf_data_field.payload.deploy_first_ant
-  :field ror: osdlp_tm_frame.tm_tf_data_field.payload.ror
+  :field ror_unknown: osdlp_tm_frame.tm_tf_data_field.payload.ror_unknown
+  :field ror_low_power: osdlp_tm_frame.tm_tf_data_field.payload.ror_low_power
+  :field ror_window_watchdog: osdlp_tm_frame.tm_tf_data_field.payload.ror_window_watchdog
+  :field ror_independent_watchdog_reset: osdlp_tm_frame.tm_tf_data_field.payload.ror_independent_watchdog_reset
+  :field ror_software: osdlp_tm_frame.tm_tf_data_field.payload.ror_software
+  :field ror_power_on_power_down: osdlp_tm_frame.tm_tf_data_field.payload.ror_power_on_power_down
+  :field ror_external_reset_pin: osdlp_tm_frame.tm_tf_data_field.payload.ror_external_reset_pin
+  :field ror_brownout: osdlp_tm_frame.tm_tf_data_field.payload.ror_brownout
   :field dropped_frames: osdlp_tm_frame.tm_tf_data_field.payload.dropped_frames
   :field rorc_low_power: osdlp_tm_frame.tm_tf_data_field.payload.rorc_low_power
   :field rorc_ind_wdg: osdlp_tm_frame.tm_tf_data_field.payload.rorc_ind_wdg
@@ -281,8 +288,22 @@ types:
         type: u1
       - id: deploy_first_ant
         type: u1
-      - id: ror
-        type: u1
+      - id: ror_unknown
+        type: b1
+      - id: ror_low_power
+        type: b1
+      - id: ror_window_watchdog
+        type: b1
+      - id: ror_independent_watchdog_reset
+        type: b1
+      - id: ror_software
+        type: b1
+      - id: ror_power_on_power_down
+        type: b1
+      - id: ror_external_reset_pin
+        type: b1
+      - id: ror_brownout
+        type: b1
       - id: dropped_frames
         type: u2
       - id: rorc_low_power
