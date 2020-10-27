@@ -50,6 +50,7 @@ from .qubik import Qubik
 from .quetzal1 import Quetzal1
 from .siriussat import Siriussat
 from .skcube import Skcube
+from .spoc import Spoc
 from .strand import Strand
 from .us6 import Us6
 from .uwe4 import Uwe4
@@ -99,6 +100,7 @@ __all__ = [
     'Quetzal1',
     'Siriussat',
     'Skcube',
+    'Spoc',
     'Strand',
     'Us6',
     'Uwe4',
