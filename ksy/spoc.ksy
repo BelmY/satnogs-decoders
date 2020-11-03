@@ -161,7 +161,7 @@ types:
         type:
           switch-on: '_parent.ax25_header.src_callsign_raw.callsign_ror.callsign'
           cases:
-            '"MOCI  "': spoc_tlm
+            '"SPOC  "': spoc_tlm
   spoc_tlm:
     meta:
       endian: be
