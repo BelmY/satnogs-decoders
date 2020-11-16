@@ -54,6 +54,7 @@ from .spoc import Spoc
 from .strand import Strand
 from .us6 import Us6
 from .uwe4 import Uwe4
+from .vzlusat2 import Vzlusat2
 
 __all__ = [
     'Aausat4',
@@ -104,6 +105,7 @@ __all__ = [
     'Strand',
     'Us6',
     'Uwe4',
+    'Vzlusat2',
 ]
 
 FIELD_REGEX = re.compile(
