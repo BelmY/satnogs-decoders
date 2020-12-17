@@ -6,37 +6,42 @@ meta:
 doc-ref: 'https://github.com/aausat/aausat4_beacon_parser/blob/master/beacon.py'
 
 doc: |
-  :field csp_hdr_crc: csp_header.crc
-  :field csp_hdr_rdp: csp_header.rdp
-  :field csp_hdr_xtea: csp_header.xtea
-  :field csp_hdr_hmac: csp_header.hmac
-  :field csp_hdr_src_port: csp_header.src_port
-  :field csp_hdr_dst_port: csp_header.dst_port
-  :field csp_hdr_destination: csp_header.destination
-  :field csp_hdr_source: csp_header.source
-  :field csp_hdr_priority: csp_header.priority
-  :field subsystems_valid: csp_data.csp_payload.valid
-  :field eps_boot_count: csp_data.csp_payload.eps.boot_count
-  :field eps_boot_cause: csp_data.csp_payload.eps.boot_cause
-  :field eps_uptime: csp_data.csp_payload.eps.uptime
-  :field eps_rt_clock: csp_data.csp_payload.eps.rt_clock
-  :field eps_ping_status: csp_data.csp_payload.eps.ping_status
-  :field eps_subsystem_selfstatus: csp_data.csp_payload.eps.subsystem_selfstatus
-  :field eps_battery_voltage: csp_data.csp_payload.eps.battery_voltage
-  :field eps_cell_diff: csp_data.csp_payload.eps.cell_diff
-  :field eps_battery_current: csp_data.csp_payload.eps.battery_current
-  :field eps_solar_power: csp_data.csp_payload.eps.solar_power
-  :field eps_temp: csp_data.csp_payload.eps.temp
-  :field eps_pa_temp: csp_data.csp_payload.eps.pa_temp
-  :field eps_main_voltage: csp_data.csp_payload.eps.main_voltage
-  :field com_boot_count: csp_data.csp_payload.com.boot_count
-  :field com_boot_cause: csp_data.csp_payload.com.boot_cause
+  :field data_plus_hmac_length: packet.data_length.data_plus_hmac_length
+  :field frame_length: frame_length
+  :field csp_hdr_crc: packet.csp_header.crc
+  :field csp_hdr_rdp: packet.csp_header.rdp
+  :field csp_hdr_xtea: packet.csp_header.xtea
+  :field csp_hdr_hmac: packet.csp_header.hmac
+  :field csp_hdr_src_port: packet.csp_header.src_port
+  :field csp_hdr_dst_port: packet.csp_header.dst_port
+  :field csp_hdr_destination: packet.csp_header.destination
+  :field csp_hdr_source: packet.csp_header.source
+  :field csp_hdr_priority: packet.csp_header.priority
+  :field subsystems_valid: packet.data.beacon.valid
+  :field eps_boot_count: packet.data.beacon.eps.boot_count
+  :field eps_boot_cause: packet.data.beacon.eps.boot_cause
+  :field eps_uptime: packet.data.beacon.eps.uptime
+  :field eps_rt_clock: packet.data.beacon.eps.rt_clock
+  :field eps_ping_status: packet.data.beacon.eps.ping_status
+  :field eps_subsystem_selfstatus: packet.data.beacon.eps.subsystem_selfstatus
+  :field eps_battery_voltage: packet.data.beacon.eps.battery_voltage
+  :field eps_cell_diff: packet.data.beacon.eps.cell_diff
+  :field eps_battery_current: packet.data.beacon.eps.battery_current
+  :field eps_solar_power: packet.data.beacon.eps.solar_power
+  :field eps_temp: packet.data.beacon.eps.temp
+  :field eps_pa_temp: packet.data.beacon.eps.pa_temp
+  :field eps_main_voltage: packet.data.beacon.eps.main_voltage
+  :field com_boot_count: packet.data.beacon.com.boot_count
+  :field com_boot_cause: packet.data.beacon.com.boot_cause
 
 seq:
-  - id: csp_header
-    type: csp_header_t
-  - id: csp_data
-    type: csp_data_t
+  - id: packet
+    type: aausat4_data_t
+
+instances:
+  frame_length:
+    value: _io.size
+
 types:
   csp_header_t:
     seq:
@@ -111,14 +116,32 @@ types:
           ) >> 6
   csp_data_t:
     seq:
-      - id: csp_payload
-        type:
-          switch-on: frame_length
-          cases:
-            88: aausat4_beacon_t
-    instances:
-      frame_length:
-        value: _io.size
+      - id: beacon
+        type: aausat4_beacon_t
+        if: _parent.csp_header.dst_port == 10 and _parent.csp_header.destination == 9
+
+  aausat4_data_t:
+    seq:
+      - id: data_length
+        type: aausat4_len_t
+        if: _root.frame_length == 92
+      - id: csp_header
+        type: csp_header_t
+      - id: data
+        type: csp_data_t
+      - id: hmac
+        type: aausat4_hmac_t
+        if: _root.frame_length == 90 or _root.frame_length == 92
+
+  aausat4_len_t:
+    seq:
+      - id: data_plus_hmac_length
+        type: u2
+
+  aausat4_hmac_t:
+    seq:
+      - id: hmac
+        type: u2
 
   # The beacon format is as follows:
   #  [ 1 byte | 20 bytes  | 10 bytes | 7 bytes  | 6 bytes  | 20 bytes  | 20 bytes  ]
@@ -141,8 +164,6 @@ types:
         type: ais1_t
       - id: ais2
         type: ais2_t
-      - id: unparsed
-        size-eos: true
   eps_t:
     seq:
       - id: boot_count_raw
