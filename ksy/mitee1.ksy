@@ -104,6 +104,8 @@ doc: |
   :field volt_batt: ax25_frame.payload.ax25_info.eps.volt_batt
   :field batt_heater: ax25_frame.payload.ax25_info.eps.batt_heater
   :field bdot_on: ax25_frame.payload.ax25_info.adcs.bdot_on
+  :field magtorq_x: ax25_frame.payload.ax25_info.adcs.magtorq.force_x
+  :field magtorq_y: ax25_frame.payload.ax25_info.adcs.magtorq.force_y
   :field magtorq_z: ax25_frame.payload.ax25_info.adcs.magtorq.force_z
   :field gyro_x: ax25_frame.payload.ax25_info.adcs.imu.gyro_x
   :field gyro_y: ax25_frame.payload.ax25_info.adcs.imu.gyro_y
