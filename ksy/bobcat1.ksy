@@ -3,185 +3,147 @@ meta:
   id: bobcat1
   endian: be
 doc: |
-  :field callsign: frame.basic.callsign
-  :field bat_v: frame.basic.bat_v
-  :field bat_i_out: frame.basic.bat_i_out
-  :field bat_i_in: frame.basic.bat_i_in
-  :field bootcount_a3200: frame.basic.bootcount_a3200
-  :field resetcause_a3200: frame.basic.resetcause_a3200
-  :field bootcause_a3200: frame.basic.bootcause_a3200
-  :field uptime_a3200: frame.basic.uptime_a3200
-  :field bootcount_ax100: frame.basic.bootcount_ax100
-  :field bootcause_ax100: frame.basic.bootcause_ax100
-  :field i_pwm: frame.basic.i_pwm
-  :field fs_mounted: frame.basic.fs_mounted
-  :field antennas_deployed: frame.basic.antennas_deployed
-  :field deploy_attempts1: frame.basic.deploy_attempts1
-  :field deploy_attempts2: frame.basic.deploy_attempts2
-  :field deploy_attempts3: frame.basic.deploy_attempts3
-  :field deploy_attempts4: frame.basic.deploy_attempts4
-  :field gyro_x: frame.basic.gyro_x
-  :field gyro_y: frame.basic.gyro_y
-  :field gyro_z: frame.basic.gyro_z
-  :field timestamp: frame.basic.timestamp
-  :field checksum: frame.hk_data.a3200_hktable0.checksum
-  :field callsign: frame.hk_data.callsign
-  :field bat_v: frame.hk_data.bat_v
-  :field bat_i_in: frame.hk_data.bat_i_in
-  :field bat_i_out: frame.hk_data.bat_i_out
-  :field solar1_i: frame.hk_data.solar1_i
-  :field solar1_v: frame.hk_data.solar1_v
-  :field solar2_i: frame.hk_data.solar2_i
-  :field solar2_v: frame.hk_data.solar2_v
-  :field solar3_i: frame.hk_data.solar3_i
-  :field solar3_v: frame.hk_data.solar3_v
-  :field novatel_i: frame.hk_data.novatel_i
-  :field sdr_i: frame.hk_data.sdr_i
-  :field bootcount_p31: frame.hk_data.bootcount_p31
-  :field bootcause_p31: frame.hk_data.bootcause_p31
-  :field bootcount_a3200: frame.hk_data.bootcount_a3200
-  :field bootcause_a3200: frame.hk_data.bootcause_a3200
-  :field resetcause_a3200: frame.hk_data.resetcause_a3200
-  :field uptime_a3200: frame.hk_data.uptime_a3200
-  :field temp_mcu: frame.hk_data.temp_mcu
-  :field i_gssb1: frame.hk_data.i_gssb1
-  :field i_pwm: frame.hk_data.i_pwm
-  :field panel_temp1: frame.hk_data.panel_temp1
-  :field panel_temp2: frame.hk_data.panel_temp2
-  :field panel_temp3: frame.hk_data.panel_temp3
-  :field panel_temp4: frame.hk_data.panel_temp4
-  :field panel_temp5: frame.hk_data.panel_temp5
-  :field panel_temp6: frame.hk_data.panel_temp6
-  :field panel_temp7: frame.hk_data.panel_temp7
-  :field panel_temp8: frame.hk_data.panel_temp8
-  :field panel_temp9: frame.hk_data.panel_temp9
-  :field p31_temp1: frame.hk_data.p31_temp1
-  :field p31_temp2: frame.hk_data.p31_temp2
-  :field p31_temp3: frame.hk_data.p31_temp3
-  :field p31_temp4: frame.hk_data.p31_temp4
-  :field p31_temp5: frame.hk_data.p31_temp5
-  :field p31_temp6: frame.hk_data.p31_temp6
-  :field flash0_free: frame.hk_data.flash0_free
-  :field flash1_free: frame.hk_data.flash1_free
-  :field collection_running: frame.hk_data.coll_running
-  :field temp_brd: frame.hk_data.temp_brd
-  :field temp_pa: frame.hk_data.temp_pa
-  :field bgnd_rssi: frame.hk_data.bgnd_rssi
-  :field tot_tx_count: frame.hk_data.tot_tx_count
-  :field tot_rx_count: frame.hk_data.tot_rx_count
-  :field tot_tx_bytes: frame.hk_data.tot_tx_bytes
-  :field tot_rx_bytes: frame.hk_data.tot_rx_bytes
-  :field bootcount_ax100: frame.hk_data.bootcount_ax100
-  :field bootcause_ax100: frame.hk_data.bootcause_ax100
-  :field callsign: frame.data.basic.callsign
-  :field bat_v: frame.data.basic.bat_v
-  :field bat_i_out: frame.data.basic.bat_i_out
-  :field bat_i_in: frame.data.basic.bat_i_in
-  :field bootcount_a3200: frame.data.basic.bootcount_a3200
-  :field resetcause_a3200: frame.data.basic.resetcause_a3200
-  :field bootcause_a3200: frame.data.basic.bootcause_a3200
-  :field uptime_a3200: frame.data.basic.uptime_a3200
-  :field bootcount_ax100: frame.data.basic.bootcount_ax100
-  :field bootcause_ax100: frame.data.basic.bootcause_ax100
-  :field i_pwm: frame.data.basic.i_pwm
-  :field fs_mounted: frame.data.basic.fs_mounted
-  :field antennas_deployed: frame.data.basic.antennas_deployed
-  :field deploy_attempts1: frame.data.basic.deploy_attempts1
-  :field deploy_attempts2: frame.data.basic.deploy_attempts2
-  :field deploy_attempts3: frame.data.basic.deploy_attempts3
-  :field deploy_attempts4: frame.data.basic.deploy_attempts4
-  :field gyro_x: frame.data.basic.gyro_x
-  :field gyro_y: frame.data.basic.gyro_y
-  :field gyro_z: frame.data.basic.gyro_z
-  :field timestamp: frame.data.basic.timestamp
-  :field callsign: frame.hk_frame.hk_data.callsign
-  :field bat_v: frame.hk_frame.hk_data.bat_v
-  :field bat_i_in: frame.hk_frame.hk_data.bat_i_in
-  :field bat_i_out: frame.hk_frame.hk_data.bat_i_out
-  :field solar1_i: frame.hk_frame.hk_data.solar1_i
-  :field solar1_v: frame.hk_frame.hk_data.solar1_v
-  :field solar2_i: frame.hk_frame.hk_data.solar2_i
-  :field solar2_v: frame.hk_frame.hk_data.solar2_v
-  :field solar3_i: frame.hk_frame.hk_data.solar3_i
-  :field solar3_v: frame.hk_frame.hk_data.solar3_v
-  :field novatel_i: frame.hk_frame.hk_data.novatel_i
-  :field sdr_i: frame.hk_frame.hk_data.sdr_i
-  :field bootcount_p31: frame.hk_frame.hk_data.bootcount_p31
-  :field bootcause_p31: frame.hk_frame.hk_data.bootcause_p31
-  :field bootcount_a3200: frame.hk_frame.hk_data.bootcount_a3200
-  :field bootcause_a3200: frame.hk_frame.hk_data.bootcause_a3200
-  :field resetcause_a3200: frame.hk_frame.hk_data.resetcause_a3200
-  :field uptime_a3200: frame.hk_frame.hk_data.uptime_a3200
-  :field temp_mcu: frame.hk_frame.hk_data.temp_mcu
-  :field i_gssb1: frame.hk_frame.hk_data.i_gssb1
-  :field i_pwm: frame.hk_frame.hk_data.i_pwm
-  :field panel_temp1: frame.hk_frame.hk_data.panel_temp1
-  :field panel_temp2: frame.hk_frame.hk_data.panel_temp2
-  :field panel_temp3: frame.hk_frame.hk_data.panel_temp3
-  :field panel_temp4: frame.hk_frame.hk_data.panel_temp4
-  :field panel_temp5: frame.hk_frame.hk_data.panel_temp5
-  :field panel_temp6: frame.hk_frame.hk_data.panel_temp6
-  :field panel_temp7: frame.hk_frame.hk_data.panel_temp7
-  :field panel_temp8: frame.hk_frame.hk_data.panel_temp8
-  :field panel_temp9: frame.hk_frame.hk_data.panel_temp9
-  :field p31_temp1: frame.hk_frame.hk_data.p31_temp1
-  :field p31_temp2: frame.hk_frame.hk_data.p31_temp2
-  :field p31_temp3: frame.hk_frame.hk_data.p31_temp3
-  :field p31_temp4: frame.hk_frame.hk_data.p31_temp4
-  :field p31_temp5: frame.hk_frame.hk_data.p31_temp5
-  :field p31_temp6: frame.hk_frame.hk_data.p31_temp6
-  :field flash0_free: frame.hk_frame.hk_data.flash0_free
-  :field flash1_free: frame.hk_frame.hk_data.flash1_free
-  :field coll_running: frame.hk_frame.hk_data.coll_running
-  :field temp_brd: frame.hk_frame.hk_data.temp_brd
-  :field temp_pa: frame.hk_frame.hk_data.temp_pa
-  :field bgnd_rssi: frame.hk_frame.hk_data.bgnd_rssi
-  :field tot_tx_count: frame.hk_frame.hk_data.tot_tx_count
-  :field tot_rx_count: frame.hk_frame.hk_data.tot_rx_count
-  :field tot_tx_bytes: frame.hk_frame.hk_data.tot_tx_bytes
-  :field tot_rx_bytes: frame.hk_frame.hk_data.tot_rx_bytes
-  :field bootcount_ax100: frame.hk_frame.hk_data.bootcount_ax100
-  :field bootcause_ax100: frame.hk_frame.hk_data.bootcause_ax100
+  :field data: frame.cspheader.data
+  :field callsign: frame.data.callsign
+  :field bobcat1: frame.data.bobcat1
+  :field bat_v: frame.data.bat_v
+  :field bat_i_out: frame.data.bat_i_out
+  :field bat_i_in: frame.data.bat_i_in
+  :field bootcount_a3200: frame.data.bootcount_a3200
+  :field resetcause_a3200: frame.data.resetcause_a3200
+  :field bootcause_a3200: frame.data.bootcause_a3200
+  :field uptime_a3200: frame.data.uptime_a3200
+  :field bootcount_ax100: frame.data.bootcount_ax100
+  :field bootcause_ax100: frame.data.bootcause_ax100
+  :field i_pwm: frame.data.i_pwm
+  :field fs_mounted: frame.data.fs_mounted
+  :field antennas_deployed: frame.data.antennas_deployed
+  :field deploy_attempts1: frame.data.deploy_attempts1
+  :field deploy_attempts2: frame.data.deploy_attempts2
+  :field deploy_attempts3: frame.data.deploy_attempts3
+  :field deploy_attempts4: frame.data.deploy_attempts4
+  :field gyro_x: frame.data.gyro_x
+  :field gyro_y: frame.data.gyro_y
+  :field gyro_z: frame.data.gyro_z
+  :field timestamp: frame.data.timestamp
+  :field protocol_version: frame.hk_header.protocol_version
+  :field type: frame.hk_header.type
+  :field version: frame.hk_header.version
+  :field satid: frame.hk_header.satid
+  :field checksum: frame.hk_frame.a3200_hktable0.checksum
+  :field a3200_hktable0_timestamp: frame.hk_frame.a3200_hktable0.timestamp
+  :field source: frame.hk_frame.a3200_hktable0.source
+  :field callsign: frame.hk_frame.callsign
+  :field bobcat1: frame.hk_frame.bobcat1
+  :field bat_v: frame.hk_frame.bat_v
+  :field bat_i_in: frame.hk_frame.bat_i_in
+  :field bat_i_out: frame.hk_frame.bat_i_out
+  :field solar1_i: frame.hk_frame.solar1_i
+  :field solar1_v: frame.hk_frame.solar1_v
+  :field solar2_i: frame.hk_frame.solar2_i
+  :field solar2_v: frame.hk_frame.solar2_v
+  :field solar3_i: frame.hk_frame.solar3_i
+  :field solar3_v: frame.hk_frame.solar3_v
+  :field novatel_i: frame.hk_frame.novatel_i
+  :field sdr_i: frame.hk_frame.sdr_i
+  :field bootcount_p31: frame.hk_frame.bootcount_p31
+  :field bootcause_p31: frame.hk_frame.bootcause_p31
+  :field bootcount_a3200: frame.hk_frame.bootcount_a3200
+  :field bootcause_a3200: frame.hk_frame.bootcause_a3200
+  :field resetcause_a3200: frame.hk_frame.resetcause_a3200
+  :field uptime_a3200: frame.hk_frame.uptime_a3200
+  :field temp_mcu: frame.hk_frame.temp_mcu
+  :field i_gssb1: frame.hk_frame.i_gssb1
+  :field i_pwm: frame.hk_frame.i_pwm
+  :field panel_temp1: frame.hk_frame.panel_temp1
+  :field panel_temp2: frame.hk_frame.panel_temp2
+  :field panel_temp3: frame.hk_frame.panel_temp3
+  :field panel_temp4: frame.hk_frame.panel_temp4
+  :field panel_temp5: frame.hk_frame.panel_temp5
+  :field panel_temp6: frame.hk_frame.panel_temp6
+  :field panel_temp7: frame.hk_frame.panel_temp7
+  :field panel_temp8: frame.hk_frame.panel_temp8
+  :field panel_temp9: frame.hk_frame.panel_temp9
+  :field p31_temp1: frame.hk_frame.p31_temp1
+  :field p31_temp2: frame.hk_frame.p31_temp2
+  :field p31_temp3: frame.hk_frame.p31_temp3
+  :field p31_temp4: frame.hk_frame.p31_temp4
+  :field p31_temp5: frame.hk_frame.p31_temp5
+  :field p31_temp6: frame.hk_frame.p31_temp6
+  :field flash0_free: frame.hk_frame.flash0_free
+  :field flash1_free: frame.hk_frame.flash1_free
+  :field coll_running: frame.hk_frame.coll_running
+  :field ax100_telemtable_checksum: frame.hk_frame.ax100_telemtable.checksum
+  :field ax100_telemtable_timestamp: frame.hk_frame.ax100_telemtable.timestamp
+  :field ax100_telemtable_source: frame.hk_frame.ax100_telemtable.source
+  :field temp_brd: frame.hk_frame.temp_brd
+  :field temp_pa: frame.hk_frame.temp_pa
+  :field bgnd_rssi: frame.hk_frame.bgnd_rssi
+  :field tot_tx_count: frame.hk_frame.tot_tx_count
+  :field tot_rx_count: frame.hk_frame.tot_rx_count
+  :field tot_tx_bytes: frame.hk_frame.tot_tx_bytes
+  :field tot_rx_bytes: frame.hk_frame.tot_rx_bytes
+  :field bootcount_ax100: frame.hk_frame.bootcount_ax100
+  :field bootcause_ax100: frame.hk_frame.bootcause_ax100
+  :field a3200_hktable_17_1_checksum: frame.extra_frame.a3200_hktable_17_1.checksum
+  :field a3200_hktable_17_1_timestamp: frame.extra_frame.a3200_hktable_17_1.timestamp
+  :field a3200_hktable_17_1_source: frame.extra_frame.a3200_hktable_17_1.source
+  :field callsign: frame.extra_frame.callsign
+  :field bobcat1: frame.extra_frame.bobcat1
+  :field coll_running: frame.extra_frame.coll_running
+  :field lat: frame.extra_frame.lat
+  :field long: frame.extra_frame.long
+  :field height: frame.extra_frame.height
+  :field sec_of_week: frame.extra_frame.sec_of_week
+  :field a3200_hktable_10_checksum: frame.extra_frame.a3200_hktable_10.checksum
+  :field a3200_hktable_10_timestamp: frame.extra_frame.a3200_hktable_10.timestamp
+  :field a3200_hktable_10_source: frame.extra_frame.a3200_hktable_10.source
+  :field cfg_path: frame.extra_frame.cfg_path
+  :field bc1_wdcnt: frame.extra_frame.bc1_wdcnt
+  :field collect_id: frame.extra_frame.collect_id
+  :field adcs_mode: frame.extra_frame.adcs_mode
+  :field a3200_hktable_17_2_checksum: frame.extra_frame.a3200_hktable_17_2.checksum
+  :field a3200_hktable_17_2_timestamp: frame.extra_frame.a3200_hktable_17_2.timestamp
+  :field a3200_hktable_17_2_source: frame.extra_frame.a3200_hktable_17_2.source
+  :field custom_message: frame.extra_frame.custom_message
+  :field framelength: framelength
 
 instances:
   framelength:
     value: _io.size
-
 
 seq:
   - id: frame
     type:
       switch-on: _root.framelength
       cases:
-        57: bc1_basic_frame
-        144: bc1_hk_frame
-        69: bc1_basic_frame_csp
-        156: bc1_hk_frame_csp
-
+        69: bc1_basic_frame
+        156: bc1_hk_frame
+        150: bc1_extra_frame
 
 types:
-  bc1_basic_frame_csp:
+  bc1_basic_frame:
     seq:
       - id: cspheader
         type: cspheader
       - id: data
-        type: bc1_basic_frame
-  bc1_hk_frame_csp:
-    seq:
-      - id: cspheader
-        type: cspheader
-      - id: hk_frame
-        type: bc1_hk_frame
-  bc1_basic_frame:
-    seq:
-      - id: basic
         type: basic
   bc1_hk_frame:
     seq:
+      - id: cspheader
+        type: cspheader
       - id: hk_header
         type: hk_header
-      - id: hk_data
+      - id: hk_frame
         type: hk_data
+  bc1_extra_frame:
+    seq:
+      - id: cspheader
+        type: cspheader
+      - id: hk_header
+        type: hk_header
+      - id: extra_frame
+        type: extra_data
 
   cspheader:
     seq:
@@ -191,13 +153,9 @@ types:
   basic:
     seq:
       - id: callsign
-        type: strz
-        encoding: ASCII
-        size: 6
+        contents: ["W8PZS", 0]
       - id: bobcat1
-        type: strz
-        encoding: ASCII
-        size: 9
+        contents: ["BOBCAT-1", 0]
       - id: bat_v
         type: u2
       - id: bat_i_out
@@ -264,13 +222,9 @@ types:
       - id: a3200_hktable0
         type: beacon_element_header
       - id: callsign
-        type: strz
-        encoding: ASCII
-        size: 6
+        contents: ["W8PZS", 0]
       - id: bobcat1
-        type: strz
-        encoding: ASCII
-        size: 9
+        contents: ["BOBCAT-1", 0]
       - id: bat_v
         type: u2
       - id: bat_i_in
@@ -367,3 +321,40 @@ types:
         type: u2
       - id: bootcause_ax100
         type: u4
+
+  extra_data:
+    seq:
+      - id: a3200_hktable_17_1
+        type: beacon_element_header
+      - id: callsign
+        contents: ["W8PZS", 0]
+      - id: bobcat1
+        contents: ["BOBCAT-1", 0]
+      - id: coll_running
+        type: u1
+      - id: lat
+        type: f4
+      - id: long
+        type: f4
+      - id: height
+        type: f4
+      - id: sec_of_week
+        type: u2
+      - id: a3200_hktable_10
+        type: beacon_element_header
+      - id: cfg_path
+        type: strz
+        size: 50
+        encoding: ASCII
+      - id: bc1_wdcnt
+        type: u4
+      - id: collect_id
+        type: u4
+      - id: adcs_mode
+        type: u1
+      - id: a3200_hktable_17_2
+        type: beacon_element_header
+      - id: custom_message
+        type: strz
+        encoding: ascii
+        size: 20
